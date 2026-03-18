@@ -76,32 +76,6 @@ export default async function Home({ searchParams }: HomeProps) {
       </section>
 
       <section className="page-stack section-block section-surface home-product-section">
-        <div className="section-head">
-          <h2 className="section-title">{t("home.featured.title")}</h2>
-          <p className="muted section-subtitle">{t("home.featured.description")}</p>
-        </div>
-
-        <ProductGrid
-          products={featuredProducts}
-          variant="public"
-          session={session}
-          vouchers={voucherWallet?.activeDiscountVouchers}
-          priorityCount={2}
-        />
-      </section>
-
-      {flashSaleProducts.length > 0 ? (
-        <section className="page-stack section-block section-surface home-product-section">
-          <div className="section-head">
-            <h2 className="section-title">{t("home.offers.title")}</h2>
-            <p className="muted section-subtitle">{t("home.offers.description")}</p>
-          </div>
-
-          <ProductGrid products={flashSaleProducts} variant="public" session={session} vouchers={voucherWallet?.activeDiscountVouchers} />
-        </section>
-      ) : null}
-
-      <section className="page-stack section-block section-surface home-product-section">
         <div className="catalog-heading">
           <div className="section-head">
             <h2 className="section-title">{t("home.catalog.title")}</h2>
@@ -148,6 +122,32 @@ export default async function Home({ searchParams }: HomeProps) {
           </div>
         </div>
       </section>
+
+      <section className="page-stack section-block section-surface home-product-section">
+        <div className="section-head">
+          <h2 className="section-title">{t("home.featured.title")}</h2>
+          <p className="muted section-subtitle">{t("home.featured.description")}</p>
+        </div>
+
+        <ProductGrid
+          products={featuredProducts}
+          variant="public"
+          session={session}
+          vouchers={voucherWallet?.activeDiscountVouchers}
+          priorityCount={2}
+        />
+      </section>
+
+      {flashSaleProducts.length > 0 ? (
+        <section className="page-stack section-block section-surface home-product-section">
+          <div className="section-head">
+            <h2 className="section-title">{t("home.offers.title")}</h2>
+            <p className="muted section-subtitle">{t("home.offers.description")}</p>
+          </div>
+
+          <ProductGrid products={flashSaleProducts} variant="public" session={session} vouchers={voucherWallet?.activeDiscountVouchers} />
+        </section>
+      ) : null}
 
       <section className="footer-contact home-footer-contact">
         <div className="section-head footer-copy">

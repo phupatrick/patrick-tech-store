@@ -1,0 +1,26 @@
+[
+  {
+    "id": "seed-customer-000001",
+    "codeHash": "86e924d75e1651123a81b64fbc12cea3b30bb43d4b848c64847966483d668741",
+    "codeSalt": "125007f765dddd222ff6977ee663b496",
+    "label": "Kh\u00e1ch h\u00e0ng 000001",
+    "role": "customer",
+    "tier": "regular",
+    "points": 10000,
+    "active": true,
+    "createdAt": "2026-03-14T03:30:00.000Z",
+    "updatedAt": "2026-03-13T18:19:39.568Z"
+  },
+  {
+    "id": "seed-ctv-0001",
+    "codeHash": "5186f9e4b710a48f86f57e2d5b7f29595de1dbcbc7d75397142ff3164cb29f0c",
+    "codeSalt": "9d192c5a714121b2dd0dae1847ed0b7b",
+    "label": "CTV 0001",
+    "role": "reseller",
+    "tier": "regular",
+    "points": 0,
+    "active": true,
+    "createdAt": "2026-03-14T03:29:00.000Z",
+    "updatedAt": "2026-03-14T03:29:00.000Z"
+  }
+]

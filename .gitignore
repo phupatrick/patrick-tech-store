@@ -1,0 +1,16 @@
+.next
+node_modules
+out
+dist
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.tmp-verification/
+.tmp-server.pid
+tmp-zalo-*

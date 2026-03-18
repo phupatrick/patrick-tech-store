@@ -1,0 +1,40 @@
+{
+  "name": "patrick-tech-store",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "clean": "node scripts/clean-workspace.mjs",
+    "dev": "next dev --webpack -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "npm run typecheck",
+    "google-sheet:create": "node scripts/create-google-sheet.mjs",
+    "google-sheet:export-template": "node scripts/export-google-sheet-template.mjs",
+    "google-sheet:sync": "node scripts/sync-google-sheet-products.mjs",
+    "import:zalo-catalog": "node scripts/import-zalo-catalog.mjs",
+    "smoke": "node scripts/smoke-test.mjs",
+    "typecheck": "node scripts/ensure-next-type-stubs.mjs && tsc --noEmit",
+    "verify": "npm run typecheck && npm run build && npm run smoke",
+    "report:daily": "node scripts/send-daily-report.mjs",
+    "telegram:set-commands": "node scripts/set-telegram-commands.mjs",
+    "telegram:send-demo": "node scripts/send-telegram-demo.mjs",
+    "telegram:set-webhook": "node scripts/set-telegram-webhook.mjs"
+  },
+  "dependencies": {
+    "csv-parse": "^6.1.0",
+    "googleapis": "^171.4.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
+}

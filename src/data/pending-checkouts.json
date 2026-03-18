@@ -1,0 +1,27 @@
+[
+  {
+    "id": "f125c6ff-f474-4cfc-90eb-cf8032464308",
+    "token": "6b87af570dd3de0e348b61558fe0e3063766603f5f30a12d",
+    "createdAt": "2026-03-15T09:35:26.654Z",
+    "expiresAt": "2026-03-15T10:35:26.654Z",
+    "language": "vi",
+    "countryCode": "VN",
+    "accessCodeId": "guest",
+    "customerLabel": "Khách vãng lai",
+    "customerRole": "customer",
+    "customerTier": "guest",
+    "customerVip": false,
+    "productId": "zalo-2089b5bfa4fa4da414eb",
+    "productName": "ChatGPT Plus 1 năm chính chủ",
+    "orderName": "ChatGPT Plus 1 năm chính chủ",
+    "orderContent": "Sản phẩm: ChatGPT Plus 1 năm chính chủ\nGiá gốc: 1.899.000 ₫\nGiảm giá: 0 ₫\nGiá cuối: 1.899.000 ₫\nKênh: Đặt qua Zalo\nVoucher: Không dùng voucher",
+    "originalPrice": 1899000,
+    "discountAmount": 0,
+    "finalPrice": 1899000,
+    "currencyCode": "VND",
+    "displayPrice": "1.899.000 ₫",
+    "contactUrl": "https://zalo.me/0933684560?text=T%C3%B4i%20mu%E1%BB%91n%20mua%20ChatGPT%20Plus%201%20n%C4%83m%20ch%C3%ADnh%20ch%E1%BB%A7%0AGi%C3%A1%20g%E1%BB%91c%3A%201.899.000%C2%A0%E2%82%AB%0AVoucher%3A%20kh%C3%B4ng%20d%C3%B9ng%0AGi%C3%A1%20sau%20gi%E1%BA%A3m%3A%201.899.000%C2%A0%E2%82%AB%0AM%C3%A3%20y%C3%AAu%20c%E1%BA%A7u%3A%20F125C6FF",
+    "messageText": "Tôi muốn mua ChatGPT Plus 1 năm chính chủ\nGiá gốc: 1.899.000 ₫\nVoucher: không dùng\nGiá sau giảm: 1.899.000 ₫\nMã yêu cầu: F125C6FF",
+    "customerIp": "::1"
+  }
+]

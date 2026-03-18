@@ -17,6 +17,7 @@ const commands = [
   { command: "orders", description: "Xem 5 don gan nhat" },
   { command: "order", description: "Xem chi tiet don theo ma" },
   { command: "report", description: "Bao cao theo ngay YYYY-MM-DD" },
+  { command: "cmt", description: "Xem commit/deploy dang live" },
   { command: "webadmin", description: "Lay link vao trang admin web" }
 ];
 

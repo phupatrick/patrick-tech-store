@@ -54,10 +54,33 @@ const buildMainMenu = () => ({
       { text: "Bao cao hom nay", callback_data: "menu:report" }
     ],
     [
-      { text: "Web admin", callback_data: "menu:webadmin" }
+      { text: "Web admin", callback_data: "menu:webadmin" },
+      { text: "CMT live", callback_data: "menu:cmt" }
     ]
   ]
 });
+
+const buildCommitStatusText = (appBaseUrl?: string) => {
+  const commit =
+    process.env.RENDER_GIT_COMMIT ??
+    process.env.VERCEL_GIT_COMMIT_SHA ??
+    process.env.GIT_COMMIT_SHA ??
+    process.env.COMMIT_SHA;
+  const branch = process.env.RENDER_GIT_BRANCH ?? process.env.VERCEL_GIT_COMMIT_REF ?? "main";
+  const serviceName = process.env.RENDER_SERVICE_NAME ?? "patrick-tech-store";
+  const publicUrl = process.env.RENDER_EXTERNAL_URL ?? appBaseUrl ?? "Chua co domain public";
+  const provider =
+    process.env.RENDER_SERVICE_NAME ? "Render" : process.env.VERCEL ? "Vercel" : "Local runtime";
+
+  return [
+    "Trang thai commit / deploy",
+    `Service: ${serviceName}`,
+    `Nen tang: ${provider}`,
+    `Branch: ${branch}`,
+    commit ? `Commit live: ${commit.slice(0, 7)}` : "Commit live: khong doc duoc tu runtime",
+    `URL: ${publicUrl}`
+  ].join("\n");
+};
 
 const buildHelpText = () =>
   [
@@ -68,6 +91,7 @@ const buildHelpText = () =>
     "/orders - xem 5 don gan nhat",
     "/order <ma> - xem chi tiet don",
     "/report [YYYY-MM-DD] - bao cao theo ngay",
+    "/cmt - xem commit/deploy dang live tren web",
     "/webadmin - nhan link vao trang admin web",
     "/help - xem tro giup"
   ].join("\n");
@@ -240,6 +264,13 @@ const sendDailyReport = async (chatId: number | string, date?: string) => {
   });
 };
 
+const sendCommitStatus = async (chatId: number | string, appBaseUrl?: string) =>
+  sendTelegramChatMessage({
+    chatId,
+    text: buildCommitStatusText(appBaseUrl),
+    reply_markup: buildMainMenu()
+  });
+
 const sendWebAdminAccess = async (chatId: number | string, appBaseUrl?: string) => {
   const loginUrl = createTelegramAdminLoginUrl({
     chatId,
@@ -336,6 +367,9 @@ const handleMenuCallback = async (callbackQuery: TelegramCallbackQuery, action: 
     case "report":
       await sendDailyReport(chatId);
       break;
+    case "cmt":
+      await sendCommitStatus(chatId, context.appBaseUrl);
+      break;
     case "webadmin":
       await sendWebAdminAccess(chatId, context.appBaseUrl);
       break;
@@ -370,6 +404,10 @@ const handleCommandMessage = async (message: TelegramMessage, context: TelegramA
       return;
     case "/report":
       await sendDailyReport(chatId, args[0]);
+      return;
+    case "/cmt":
+    case "/commit":
+      await sendCommitStatus(chatId, context.appBaseUrl);
       return;
     case "/webadmin":
       await sendWebAdminAccess(chatId, context.appBaseUrl);

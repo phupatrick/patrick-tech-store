@@ -1002,6 +1002,8 @@ select {
 
 .home-product-section {
   gap: 20px;
+  content-visibility: auto;
+  contain-intrinsic-size: 920px;
 }
 
 .home-footer-contact {

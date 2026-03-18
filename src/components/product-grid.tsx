@@ -16,6 +16,7 @@ type ProductGridProps = {
   variant?: "public" | "internal";
   session?: AuthSession;
   vouchers?: VoucherView[];
+  priorityCount?: number;
 };
 
 type ActivePanelMode = "detail" | "checkout";
@@ -26,7 +27,13 @@ const ProductGridDialog = dynamic(() => import("@/components/product-grid-dialog
 const getProductCategories = (product: Pick<ProductView, "category" | "categories">) =>
   product.categories ?? (product.category ? [product.category] : []);
 
-export function ProductGrid({ products, variant = "internal", session, vouchers = [] }: ProductGridProps) {
+export function ProductGrid({
+  products,
+  variant = "internal",
+  session,
+  vouchers = [],
+  priorityCount = 0
+}: ProductGridProps) {
   const { language, t } = useI18n();
   const { format } = useCurrency();
   const [pendingId, setPendingId] = useState<string | null>(null);
@@ -76,7 +83,7 @@ export function ProductGrid({ products, variant = "internal", session, vouchers 
   return (
     <>
       <div className={`product-grid${isPublic ? " product-grid-public" : ""}`}>
-        {products.map((product) => {
+        {products.map((product, index) => {
           const productCategories = getProductCategories(product);
           const isExpanded = Boolean(expandedDescriptions[product.id]);
           const hasLongSummary = product.shortDescription.length > SHORT_DESCRIPTION_PREVIEW_LENGTH;
@@ -87,6 +94,7 @@ export function ProductGrid({ products, variant = "internal", session, vouchers 
           const imageSrc = getRenderableProductImageSrc(product.image);
           const useUnoptimizedImage = isInlineImageSrc(imageSrc);
           const priceSummary = getProductPriceSummary(product);
+          const shouldPrioritizeImage = index < priorityCount;
 
           return (
             <article key={product.id} className={`card${isPublic ? " product-card-public" : ""}`}>
@@ -99,6 +107,7 @@ export function ProductGrid({ products, variant = "internal", session, vouchers 
                     className={`product-image${isPublic ? " product-image-public" : ""}`}
                     sizes={isPublic ? "(max-width: 720px) 260px, (max-width: 1080px) 280px, 300px" : "320px"}
                     quality={95}
+                    priority={shouldPrioritizeImage}
                     unoptimized={useUnoptimizedImage}
                   />
                 </div>

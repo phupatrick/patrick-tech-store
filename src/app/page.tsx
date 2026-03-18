@@ -81,7 +81,13 @@ export default async function Home({ searchParams }: HomeProps) {
           <p className="muted section-subtitle">{t("home.featured.description")}</p>
         </div>
 
-        <ProductGrid products={featuredProducts} variant="public" session={session} vouchers={voucherWallet?.activeDiscountVouchers} />
+        <ProductGrid
+          products={featuredProducts}
+          variant="public"
+          session={session}
+          vouchers={voucherWallet?.activeDiscountVouchers}
+          priorityCount={2}
+        />
       </section>
 
       {flashSaleProducts.length > 0 ? (

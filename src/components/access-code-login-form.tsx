@@ -36,11 +36,14 @@ export function AccessCodeLoginForm({ action, nextPath }: AccessCodeLoginFormPro
         <span className="field-label">{t("admin.login.field.code")}</span>
         <input
           name="code"
-          type="password"
+          type="text"
           defaultValue={state.code}
           className="input"
           placeholder={t("admin.accessCodes.form.placeholderCode")}
-          autoComplete="current-password"
+          autoComplete="one-time-code"
+          autoCapitalize="off"
+          autoCorrect="off"
+          spellCheck={false}
           required
         />
       </label>

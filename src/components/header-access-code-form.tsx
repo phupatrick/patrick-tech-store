@@ -83,11 +83,14 @@ export function HeaderAccessCodeForm({ action, session }: HeaderAccessCodeFormPr
       <input
         id="header-access-code"
         name="code"
-        type="password"
+        type="text"
         defaultValue={state.code}
         className="input header-access-input"
         placeholder={t("admin.accessCodes.form.placeholderCode")}
-        autoComplete="current-password"
+        autoComplete="one-time-code"
+        autoCapitalize="off"
+        autoCorrect="off"
+        spellCheck={false}
         required
       />
       <SubmitButton />

@@ -14,8 +14,7 @@ export const DEFAULT_PRODUCT_IMAGE = `data:image/svg+xml;utf8,${encodeURICompone
 `)}`;
 
 const REMOTE_IMAGE_PROXY_HOST = "wsrv.nl";
-const PROXIED_IMAGE_WIDTH = "960";
-const PROXIED_IMAGE_HEIGHT = "720";
+const PROXIED_IMAGE_WIDTH = "720";
 
 export const getProductImageSrc = (image?: string | null) => image?.trim() || DEFAULT_PRODUCT_IMAGE;
 
@@ -36,11 +35,8 @@ export const getRenderableProductImageSrc = (image?: string | null) => {
     const proxyUrl = new URL(`https://${REMOTE_IMAGE_PROXY_HOST}/`);
     proxyUrl.searchParams.set("url", source);
     proxyUrl.searchParams.set("w", PROXIED_IMAGE_WIDTH);
-    proxyUrl.searchParams.set("h", PROXIED_IMAGE_HEIGHT);
-    proxyUrl.searchParams.set("fit", "contain");
-    proxyUrl.searchParams.set("we", "1");
     proxyUrl.searchParams.set("output", "jpg");
-    proxyUrl.searchParams.set("q", "90");
+    proxyUrl.searchParams.set("q", "92");
 
     return proxyUrl.toString();
   } catch {

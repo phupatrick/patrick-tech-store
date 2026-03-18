@@ -525,22 +525,22 @@ select {
 
 .product-image-frame {
   position: relative;
-  width: min(calc(100% - 24px), 280px);
-  height: calc(100% - 24px);
-  max-height: calc(100% - 24px);
+  width: min(calc(100% - 14px), 302px);
+  height: calc(100% - 14px);
+  max-height: calc(100% - 14px);
 }
 
 .product-image-frame-public {
-  width: min(calc(100% - 20px), 248px);
-  height: calc(100% - 20px);
-  max-height: calc(100% - 20px);
+  width: min(calc(100% - 12px), 286px);
+  height: calc(100% - 12px);
+  max-height: calc(100% - 12px);
 }
 
 .product-image {
   object-fit: contain;
   image-rendering: -webkit-optimize-contrast;
   object-position: center;
-  filter: saturate(1.03) contrast(1.02);
+  filter: saturate(1.04) contrast(1.03) brightness(1.01);
 }
 
 .product-image-public {
@@ -1836,15 +1836,15 @@ select {
   }
 
   .product-image-frame {
-    width: min(calc(100% - 18px), 232px);
-    height: calc(100% - 18px);
-    max-height: calc(100% - 18px);
+    width: min(calc(100% - 12px), 248px);
+    height: calc(100% - 12px);
+    max-height: calc(100% - 12px);
   }
 
   .product-image-frame-public {
-    width: min(calc(100% - 16px), 216px);
-    height: calc(100% - 16px);
-    max-height: calc(100% - 16px);
+    width: min(calc(100% - 10px), 236px);
+    height: calc(100% - 10px);
+    max-height: calc(100% - 10px);
   }
 
   .card-body-public {

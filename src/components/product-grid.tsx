@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import { useCurrency } from "@/components/currency-provider";
 import { useI18n } from "@/components/i18n-provider";
-import { getRenderableProductImageSrc, isInlineImageSrc, isProxiedProductImageSrc } from "@/lib/product-image-src";
+import { getRenderableProductImageSrc, isInlineImageSrc } from "@/lib/product-image-src";
 import { getLocalizedWarrantyDuration } from "@/lib/product-localization";
 import { getProductPriceSummary, getPublicPriceLabels } from "@/lib/product-price-display";
 import { AuthSession, ProductView, VoucherView } from "@/lib/types";
@@ -85,7 +85,7 @@ export function ProductGrid({ products, variant = "internal", session, vouchers 
               ? `${product.shortDescription.slice(0, SHORT_DESCRIPTION_PREVIEW_LENGTH).trimEnd()}...`
               : product.shortDescription;
           const imageSrc = getRenderableProductImageSrc(product.image);
-          const useUnoptimizedImage = isInlineImageSrc(imageSrc) || isProxiedProductImageSrc(imageSrc);
+          const useUnoptimizedImage = isInlineImageSrc(imageSrc);
           const priceSummary = getProductPriceSummary(product);
 
           return (
@@ -97,7 +97,7 @@ export function ProductGrid({ products, variant = "internal", session, vouchers 
                     alt={product.name}
                     fill
                     className={`product-image${isPublic ? " product-image-public" : ""}`}
-                    sizes={isPublic ? "(max-width: 720px) 240px, (max-width: 1080px) 260px, 280px" : "320px"}
+                    sizes={isPublic ? "(max-width: 720px) 260px, (max-width: 1080px) 280px, 300px" : "320px"}
                     quality={95}
                     unoptimized={useUnoptimizedImage}
                   />

@@ -125,6 +125,28 @@ export default async function Home({ searchParams }: HomeProps) {
         ) : (
           <div className="notice">{t("home.catalog.empty")}</div>
         )}
+
+        <div className="catalog-help-card">
+          <div className="catalog-help-copy">
+            <p className="eyebrow">{t("home.catalog.missingEyebrow")}</p>
+            <h3 className="card-title">{t("home.catalog.missingTitle")}</h3>
+            <p className="muted">{t("home.catalog.missingDescription")}</p>
+          </div>
+          <div className="catalog-help-actions">
+            <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill">
+              <span className="contact-icon" aria-hidden="true">
+                Z
+              </span>
+              {t("home.catalog.contactZalo")}
+            </a>
+            <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill">
+              <span className="contact-icon" aria-hidden="true">
+                T
+              </span>
+              {t("home.catalog.contactTelegram")}
+            </a>
+          </div>
+        </div>
       </section>
 
       <section className="footer-contact home-footer-contact">

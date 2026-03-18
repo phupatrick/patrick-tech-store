@@ -1,7 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { getAuthSession } from "@/lib/auth";
-import { formatCurrency, getCurrencySettings } from "@/lib/currency";
+import {
+  convertVndToDisplayAmount,
+  formatCurrencyValue,
+  getCurrencySettings,
+  resolveCurrencyCode,
+  roundCurrencyAmount
+} from "@/lib/currency";
 import { isLanguage, translate } from "@/lib/i18n";
 import { createPendingCheckoutRecord, getReservedVoucherMap, updatePendingCheckout } from "@/lib/pending-checkout-store";
 import { getPublicProductView } from "@/lib/pricing";
@@ -38,8 +44,9 @@ export async function POST(request: NextRequest) {
     : countryCode === "VN"
       ? "vi"
       : requestContext.languageHint;
-  const currencySettings = await getCurrencySettings(language);
-  const productView = getPublicProductView(product, language, session);
+  const currency = resolveCurrencyCode(language, request.cookies.get("preferred-currency")?.value);
+  const currencySettings = await getCurrencySettings(language, currency);
+  const productView = await getPublicProductView(product, language, session, currency);
   const contactMethod =
     body.contactMethod === "zalo" || body.contactMethod === "telegram"
       ? body.contactMethod
@@ -86,9 +93,18 @@ export async function POST(request: NextRequest) {
   }
 
   const finalPrice = Math.max(0, productView.visiblePrice - discountAmount);
-  const formattedOriginalPrice = formatCurrency(productView.visiblePrice, currencySettings);
-  const formattedDiscount = formatCurrency(discountAmount, currencySettings);
-  const formattedFinalPrice = formatCurrency(finalPrice, currencySettings);
+  const displayOriginalPrice = productView.displayVisiblePrice;
+  const displayDiscountAmount = roundCurrencyAmount(
+    convertVndToDisplayAmount(discountAmount, currencySettings),
+    currencySettings.currency
+  );
+  const displayFinalPrice = roundCurrencyAmount(
+    Math.max(0, displayOriginalPrice - displayDiscountAmount),
+    currencySettings.currency
+  );
+  const formattedOriginalPrice = formatCurrencyValue(displayOriginalPrice, currencySettings);
+  const formattedDiscount = formatCurrencyValue(displayDiscountAmount, currencySettings);
+  const formattedFinalPrice = formatCurrencyValue(displayFinalPrice, currencySettings);
   const voucherLine = voucherDefinitionId
     ? translate(language, "checkout.voucherApplied", {
         voucher: translate(language, `voucher.def.${voucherDefinitionId}.name` as never),

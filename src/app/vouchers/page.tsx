@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { redeemVoucherAction } from "@/app/vouchers/actions";
 import { getAuthSession } from "@/lib/auth";
 import { formatCurrency, getCurrencySettings } from "@/lib/currency";
+import { getRequestCurrency } from "@/lib/currency/server";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { getMemberRoleKey, getMemberTierKey, isVipMember } from "@/lib/member-status";
@@ -36,7 +37,8 @@ const getNoticeKey = (notice?: string) => {
 
 export default async function VoucherPage({ searchParams }: VoucherPageProps) {
   const language = await getRequestLanguage();
-  const currencySettings = await getCurrencySettings(language);
+  const currency = await getRequestCurrency(language);
+  const currencySettings = await getCurrencySettings(language, currency);
   const { t } = createTranslator(language);
   const session = await getAuthSession();
 

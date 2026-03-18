@@ -2,13 +2,15 @@ import { AdminInventoryTable } from "@/components/admin-inventory-table";
 import { AdminSessionBar } from "@/components/admin-session-bar";
 import { requireAdminUser } from "@/lib/auth";
 import { getCurrencySettings } from "@/lib/currency";
+import { getRequestCurrency } from "@/lib/currency/server";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { listProducts } from "@/lib/product-store";
 
 export default async function AdminInventoryPage() {
   const language = await getRequestLanguage();
-  const currencySettings = await getCurrencySettings(language);
+  const currency = await getRequestCurrency(language);
+  const currencySettings = await getCurrencySettings(language, currency);
   const { t } = createTranslator(language);
   const adminUser = await requireAdminUser("/admin/inventory");
   const products = listProducts();

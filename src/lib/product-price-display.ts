@@ -25,10 +25,10 @@ export const getPublicPriceLabels = (language: Language): PublicPriceLabels =>
       };
 
 export const getProductPriceSummary = (
-  product: Pick<ProductView, "retailPrice" | "visiblePrice" | "customerRegularPrice">
+  product: Pick<ProductView, "displayRetailPrice" | "displayVisiblePrice">
 ): ProductPriceSummary => {
-  const originalPrice = Math.max(0, product.retailPrice);
-  const salePrice = Math.max(0, product.visiblePrice);
+  const originalPrice = Math.max(0, product.displayRetailPrice);
+  const salePrice = Math.max(0, product.displayVisiblePrice);
   const hasDiscount = originalPrice > 0 && salePrice < originalPrice;
   const discountPercent = hasDiscount ? Math.round(((originalPrice - salePrice) / originalPrice) * 100) : 0;
 

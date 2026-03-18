@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 
 import { requireAdminUser } from "@/lib/auth";
 import { convertDisplayAmountToVnd, getCurrencySettings } from "@/lib/currency";
+import { getRequestCurrency } from "@/lib/currency/server";
 import { OrderFormState, OrderFormValues, emptyOrderFormValues } from "@/lib/order-form";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
@@ -59,7 +60,8 @@ export const createOrderAction = async (
 ): Promise<OrderFormState> => {
   await requireAdminUser("/admin/orders");
   const language = await getRequestLanguage();
-  const currencySettings = await getCurrencySettings(language);
+  const currency = await getRequestCurrency(language);
+  const currencySettings = await getCurrencySettings(language, currency);
   const { t } = createTranslator(language);
   const values = getValuesFromFormData(formData);
   const error = validateValues(values, t);

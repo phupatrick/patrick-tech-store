@@ -2,8 +2,10 @@ import Link from "next/link";
 
 import { CatalogControls } from "@/components/catalog-controls";
 import { CommunityBubbles } from "@/components/community-bubbles";
+import { ContactChannelIcon } from "@/components/contact-channel-icon";
 import { ProductGrid } from "@/components/product-grid";
 import { getAuthSession } from "@/lib/auth";
+import { getRequestCurrency } from "@/lib/currency/server";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { getStorefrontSnapshot } from "@/lib/pricing";
@@ -11,24 +13,84 @@ import { getVoucherWalletForSession } from "@/lib/voucher-wallet";
 
 const ZALO_GROUP_URL = "https://zalo.me/g/kmpeiw236";
 const TELEGRAM_GROUP_URL = "https://t.me/PatrichTechMenu";
+const CATALOG_PAGE_SIZE = 8;
+const PAGINATION_WINDOW = 5;
 
 type HomeProps = {
-  searchParams: Promise<{ q?: string; category?: string; sort?: string }>;
+  searchParams: Promise<{ q?: string; category?: string; sort?: string; page?: string }>;
+};
+
+const buildCatalogHref = ({
+  query,
+  category,
+  sort,
+  page
+}: {
+  query?: string;
+  category?: string;
+  sort?: string;
+  page?: number;
+}) => {
+  const params = new URLSearchParams();
+
+  if (query) {
+    params.set("q", query);
+  }
+
+  if (category) {
+    params.set("category", category);
+  }
+
+  if (sort && sort !== "relevant") {
+    params.set("sort", sort);
+  }
+
+  if (page && page > 1) {
+    params.set("page", String(page));
+  }
+
+  const queryString = params.toString();
+  return queryString ? `/?${queryString}` : "/";
+};
+
+const getPaginationPages = (currentPage: number, totalPages: number) => {
+  const halfWindow = Math.floor(PAGINATION_WINDOW / 2);
+  const startPage = Math.max(1, Math.min(currentPage - halfWindow, totalPages - PAGINATION_WINDOW + 1));
+  const endPage = Math.min(totalPages, Math.max(PAGINATION_WINDOW, currentPage + halfWindow));
+  const pages: number[] = [];
+
+  for (let page = startPage; page <= endPage; page += 1) {
+    pages.push(page);
+  }
+
+  return pages;
 };
 
 export default async function Home({ searchParams }: HomeProps) {
   const language = await getRequestLanguage();
+  const currency = await getRequestCurrency(language);
   const { t } = createTranslator(language);
   const session = await getAuthSession();
   const voucherWallet = getVoucherWalletForSession(session);
-  const { q = "", category = "", sort = "relevant" } = await searchParams;
-  const { featuredProducts, flashSaleProducts, catalogProducts, categories } = getStorefrontSnapshot({
+  const { q = "", category = "", sort = "relevant", page = "1" } = await searchParams;
+  const { featuredProducts, flashSaleProducts, catalogProducts, categories } = await getStorefrontSnapshot({
     language,
+    currency,
     query: q,
     category,
     sort,
     session
   });
+  const requestedPage = Number.parseInt(page, 10);
+  const currentPage = Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1;
+  const totalCatalogProducts = catalogProducts.length;
+  const totalPages = Math.max(1, Math.ceil(totalCatalogProducts / CATALOG_PAGE_SIZE));
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+  const paginatedCatalogProducts = catalogProducts.slice(
+    (safeCurrentPage - 1) * CATALOG_PAGE_SIZE,
+    safeCurrentPage * CATALOG_PAGE_SIZE
+  );
+  const paginationPages = getPaginationPages(safeCurrentPage, totalPages);
   const featureKeys = [
     {
       title: "home.feature.pricing.title",
@@ -53,9 +115,11 @@ export default async function Home({ searchParams }: HomeProps) {
           <p className="lead hero-lead">{t("home.hero.description")}</p>
           <div className="hero-actions home-hero-actions">
             <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="button button-primary">
+              <ContactChannelIcon channel="zalo" />
               {t("home.contact.zalo")}
             </a>
             <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="button">
+              <ContactChannelIcon channel="telegram" />
               {t("home.contact.telegram")}
             </a>
             <Link href="/warranty" className="button">
@@ -81,7 +145,12 @@ export default async function Home({ searchParams }: HomeProps) {
             <h2 className="section-title">{t("home.catalog.title")}</h2>
             <p className="muted section-subtitle">{t("home.catalog.description")}</p>
           </div>
-          <p className="catalog-result-count">{t("home.catalog.resultCount", { count: catalogProducts.length })}</p>
+          <div className="catalog-meta">
+            <p className="catalog-result-count">{t("home.catalog.resultCount", { count: totalCatalogProducts })}</p>
+            {totalPages > 1 ? (
+              <p className="catalog-page-status">{t("home.catalog.pageStatus", { page: safeCurrentPage, total: totalPages })}</p>
+            ) : null}
+          </div>
         </div>
 
         <div className="catalog-panel">
@@ -94,11 +163,51 @@ export default async function Home({ searchParams }: HomeProps) {
           />
         </div>
 
-        {catalogProducts.length > 0 ? (
-          <ProductGrid products={catalogProducts} variant="public" session={session} vouchers={voucherWallet?.activeDiscountVouchers} />
+        {paginatedCatalogProducts.length > 0 ? (
+          <ProductGrid
+            products={paginatedCatalogProducts}
+            variant="public"
+            session={session}
+            vouchers={voucherWallet?.activeDiscountVouchers}
+          />
         ) : (
           <div className="notice">{t("home.catalog.empty")}</div>
         )}
+
+        {totalPages > 1 ? (
+          <nav className="catalog-pagination" aria-label={t("home.catalog.paginationAria")}>
+            <Link
+              href={buildCatalogHref({ query: q, category, sort, page: Math.max(1, safeCurrentPage - 1) })}
+              className={`pagination-link${safeCurrentPage === 1 ? " disabled" : ""}`}
+              aria-disabled={safeCurrentPage === 1}
+              tabIndex={safeCurrentPage === 1 ? -1 : undefined}
+            >
+              {t("home.catalog.previousPage")}
+            </Link>
+
+            <div className="pagination-number-row">
+              {paginationPages.map((paginationPage) => (
+                <Link
+                  key={paginationPage}
+                  href={buildCatalogHref({ query: q, category, sort, page: paginationPage })}
+                  className={`pagination-link${paginationPage === safeCurrentPage ? " active" : ""}`}
+                  aria-current={paginationPage === safeCurrentPage ? "page" : undefined}
+                >
+                  {paginationPage}
+                </Link>
+              ))}
+            </div>
+
+            <Link
+              href={buildCatalogHref({ query: q, category, sort, page: Math.min(totalPages, safeCurrentPage + 1) })}
+              className={`pagination-link${safeCurrentPage === totalPages ? " disabled" : ""}`}
+              aria-disabled={safeCurrentPage === totalPages}
+              tabIndex={safeCurrentPage === totalPages ? -1 : undefined}
+            >
+              {t("home.catalog.nextPage")}
+            </Link>
+          </nav>
+        ) : null}
 
         <div className="catalog-help-card">
           <div className="catalog-help-copy">
@@ -108,15 +217,11 @@ export default async function Home({ searchParams }: HomeProps) {
           </div>
           <div className="catalog-help-actions">
             <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill">
-              <span className="contact-icon" aria-hidden="true">
-                Z
-              </span>
+              <ContactChannelIcon channel="zalo" />
               {t("home.catalog.contactZalo")}
             </a>
             <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill">
-              <span className="contact-icon" aria-hidden="true">
-                T
-              </span>
+              <ContactChannelIcon channel="telegram" />
               {t("home.catalog.contactTelegram")}
             </a>
           </div>
@@ -156,15 +261,11 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
         <div className="footer-actions">
           <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill">
-            <span className="contact-icon" aria-hidden="true">
-              Z
-            </span>
+            <ContactChannelIcon channel="zalo" />
             {t("home.community.zalo")}
           </a>
           <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill">
-            <span className="contact-icon" aria-hidden="true">
-              T
-            </span>
+            <ContactChannelIcon channel="telegram" />
             {t("home.community.telegram")}
           </a>
         </div>

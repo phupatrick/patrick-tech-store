@@ -1,9 +1,9 @@
-import { convertDisplayAmountToVnd, CurrencySettings } from "@/lib/currency";
+import { convertDisplayAmountToVnd, CurrencySettings, roundCurrencyAmount } from "@/lib/currency";
 import { Language, translate } from "@/lib/i18n";
 import { normalizeCategoryList } from "@/lib/product-categories";
 import { formatUsageDuration, ProductFormValues, slugify, UsageDurationUnit } from "@/lib/product-form";
 import { isSlugTaken } from "@/lib/product-store";
-import { Product, ProductAccountType } from "@/lib/types";
+import { CurrencyCode, Product, ProductAccountType, ProductPriceSet } from "@/lib/types";
 
 const isProductAccountType = (value: string): value is ProductAccountType =>
   ["dedicated", "primary", "rental"].includes(value);
@@ -49,9 +49,6 @@ type ValidationResult =
         | "usageDuration"
         | "costPrice"
         | "image"
-        | "retailPrice"
-        | "tierPrices"
-        | "customerTierPrices"
         | "warrantyMonths"
         | "category"
         | "categories"
@@ -60,11 +57,27 @@ type ValidationResult =
         | "isFlashSale"
         | "flashSaleLabel"
         | "published"
-      >;
+      > & {
+        vndPricing: ProductPriceSet;
+        currencyPriceOverride?: {
+          currency: CurrencyCode;
+          prices: ProductPriceSet;
+        };
+      };
     }
   | { ok: false; error: string };
 
 const parseDisplayMoney = (value: string) => Number.parseFloat(value.replace(/,/g, ""));
+
+const parseExactMoney = (value: string, currency: CurrencyCode) => {
+  const parsedValue = parseDisplayMoney(value);
+
+  if (!Number.isFinite(parsedValue) || parsedValue < 0) {
+    return undefined;
+  }
+
+  return roundCurrencyAmount(parsedValue, currency);
+};
 
 const parseStoredMoney = (value: string, settings: CurrencySettings) => {
   const parsedValue = parseDisplayMoney(value);
@@ -115,18 +128,34 @@ export const validateProductValues = (
   }
 
   const costPrice = parseStoredMoney(values.costPrice, currencySettings);
-  const customerRegularPrice = parseStoredMoney(values.customerRegularPrice, currencySettings);
-  const customerVipPrice = parseStoredMoney(values.customerVipPrice, currencySettings);
-  const ctvRegularPrice = parseStoredMoney(values.ctvRegularPrice, currencySettings);
-  const ctvVipPrice = parseStoredMoney(values.ctvVipPrice, currencySettings);
+  const customerRegularDisplayPrice = parseExactMoney(values.customerRegularPrice, currencySettings.currency);
+  const customerVipDisplayPrice = parseExactMoney(values.customerVipPrice, currencySettings.currency);
+  const ctvRegularDisplayPrice = parseExactMoney(values.ctvRegularPrice, currencySettings.currency);
+  const ctvVipDisplayPrice = parseExactMoney(values.ctvVipPrice, currencySettings.currency);
+  const customerRegularPrice =
+    customerRegularDisplayPrice !== undefined
+      ? roundCurrencyAmount(convertDisplayAmountToVnd(customerRegularDisplayPrice, currencySettings), "VND")
+      : undefined;
+  const customerVipPrice =
+    customerVipDisplayPrice !== undefined
+      ? roundCurrencyAmount(convertDisplayAmountToVnd(customerVipDisplayPrice, currencySettings), "VND")
+      : undefined;
+  const ctvRegularPrice =
+    ctvRegularDisplayPrice !== undefined
+      ? roundCurrencyAmount(convertDisplayAmountToVnd(ctvRegularDisplayPrice, currencySettings), "VND")
+      : undefined;
+  const ctvVipPrice =
+    ctvVipDisplayPrice !== undefined
+      ? roundCurrencyAmount(convertDisplayAmountToVnd(ctvVipDisplayPrice, currencySettings), "VND")
+      : undefined;
   const warrantyMonths = Number(values.warrantyMonths);
 
   const numericValues = [
     costPrice,
-    customerRegularPrice,
-    customerVipPrice,
-    ctvRegularPrice,
-    ctvVipPrice
+    customerRegularDisplayPrice,
+    customerVipDisplayPrice,
+    ctvRegularDisplayPrice,
+    ctvVipDisplayPrice
   ];
 
   if (numericValues.some((value) => typeof value !== "number" || !Number.isFinite(value) || value < 0)) {
@@ -147,15 +176,34 @@ export const validateProductValues = (
       usageDuration: formatUsageDuration(values.usageDurationValue, values.usageDurationUnit),
       costPrice: costPrice ?? 0,
       image: values.image,
-      retailPrice: customerRegularPrice ?? 0,
-      tierPrices: {
-        regular: ctvRegularPrice ?? 0,
-        vip: ctvVipPrice ?? 0
+      vndPricing: {
+        retailPrice: customerRegularPrice ?? 0,
+        tierPrices: {
+          regular: ctvRegularPrice ?? 0,
+          vip: ctvVipPrice ?? 0
+        },
+        customerTierPrices: {
+          regular: customerRegularPrice ?? 0,
+          vip: customerVipPrice ?? 0
+        }
       },
-      customerTierPrices: {
-        regular: customerRegularPrice ?? 0,
-        vip: customerVipPrice ?? 0
-      },
+      currencyPriceOverride:
+        currencySettings.currency === "USD"
+          ? {
+              currency: "USD",
+              prices: {
+                retailPrice: customerRegularDisplayPrice ?? 0,
+                tierPrices: {
+                  regular: ctvRegularDisplayPrice ?? 0,
+                  vip: ctvVipDisplayPrice ?? 0
+                },
+                customerTierPrices: {
+                  regular: customerRegularDisplayPrice ?? 0,
+                  vip: customerVipDisplayPrice ?? 0
+                }
+              }
+            }
+          : undefined,
       warrantyMonths,
       category: values.category || undefined,
       categories: normalizeCategoryList(values.category),

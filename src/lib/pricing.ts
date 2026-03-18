@@ -1,14 +1,17 @@
 import { users } from "@/lib/data";
+import { CurrencySettings, convertVndToDisplayAmount, getCurrencySettings, roundCurrencyAmount } from "@/lib/currency";
 import { Language, translate } from "@/lib/i18n";
 import { getMemberTierKey } from "@/lib/member-status";
 import { normalizeText } from "@/lib/product-categories";
 import { getLocalizedProductCopy, getLocalizedUsageDuration } from "@/lib/product-localization";
+import { getDisplayPriceSet, getStoredPriceSetForCurrency } from "@/lib/product-pricing";
 import { getProductById, listProducts } from "@/lib/product-store";
-import { AuthSession, Product, ProductView, ResellerTier, User } from "@/lib/types";
+import { AuthSession, CurrencyCode, Product, ProductPriceSet, ProductView, ResellerTier, User } from "@/lib/types";
 
 type PublicPricingSession = Pick<AuthSession, "role" | "tier" | "points" | "vip">;
 type StorefrontSnapshotOptions = {
   language: Language;
+  currency?: CurrencyCode;
   query?: string;
   category?: string;
   sort?: string;
@@ -23,51 +26,87 @@ type PreparedPublicProduct = {
 export const getUserById = (userId?: string | null): User | undefined =>
   users.find((user) => user.id === userId);
 
-export const computeVisiblePrice = (product: Product, tier: ResellerTier, user?: User) => {
-  const override = (user && user.overridePriceMap[product.id]) || (user && product.overridePrices[user.id]);
+const computeVisiblePriceFromSet = (priceSet: ProductPriceSet, tier: ResellerTier) => {
+  if (tier === "guest") {
+    return priceSet.retailPrice;
+  }
 
-  if (override) {
-    return { price: override, label: "Special reseller price" };
+  return priceSet.tierPrices.regular;
+};
+
+const computeRegularDisplayVisiblePrice = (
+  displayPriceSet: ReturnType<typeof getDisplayPriceSet>,
+  tier: ResellerTier,
+  hasOverride: boolean,
+  overridePrice: number | undefined,
+  currencySettings: CurrencySettings
+) => {
+  if (hasOverride && overridePrice !== undefined) {
+    return roundCurrencyAmount(convertVndToDisplayAmount(overridePrice, currencySettings), currencySettings.currency);
   }
 
   if (tier === "guest") {
-    return { price: product.retailPrice, label: "Retail price" };
+    return displayPriceSet.retailPrice;
   }
 
-  return {
-    price: product.tierPrices.regular,
-    label: "Regular reseller"
-  };
+  return displayPriceSet.tierPrices.regular;
 };
 
-const computePublicVisiblePrice = (product: Product, session?: PublicPricingSession) => {
+const computePublicVisiblePriceFromSet = (priceSet: ProductPriceSet, session?: PublicPricingSession) => {
   if (!session || session.role === "admin" || session.role === "deputy_admin" || session.role === "staff") {
-    return { price: product.retailPrice, label: "Retail price" };
+    return { price: priceSet.retailPrice, label: "Retail price" };
   }
 
   if (session.role === "customer") {
     if (session.tier === "guest") {
-      return { price: product.retailPrice, label: "Retail price" };
+      return { price: priceSet.retailPrice, label: "Retail price" };
     }
 
     return {
-      price: session.vip ? product.customerTierPrices.vip : product.customerTierPrices.regular,
+      price: session.vip ? priceSet.customerTierPrices.vip : priceSet.customerTierPrices.regular,
       label: session.vip ? "VIP customer" : "Regular customer"
     };
   }
 
   if (session.role === "reseller") {
     if (session.tier === "guest") {
-      return { price: product.retailPrice, label: "Retail price" };
+      return { price: priceSet.retailPrice, label: "Retail price" };
     }
 
     return {
-      price: session.vip ? product.tierPrices.vip : product.tierPrices.regular,
+      price: session.vip ? priceSet.tierPrices.vip : priceSet.tierPrices.regular,
       label: session.vip ? "VIP reseller" : "Regular reseller"
     };
   }
 
-  return { price: product.retailPrice, label: "Retail price" };
+  return { price: priceSet.retailPrice, label: "Retail price" };
+};
+
+const computePublicVisibleDisplayPrice = (
+  displayPriceSet: ReturnType<typeof getDisplayPriceSet>,
+  session?: PublicPricingSession
+) => {
+  if (!session || session.role === "admin" || session.role === "deputy_admin" || session.role === "staff") {
+    return displayPriceSet.retailPrice;
+  }
+
+  if (session.role === "customer") {
+    if (session.tier === "guest") {
+      return displayPriceSet.retailPrice;
+    }
+
+    return session.vip ? displayPriceSet.customerTierPrices.vip : displayPriceSet.customerTierPrices.regular;
+  }
+
+  if (session.role === "reseller") {
+    if (session.tier === "guest") {
+      return displayPriceSet.retailPrice;
+    }
+
+    return session.vip ? displayPriceSet.tierPrices.vip : displayPriceSet.tierPrices.regular;
+  }
+
+  return displayPriceSet.retailPrice;
 };
 
 const getPricingLabel = (language: Language, product: Product, tier: ResellerTier, user?: User) => {
@@ -108,14 +147,25 @@ const getProductSearchPayload = (product: Product) => {
   };
 };
 
-export const buildProductView = (
+export const buildProductView = async (
   product: Product,
   tier: ResellerTier,
   language: Language,
-  user?: User
-): ProductView => {
-  const visible = computeVisiblePrice(product, tier, user);
+  user?: User,
+  preferredCurrency?: CurrencyCode
+): Promise<ProductView> => {
   const localized = getLocalizedProductCopy(product, language);
+  const currencySettings = await getCurrencySettings(language, preferredCurrency);
+  const displayPriceSet = getDisplayPriceSet(product, currencySettings);
+  const storedPriceSet = getStoredPriceSetForCurrency(product, currencySettings);
+  const overridePrice = (user && user.overridePriceMap[product.id]) || (user && product.overridePrices[user.id]) || undefined;
+  const displayVisiblePrice = computeRegularDisplayVisiblePrice(
+    displayPriceSet,
+    tier,
+    overridePrice !== undefined,
+    overridePrice,
+    currencySettings
+  );
 
   return {
     id: product.id,
@@ -125,9 +175,13 @@ export const buildProductView = (
     fullDescription: localized.fullDescription,
     usageDuration: getLocalizedUsageDuration(product.usageDuration, language),
     image: product.image,
-    retailPrice: product.retailPrice,
-    customerRegularPrice: product.customerTierPrices.regular,
-    visiblePrice: visible.price,
+    retailPrice: storedPriceSet.retailPrice,
+    customerRegularPrice: storedPriceSet.customerTierPrices.regular,
+    visiblePrice: overridePrice ?? computeVisiblePriceFromSet(storedPriceSet, tier),
+    displayCurrency: currencySettings.currency,
+    displayRetailPrice: displayPriceSet.retailPrice,
+    displayCustomerRegularPrice: displayPriceSet.customerTierPrices.regular,
+    displayVisiblePrice,
     label: tier === "guest" ? undefined : getPricingLabel(language, product, tier, user),
     stock: product.stock,
     warrantyMonths: product.warrantyMonths,
@@ -142,9 +196,16 @@ export const buildProductView = (
   };
 };
 
-const buildPublicProductView = (product: Product, language: Language, session?: PublicPricingSession): ProductView => {
-  const visible = computePublicVisiblePrice(product, session);
+const buildPublicProductView = (
+  product: Product,
+  language: Language,
+  currencySettings: CurrencySettings,
+  session?: PublicPricingSession
+): ProductView => {
   const localized = getLocalizedProductCopy(product, language);
+  const displayPriceSet = getDisplayPriceSet(product, currencySettings);
+  const storedPriceSet = getStoredPriceSetForCurrency(product, currencySettings);
+  const visible = computePublicVisiblePriceFromSet(storedPriceSet, session);
 
   return {
     id: product.id,
@@ -154,9 +215,13 @@ const buildPublicProductView = (product: Product, language: Language, session?: 
     fullDescription: localized.fullDescription,
     usageDuration: getLocalizedUsageDuration(product.usageDuration, language),
     image: product.image,
-    retailPrice: product.retailPrice,
-    customerRegularPrice: product.customerTierPrices.regular,
+    retailPrice: storedPriceSet.retailPrice,
+    customerRegularPrice: storedPriceSet.customerTierPrices.regular,
     visiblePrice: visible.price,
+    displayCurrency: currencySettings.currency,
+    displayRetailPrice: displayPriceSet.retailPrice,
+    displayCustomerRegularPrice: displayPriceSet.customerTierPrices.regular,
+    displayVisiblePrice: computePublicVisibleDisplayPrice(displayPriceSet, session),
     label: undefined,
     stock: product.stock,
     warrantyMonths: product.warrantyMonths,
@@ -179,10 +244,10 @@ const sortPublicProducts = (products: ProductView[], sort: string | undefined, l
 
   switch (sort) {
     case "price-asc":
-      sortedProducts.sort((left, right) => left.visiblePrice - right.visiblePrice);
+      sortedProducts.sort((left, right) => left.displayVisiblePrice - right.displayVisiblePrice);
       break;
     case "price-desc":
-      sortedProducts.sort((left, right) => right.visiblePrice - left.visiblePrice);
+      sortedProducts.sort((left, right) => right.displayVisiblePrice - left.displayVisiblePrice);
       break;
     case "newest":
       sortedProducts.sort((left, right) => {
@@ -208,27 +273,46 @@ const sortPublicProducts = (products: ProductView[], sort: string | undefined, l
   return sortedProducts;
 };
 
-const getPreparedPublicProducts = (language: Language, session?: PublicPricingSession): PreparedPublicProduct[] =>
-  listProducts()
+const getPreparedPublicProducts = async (
+  language: Language,
+  currency: CurrencyCode | undefined,
+  session?: PublicPricingSession
+): Promise<PreparedPublicProduct[]> => {
+  const currencySettings = await getCurrencySettings(language, currency);
+
+  return listProducts()
     .filter((product) => product.published)
     .map((product) => {
-      const view = buildPublicProductView(product, language, session);
+      const view = buildPublicProductView(product, language, currencySettings, session);
       return {
         view,
         searchPayload: getProductSearchPayload(product),
         categories: getViewCategories(view).map((category) => category.trim()).filter(Boolean)
       };
     });
+};
 
-export const getPublicProductView = (product: Product, language: Language, session?: PublicPricingSession) =>
-  buildPublicProductView(product, language, session);
+export const getPublicProductView = async (
+  product: Product,
+  language: Language,
+  session?: PublicPricingSession,
+  currency?: CurrencyCode
+) => {
+  const currencySettings = await getCurrencySettings(language, currency);
+  return buildPublicProductView(product, language, currencySettings, session);
+};
 
-export const getVisibleProducts = (userId?: string | null, forcedTier?: ResellerTier, language: Language = "en") => {
+export const getVisibleProducts = async (
+  userId?: string | null,
+  forcedTier?: ResellerTier,
+  language: Language = "en",
+  currency?: CurrencyCode
+) => {
   const user = getUserById(userId);
   const tier = forcedTier || user?.tier || "guest";
   const products = listProducts().filter((product) => (tier === "guest" ? product.published : true));
 
-  return products.map((product) => buildProductView(product, tier, language, user));
+  return Promise.all(products.map((product) => buildProductView(product, tier, language, user, currency)));
 };
 
 export const getAdminSnapshot = () => ({
@@ -247,10 +331,10 @@ export const getAdminSnapshot = () => ({
 
 export const getProductNameById = (productId: string) => getProductById(productId)?.name ?? "Archived product";
 
-export const getStorefrontSnapshot = ({ language, query, category, sort, session }: StorefrontSnapshotOptions) => {
+export const getStorefrontSnapshot = async ({ language, currency, query, category, sort, session }: StorefrontSnapshotOptions) => {
   const normalizedQuery = normalizeText(query);
   const normalizedCategory = normalizeText(category);
-  const preparedProducts = getPreparedPublicProducts(language, session);
+  const preparedProducts = await getPreparedPublicProducts(language, currency, session);
   const categorySet = new Set<string>();
   const filteredProducts: PreparedPublicProduct[] = [];
   const featuredSource: PreparedPublicProduct[] = [];
@@ -302,20 +386,21 @@ export const getStorefrontSnapshot = ({ language, query, category, sort, session
   };
 };
 
-export const getPublicCategories = (language: Language, session?: PublicPricingSession) =>
-  getStorefrontSnapshot({ language, session }).categories;
+export const getPublicCategories = async (language: Language, currency?: CurrencyCode, session?: PublicPricingSession) =>
+  (await getStorefrontSnapshot({ language, currency, session })).categories;
 
-export const getFeaturedProducts = (language: Language, session?: PublicPricingSession) =>
-  getStorefrontSnapshot({ language, session }).featuredProducts;
+export const getFeaturedProducts = async (language: Language, currency?: CurrencyCode, session?: PublicPricingSession) =>
+  (await getStorefrontSnapshot({ language, currency, session })).featuredProducts;
 
-export const getFlashSaleProducts = (language: Language, session?: PublicPricingSession) =>
-  getStorefrontSnapshot({ language, session }).flashSaleProducts;
+export const getFlashSaleProducts = async (language: Language, currency?: CurrencyCode, session?: PublicPricingSession) =>
+  (await getStorefrontSnapshot({ language, currency, session })).flashSaleProducts;
 
-export const getFilteredPublicProducts = ({
+export const getFilteredPublicProducts = async ({
   language,
+  currency,
   query,
   category,
   sort,
   session
 }: StorefrontSnapshotOptions) =>
-  getStorefrontSnapshot({ language, query, category, sort, session }).catalogProducts;
+  (await getStorefrontSnapshot({ language, currency, query, category, sort, session })).catalogProducts;

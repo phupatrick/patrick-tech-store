@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useCurrency } from "@/components/currency-provider";
 import { useI18n } from "@/components/i18n-provider";
 import { getProductName } from "@/lib/i18n";
+import { getDisplayPriceSet } from "@/lib/product-pricing";
 import { Product, User } from "@/lib/types";
 
 type AdminDashboardProps = {
@@ -14,12 +15,13 @@ type AdminDashboardProps = {
 
 export function AdminDashboard({ products, users }: AdminDashboardProps) {
   const { language, t } = useI18n();
-  const { format } = useCurrency();
+  const { format, formatDisplay, settings } = useCurrency();
   const [selectedProduct, setSelectedProduct] = useState(products[0]?.id ?? "");
   const [selectedUser, setSelectedUser] = useState(users[1]?.id ?? "");
 
   const product = products.find((item) => item.id === selectedProduct) ?? products[0];
   const user = users.find((item) => item.id === selectedUser) ?? users[1];
+  const displayPriceSet = product ? getDisplayPriceSet(product, settings) : undefined;
   const productOverrides = Object.entries(product?.overridePrices ?? {}).filter(
     (entry): entry is [string, number] => typeof entry[1] === "number"
   );
@@ -76,19 +78,19 @@ export function AdminDashboard({ products, users }: AdminDashboardProps) {
               </div>
               <div className="detail-card">
                 <p className="eyebrow">{t("admin.form.field.customerRegularPrice")}</p>
-                <p className="price">{format(product.retailPrice)}</p>
+                <p className="price">{displayPriceSet ? formatDisplay(displayPriceSet.retailPrice) : "-"}</p>
               </div>
               <div className="detail-card">
                 <p className="eyebrow">{t("admin.form.field.customerVipPrice")}</p>
-                <p className="price">{format(product.customerTierPrices.vip)}</p>
+                <p className="price">{displayPriceSet ? formatDisplay(displayPriceSet.customerTierPrices.vip) : "-"}</p>
               </div>
               <div className="detail-card">
                 <p className="eyebrow">{t("admin.form.field.ctvRegularPrice")}</p>
-                <p className="price">{format(product.tierPrices.regular)}</p>
+                <p className="price">{displayPriceSet ? formatDisplay(displayPriceSet.tierPrices.regular) : "-"}</p>
               </div>
               <div className="detail-card">
                 <p className="eyebrow">{t("admin.form.field.ctvVipPrice")}</p>
-                <p className="price">{format(product.tierPrices.vip)}</p>
+                <p className="price">{displayPriceSet ? formatDisplay(displayPriceSet.tierPrices.vip) : "-"}</p>
               </div>
               <div className="detail-card">
                 <p className="eyebrow">{t("admin.productMatrix.overrides")}</p>

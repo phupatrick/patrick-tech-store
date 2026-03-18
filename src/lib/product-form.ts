@@ -1,6 +1,7 @@
-import { formatCurrencyInputValue, CurrencySettings } from "@/lib/currency";
+import { CurrencySettings, formatCurrencyInputDisplayValue, formatCurrencyInputValue } from "@/lib/currency";
 import { Language } from "@/lib/i18n";
 import { getLocalizedProductCopy } from "@/lib/product-localization";
+import { getDisplayPriceSet } from "@/lib/product-pricing";
 import { Product, ProductAccountType } from "@/lib/types";
 
 export type UsageDurationUnit = "day" | "month";
@@ -78,6 +79,7 @@ export const productToFormValues = (
 ): ProductFormValues => {
   const usageDuration = parseUsageDuration(product.usageDuration);
   const localized = getLocalizedProductCopy(product, language);
+  const displayPriceSet = getDisplayPriceSet(product, currencySettings);
 
   return {
     name: localized.name,
@@ -89,10 +91,10 @@ export const productToFormValues = (
     costPrice: formatCurrencyInputValue(product.costPrice, currencySettings),
     image: product.image,
     removeImage: false,
-    customerRegularPrice: formatCurrencyInputValue(product.customerTierPrices.regular, currencySettings),
-    customerVipPrice: formatCurrencyInputValue(product.customerTierPrices.vip, currencySettings),
-    ctvRegularPrice: formatCurrencyInputValue(product.tierPrices.regular, currencySettings),
-    ctvVipPrice: formatCurrencyInputValue(product.tierPrices.vip, currencySettings),
+    customerRegularPrice: formatCurrencyInputDisplayValue(displayPriceSet.customerTierPrices.regular, currencySettings),
+    customerVipPrice: formatCurrencyInputDisplayValue(displayPriceSet.customerTierPrices.vip, currencySettings),
+    ctvRegularPrice: formatCurrencyInputDisplayValue(displayPriceSet.tierPrices.regular, currencySettings),
+    ctvVipPrice: formatCurrencyInputDisplayValue(displayPriceSet.tierPrices.vip, currencySettings),
     warrantyMonths: String(product.warrantyMonths),
     category: localized.categories?.join(", ") ?? localized.category ?? "",
     accountType: product.accountType,

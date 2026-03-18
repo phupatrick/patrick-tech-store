@@ -1,11 +1,24 @@
 export type ResellerTier = "guest" | "regular";
 export type MemberPriceTier = "regular" | "vip";
+export type CurrencyCode = "VND" | "USD";
 export type OrderStatus = "active" | "expired";
 export type OrderSource = "manual" | "checkout";
 export type AccessRole = "admin" | "deputy_admin" | "reseller" | "staff" | "customer";
 export type ProductAccountType = "dedicated" | "primary" | "rental";
 export type VoucherDefinitionId = "vip_upgrade" | "discount_10000" | "discount_20000" | "discount_50000";
 export type VoucherKind = "vip_upgrade" | "discount";
+
+export type ProductPriceSet = {
+  retailPrice: number;
+  customerTierPrices: Record<MemberPriceTier, number>;
+  tierPrices: Record<MemberPriceTier, number>;
+};
+
+export type ProductPriceOverride = {
+  retailPrice?: number;
+  customerTierPrices?: Partial<Record<MemberPriceTier, number>>;
+  tierPrices?: Partial<Record<MemberPriceTier, number>>;
+};
 
 export type ProductTranslation = {
   name?: string;
@@ -34,6 +47,7 @@ export type Product = {
   flashSaleLabel?: string;
   published: boolean;
   tierPrices: Record<MemberPriceTier, number>;
+  currencyPrices?: Partial<Record<CurrencyCode, ProductPriceOverride>>;
   overridePrices: Partial<Record<string, number>>;
   image: string;
   warrantyMonths: number;
@@ -91,6 +105,10 @@ export type ProductView = {
   retailPrice: number;
   customerRegularPrice: number;
   visiblePrice: number;
+  displayCurrency: CurrencyCode;
+  displayRetailPrice: number;
+  displayCustomerRegularPrice: number;
+  displayVisiblePrice: number;
   label?: string;
   stock: number;
   warrantyMonths: number;

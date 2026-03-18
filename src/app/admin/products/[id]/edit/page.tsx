@@ -5,6 +5,7 @@ import { AdminSessionBar } from "@/components/admin-session-bar";
 import { ProductForm } from "@/components/product-form";
 import { requireAdminUser } from "@/lib/auth";
 import { getCurrencySettings } from "@/lib/currency";
+import { getRequestCurrency } from "@/lib/currency/server";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { productToFormValues } from "@/lib/product-form";
@@ -17,7 +18,8 @@ type EditProductPageProps = {
 
 export default async function EditProductPage({ params }: EditProductPageProps) {
   const language = await getRequestLanguage();
-  const currencySettings = await getCurrencySettings(language);
+  const currency = await getRequestCurrency(language);
+  const currencySettings = await getCurrencySettings(language, currency);
   const { t } = createTranslator(language);
   const adminUser = await requireAdminUser();
   const { id } = await params;

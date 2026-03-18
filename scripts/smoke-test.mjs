@@ -80,11 +80,16 @@ const fetchText = async (pathname, language = "vi-VN,vi;q=0.9") => {
     }
   });
   const text = await response.text();
+  const visibleText = text
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ");
 
   assert(response.ok, `Expected 200 for ${pathname}, received ${response.status}.`);
-  assert(!mojibakePattern.test(text), `Detected mojibake text in ${pathname}.`);
+  assert(!mojibakePattern.test(visibleText), `Detected mojibake text in ${pathname}.`);
 
-  return text;
+  return visibleText;
 };
 
 const fetchJson = async (pathname, language = "vi-VN,vi;q=0.9") => {

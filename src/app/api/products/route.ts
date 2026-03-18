@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { getAuthSession } from "@/lib/auth";
+import { resolveCurrencyCode } from "@/lib/currency";
 import { detectLanguageFromHeaders, isLanguage, LANGUAGE_COOKIE_NAME } from "@/lib/i18n";
 import { getFilteredPublicProducts } from "@/lib/pricing";
 
@@ -9,15 +10,19 @@ export async function GET(request: NextRequest) {
   const language = isLanguage(cookieLanguage)
     ? cookieLanguage
     : detectLanguageFromHeaders(request.headers.get("x-vercel-ip-country"), request.headers.get("accept-language"));
+  const currency = resolveCurrencyCode(language, request.cookies.get("preferred-currency")?.value);
   const session = await getAuthSession();
   const searchParams = request.nextUrl.searchParams;
-  const products = getFilteredPublicProducts({
-    language,
-    query: searchParams.get("q") ?? "",
-    category: searchParams.get("category") ?? "",
-    sort: searchParams.get("sort") ?? "relevant",
-    session
-  }).map((product) => ({
+  const products = (
+    await getFilteredPublicProducts({
+      language,
+      currency,
+      query: searchParams.get("q") ?? "",
+      category: searchParams.get("category") ?? "",
+      sort: searchParams.get("sort") ?? "relevant",
+      session
+    })
+  ).map((product) => ({
     id: product.id,
     slug: product.slug,
     name: product.name,
@@ -27,6 +32,10 @@ export async function GET(request: NextRequest) {
     retailPrice: product.retailPrice,
     customerRegularPrice: product.customerRegularPrice,
     visiblePrice: product.visiblePrice,
+    displayCurrency: product.displayCurrency,
+    displayRetailPrice: product.displayRetailPrice,
+    displayCustomerRegularPrice: product.displayCustomerRegularPrice,
+    displayVisiblePrice: product.displayVisiblePrice,
     category: product.category,
     flashSaleLabel: product.flashSaleLabel
   }));

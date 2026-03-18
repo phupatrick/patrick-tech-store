@@ -3,9 +3,10 @@ import Link from "next/link";
 
 import { deleteProductAction } from "@/app/admin/products/actions";
 import { DeleteProductButton } from "@/components/delete-product-button";
-import { CurrencySettings, formatCurrency } from "@/lib/currency";
+import { CurrencySettings, formatCurrency, formatCurrencyValue } from "@/lib/currency";
 import { Language, translate } from "@/lib/i18n";
 import { getLocalizedProductCopy, getLocalizedUsageDuration, getLocalizedWarrantyDuration } from "@/lib/product-localization";
+import { getDisplayPriceSet } from "@/lib/product-pricing";
 import { getProductImageSrc, isInlineImageSrc } from "@/lib/product-image-src";
 import { Product, ProductAccountType } from "@/lib/types";
 
@@ -65,6 +66,7 @@ export function AdminInventoryTable({ products, language, currencySettings }: Ad
             {products.map((product, index) => {
               const localized = getLocalizedProductCopy(product, language);
               const imageSrc = getProductImageSrc(product.image);
+              const displayPriceSet = getDisplayPriceSet(product, currencySettings);
 
               return (
                 <tr key={product.id}>
@@ -90,10 +92,10 @@ export function AdminInventoryTable({ products, language, currencySettings }: Ad
                   </td>
                   <td>{getLocalizedUsageDuration(product.usageDuration, language)}</td>
                   <td>{formatCurrency(product.costPrice, currencySettings)}</td>
-                  <td>{formatCurrency(product.retailPrice, currencySettings)}</td>
-                  <td>{formatCurrency(product.customerTierPrices.vip, currencySettings)}</td>
-                  <td>{formatCurrency(product.tierPrices.regular, currencySettings)}</td>
-                  <td>{formatCurrency(product.tierPrices.vip, currencySettings)}</td>
+                  <td>{formatCurrencyValue(displayPriceSet.retailPrice, currencySettings)}</td>
+                  <td>{formatCurrencyValue(displayPriceSet.customerTierPrices.vip, currencySettings)}</td>
+                  <td>{formatCurrencyValue(displayPriceSet.tierPrices.regular, currencySettings)}</td>
+                  <td>{formatCurrencyValue(displayPriceSet.tierPrices.vip, currencySettings)}</td>
                   <td>{getLocalizedWarrantyDuration(product.warrantyMonths, language)}</td>
                   <td className="inventory-description-cell">{localized.shortDescription}</td>
                   <td className="inventory-description-cell inventory-description-long">{localized.fullDescription}</td>

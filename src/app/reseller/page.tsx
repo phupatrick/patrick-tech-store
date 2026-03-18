@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 
 import { ProductGrid } from "@/components/product-grid";
+import { getRequestCurrency } from "@/lib/currency/server";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { getVisibleProducts, getUserById } from "@/lib/pricing";
@@ -8,6 +9,7 @@ import { users } from "@/lib/data";
 
 export default async function ResellerPage() {
   const language = await getRequestLanguage();
+  const currency = await getRequestCurrency(language);
   const { t } = createTranslator(language);
   const cookieStore = await cookies();
   const resellerUserId = cookieStore.get("reseller_user")?.value;
@@ -15,7 +17,7 @@ export default async function ResellerPage() {
   const signedInReseller = reseller?.role === "reseller" ? reseller : undefined;
   const resellerAccounts = users.filter((user) => user.role === "reseller");
   const products = signedInReseller
-    ? getVisibleProducts(signedInReseller.id, signedInReseller.tier, language)
+    ? await getVisibleProducts(signedInReseller.id, signedInReseller.tier, language, currency)
     : [];
 
   return (

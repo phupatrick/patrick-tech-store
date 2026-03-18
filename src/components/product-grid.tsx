@@ -35,7 +35,7 @@ export function ProductGrid({
   priorityCount = 0
 }: ProductGridProps) {
   const { language, t } = useI18n();
-  const { format } = useCurrency();
+  const { format, formatDisplay } = useCurrency();
   const [pendingId, setPendingId] = useState<string | null>(null);
   const [activeProduct, setActiveProduct] = useState<ProductView | null>(null);
   const [activePanelMode, setActivePanelMode] = useState<ActivePanelMode>("detail");
@@ -163,7 +163,7 @@ export function ProductGrid({
                             <span className="product-price-label">{priceLabels.original}</span>
                             <div className="product-price-topline-values">
                               <span className="product-price-value product-price-original is-struck">
-                                {format(priceSummary.originalPrice)}
+                                {formatDisplay(priceSummary.originalPrice)}
                               </span>
                               <span className="product-price-discount-badge">-{priceSummary.discountPercent}%</span>
                             </div>
@@ -171,7 +171,7 @@ export function ProductGrid({
                         ) : null}
                         <div className="product-price-row product-price-row-sale product-price-row-compact">
                           <span className="product-price-label product-price-label-strong">{priceLabels.sale}</span>
-                          <span className="product-price-value product-price-sale">{format(priceSummary.salePrice)}</span>
+                          <span className="product-price-value product-price-sale">{formatDisplay(priceSummary.salePrice)}</span>
                         </div>
                       </div>
                     ) : (

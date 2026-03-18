@@ -2,9 +2,10 @@ import Link from "next/link";
 
 import { deleteProductAction } from "@/app/admin/products/actions";
 import { DeleteProductButton } from "@/components/delete-product-button";
-import { CurrencySettings, formatCurrency } from "@/lib/currency";
+import { CurrencySettings, formatCurrencyValue } from "@/lib/currency";
 import { Language, translate } from "@/lib/i18n";
 import { getLocalizedProductCopy } from "@/lib/product-localization";
+import { getDisplayPriceSet } from "@/lib/product-pricing";
 import { Product } from "@/lib/types";
 
 type AdminProductsTableProps = {
@@ -37,6 +38,7 @@ export function AdminProductsTable({
       <div className="admin-cards-grid">
         {products.map((product) => {
           const localized = getLocalizedProductCopy(product, language);
+          const displayPriceSet = getDisplayPriceSet(product, currencySettings);
           const categories =
             localized.categories ??
             (localized.category ? [localized.category] : product.categories ?? (product.category ? [product.category] : []));
@@ -53,7 +55,7 @@ export function AdminProductsTable({
                   <h3 className="card-title">{localized.name}</h3>
                   <p className="admin-product-meta">/{product.slug}</p>
                 </div>
-                <p className="price admin-inline-price">{formatCurrency(product.retailPrice, currencySettings)}</p>
+                <p className="price admin-inline-price">{formatCurrencyValue(displayPriceSet.retailPrice, currencySettings)}</p>
               </div>
 
               <p className="muted admin-item-copy">{localized.shortDescription}</p>

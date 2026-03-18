@@ -4,13 +4,15 @@ import { AdminOrdersTable } from "@/components/admin-orders-table";
 import { AdminSessionBar } from "@/components/admin-session-bar";
 import { requireAdminUser } from "@/lib/auth";
 import { getCurrencySettings } from "@/lib/currency";
+import { getRequestCurrency } from "@/lib/currency/server";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { listOrders } from "@/lib/order-store";
 
 export default async function AdminOrdersPage() {
   const language = await getRequestLanguage();
-  const currencySettings = await getCurrencySettings(language);
+  const currency = await getRequestCurrency(language);
+  const currencySettings = await getCurrencySettings(language, currency);
   const { t } = createTranslator(language);
   const adminUser = await requireAdminUser("/admin/orders");
   const orders = listOrders();

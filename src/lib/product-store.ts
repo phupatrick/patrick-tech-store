@@ -12,6 +12,7 @@ import {
 } from "@/lib/product-categories";
 import { Language } from "@/lib/i18n";
 import { createJsonFileStore } from "@/lib/json-file-store";
+import { getBaseProductPriceSet, normalizeProductCurrencyPrices } from "@/lib/product-pricing";
 import { MemberPriceTier, Product, ProductAccountType } from "@/lib/types";
 
 const buildSvg = (hue: string) =>
@@ -198,6 +199,19 @@ const normalizeProduct = (product: Product, index: number): Product => {
   const retailPrice = Number.isFinite(product.retailPrice)
     ? product.retailPrice
     : resolveRegularPrice(product.customerTierPrices, 0);
+  const customerTierPrices = {
+    regular: resolveRegularPrice(product.customerTierPrices, retailPrice),
+    vip: resolveVipPrice(product.customerTierPrices, retailPrice)
+  };
+  const tierPrices = {
+    regular: resolveRegularPrice(product.tierPrices, retailPrice),
+    vip: resolveVipPrice(product.tierPrices, resolveRegularPrice(product.tierPrices, retailPrice))
+  };
+  const basePriceSet = getBaseProductPriceSet({
+    retailPrice,
+    customerTierPrices,
+    tierPrices
+  });
 
   return {
     ...product,
@@ -206,14 +220,9 @@ const normalizeProduct = (product: Product, index: number): Product => {
     usageDuration: product.usageDuration?.trim() || "30 ngay",
     costPrice: Number.isFinite(product.costPrice) ? product.costPrice : retailPrice,
     retailPrice,
-    customerTierPrices: {
-      regular: resolveRegularPrice(product.customerTierPrices, retailPrice),
-      vip: resolveVipPrice(product.customerTierPrices, retailPrice)
-    },
-    tierPrices: {
-      regular: resolveRegularPrice(product.tierPrices, retailPrice),
-      vip: resolveVipPrice(product.tierPrices, resolveRegularPrice(product.tierPrices, retailPrice))
-    },
+    customerTierPrices,
+    tierPrices,
+    currencyPrices: normalizeProductCurrencyPrices(product.currencyPrices, basePriceSet),
     categories: normalizeProductCategories(product),
     category: normalizeProductCategory(product),
     accountType: inferAccountType(product),
@@ -287,6 +296,7 @@ type ProductInput = Pick<
   | "published"
   | "tierPrices"
   | "warrantyMonths"
+  | "currencyPrices"
 >;
 
 export const createProductRecord = (input: ProductInput, language: Language = "vi") => {
@@ -303,6 +313,7 @@ export const createProductRecord = (input: ProductInput, language: Language = "v
     accountType: inferAccountType(input),
     customerTierPrices: input.customerTierPrices ?? createMemberPrices(input.retailPrice),
     tierPrices: input.tierPrices ?? createMemberPrices(input.retailPrice),
+    currencyPrices: input.currencyPrices,
     overridePrices: {},
     stock: 0,
     points: 0,
@@ -348,6 +359,7 @@ export const updateProductRecord = (productId: string, input: ProductInput, lang
     accountType: inferAccountType(input),
     customerTierPrices: input.customerTierPrices ?? createMemberPrices(input.retailPrice),
     tierPrices: input.tierPrices ?? createMemberPrices(input.retailPrice),
+    currencyPrices: input.currencyPrices ?? existing.currencyPrices,
     translations: {
       ...existing.translations,
       [language]: localizedFields

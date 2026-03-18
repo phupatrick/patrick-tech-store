@@ -29,7 +29,7 @@ export function ProductGridDialog({
   onClose
 }: ProductGridDialogProps) {
   const { language, t } = useI18n();
-  const { format } = useCurrency();
+  const { format, formatDisplay, toDisplayAmount } = useCurrency();
   const [panelMode, setPanelMode] = useState<"detail" | "checkout">(initialMode);
   const [selectedVoucherId, setSelectedVoucherId] = useState("");
   const [pending, setPending] = useState(false);
@@ -71,7 +71,7 @@ export function ProductGridDialog({
   const selectedVoucher = activeVoucherOptions.find(
     (voucher) => voucher.id === selectedVoucherId && voucher.isApplicable && !voucher.isReserved
   );
-  const finalPrice = Math.max(0, product.visiblePrice - (selectedVoucher?.discountAmount ?? 0));
+  const finalDisplayPrice = Math.max(0, product.displayVisiblePrice - toDisplayAmount(selectedVoucher?.discountAmount ?? 0));
 
   const handleCheckout = async (contactMethod: "zalo" | "telegram", voucherId?: string) => {
     setPending(true);
@@ -140,7 +140,7 @@ export function ProductGridDialog({
                 <span className="product-price-label">{priceLabels.original}</span>
                 <div className="product-price-topline-values">
                   <span className="product-price-value product-price-original is-struck">
-                    {format(priceSummary.originalPrice)}
+                    {formatDisplay(priceSummary.originalPrice)}
                   </span>
                   <span className="product-price-discount-badge">-{priceSummary.discountPercent}%</span>
                 </div>
@@ -148,7 +148,7 @@ export function ProductGridDialog({
             ) : null}
             <div className="product-price-row product-price-row-sale product-price-row-compact">
               <span className="product-price-label product-price-label-strong">{priceLabels.sale}</span>
-              <span className="product-price-value product-price-sale">{format(priceSummary.salePrice)}</span>
+              <span className="product-price-value product-price-sale">{formatDisplay(priceSummary.salePrice)}</span>
             </div>
           </div>
 
@@ -237,7 +237,7 @@ export function ProductGridDialog({
               <div className="checkout-summary-card">
                 <div className="checkout-summary-row">
                   <span>{t("checkout.originalPrice")}</span>
-                  <strong>{format(product.visiblePrice)}</strong>
+                  <strong>{formatDisplay(product.displayVisiblePrice)}</strong>
                 </div>
                 <div className="checkout-summary-row">
                   <span>{t("checkout.discount")}</span>
@@ -245,7 +245,7 @@ export function ProductGridDialog({
                 </div>
                 <div className="checkout-summary-row checkout-summary-row-total">
                   <span>{t("checkout.finalPrice")}</span>
-                  <strong>{format(finalPrice)}</strong>
+                  <strong>{formatDisplay(finalDisplayPrice)}</strong>
                 </div>
               </div>
 

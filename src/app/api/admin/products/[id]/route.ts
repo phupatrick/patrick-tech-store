@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getAdminUser } from "@/lib/auth";
 import { getCurrencySettings } from "@/lib/currency";
+import { resolveCurrencyCode } from "@/lib/currency";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { removeStoredProductImage, resolveProductImageFromFormData } from "@/lib/product-images";
 import { getProductValuesFromFormData, validateProductValues } from "@/lib/product-validation";
@@ -40,7 +41,8 @@ export async function PATCH(request: Request, context: RouteContext) {
   const { id } = await context.params;
   const product = getProductById(id);
   const language = await getRequestLanguage();
-  const currencySettings = await getCurrencySettings(language);
+  const currency = resolveCurrencyCode(language, request.headers.get("cookie")?.match(/preferred-currency=([^;]+)/)?.[1] ?? null);
+  const currencySettings = await getCurrencySettings(language, currency);
 
   if (!product) {
     return NextResponse.json({ error: "Product not found" }, { status: 404 });
@@ -66,11 +68,40 @@ export async function PATCH(request: Request, context: RouteContext) {
     return NextResponse.json({ error: imageResult.error }, { status: 400 });
   }
 
+  const nextCurrencyPrices = validation.data.currencyPriceOverride
+    ? {
+        ...(product.currencyPrices ?? {}),
+        [validation.data.currencyPriceOverride.currency]: {
+          retailPrice: validation.data.currencyPriceOverride.prices.retailPrice,
+          customerTierPrices: validation.data.currencyPriceOverride.prices.customerTierPrices,
+          tierPrices: validation.data.currencyPriceOverride.prices.tierPrices
+        }
+      }
+    : product.currencyPrices;
+
   const updated = updateProductRecord(
     id,
     {
-      ...validation.data,
-      image: imageResult.imagePath
+      name: validation.data.name,
+      slug: validation.data.slug,
+      shortDescription: validation.data.shortDescription,
+      fullDescription: validation.data.fullDescription,
+      usageDuration: validation.data.usageDuration,
+      costPrice: validation.data.costPrice,
+      image: imageResult.imagePath,
+      retailPrice: currency === "USD" ? product.retailPrice : validation.data.vndPricing.retailPrice,
+      customerTierPrices:
+        currency === "USD" ? product.customerTierPrices : validation.data.vndPricing.customerTierPrices,
+      tierPrices: currency === "USD" ? product.tierPrices : validation.data.vndPricing.tierPrices,
+      warrantyMonths: validation.data.warrantyMonths,
+      category: validation.data.category,
+      categories: validation.data.categories,
+      accountType: validation.data.accountType,
+      featured: validation.data.featured,
+      isFlashSale: validation.data.isFlashSale,
+      flashSaleLabel: validation.data.flashSaleLabel,
+      published: validation.data.published,
+      currencyPrices: nextCurrencyPrices
     },
     language
   );

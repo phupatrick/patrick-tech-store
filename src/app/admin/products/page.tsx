@@ -2,6 +2,7 @@ import { AdminProductsTable } from "@/components/admin-products-table";
 import { AdminSessionBar } from "@/components/admin-session-bar";
 import { requireAdminUser } from "@/lib/auth";
 import { getCurrencySettings } from "@/lib/currency";
+import { getRequestCurrency } from "@/lib/currency/server";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { listProducts } from "@/lib/product-store";
@@ -12,7 +13,8 @@ type AdminProductsPageProps = {
 
 export default async function AdminProductsPage({ searchParams }: AdminProductsPageProps) {
   const language = await getRequestLanguage();
-  const currencySettings = await getCurrencySettings(language);
+  const currency = await getRequestCurrency(language);
+  const currencySettings = await getCurrencySettings(language, currency);
   const { t } = createTranslator(language);
   const adminUser = await requireAdminUser("/admin/products");
   const products = listProducts();

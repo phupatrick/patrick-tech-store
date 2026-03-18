@@ -1137,6 +1137,13 @@ select {
   display: block;
 }
 
+.contact-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .community-bubbles {
   position: fixed;
   right: 24px;

@@ -146,7 +146,7 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
       </section>
 
-      <section className="page-stack section-block section-surface home-product-section">
+      <section className="page-stack section-block section-surface home-product-section home-product-section-catalog">
         <div className="catalog-heading">
           <div className="section-head">
             <h2 className="section-title">{t("home.catalog.title")}</h2>
@@ -235,7 +235,7 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
       </section>
 
-      <section className="page-stack section-block section-surface home-product-section">
+      <section className="page-stack section-block section-surface home-product-section home-product-section-featured">
         <div className="section-head">
           <h2 className="section-title">{t("home.featured.title")}</h2>
           <p className="muted section-subtitle">{t("home.featured.description")}</p>
@@ -251,7 +251,7 @@ export default async function Home({ searchParams }: HomeProps) {
       </section>
 
       {flashSaleProducts.length > 0 ? (
-        <section className="page-stack section-block section-surface home-product-section">
+        <section className="page-stack section-block section-surface home-product-section home-product-section-offers">
           <div className="section-head">
             <h2 className="section-title">{t("home.offers.title")}</h2>
             <p className="muted section-subtitle">{t("home.offers.description")}</p>

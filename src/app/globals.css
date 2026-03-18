@@ -2155,15 +2155,15 @@ select {
   }
 
   .product-grid-public {
-    gap: 10px;
+    gap: 8px;
   }
 
   .product-card-public {
-    border-radius: 16px;
+    border-radius: 15px;
   }
 
   .card-image-public {
-    aspect-ratio: 16 / 8.8;
+    aspect-ratio: 16 / 9.7;
   }
 
   .product-image-frame {
@@ -2173,19 +2173,19 @@ select {
   }
 
   .product-image-frame-public {
-    width: min(calc(100% - 8px), 228px);
-    height: calc(100% - 8px);
-    max-height: calc(100% - 8px);
+    width: min(calc(100% - 10px), 212px);
+    height: calc(100% - 10px);
+    max-height: calc(100% - 10px);
   }
 
   .card-body-public {
-    padding: 12px 12px 13px;
-    gap: 10px;
+    padding: 10px 10px 11px;
+    gap: 8px;
   }
 
   .card-title-public {
-    font-size: 0.92rem;
-    line-height: 1.3;
+    font-size: 0.88rem;
+    line-height: 1.28;
   }
 
   .product-card-public .filter-chip-row {
@@ -2207,8 +2207,8 @@ select {
   }
 
   .product-summary {
-    font-size: 0.82rem;
-    line-height: 1.45;
+    font-size: 0.78rem;
+    line-height: 1.38;
     min-height: 0;
   }
 
@@ -2229,7 +2229,7 @@ select {
   }
 
   .product-price-sale {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
   }
 
   .product-public-meta {
@@ -2239,8 +2239,8 @@ select {
 
   .product-public-meta-item {
     min-width: 0;
-    padding: 9px 10px;
-    border-radius: 12px;
+    padding: 8px 9px;
+    border-radius: 11px;
   }
 
   .product-public-meta-label {
@@ -2259,9 +2259,9 @@ select {
   }
 
   .product-card-public .button {
-    min-height: 42px;
-    padding: 10px 12px;
-    font-size: 0.88rem;
+    min-height: 40px;
+    padding: 9px 10px;
+    font-size: 0.84rem;
   }
 
   .checkout-channel-actions {

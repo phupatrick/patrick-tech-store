@@ -13,7 +13,7 @@ import { getVoucherWalletForSession } from "@/lib/voucher-wallet";
 
 const ZALO_GROUP_URL = "https://zalo.me/g/kmpeiw236";
 const TELEGRAM_GROUP_URL = "https://t.me/PatrichTechMenu";
-const CATALOG_PAGE_SIZE = 8;
+const CATALOG_PAGE_SIZE = 6;
 const PAGINATION_WINDOW = 5;
 
 type HomeProps = {
@@ -91,6 +91,8 @@ export default async function Home({ searchParams }: HomeProps) {
     safeCurrentPage * CATALOG_PAGE_SIZE
   );
   const paginationPages = getPaginationPages(safeCurrentPage, totalPages);
+  const featuredShowcaseProducts = featuredProducts.slice(0, 4);
+  const flashSaleShowcaseProducts = flashSaleProducts.slice(0, 4);
   const featureKeys = [
     {
       title: "home.feature.pricing.title",
@@ -114,11 +116,16 @@ export default async function Home({ searchParams }: HomeProps) {
           <h1 className="page-title">{t("home.hero.title")}</h1>
           <p className="lead hero-lead">{t("home.hero.description")}</p>
           <div className="hero-actions home-hero-actions">
-            <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="button button-primary">
+            <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="button button-channel button-channel-zalo">
               <ContactChannelIcon channel="zalo" />
               {t("home.contact.zalo")}
             </a>
-            <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="button">
+            <a
+              href={TELEGRAM_GROUP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="button button-channel button-channel-telegram"
+            >
               <ContactChannelIcon channel="telegram" />
               {t("home.contact.telegram")}
             </a>
@@ -216,11 +223,11 @@ export default async function Home({ searchParams }: HomeProps) {
             <p className="muted">{t("home.catalog.missingDescription")}</p>
           </div>
           <div className="catalog-help-actions">
-            <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill">
+            <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
               <ContactChannelIcon channel="zalo" />
               {t("home.catalog.contactZalo")}
             </a>
-            <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill">
+            <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-telegram">
               <ContactChannelIcon channel="telegram" />
               {t("home.catalog.contactTelegram")}
             </a>
@@ -235,7 +242,7 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
 
         <ProductGrid
-          products={featuredProducts}
+          products={featuredShowcaseProducts}
           variant="public"
           session={session}
           vouchers={voucherWallet?.activeDiscountVouchers}
@@ -250,7 +257,12 @@ export default async function Home({ searchParams }: HomeProps) {
             <p className="muted section-subtitle">{t("home.offers.description")}</p>
           </div>
 
-          <ProductGrid products={flashSaleProducts} variant="public" session={session} vouchers={voucherWallet?.activeDiscountVouchers} />
+          <ProductGrid
+            products={flashSaleShowcaseProducts}
+            variant="public"
+            session={session}
+            vouchers={voucherWallet?.activeDiscountVouchers}
+          />
         </section>
       ) : null}
 
@@ -260,11 +272,11 @@ export default async function Home({ searchParams }: HomeProps) {
           <p className="muted section-subtitle">{t("home.community.description")}</p>
         </div>
         <div className="footer-actions">
-          <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill">
+          <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
             <ContactChannelIcon channel="zalo" />
             {t("home.community.zalo")}
           </a>
-          <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill">
+          <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-telegram">
             <ContactChannelIcon channel="telegram" />
             {t("home.community.telegram")}
           </a>

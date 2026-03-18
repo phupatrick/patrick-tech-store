@@ -13,4 +13,5 @@ pnpm-debug.log*
 !.env.example
 .tmp-verification/
 .tmp-server.pid
+.tmp-run/
 tmp-zalo-*

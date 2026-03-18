@@ -511,11 +511,40 @@ select {
 .card-image {
   position: relative;
   aspect-ratio: 16 / 11;
-  background: #050505;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.09), transparent 45%),
+    linear-gradient(180deg, rgba(13, 20, 35, 0.96), rgba(6, 10, 19, 0.98));
 }
 
 .card-image-public {
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 16 / 10;
+}
+
+.product-image-frame {
+  position: relative;
+  width: min(calc(100% - 24px), 280px);
+  height: calc(100% - 24px);
+  max-height: calc(100% - 24px);
+}
+
+.product-image-frame-public {
+  width: min(calc(100% - 20px), 248px);
+  height: calc(100% - 20px);
+  max-height: calc(100% - 20px);
+}
+
+.product-image {
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  object-position: center;
+  filter: saturate(1.03) contrast(1.02);
+}
+
+.product-image-public {
+  transform: translateZ(0);
 }
 
 .product-offer-badge {
@@ -540,8 +569,8 @@ select {
 }
 
 .card-body-public {
-  padding: 18px;
-  gap: 14px;
+  padding: 16px;
+  gap: 12px;
   align-content: space-between;
   min-height: 100%;
 }
@@ -748,7 +777,7 @@ select {
 .product-public-meta-item {
   display: grid;
   gap: 4px;
-  padding: 12px 13px;
+  padding: 11px 12px;
   border: 1px solid var(--border);
   border-radius: 16px;
   background: rgba(14, 22, 38, 0.56);
@@ -807,9 +836,9 @@ select {
 }
 
 .card-title-public {
-  font-size: 1.06rem;
+  font-size: 1rem;
   font-weight: 650;
-  line-height: 1.42;
+  line-height: 1.38;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -818,10 +847,10 @@ select {
 
 .product-summary {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  min-height: 4.9em;
+  min-height: 3.4em;
 }
 
 .product-summary.expanded {
@@ -1621,6 +1650,11 @@ select {
     line-height: 1.5;
   }
 
+  .product-summary {
+    -webkit-line-clamp: 3;
+    min-height: 4.9em;
+  }
+
   .price {
     font-size: 1.5rem;
   }
@@ -1667,7 +1701,7 @@ select {
 
 @media (max-width: 720px) {
   .app-shell {
-    padding: 16px;
+    padding: 12px;
   }
 
   .site-header,
@@ -1695,7 +1729,20 @@ select {
   }
 
   .hero {
-    padding: 28px 22px;
+    padding: 22px 16px;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 11vw, 2.7rem);
+    line-height: 1.06;
+  }
+
+  .lead,
+  .section-subtitle,
+  .feature-description,
+  .hero-note {
+    font-size: 0.92rem;
+    line-height: 1.7;
   }
 
   .nav-links,
@@ -1742,6 +1789,13 @@ select {
     align-items: stretch;
   }
 
+  .catalog-panel,
+  .surface,
+  .section-surface,
+  .home-footer-contact {
+    padding: 18px;
+  }
+
   .catalog-heading {
     flex-direction: column;
     align-items: stretch;
@@ -1769,6 +1823,67 @@ select {
     max-width: none;
   }
 
+  .product-grid {
+    gap: 12px;
+  }
+
+  .product-card-public {
+    border-radius: 18px;
+  }
+
+  .card-image-public {
+    aspect-ratio: 16 / 9.5;
+  }
+
+  .product-image-frame {
+    width: min(calc(100% - 18px), 232px);
+    height: calc(100% - 18px);
+    max-height: calc(100% - 18px);
+  }
+
+  .product-image-frame-public {
+    width: min(calc(100% - 16px), 216px);
+    height: calc(100% - 16px);
+    max-height: calc(100% - 16px);
+  }
+
+  .card-body-public {
+    padding: 14px;
+    gap: 11px;
+  }
+
+  .card-title-public {
+    font-size: 0.98rem;
+    line-height: 1.34;
+  }
+
+  .product-summary {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .product-price-label {
+    font-size: 0.7rem;
+  }
+
+  .product-price-value {
+    font-size: 0.92rem;
+  }
+
+  .product-price-sale {
+    font-size: 1.2rem;
+  }
+
+  .product-public-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .product-public-meta-item {
+    min-width: 0;
+    border-radius: 14px;
+  }
+
   .product-actions {
     grid-template-columns: 1fr;
   }
@@ -1777,16 +1892,21 @@ select {
     grid-template-columns: 1fr;
   }
 
-  .product-public-meta {
-    grid-template-columns: 1fr;
-  }
-
   .detail-overlay {
-    padding: 16px;
+    align-items: end;
+    padding: 0;
   }
 
   .detail-panel {
-    padding: 20px;
-    border-radius: 20px;
+    width: 100%;
+    max-height: min(88dvh, 920px);
+    padding: 18px 16px calc(18px + env(safe-area-inset-bottom));
+    border-radius: 22px 22px 0 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .product-public-meta {
+    grid-template-columns: 1fr;
   }
 }

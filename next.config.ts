@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const imageHosts = (process.env.NEXT_PUBLIC_IMAGE_HOSTS ?? "f1-zpprd.zdn.vn")
+const imageHosts = (process.env.NEXT_PUBLIC_IMAGE_HOSTS ?? "f1-zpprd.zdn.vn,wsrv.nl")
   .split(",")
   .map((host) => host.trim())
   .filter(Boolean);

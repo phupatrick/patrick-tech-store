@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import { useCurrency } from "@/components/currency-provider";
 import { useI18n } from "@/components/i18n-provider";
-import { getProductImageSrc, isInlineImageSrc } from "@/lib/product-image-src";
+import { getRenderableProductImageSrc, isInlineImageSrc, isProxiedProductImageSrc } from "@/lib/product-image-src";
 import { getLocalizedWarrantyDuration } from "@/lib/product-localization";
 import { getProductPriceSummary, getPublicPriceLabels } from "@/lib/product-price-display";
 import { AuthSession, ProductView, VoucherView } from "@/lib/types";
@@ -84,21 +84,24 @@ export function ProductGrid({ products, variant = "internal", session, vouchers 
             hasLongSummary && !isExpanded
               ? `${product.shortDescription.slice(0, SHORT_DESCRIPTION_PREVIEW_LENGTH).trimEnd()}...`
               : product.shortDescription;
-          const imageSrc = getProductImageSrc(product.image);
-          const useUnoptimizedImage = isInlineImageSrc(imageSrc);
+          const imageSrc = getRenderableProductImageSrc(product.image);
+          const useUnoptimizedImage = isInlineImageSrc(imageSrc) || isProxiedProductImageSrc(imageSrc);
           const priceSummary = getProductPriceSummary(product);
 
           return (
             <article key={product.id} className={`card${isPublic ? " product-card-public" : ""}`}>
               <div className={`card-image${isPublic ? " card-image-public" : ""}`}>
-                <Image
-                  src={imageSrc}
-                  alt={product.name}
-                  fill
-                  className="object-cover"
-                  sizes={isPublic ? "(max-width: 720px) 100vw, (max-width: 1080px) 50vw, 25vw" : "320px"}
-                  unoptimized={useUnoptimizedImage}
-                />
+                <div className={`product-image-frame${isPublic ? " product-image-frame-public" : ""}`}>
+                  <Image
+                    src={imageSrc}
+                    alt={product.name}
+                    fill
+                    className={`product-image${isPublic ? " product-image-public" : ""}`}
+                    sizes={isPublic ? "(max-width: 720px) 240px, (max-width: 1080px) 260px, 280px" : "320px"}
+                    quality={95}
+                    unoptimized={useUnoptimizedImage}
+                  />
+                </div>
                 {isPublic && product.flashSaleLabel ? <span className="product-offer-badge">{product.flashSaleLabel}</span> : null}
               </div>
               <div className={`card-body${isPublic ? " card-body-public" : ""}`}>

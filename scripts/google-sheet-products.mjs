@@ -14,38 +14,23 @@ const GOOGLE_SHEET_SCOPES = [
   "https://www.googleapis.com/auth/drive.file"
 ];
 const MOJIBAKE_PATTERN = /(?:\u00c3.|\u00c2.|\u00c4.|\u00c6.|\u00e1\u00bb|\u00e1\u00ba|\u00e2\u20ac)/;
+const DEFAULT_USD_PER_VND = 0.000038;
 
 const PRODUCT_SHEET_COLUMNS = [
+  { key: "id", label: "M\u00e3 s\u1ea3n ph\u1ea9m" },
+  { key: "image", label: "H\u00ecnh \u1ea3nh" },
   { key: "name", label: "T\u00ean s\u1ea3n ph\u1ea9m" },
-  { key: "imagePreview", label: "\u1ea2nh" },
+  { key: "usageDuration", label: "Th\u1eddi gian s\u1eed d\u1ee5ng" },
+  { key: "warrantyDuration", label: "Th\u1eddi gian b\u1ea3o h\u00e0nh" },
+  { key: "accountType", label: "Lo\u1ea1i acc" },
+  { key: "costPrice", label: "Gi\u00e1 v\u1ed1n" },
+  { key: "customerPriceVnd", label: "Gi\u00e1 kh\u00e1ch (VND)" },
+  { key: "ctvPriceVnd", label: "Gi\u00e1 CTV (VND)" },
+  { key: "customerPriceUsd", label: "Gi\u00e1 kh\u00e1ch (USD)" },
+  { key: "ctvPriceUsd", label: "Gi\u00e1 CTV (USD)" },
   { key: "shortDescription", label: "M\u00f4 t\u1ea3 ng\u1eafn" },
   { key: "fullDescription", label: "M\u00f4 t\u1ea3 chi ti\u1ebft" },
-  { key: "usageDurationValue", label: "Th\u1eddi gian s\u1eed d\u1ee5ng s\u1ed1" },
-  { key: "usageDurationUnit", label: "Th\u1eddi gian s\u1eed d\u1ee5ng \u0111\u01a1n v\u1ecb" },
-  { key: "warrantyMonths", label: "B\u1ea3o h\u00e0nh th\u00e1ng" },
-  { key: "costPrice", label: "Gi\u00e1 v\u1ed1n" },
-  { key: "retailPrice", label: "Gi\u00e1 b\u00e1n l\u1ebb" },
-  { key: "customerRegularPrice", label: "Gi\u00e1 kh\u00e1ch th\u01b0\u1eddng" },
-  { key: "customerVipPrice", label: "Gi\u00e1 kh\u00e1ch VIP" },
-  { key: "ctvRegularPrice", label: "Gi\u00e1 CTV th\u01b0\u1eddng" },
-  { key: "ctvVipPrice", label: "Gi\u00e1 CTV VIP" },
-  { key: "category", label: "Danh m\u1ee5c ch\u00ednh" },
-  { key: "categories", label: "Danh m\u1ee5c" },
-  { key: "accountType", label: "Lo\u1ea1i t\u00e0i kho\u1ea3n" },
-  { key: "featured", label: "N\u1ed5i b\u1eadt" },
-  { key: "isFlashSale", label: "Flash sale" },
-  { key: "flashSaleLabel", label: "Nh\u00e3n flash sale" },
-  { key: "published", label: "Hi\u1ec3n th\u1ecb" },
-  { key: "points", label: "\u0110i\u1ec3m" },
-  { key: "id", label: "M\u00e3 s\u1ea3n ph\u1ea9m" },
-  { key: "slug", label: "Slug" },
-  { key: "image", label: "Link \u1ea3nh" },
-  { key: "enName", label: "T\u00ean ti\u1ebfng Anh" },
-  { key: "enShortDescription", label: "M\u00f4 t\u1ea3 ng\u1eafn ti\u1ebfng Anh" },
-  { key: "enFullDescription", label: "M\u00f4 t\u1ea3 chi ti\u1ebft ti\u1ebfng Anh" },
-  { key: "enCategory", label: "Danh m\u1ee5c ch\u00ednh ti\u1ebfng Anh" },
-  { key: "enCategories", label: "Danh m\u1ee5c ti\u1ebfng Anh" },
-  { key: "enFlashSaleLabel", label: "Nh\u00e3n flash sale ti\u1ebfng Anh" }
+  { key: "published", label: "C\u00f2n h\u00e0ng (y/n)" }
 ];
 
 export const PRODUCT_SHEET_HEADERS = PRODUCT_SHEET_COLUMNS.map((column) => column.label);
@@ -96,10 +81,6 @@ const repairMojibakeText = (value = "") => {
     }
 
     repaired = candidate;
-
-    if (!MOJIBAKE_PATTERN.test(repaired)) {
-      break;
-    }
   }
 
   return repaired;
@@ -116,10 +97,40 @@ const PRODUCT_SHEET_HEADER_KEY_MAP = new Map(
   ])
 );
 
-PRODUCT_SHEET_HEADER_KEY_MAP.set(normalizeText("Xem ảnh"), "imagePreview");
-PRODUCT_SHEET_HEADER_KEY_MAP.set(normalizeText("Xem trước ảnh"), "imagePreview");
+[
+  ["anh", "image"],
+  ["link anh", "image"],
+  ["xem anh", "image"],
+  ["xem truoc anh", "image"],
+  ["gia ban le", "customerPriceVnd"],
+  ["gia khach thuong", "customerPriceVnd"],
+  ["gia khach vip", "customerPriceVnd"],
+  ["gia ctv thuong", "ctvPriceVnd"],
+  ["gia ctv vip", "ctvPriceVnd"],
+  ["so dung", "usageDurationValue"],
+  ["don vi dung", "usageDurationUnit"],
+  ["bao hanh thang", "warrantyMonths"],
+  ["hien thi", "published"],
+  ["con hang", "published"],
+  ["loai tai khoan", "accountType"],
+  ["danh muc chinh", "category"],
+  ["danh muc", "categories"],
+  ["ten tieng anh", "enName"],
+  ["mo ta ngan tieng anh", "enShortDescription"],
+  ["mo ta chi tiet tieng anh", "enFullDescription"],
+  ["danh muc chinh tieng anh", "enCategory"],
+  ["danh muc tieng anh", "enCategories"],
+  ["nhan flash sale", "flashSaleLabel"],
+  ["nhan flash sale tieng anh", "enFlashSaleLabel"],
+  ["flash sale", "isFlashSale"],
+  ["noi bat", "featured"],
+  ["diem", "points"]
+].forEach(([alias, key]) => {
+  PRODUCT_SHEET_HEADER_KEY_MAP.set(normalizeText(alias), key);
+});
 
-const resolveSheetHeaderKey = (header = "") => PRODUCT_SHEET_HEADER_KEY_MAP.get(normalizeText(sanitizeSheetText(header))) ?? sanitizeSheetText(header);
+const resolveSheetHeaderKey = (header = "") =>
+  PRODUCT_SHEET_HEADER_KEY_MAP.get(normalizeText(sanitizeSheetText(header))) ?? sanitizeSheetText(header);
 
 const slugify = (value) =>
   normalizeText(value)
@@ -147,11 +158,17 @@ const normalizeCategoryList = (value) => {
   return Array.from(uniqueCategories.values());
 };
 
-const parseUsageDuration = (value = "") => {
+const parseDurationValue = (value = "", fallbackValue = "1", fallbackUnit = "month") => {
   const trimmed = sanitizeSheetText(value);
-  const matchedValue = trimmed.match(/\d+/)?.[0] ?? "30";
+  const matchedValue = trimmed.match(/\d+/)?.[0] ?? fallbackValue;
   const normalized = normalizeText(trimmed);
-  const unit = normalized.includes("thang") || normalized.includes("month") ? "month" : "day";
+  const unit = normalized.includes("nam") || normalized.includes("year")
+    ? "year"
+    : normalized.includes("thang") || normalized.includes("month")
+      ? "month"
+      : normalized.includes("ngay") || normalized.includes("day")
+        ? "day"
+        : fallbackUnit;
 
   return {
     value: matchedValue,
@@ -159,7 +176,21 @@ const parseUsageDuration = (value = "") => {
   };
 };
 
-const formatUsageDuration = (value, unit) => `${String(value).trim()} ${unit === "month" ? "thang" : "ngay"}`;
+const formatDurationForStorage = (value, unit) => `${String(value).trim()} ${unit}`;
+
+const formatDurationForSheet = (value = "", fallbackValue = "1", fallbackUnit = "month") => {
+  const parsed = parseDurationValue(value, fallbackValue, fallbackUnit);
+
+  if (parsed.unit === "year") {
+    return `${parsed.value} n\u0103m`;
+  }
+
+  if (parsed.unit === "month") {
+    return `${parsed.value} th\u00e1ng`;
+  }
+
+  return `${parsed.value} ng\u00e0y`;
+};
 
 const parseBooleanCell = (value, fallback = false) => {
   const normalized = normalizeText(sanitizeSheetText(value));
@@ -181,12 +212,80 @@ const parseMoneyCell = (value, fallback = 0) => {
   const digits = normalizedValue.replace(/[^\d.-]/g, "");
   const parsedValue = Number.parseFloat(digits);
 
-  return Number.isFinite(parsedValue) && parsedValue >= 0 ? Math.round(parsedValue) : fallback;
+  return Number.isFinite(parsedValue) && parsedValue >= 0 ? Math.round(parsedValue * 100) / 100 : fallback;
 };
 
 const parseIntegerCell = (value, fallback = 0) => {
   const parsedValue = Number.parseInt(sanitizeSheetText(value), 10);
   return Number.isInteger(parsedValue) && parsedValue >= 0 ? parsedValue : fallback;
+};
+
+const parseAccountTypeCell = (value = "", fallback = "primary") => {
+  const normalized = normalizeText(sanitizeSheetText(value));
+
+  if (normalized.includes("cap rieng") || normalized.includes("dedicated")) {
+    return "dedicated";
+  }
+
+  if (normalized.includes("thue") || normalized.includes("rental")) {
+    return "rental";
+  }
+
+  if (normalized.includes("chinh chu") || normalized.includes("primary")) {
+    return "primary";
+  }
+
+  return fallback;
+};
+
+const formatAccountTypeForSheet = (value = "primary") => {
+  if (value === "dedicated") {
+    return "C\u1ea5p ri\u00eang";
+  }
+
+  if (value === "rental") {
+    return "Thu\u00ea";
+  }
+
+  return "Ch\u00ednh ch\u1ee7";
+};
+
+const toPublicAvailabilityCell = (value) => (value ? "y" : "n");
+
+const resolveUsdFallback = (amountVnd) => Math.round(amountVnd * DEFAULT_USD_PER_VND * 100) / 100;
+
+const resolveUsdRegularPrice = (product, priceKey, fallbackVndAmount) => {
+  const override = product.currencyPrices?.USD;
+  const nestedValue =
+    priceKey === "customer"
+      ? override?.customerTierPrices?.regular
+      : override?.tierPrices?.regular;
+
+  if (typeof nestedValue === "number" && Number.isFinite(nestedValue) && nestedValue >= 0) {
+    return nestedValue;
+  }
+
+  if (typeof override?.retailPrice === "number" && Number.isFinite(override.retailPrice) && override.retailPrice >= 0) {
+    return override.retailPrice;
+  }
+
+  return resolveUsdFallback(fallbackVndAmount);
+};
+
+const parseImageCell = (value = "") => {
+  const sanitized = sanitizeSheetText(value);
+
+  if (!sanitized) {
+    return "";
+  }
+
+  const formulaMatch = sanitized.match(/"(https?:\/\/[^"]+)"/i);
+
+  if (formulaMatch?.[1]) {
+    return formulaMatch[1];
+  }
+
+  return sanitized;
 };
 
 const dedupeProducts = (products) => {
@@ -203,6 +302,22 @@ const dedupeProducts = (products) => {
   }
 
   return Array.from(uniqueProducts.values());
+};
+
+const buildExistingProductLookup = (products) => {
+  const lookup = new Map();
+
+  products.forEach((product) => {
+    if (product.id) {
+      lookup.set(`id:${product.id}`, product);
+    }
+
+    if (product.slug) {
+      lookup.set(`slug:${product.slug}`, product);
+    }
+  });
+
+  return lookup;
 };
 
 const hasGoogleServiceAccountCredentials = () =>
@@ -248,126 +363,131 @@ export const writeProductsFile = async (products) => {
   await writeFile(PRODUCT_FILE_PATH, JSON.stringify(products, null, 2), "utf8");
 };
 
-const boolToSheetCell = (value) => (value ? "TRUE" : "FALSE");
-
-const getEnglishTranslation = (product, key) => product.translations?.en?.[key] ?? "";
-const SHEET_IMAGE_PROXY_URL = "https://wsrv.nl/?url=";
-
-const toSheetRow = (product, rowIndex) => {
-  const usageDuration = parseUsageDuration(product.usageDuration ?? "");
-  const imageColumn = PRODUCT_SHEET_COLUMNS.findIndex((column) => column.key === "image");
-  const rowNumber = rowIndex + 2;
-  const imageCellRef = `${getSpreadsheetColumnLabel(imageColumn)}${rowNumber}`;
-  const imagePreviewValue = product.image?.trim()
-    ? `=IF(${imageCellRef}="";"";IMAGE("${SHEET_IMAGE_PROXY_URL}"&ENCODEURL(${imageCellRef})))`
-    : "";
-
-  return [
-    product.name ?? "",
-    imagePreviewValue,
-    product.shortDescription ?? "",
-    product.fullDescription ?? "",
-    usageDuration.value,
-    usageDuration.unit,
-    String(product.warrantyMonths ?? 0),
-    String(product.costPrice ?? 0),
-    String(product.retailPrice ?? 0),
-    String(product.customerTierPrices?.regular ?? product.retailPrice ?? 0),
-    String(product.customerTierPrices?.vip ?? product.customerTierPrices?.regular ?? product.retailPrice ?? 0),
-    String(product.tierPrices?.regular ?? product.retailPrice ?? 0),
-    String(product.tierPrices?.vip ?? product.tierPrices?.regular ?? product.retailPrice ?? 0),
-    product.category ?? "",
-    (product.categories ?? []).join(", "),
-    product.accountType ?? "primary",
-    boolToSheetCell(Boolean(product.featured)),
-    boolToSheetCell(Boolean(product.isFlashSale)),
-    product.flashSaleLabel ?? "",
-    boolToSheetCell(Boolean(product.published)),
-    String(product.points ?? 0),
-    product.id ?? "",
-    product.slug ?? "",
-    product.image ?? "",
-    getEnglishTranslation(product, "name"),
-    getEnglishTranslation(product, "shortDescription"),
-    getEnglishTranslation(product, "fullDescription"),
-    getEnglishTranslation(product, "category"),
-    (product.translations?.en?.categories ?? []).join(", "),
-    getEnglishTranslation(product, "flashSaleLabel")
-  ];
-};
+const toSheetRow = (product) => [
+  product.id ?? "",
+  product.image ?? "",
+  product.name ?? "",
+  formatDurationForSheet(product.usageDuration ?? "30 day", "30", "day"),
+  formatDurationForSheet(product.warrantyDuration ?? `${product.warrantyMonths ?? 1} month`, "1", "month"),
+  formatAccountTypeForSheet(product.accountType ?? "primary"),
+  String(product.costPrice ?? 0),
+  String(product.customerTierPrices?.regular ?? product.retailPrice ?? 0),
+  String(product.tierPrices?.regular ?? product.retailPrice ?? 0),
+  String(resolveUsdRegularPrice(product, "customer", product.customerTierPrices?.regular ?? product.retailPrice ?? 0)),
+  String(resolveUsdRegularPrice(product, "ctv", product.tierPrices?.regular ?? product.retailPrice ?? 0)),
+  product.shortDescription ?? "",
+  product.fullDescription ?? "",
+  toPublicAvailabilityCell(Boolean(product.published))
+];
 
 export const buildTemplateRowsFromProducts = async () => {
   const products = await readProductsFile();
-  return [PRODUCT_SHEET_HEADERS, ...products.map((product, index) => toSheetRow(product, index))];
+  return [PRODUCT_SHEET_HEADERS, ...products.map((product) => toSheetRow(product))];
 };
 
-export const buildProductFromSheetRow = (row) => {
-  const usageDurationValue = sanitizeSheetText(row.usageDurationValue) || "30";
-  const usageDurationUnit = normalizeText(sanitizeSheetText(row.usageDurationUnit)).includes("month") ? "month" : "day";
-  const retailPrice = parseMoneyCell(row.retailPrice, 0);
-  const customerRegularPrice = parseMoneyCell(row.customerRegularPrice, retailPrice);
-  const customerVipPrice = parseMoneyCell(row.customerVipPrice, customerRegularPrice);
-  const ctvRegularPrice = parseMoneyCell(row.ctvRegularPrice, customerRegularPrice);
-  const ctvVipPrice = parseMoneyCell(row.ctvVipPrice, ctvRegularPrice);
-  const categories = normalizeCategoryList(row.categories || row.category);
-  const name = sanitizeSheetText(row.name);
-  const slug = sanitizeSheetText(row.slug) || slugify(name);
-  const englishCategories = normalizeCategoryList(row.enCategories || row.enCategory);
-  const englishName = sanitizeSheetText(row.enName);
-  const englishShortDescription = sanitizeSheetText(row.enShortDescription);
-  const englishFullDescription = restoreMultilineSheetText(row.enFullDescription);
-  const englishCategory = sanitizeSheetText(row.enCategory);
-  const englishFlashSaleLabel = sanitizeSheetText(row.enFlashSaleLabel);
-  const englishTranslations =
-    englishName || englishShortDescription || englishFullDescription || englishCategory || englishCategories.length > 0 || englishFlashSaleLabel
-      ? {
-          name: englishName || undefined,
-          shortDescription: englishShortDescription || undefined,
-          fullDescription: englishFullDescription || undefined,
-          category: englishCategory || undefined,
-          categories: englishCategories.length > 0 ? englishCategories : undefined,
-          flashSaleLabel: englishFlashSaleLabel || undefined
-        }
+export const buildProductFromSheetRow = (row, existingLookup = new Map()) => {
+  const rowId = sanitizeSheetText(row.id);
+  const rowName = sanitizeSheetText(row.name);
+  const rowSlug = sanitizeSheetText(row.slug) || (rowName ? slugify(rowName) : "");
+  const existingProduct = existingLookup.get(`id:${rowId}`) ?? existingLookup.get(`slug:${rowSlug}`);
+  const name = rowName || existingProduct?.name || "";
+  const slug = rowSlug || existingProduct?.slug || slugify(name);
+  const usageSource =
+    sanitizeSheetText(row.usageDuration) ||
+    (row.usageDurationValue ? `${sanitizeSheetText(row.usageDurationValue)} ${sanitizeSheetText(row.usageDurationUnit)}` : "") ||
+    existingProduct?.usageDuration ||
+    "30 day";
+  const warrantySource =
+    sanitizeSheetText(row.warrantyDuration) ||
+    (row.warrantyMonths ? `${sanitizeSheetText(row.warrantyMonths)} month` : "") ||
+    existingProduct?.warrantyDuration ||
+    `${existingProduct?.warrantyMonths ?? 1} month`;
+  const usageDuration = formatDurationForStorage(
+    parseDurationValue(usageSource, "30", "day").value,
+    parseDurationValue(usageSource, "30", "day").unit
+  );
+  const parsedWarranty = parseDurationValue(warrantySource, "1", "month");
+  const warrantyDuration = formatDurationForStorage(parsedWarranty.value, parsedWarranty.unit);
+  const warrantyMonths =
+    parsedWarranty.unit === "year"
+      ? Number(parsedWarranty.value) * 12
+      : parsedWarranty.unit === "day"
+        ? Math.max(1, Math.ceil(Number(parsedWarranty.value) / 30))
+        : Number(parsedWarranty.value);
+  const customerPriceVnd = parseMoneyCell(
+    row.customerPriceVnd ?? row.customerRegularPrice ?? row.retailPrice,
+    existingProduct?.customerTierPrices?.regular ?? existingProduct?.retailPrice ?? 0
+  );
+  const ctvPriceVnd = parseMoneyCell(
+    row.ctvPriceVnd ?? row.ctvRegularPrice,
+    existingProduct?.tierPrices?.regular ?? customerPriceVnd
+  );
+  const customerUsdRaw = sanitizeSheetText(row.customerPriceUsd);
+  const ctvUsdRaw = sanitizeSheetText(row.ctvPriceUsd);
+  const existingUsdOverride = existingProduct?.currencyPrices?.USD;
+  const customerUsd = customerUsdRaw
+    ? parseMoneyCell(customerUsdRaw, 0)
+    : typeof existingUsdOverride?.customerTierPrices?.regular === "number"
+      ? existingUsdOverride.customerTierPrices.regular
       : undefined;
+  const ctvUsd = ctvUsdRaw
+    ? parseMoneyCell(ctvUsdRaw, 0)
+    : typeof existingUsdOverride?.tierPrices?.regular === "number"
+      ? existingUsdOverride.tierPrices.regular
+      : undefined;
+  const published = parseBooleanCell(row.published, existingProduct?.published ?? true);
+  const accountType = parseAccountTypeCell(row.accountType, existingProduct?.accountType ?? "primary");
 
   return {
-    id: sanitizeSheetText(row.id) || `sheet-${slug}`,
+    id: rowId || existingProduct?.id || `sheet-${slug}`,
     slug,
     name,
-    shortDescription: sanitizeSheetText(row.shortDescription),
-    fullDescription: restoreMultilineSheetText(row.fullDescription),
-    usageDuration: formatUsageDuration(usageDurationValue, usageDurationUnit),
-    costPrice: parseMoneyCell(row.costPrice, retailPrice),
-    retailPrice,
+    shortDescription: sanitizeSheetText(row.shortDescription) || existingProduct?.shortDescription || "",
+    fullDescription: restoreMultilineSheetText(row.fullDescription) || existingProduct?.fullDescription || "",
+    usageDuration,
+    warrantyDuration,
+    costPrice: parseMoneyCell(row.costPrice, existingProduct?.costPrice ?? customerPriceVnd),
+    retailPrice: customerPriceVnd,
     customerTierPrices: {
-      regular: customerRegularPrice,
-      vip: customerVipPrice
+      regular: customerPriceVnd,
+      vip: customerPriceVnd
     },
-    category: sanitizeSheetText(row.category) || categories[0] || undefined,
-    categories,
-    accountType: ["dedicated", "primary", "rental"].includes(sanitizeSheetText(row.accountType))
-      ? sanitizeSheetText(row.accountType)
-      : "primary",
-    featured: parseBooleanCell(row.featured, false),
-    isFlashSale: parseBooleanCell(row.isFlashSale, false),
-    flashSaleLabel: sanitizeSheetText(row.flashSaleLabel) || undefined,
-    published: parseBooleanCell(row.published, true),
+    category: existingProduct?.category,
+    categories: existingProduct?.categories ?? [],
+    accountType,
+    featured: existingProduct?.featured ?? false,
+    isFlashSale: existingProduct?.isFlashSale ?? false,
+    flashSaleLabel: existingProduct?.flashSaleLabel,
+    published,
     tierPrices: {
-      regular: ctvRegularPrice,
-      vip: ctvVipPrice
+      regular: ctvPriceVnd,
+      vip: ctvPriceVnd
     },
-    overridePrices: {},
-    image: sanitizeSheetText(row.image),
-    warrantyMonths: parseIntegerCell(row.warrantyMonths, 0),
-    stock: 0,
-    points: parseIntegerCell(row.points, 0),
-    createdAt: new Date().toISOString(),
+    currencyPrices:
+      customerUsd !== undefined || ctvUsd !== undefined
+        ? {
+            ...(existingProduct?.currencyPrices ?? {}),
+            USD: {
+              retailPrice: customerUsd ?? resolveUsdFallback(customerPriceVnd),
+              customerTierPrices: {
+                regular: customerUsd ?? resolveUsdFallback(customerPriceVnd),
+                vip: customerUsd ?? resolveUsdFallback(customerPriceVnd)
+              },
+              tierPrices: {
+                regular: ctvUsd ?? resolveUsdFallback(ctvPriceVnd),
+                vip: ctvUsd ?? resolveUsdFallback(ctvPriceVnd)
+              }
+            }
+          }
+        : existingProduct?.currencyPrices,
+    overridePrices: existingProduct?.overridePrices ?? {},
+    image: parseImageCell(row.image) || existingProduct?.image || "",
+    warrantyMonths,
+    stock: published ? Math.max(existingProduct?.stock ?? 1, 1) : 0,
+    points: existingProduct?.points ?? 0,
+    createdAt: existingProduct?.createdAt ?? new Date().toISOString(),
     updatedAt: new Date().toISOString(),
-    translations: englishTranslations
-      ? {
-          en: englishTranslations
-        }
-      : undefined
+    translations: existingProduct?.translations
   };
 };
 
@@ -388,7 +508,7 @@ export const rowsToObjects = (values) => {
       });
       return object;
     })
-    .filter((row) => sanitizeSheetText(row.name));
+    .filter((row) => sanitizeSheetText(row.name) || sanitizeSheetText(row.id));
 };
 
 const parsePublicSheetCsv = (csvContent) =>
@@ -407,9 +527,9 @@ const parsePublicSheetCsv = (csvContent) =>
         ])
       )
     )
-    .filter((row) => sanitizeSheetText(row.name));
+    .filter((row) => sanitizeSheetText(row.name) || sanitizeSheetText(row.id));
 
-const readProductsFromPublicGoogleSheet = async (spreadsheetId) => {
+const readProductsFromPublicGoogleSheet = async (spreadsheetId, existingLookup) => {
   const csvUrl = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/export?format=csv&gid=${PRODUCT_SHEET_GID}`;
   const response = await fetch(csvUrl, {
     headers: {
@@ -424,10 +544,13 @@ const readProductsFromPublicGoogleSheet = async (spreadsheetId) => {
 
   const csvContent = await response.text();
   const rows = parsePublicSheetCsv(csvContent);
-  return dedupeProducts(rows.map(buildProductFromSheetRow));
+  return dedupeProducts(rows.map((row) => buildProductFromSheetRow(row, existingLookup)));
 };
 
 export const readProductsFromGoogleSheet = async (spreadsheetId) => {
+  const existingProducts = await readProductsFile();
+  const existingLookup = buildExistingProductLookup(existingProducts);
+
   if (hasGoogleServiceAccountCredentials()) {
     try {
       const { sheets } = await createGoogleClients();
@@ -436,7 +559,7 @@ export const readProductsFromGoogleSheet = async (spreadsheetId) => {
         range: PRODUCT_SHEET_RANGE
       });
       const rows = rowsToObjects(response.data.values ?? []);
-      return dedupeProducts(rows.map(buildProductFromSheetRow));
+      return dedupeProducts(rows.map((row) => buildProductFromSheetRow(row, existingLookup)));
     } catch (error) {
       if (process.env.GOOGLE_SHEET_DISABLE_PUBLIC_FALLBACK === "true") {
         throw error;
@@ -444,7 +567,7 @@ export const readProductsFromGoogleSheet = async (spreadsheetId) => {
     }
   }
 
-  return readProductsFromPublicGoogleSheet(spreadsheetId);
+  return readProductsFromPublicGoogleSheet(spreadsheetId, existingLookup);
 };
 
 export const DEFAULT_SHARED_EDITORS = [

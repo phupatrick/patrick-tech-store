@@ -1,5 +1,5 @@
+import { parseDuration } from "@/lib/duration";
 import { Language } from "@/lib/i18n";
-import { normalizeText } from "@/lib/product-categories";
 import { Product, ProductTranslation } from "@/lib/types";
 
 export const getLocalizedProductCopy = (
@@ -19,46 +19,30 @@ export const getLocalizedProductCopy = (
   };
 };
 
-export const getLocalizedUsageDuration = (value: string, language: Language) => {
-  const trimmed = value.trim();
-  const normalized = normalizeText(trimmed);
+const localizeDuration = (
+  value: string | number | undefined,
+  language: Language,
+  defaults: { value?: number; unit?: "day" | "month" | "year" }
+) => {
+  const parsed = parseDuration(value, defaults);
 
-  if (!trimmed) {
-    return language === "vi" ? "30 ng\u00E0y" : "30 days";
-  }
-
-  if (["vinh vien", "lifetime", "permanent", "forever"].some((token) => normalized.includes(token))) {
+  if (parsed.isLifetime) {
     return language === "vi" ? "V\u0129nh vi\u1EC5n" : "Lifetime";
   }
 
-  const count = Number(normalized.match(/\d+/)?.[0] ?? Number.NaN);
-  const hasDays = /\b(day|days|ngay)\b/i.test(normalized);
-  const hasMonths = /\b(month|months|thang)\b/i.test(normalized);
-  const hasYears = /\b(year|years|nam)\b/i.test(normalized);
-
-  if (Number.isFinite(count)) {
-    if (hasDays) {
-      return language === "vi" ? `${count} ng\u00E0y` : `${count} ${count === 1 ? "day" : "days"}`;
-    }
-
-    if (hasMonths) {
-      return language === "vi" ? `${count} th\u00E1ng` : `${count} ${count === 1 ? "month" : "months"}`;
-    }
-
-    if (hasYears) {
-      return language === "vi" ? `${count} n\u0103m` : `${count} ${count === 1 ? "year" : "years"}`;
-    }
+  if (parsed.unit === "day") {
+    return language === "vi" ? `${parsed.value} ng\u00E0y` : `${parsed.value} ${parsed.value === 1 ? "day" : "days"}`;
   }
 
-  return trimmed;
-};
-
-export const getLocalizedWarrantyDuration = (months: number, language: Language) => {
-  const safeMonths = Number.isFinite(months) ? Math.max(0, Math.trunc(months)) : 0;
-
-  if (language === "vi") {
-    return `${safeMonths} tháng`;
+  if (parsed.unit === "year") {
+    return language === "vi" ? `${parsed.value} n\u0103m` : `${parsed.value} ${parsed.value === 1 ? "year" : "years"}`;
   }
 
-  return `${safeMonths} ${safeMonths === 1 ? "month" : "months"}`;
+  return language === "vi" ? `${parsed.value} th\u00E1ng` : `${parsed.value} ${parsed.value === 1 ? "month" : "months"}`;
 };
+
+export const getLocalizedUsageDuration = (value: string, language: Language) =>
+  localizeDuration(value, language, { value: 30, unit: "day" });
+
+export const getLocalizedWarrantyDuration = (value: string | number | undefined, language: Language) =>
+  localizeDuration(typeof value === "number" ? `${value} month` : value, language, { value: 1, unit: "month" });

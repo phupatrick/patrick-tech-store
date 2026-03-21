@@ -3,7 +3,7 @@ import { CurrencySettings, convertVndToDisplayAmount, getCurrencySettings, round
 import { Language, translate } from "@/lib/i18n";
 import { getMemberTierKey } from "@/lib/member-status";
 import { normalizeText } from "@/lib/product-categories";
-import { getLocalizedProductCopy, getLocalizedUsageDuration } from "@/lib/product-localization";
+import { getLocalizedProductCopy, getLocalizedUsageDuration, getLocalizedWarrantyDuration } from "@/lib/product-localization";
 import { getDisplayPriceSet, getStoredPriceSetForCurrency } from "@/lib/product-pricing";
 import { getProductById, listProducts } from "@/lib/product-store";
 import { AuthSession, CurrencyCode, Product, ProductPriceSet, ProductView, ResellerTier, User } from "@/lib/types";
@@ -174,6 +174,7 @@ export const buildProductView = async (
     shortDescription: localized.shortDescription,
     fullDescription: localized.fullDescription,
     usageDuration: getLocalizedUsageDuration(product.usageDuration, language),
+    warrantyDuration: getLocalizedWarrantyDuration(product.warrantyDuration ?? product.warrantyMonths, language),
     image: product.image,
     retailPrice: storedPriceSet.retailPrice,
     customerRegularPrice: storedPriceSet.customerTierPrices.regular,
@@ -214,6 +215,7 @@ const buildPublicProductView = (
     shortDescription: localized.shortDescription,
     fullDescription: localized.fullDescription,
     usageDuration: getLocalizedUsageDuration(product.usageDuration, language),
+    warrantyDuration: getLocalizedWarrantyDuration(product.warrantyDuration ?? product.warrantyMonths, language),
     image: product.image,
     retailPrice: storedPriceSet.retailPrice,
     customerRegularPrice: storedPriceSet.customerTierPrices.regular,

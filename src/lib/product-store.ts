@@ -10,6 +10,7 @@ import {
   normalizeProductCategory,
   normalizeText
 } from "@/lib/product-categories";
+import { formatDuration, getApproximateMonths } from "@/lib/duration";
 import { Language } from "@/lib/i18n";
 import { createJsonFileStore } from "@/lib/json-file-store";
 import { getBaseProductPriceSet, normalizeProductCurrencyPrices } from "@/lib/product-pricing";
@@ -85,6 +86,7 @@ const seedProducts: Product[] = [
     shortDescription: "Goi nang cap theo thang cho nhu cau lam viec va ban giao nhanh.",
     fullDescription: "Dang tai khoan hoac nang cap goi theo thang cho nhu cau lam viec chat luong cao.",
     usageDuration: "30 ngay",
+    warrantyDuration: "1 month",
     costPrice: 199000,
     retailPrice: 249000,
     customerTierPrices: { regular: 249000, vip: 219000 },
@@ -110,6 +112,7 @@ const seedProducts: Product[] = [
     shortDescription: "Tai khoan dung chung tiet kiem chi phi va ban giao nhanh.",
     fullDescription: "Tai khoan so da kich hoat san, phu hop cho hoc tap va su dung co ban.",
     usageDuration: "30 ngay",
+    warrantyDuration: "1 month",
     costPrice: 89000,
     retailPrice: 119000,
     customerTierPrices: { regular: 119000, vip: 105000 },
@@ -136,6 +139,7 @@ const seedProducts: Product[] = [
     shortDescription: "Nang cap goi Canva Pro theo ky cho hoc tap, lam viec va san xuat noi dung.",
     fullDescription: "Goi nang cap mo khoa tinh nang Pro va lien ket vao tai khoan hien co cua khach hang.",
     usageDuration: "30 ngay",
+    warrantyDuration: "1 month",
     costPrice: 69000,
     retailPrice: 89000,
     customerTierPrices: { regular: 89000, vip: 79000 },
@@ -162,6 +166,7 @@ const seedProducts: Product[] = [
     shortDescription: "Tai khoan so san dung voi tinh nang Pro cho chinh sua video ngan.",
     fullDescription: "Tai khoan so da kich hoat san, giao thong tin dang nhap nhanh va co huong dan su dung.",
     usageDuration: "30 ngay",
+    warrantyDuration: "1 month",
     costPrice: 119000,
     retailPrice: 159000,
     customerTierPrices: { regular: 159000, vip: 139000 },
@@ -213,11 +218,17 @@ const normalizeProduct = (product: Product, index: number): Product => {
     tierPrices
   });
 
+  const warrantyDuration = product.warrantyDuration?.trim() || formatDuration(product.warrantyMonths || 1, "month");
+  const warrantyMonths = Number.isFinite(product.warrantyMonths) && product.warrantyMonths > 0
+    ? Math.trunc(product.warrantyMonths)
+    : getApproximateMonths(warrantyDuration);
+
   return {
     ...product,
     shortDescription: product.shortDescription.trim(),
     fullDescription: product.fullDescription.trim(),
     usageDuration: product.usageDuration?.trim() || "30 ngay",
+    warrantyDuration,
     costPrice: Number.isFinite(product.costPrice) ? product.costPrice : retailPrice,
     retailPrice,
     customerTierPrices,
@@ -226,6 +237,7 @@ const normalizeProduct = (product: Product, index: number): Product => {
     categories: normalizeProductCategories(product),
     category: normalizeProductCategory(product),
     accountType: inferAccountType(product),
+    warrantyMonths,
     isFlashSale: product.isFlashSale ?? false,
     flashSaleLabel: product.flashSaleLabel?.trim() || undefined,
     createdAt: product.createdAt ?? new Date(Date.UTC(2026, 0, 1 + index)).toISOString(),
@@ -283,6 +295,7 @@ type ProductInput = Pick<
   | "shortDescription"
   | "fullDescription"
   | "usageDuration"
+  | "warrantyDuration"
   | "costPrice"
   | "image"
   | "retailPrice"
@@ -308,6 +321,7 @@ export const createProductRecord = (input: ProductInput, language: Language = "v
     ...input,
     ...localizedFields,
     usageDuration: input.usageDuration.trim(),
+    warrantyDuration: input.warrantyDuration?.trim() || formatDuration(input.warrantyMonths || 1, "month"),
     categories: normalizeProductCategories(input),
     category: normalizeProductCategory(input),
     accountType: inferAccountType(input),
@@ -354,6 +368,7 @@ export const updateProductRecord = (productId: string, input: ProductInput, lang
     ...input,
     ...nextBaseFields,
     usageDuration: input.usageDuration.trim(),
+    warrantyDuration: input.warrantyDuration?.trim() || existing.warrantyDuration || formatDuration(input.warrantyMonths || 1, "month"),
     categories: nextBaseFields.categories ?? normalizeProductCategories(input),
     category: nextBaseFields.category ?? normalizeProductCategory(input),
     accountType: inferAccountType(input),

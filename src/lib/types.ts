@@ -36,6 +36,7 @@ export type Product = {
   shortDescription: string;
   fullDescription: string;
   usageDuration: string;
+  warrantyDuration?: string;
   costPrice: number;
   retailPrice: number;
   customerTierPrices: Record<MemberPriceTier, number>;
@@ -101,6 +102,7 @@ export type ProductView = {
   shortDescription: string;
   fullDescription: string;
   usageDuration: string;
+  warrantyDuration: string;
   image: string;
   retailPrice: number;
   customerRegularPrice: number;

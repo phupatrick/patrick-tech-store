@@ -2,6 +2,7 @@ import { randomInt } from "node:crypto";
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
+import { addDurationToDate } from "@/lib/duration";
 import { createJsonFileStore } from "@/lib/json-file-store";
 import { Order, OrderStatus, PendingCheckout, Product } from "@/lib/types";
 
@@ -36,12 +37,6 @@ const parseDate = (value: string, endOfDay = false) => {
 const addDays = (value: string, days: number) => {
   const date = parseDate(value, true);
   date.setDate(date.getDate() + days);
-  return date;
-};
-
-const addMonthsToDate = (value: string, months: number) => {
-  const date = parseDate(value, true);
-  date.setMonth(date.getMonth() + months);
   return date;
 };
 
@@ -211,7 +206,9 @@ export const createOrderFromPendingCheckout = (pendingCheckout: PendingCheckout,
   const orderId = generateUniqueOrderId(new Set(orders.map((order) => order.id)));
   const createdAt = now.toISOString();
   const purchaseDate = formatDateInput(now);
-  const warrantyUntil = formatDateInput(addMonthsToDate(purchaseDate, product.warrantyMonths));
+  const warrantyUntil = formatDateInput(
+    addDurationToDate(parseDate(purchaseDate, true), product.warrantyDuration ?? product.warrantyMonths)
+  );
   const profit = pendingCheckout.finalPrice - product.costPrice;
   const order: Order = {
     id: orderId,

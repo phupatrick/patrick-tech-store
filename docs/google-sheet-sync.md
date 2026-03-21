@@ -45,9 +45,17 @@ Optional:
 
 ## Product sheet columns
 
-The `Products` tab uses these columns:
+The `Products` tab now uses this simplified layout:
 
-`id, slug, name, shortDescription, fullDescription, usageDurationValue, usageDurationUnit, costPrice, retailPrice, customerRegularPrice, customerVipPrice, ctvRegularPrice, ctvVipPrice, warrantyMonths, category, categories, accountType, featured, isFlashSale, flashSaleLabel, published, image, points, enName, enShortDescription, enFullDescription, enCategory, enCategories, enFlashSaleLabel`
+`Mã sản phẩm, Hình ảnh, Tên sản phẩm, Thời gian sử dụng, Thời gian bảo hành, Loại acc, Giá vốn, Giá khách (VND), Giá CTV (VND), Giá khách (USD), Giá CTV (USD), Mô tả ngắn, Mô tả chi tiết, Còn hàng (y/n)`
+
+Notes:
+
+- `Hình ảnh` should store the real image URL.
+- `Còn hàng (y/n)` accepts `y/yes` or `n/no`.
+- If `Giá khách (USD)` or `Giá CTV (USD)` is left blank, the existing USD override is preserved. If there is no existing USD override, the app falls back to conversion.
+- VIP prices are automatically aligned to the regular customer/CTV prices when syncing from this simplified sheet.
+- Existing fields not shown in the sheet, such as categories, English translations, flash sale flags, and points, are preserved from the current local catalog when a matching product already exists.
 
 ## Auto-update the web catalog from Google Sheets
 

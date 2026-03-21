@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
   const contactMethod =
     body.contactMethod === "zalo" || body.contactMethod === "telegram"
       ? body.contactMethod
-      : countryCode === "VN"
+      : language === "vi" && countryCode === "VN"
         ? "zalo"
         : "telegram";
   const baseContactUrl = contactMethod === "zalo" ? ZALO_URL : TELEGRAM_URL;

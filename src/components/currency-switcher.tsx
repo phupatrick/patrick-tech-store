@@ -11,7 +11,7 @@ export function CurrencySwitcher() {
   const label = t("currency.label");
 
   return (
-    <label className="field language-switcher">
+    <label className="field language-switcher currency-switcher">
       <span className="sr-only">{label}</span>
       <select
         value={currency}

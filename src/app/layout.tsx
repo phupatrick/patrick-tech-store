@@ -5,6 +5,7 @@ import { loginFromHeaderAction } from "@/app/admin/login/actions";
 import { CurrencySwitcher } from "@/components/currency-switcher";
 import { I18nProvider } from "@/components/i18n-provider";
 import { HeaderAccessCodeForm } from "@/components/header-access-code-form";
+import { LanguageWelcomeModal } from "@/components/language-welcome-modal";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { SiteHeader } from "@/components/site-header";
 import { getAuthSession } from "@/lib/auth";
@@ -34,6 +35,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <CurrencyProvider initialSettings={currencySettings}>
           <I18nProvider initialLanguage={language}>
             <div className="app-shell">
+              <LanguageWelcomeModal />
               <SiteHeader
                 brandKicker={t("layout.brand.kicker")}
                 brandTitle={t("layout.brand.title")}

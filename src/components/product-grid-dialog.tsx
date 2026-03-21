@@ -72,6 +72,7 @@ export function ProductGridDialog({
     (voucher) => voucher.id === selectedVoucherId && voucher.isApplicable && !voucher.isReserved
   );
   const finalDisplayPrice = Math.max(0, product.displayVisiblePrice - toDisplayAmount(selectedVoucher?.discountAmount ?? 0));
+  const showZaloChannel = language === "vi";
 
   const handleCheckout = async (contactMethod: "zalo" | "telegram", voucherId?: string) => {
     setPending(true);
@@ -254,15 +255,17 @@ export function ProductGridDialog({
                 <p className="muted">{t("checkout.channelDescription")}</p>
               </div>
 
-              <div className="checkout-channel-actions">
-                <button
-                  type="button"
-                  onClick={() => handleCheckout("zalo", selectedVoucher?.id)}
-                  disabled={pending}
-                  className="button button-primary"
-                >
-                  {pending ? t("product.routing") : t("checkout.channel.zalo")}
-                </button>
+              <div className={`checkout-channel-actions${showZaloChannel ? "" : " single"}`}>
+                {showZaloChannel ? (
+                  <button
+                    type="button"
+                    onClick={() => handleCheckout("zalo", selectedVoucher?.id)}
+                    disabled={pending}
+                    className="button button-primary"
+                  >
+                    {pending ? t("product.routing") : t("checkout.channel.zalo")}
+                  </button>
+                ) : null}
                 <button
                   type="button"
                   onClick={() => handleCheckout("telegram", selectedVoucher?.id)}

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useActionState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useFormStatus } from "react-dom";
 
 import type { LoginFormState } from "@/app/admin/login/actions";
@@ -31,12 +31,19 @@ export function HeaderAccessCodeForm({ action, session }: HeaderAccessCodeFormPr
   const pathname = usePathname();
   const { t } = useI18n();
   const [state, formAction] = useActionState(action, { code: "" });
+  const [isCompactOpen, setIsCompactOpen] = useState(false);
   const shouldShowTier = Boolean(session && (session.role === "reseller" || session.role === "customer"));
   const roleLabel = session ? t(getMemberRoleKey(session)) : "";
   const sessionLabel = session ? getLocalizedSessionLabel(session, t) : "";
   const pointsToVip = session ? getPointsToVip(session.points) : VIP_POINTS_THRESHOLD;
   const hasVipStatus = session ? isVipMember(session) : false;
   const tierLabel = session ? t(getMemberTierKey(session)) : "";
+
+  useEffect(() => {
+    if (state.error) {
+      setIsCompactOpen(true);
+    }
+  }, [state.error]);
 
   if (session) {
     return (
@@ -75,26 +82,35 @@ export function HeaderAccessCodeForm({ action, session }: HeaderAccessCodeFormPr
   }
 
   return (
-    <form action={formAction} className="header-access-form">
-      <input type="hidden" name="next" value={pathname || "/"} />
-      <label className="sr-only" htmlFor="header-access-code">
-        {t("admin.login.field.code")}
-      </label>
-      <input
-        id="header-access-code"
-        name="code"
-        type="text"
-        defaultValue={state.code}
-        className="input header-access-input"
-        placeholder={t("admin.accessCodes.form.placeholderCode")}
-        autoComplete="one-time-code"
-        autoCapitalize="off"
-        autoCorrect="off"
-        spellCheck={false}
-        required
-      />
-      <SubmitButton />
-      {state.error ? <p className="header-login-error">{state.error}</p> : null}
-    </form>
+    <div className={`header-access-shell${isCompactOpen ? " is-open" : ""}`}>
+      <button
+        type="button"
+        className="button header-access-toggle"
+        onClick={() => setIsCompactOpen((current) => !current)}
+      >
+        {isCompactOpen ? t("product.close") : t("admin.login.field.code")}
+      </button>
+      <form action={formAction} className="header-access-form">
+        <input type="hidden" name="next" value={pathname || "/"} />
+        <label className="sr-only" htmlFor="header-access-code">
+          {t("admin.login.field.code")}
+        </label>
+        <input
+          id="header-access-code"
+          name="code"
+          type="text"
+          defaultValue={state.code}
+          className="input header-access-input"
+          placeholder={t("admin.accessCodes.form.placeholderCode")}
+          autoComplete="one-time-code"
+          autoCapitalize="off"
+          autoCorrect="off"
+          spellCheck={false}
+          required
+        />
+        <SubmitButton />
+        {state.error ? <p className="header-login-error">{state.error}</p> : null}
+      </form>
+    </div>
   );
 }

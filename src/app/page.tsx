@@ -93,6 +93,9 @@ export default async function Home({ searchParams }: HomeProps) {
   const paginationPages = getPaginationPages(safeCurrentPage, totalPages);
   const featuredShowcaseProducts = featuredProducts.slice(0, 4);
   const flashSaleShowcaseProducts = flashSaleProducts.slice(0, 4);
+  const showZaloChannel = language === "vi";
+  const contactActionClass = `hero-actions home-hero-actions${showZaloChannel ? "" : " home-hero-actions-single"}`;
+  const catalogHelpClass = `catalog-help-actions${showZaloChannel ? "" : " catalog-help-actions-single"}`;
   const featureKeys = [
     {
       title: "home.feature.pricing.title",
@@ -110,42 +113,6 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <main className="page-stack">
-      <section className="hero hero-copy hero-premium hero-storefront home-hero">
-        <div className="hero-copy-block home-hero-copy">
-          <p className="eyebrow">{t("home.hero.eyebrow")}</p>
-          <h1 className="page-title">{t("home.hero.title")}</h1>
-          <p className="lead hero-lead">{t("home.hero.description")}</p>
-          <div className="hero-actions home-hero-actions">
-            <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="button button-channel button-channel-zalo">
-              <ContactChannelIcon channel="zalo" />
-              {t("home.contact.zalo")}
-            </a>
-            <a
-              href={TELEGRAM_GROUP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="button button-channel button-channel-telegram"
-            >
-              <ContactChannelIcon channel="telegram" />
-              {t("home.contact.telegram")}
-            </a>
-            <Link href="/warranty" className="button">
-              {t("layout.nav.warranty")}
-            </Link>
-          </div>
-          <p className="hero-note">{t("home.contact.note")}</p>
-        </div>
-
-        <div className="feature-grid home-feature-grid">
-          {featureKeys.map((feature) => (
-            <div key={feature.title} className="feature-card feature-card-premium home-feature-card">
-              <p className="card-title">{t(feature.title)}</p>
-              <p className="muted feature-description">{t(feature.description)}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="page-stack section-block section-surface home-product-section home-product-section-catalog">
         <div className="catalog-heading">
           <div className="section-head">
@@ -222,16 +189,59 @@ export default async function Home({ searchParams }: HomeProps) {
             <h3 className="card-title">{t("home.catalog.missingTitle")}</h3>
             <p className="muted">{t("home.catalog.missingDescription")}</p>
           </div>
-          <div className="catalog-help-actions">
-            <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
-              <ContactChannelIcon channel="zalo" />
-              {t("home.catalog.contactZalo")}
-            </a>
+
+          <div className={catalogHelpClass}>
+            {showZaloChannel ? (
+              <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
+                <ContactChannelIcon channel="zalo" />
+                {t("home.catalog.contactZalo")}
+              </a>
+            ) : null}
             <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-telegram">
               <ContactChannelIcon channel="telegram" />
               {t("home.catalog.contactTelegram")}
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="hero hero-copy hero-premium hero-storefront home-hero">
+        <div className="hero-copy-block home-hero-copy">
+          <p className="eyebrow">{t("home.hero.eyebrow")}</p>
+          <h1 className="page-title">{t("home.hero.title")}</h1>
+          <p className="lead hero-lead">{t("home.hero.description")}</p>
+
+          <div className={contactActionClass}>
+            {showZaloChannel ? (
+              <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="button button-channel button-channel-zalo">
+                <ContactChannelIcon channel="zalo" />
+                {t("home.contact.zalo")}
+              </a>
+            ) : null}
+            <a
+              href={TELEGRAM_GROUP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="button button-channel button-channel-telegram"
+            >
+              <ContactChannelIcon channel="telegram" />
+              {t("home.contact.telegram")}
+            </a>
+            <Link href="/warranty" className="button">
+              {t("layout.nav.warranty")}
+            </Link>
+          </div>
+
+          <p className="hero-note">{t("home.contact.note")}</p>
+        </div>
+
+        <div className="feature-grid home-feature-grid">
+          {featureKeys.map((feature) => (
+            <div key={feature.title} className="feature-card feature-card-premium home-feature-card">
+              <p className="card-title">{t(feature.title)}</p>
+              <p className="muted feature-description">{t(feature.description)}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -272,10 +282,12 @@ export default async function Home({ searchParams }: HomeProps) {
           <p className="muted section-subtitle">{t("home.community.description")}</p>
         </div>
         <div className="footer-actions">
-          <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
-            <ContactChannelIcon channel="zalo" />
-            {t("home.community.zalo")}
-          </a>
+          {showZaloChannel ? (
+            <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
+              <ContactChannelIcon channel="zalo" />
+              {t("home.community.zalo")}
+            </a>
+          ) : null}
           <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-telegram">
             <ContactChannelIcon channel="telegram" />
             {t("home.community.telegram")}

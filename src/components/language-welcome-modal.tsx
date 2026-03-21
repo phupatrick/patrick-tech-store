@@ -8,16 +8,18 @@ import { applyLanguagePreset, hasStoredLanguagePreference } from "@/lib/client-l
 const WELCOME_KICKER = "Welcome / Ch\u00e0o m\u1eebng";
 const WELCOME_TITLE = "Ch\u1ecdn ng\u00f4n ng\u1eef / Choose your language";
 const WELCOME_DESCRIPTION =
-  "Ti\u1ebfng Vi\u1ec7t s\u1ebd d\u00f9ng VND v\u00e0 hi\u1ec7n Zalo + Telegram. English will use USD and show Telegram only.";
+  "Ti\u1ebfng Vi\u1ec7t s\u1ebd d\u00f9ng VND v\u00e0 hi\u1ec7n Zalo + G\u1ecdi tr\u1ef1c ti\u1ebfp. English will use USD and show Telegram + WhatsApp.";
 const VIETNAMESE_LABEL = "Ti\u1ebfng Vi\u1ec7t";
-const VIETNAMESE_COPY = "VND + Zalo v\u00e0 Telegram";
-const ENGLISH_COPY = "USD + Telegram only";
+const VIETNAMESE_COPY = "VND + Zalo + G\u1ecdi tr\u1ef1c ti\u1ebfp";
+const ENGLISH_COPY = "USD + Telegram + WhatsApp";
 
 export function LanguageWelcomeModal() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setIsOpen(!hasStoredLanguagePreference());
+    const searchParams = new URLSearchParams(window.location.search);
+    const forceOpen = searchParams.get("welcome") === "1";
+    setIsOpen(forceOpen || !hasStoredLanguagePreference());
   }, []);
 
   useEffect(() => {
@@ -56,8 +58,8 @@ export function LanguageWelcomeModal() {
                 Zalo
               </span>
               <span className="welcome-choice-tag">
-                <ContactChannelIcon channel="telegram" className="contact-icon-inline" />
-                Telegram
+                <ContactChannelIcon channel="phone" className="contact-icon-inline" />
+                Call
               </span>
             </span>
           </button>
@@ -73,6 +75,10 @@ export function LanguageWelcomeModal() {
               <span className="welcome-choice-tag">
                 <ContactChannelIcon channel="telegram" className="contact-icon-inline" />
                 Telegram
+              </span>
+              <span className="welcome-choice-tag">
+                <ContactChannelIcon channel="whatsapp" className="contact-icon-inline" />
+                WhatsApp
               </span>
             </span>
           </button>

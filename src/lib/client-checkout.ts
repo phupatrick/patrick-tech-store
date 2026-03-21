@@ -21,7 +21,7 @@ export const openCheckoutWindow = async ({
   productId: string;
   language: Language;
   voucherId?: string;
-  contactMethod?: "zalo" | "telegram";
+  contactMethod?: "zalo" | "telegram" | "whatsapp";
   fallbackError: string;
 }) => {
   const response = await fetch("/api/checkout", {

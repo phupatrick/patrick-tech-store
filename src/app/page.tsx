@@ -5,14 +5,17 @@ import { CommunityBubbles } from "@/components/community-bubbles";
 import { ContactChannelIcon } from "@/components/contact-channel-icon";
 import { ProductGrid } from "@/components/product-grid";
 import { getAuthSession } from "@/lib/auth";
+import {
+  DIRECT_PHONE_TEL_URL,
+  TELEGRAM_DIRECT_URL,
+  WHATSAPP_DIRECT_URL,
+  ZALO_DIRECT_URL
+} from "@/lib/contact-links";
 import { getRequestCurrency } from "@/lib/currency/server";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { getStorefrontSnapshot } from "@/lib/pricing";
 import { getVoucherWalletForSession } from "@/lib/voucher-wallet";
-
-const ZALO_GROUP_URL = "https://zalo.me/g/kmpeiw236";
-const TELEGRAM_GROUP_URL = "https://t.me/PatrichTechMenu";
 const CATALOG_PAGE_SIZE = 6;
 const PAGINATION_WINDOW = 5;
 
@@ -72,7 +75,8 @@ export default async function Home({ searchParams }: HomeProps) {
   const { t } = createTranslator(language);
   const session = await getAuthSession();
   const voucherWallet = getVoucherWalletForSession(session);
-  const { q = "", category = "", sort = "relevant", page = "1" } = await searchParams;
+  const { q = "", category = "", sort: requestedSort, page = "1" } = await searchParams;
+  const sort = requestedSort || (q || category ? "relevant" : "price-asc");
   const { featuredProducts, flashSaleProducts, catalogProducts, categories } = await getStorefrontSnapshot({
     language,
     currency,
@@ -93,9 +97,14 @@ export default async function Home({ searchParams }: HomeProps) {
   const paginationPages = getPaginationPages(safeCurrentPage, totalPages);
   const featuredShowcaseProducts = featuredProducts.slice(0, 4);
   const flashSaleShowcaseProducts = flashSaleProducts.slice(0, 4);
-  const showZaloChannel = language === "vi";
-  const contactActionClass = `hero-actions home-hero-actions${showZaloChannel ? "" : " home-hero-actions-single"}`;
-  const catalogHelpClass = `catalog-help-actions${showZaloChannel ? "" : " catalog-help-actions-single"}`;
+  const isVietnamese = language === "vi";
+  const catalogHelpDescription = isVietnamese
+    ? "Nhắn trực tiếp qua Zalo hoặc gọi số 0933684560 để được báo giá nhanh, kiểm tra còn hàng hoặc yêu cầu bổ sung sản phẩm."
+    : "Message us directly on Telegram or WhatsApp for fast pricing, stock checks, and product requests.";
+  const quickContactTitle = isVietnamese ? "Liên hệ nhanh" : "Quick contact";
+  const quickContactDescription = isVietnamese
+    ? "Chọn đúng kênh liên hệ để được hỗ trợ nhanh hơn."
+    : "Choose the contact channel you prefer for a faster response.";
   const featureKeys = [
     {
       title: "home.feature.pricing.title",
@@ -187,20 +196,42 @@ export default async function Home({ searchParams }: HomeProps) {
           <div className="catalog-help-copy">
             <p className="eyebrow">{t("home.catalog.missingEyebrow")}</p>
             <h3 className="card-title">{t("home.catalog.missingTitle")}</h3>
-            <p className="muted">{t("home.catalog.missingDescription")}</p>
+            <p className="muted">{catalogHelpDescription}</p>
           </div>
 
-          <div className={catalogHelpClass}>
-            {showZaloChannel ? (
-              <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
+          <div className="catalog-help-actions">
+            {isVietnamese ? (
+              <a href={ZALO_DIRECT_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
                 <ContactChannelIcon channel="zalo" />
                 {t("home.catalog.contactZalo")}
               </a>
-            ) : null}
-            <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-telegram">
-              <ContactChannelIcon channel="telegram" />
-              {t("home.catalog.contactTelegram")}
-            </a>
+            ) : (
+              <a
+                href={TELEGRAM_DIRECT_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="contact-pill contact-pill-telegram"
+              >
+                <ContactChannelIcon channel="telegram" />
+                {t("home.catalog.contactTelegram")}
+              </a>
+            )}
+            {isVietnamese ? (
+              <a href={DIRECT_PHONE_TEL_URL} className="contact-pill contact-pill-phone">
+                <ContactChannelIcon channel="phone" />
+                {t("home.catalog.contactCall")}
+              </a>
+            ) : (
+              <a
+                href={WHATSAPP_DIRECT_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="contact-pill contact-pill-whatsapp"
+              >
+                <ContactChannelIcon channel="whatsapp" />
+                {t("home.catalog.contactWhatsApp")}
+              </a>
+            )}
           </div>
         </div>
       </section>
@@ -211,22 +242,39 @@ export default async function Home({ searchParams }: HomeProps) {
           <h1 className="page-title">{t("home.hero.title")}</h1>
           <p className="lead hero-lead">{t("home.hero.description")}</p>
 
-          <div className={contactActionClass}>
-            {showZaloChannel ? (
-              <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="button button-channel button-channel-zalo">
+          <div className="hero-actions home-hero-actions">
+            {isVietnamese ? (
+              <a href={ZALO_DIRECT_URL} target="_blank" rel="noreferrer" className="button button-channel button-channel-zalo">
                 <ContactChannelIcon channel="zalo" />
                 {t("home.contact.zalo")}
               </a>
-            ) : null}
-            <a
-              href={TELEGRAM_GROUP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="button button-channel button-channel-telegram"
-            >
-              <ContactChannelIcon channel="telegram" />
-              {t("home.contact.telegram")}
-            </a>
+            ) : (
+              <a
+                href={TELEGRAM_DIRECT_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="button button-channel button-channel-telegram"
+              >
+                <ContactChannelIcon channel="telegram" />
+                {t("home.contact.telegram")}
+              </a>
+            )}
+            {isVietnamese ? (
+              <a href={DIRECT_PHONE_TEL_URL} className="button button-channel button-channel-phone">
+                <ContactChannelIcon channel="phone" />
+                {t("home.contact.call")}
+              </a>
+            ) : (
+              <a
+                href={WHATSAPP_DIRECT_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="button button-channel button-channel-whatsapp"
+              >
+                <ContactChannelIcon channel="whatsapp" />
+                {t("home.contact.whatsapp")}
+              </a>
+            )}
             <Link href="/warranty" className="button">
               {t("layout.nav.warranty")}
             </Link>
@@ -278,20 +326,32 @@ export default async function Home({ searchParams }: HomeProps) {
 
       <section className="footer-contact home-footer-contact">
         <div className="section-head footer-copy">
-          <h2 className="section-title">{t("home.community.title")}</h2>
-          <p className="muted section-subtitle">{t("home.community.description")}</p>
+          <h2 className="section-title">{quickContactTitle}</h2>
+          <p className="muted section-subtitle">{quickContactDescription}</p>
         </div>
         <div className="footer-actions">
-          {showZaloChannel ? (
-            <a href={ZALO_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
+          {isVietnamese ? (
+            <a href={ZALO_DIRECT_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
               <ContactChannelIcon channel="zalo" />
-              {t("home.community.zalo")}
+              {t("home.contact.zalo")}
             </a>
-          ) : null}
-          <a href={TELEGRAM_GROUP_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-telegram">
-            <ContactChannelIcon channel="telegram" />
-            {t("home.community.telegram")}
-          </a>
+          ) : (
+            <a href={TELEGRAM_DIRECT_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-telegram">
+              <ContactChannelIcon channel="telegram" />
+              {t("home.contact.telegram")}
+            </a>
+          )}
+          {isVietnamese ? (
+            <a href={DIRECT_PHONE_TEL_URL} className="contact-pill contact-pill-phone">
+              <ContactChannelIcon channel="phone" />
+              {t("home.contact.call")}
+            </a>
+          ) : (
+            <a href={WHATSAPP_DIRECT_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-whatsapp">
+              <ContactChannelIcon channel="whatsapp" />
+              {t("home.contact.whatsapp")}
+            </a>
+          )}
         </div>
       </section>
 

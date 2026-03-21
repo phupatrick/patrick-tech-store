@@ -18,8 +18,7 @@ import { VoucherDefinitionId } from "@/lib/types";
 import { calculateVoucherDiscount } from "@/lib/vouchers";
 import { getVoucherWalletForAccessCode } from "@/lib/voucher-wallet";
 
-const ZALO_URL = "https://zalo.me/0933684560";
-const TELEGRAM_URL = "https://t.me/Patrick_Tech_Fullapp";
+import { TELEGRAM_DIRECT_URL, WHATSAPP_DIRECT_URL, ZALO_DIRECT_URL } from "@/lib/contact-links";
 
 export async function POST(request: NextRequest) {
   const body = (await request.json()) as {
@@ -27,7 +26,7 @@ export async function POST(request: NextRequest) {
     countryCode?: string;
     language?: string;
     voucherId?: string;
-    contactMethod?: "zalo" | "telegram";
+    contactMethod?: "zalo" | "telegram" | "whatsapp";
   };
   const session = await getAuthSession();
   const product = body.productId ? getProductById(body.productId) : undefined;
@@ -48,12 +47,17 @@ export async function POST(request: NextRequest) {
   const currencySettings = await getCurrencySettings(language, currency);
   const productView = await getPublicProductView(product, language, session, currency);
   const contactMethod =
-    body.contactMethod === "zalo" || body.contactMethod === "telegram"
+    body.contactMethod === "zalo" || body.contactMethod === "telegram" || body.contactMethod === "whatsapp"
       ? body.contactMethod
       : language === "vi" && countryCode === "VN"
         ? "zalo"
-        : "telegram";
-  const baseContactUrl = contactMethod === "zalo" ? ZALO_URL : TELEGRAM_URL;
+        : "whatsapp";
+  const baseContactUrl =
+    contactMethod === "zalo"
+      ? ZALO_DIRECT_URL
+      : contactMethod === "whatsapp"
+        ? WHATSAPP_DIRECT_URL
+        : TELEGRAM_DIRECT_URL;
   const separator = baseContactUrl.includes("?") ? "&" : "?";
   let discountAmount = 0;
   let voucherId: string | undefined;

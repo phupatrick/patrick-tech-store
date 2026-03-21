@@ -426,4 +426,13 @@ export const vi = {
   "checkout.content.channel": "Kênh",
   "checkout.content.voucher": "Voucher",
   "checkout.error.generic": "Không thể tạo yêu cầu mua hàng. Vui lòng thử lại."
+  ,"home.catalog.contactCall": "G\u1ecdi 0933684560",
+  "home.catalog.contactWhatsApp": "Nh\u1eafn WhatsApp",
+  "home.community.call": "G\u1ecdi 0933684560",
+  "home.community.whatsapp": "Nh\u1eafn WhatsApp",
+  "home.community.floatingCall": "G\u1ecdi tr\u1ef1c ti\u1ebfp",
+  "home.community.floatingWhatsapp": "Nh\u1eafn WhatsApp",
+  "home.contact.call": "G\u1ecdi 0933684560",
+  "home.contact.whatsapp": "WhatsApp",
+  "checkout.channel.whatsapp": "\u0110\u1eb7t qua WhatsApp"
 } as const;

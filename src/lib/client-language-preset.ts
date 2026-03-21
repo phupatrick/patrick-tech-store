@@ -14,7 +14,10 @@ export const applyLanguagePreset = (language: Language) => {
   persistCookie(CURRENCY_COOKIE_NAME, currency);
   document.documentElement.lang = language;
 
-  const nextUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+  const params = new URLSearchParams(window.location.search);
+  params.delete("welcome");
+  const nextSearch = params.toString();
+  const nextUrl = `${window.location.pathname}${nextSearch ? `?${nextSearch}` : ""}${window.location.hash}`;
   window.location.replace(nextUrl);
 };
 

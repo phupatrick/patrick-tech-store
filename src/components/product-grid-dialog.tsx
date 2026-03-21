@@ -73,8 +73,12 @@ export function ProductGridDialog({
   );
   const finalDisplayPrice = Math.max(0, product.displayVisiblePrice - toDisplayAmount(selectedVoucher?.discountAmount ?? 0));
   const showZaloChannel = language === "vi";
+  const showWhatsappChannel = language === "en";
+  const checkoutChannelDescription = language === "vi"
+    ? "Chọn kênh bạn muốn dùng để gửi sẵn nội dung đặt hàng."
+    : "Choose the app you want to use for this order request.";
 
-  const handleCheckout = async (contactMethod: "zalo" | "telegram", voucherId?: string) => {
+  const handleCheckout = async (contactMethod: "zalo" | "telegram" | "whatsapp", voucherId?: string) => {
     setPending(true);
     setCheckoutError(null);
 
@@ -252,10 +256,10 @@ export function ProductGridDialog({
 
               <div className="detail-copy-block">
                 <p className="detail-copy-label">{t("checkout.channelTitle")}</p>
-                <p className="muted">{t("checkout.channelDescription")}</p>
+                <p className="muted">{checkoutChannelDescription}</p>
               </div>
 
-              <div className={`checkout-channel-actions${showZaloChannel ? "" : " single"}`}>
+              <div className="checkout-channel-actions">
                 {showZaloChannel ? (
                   <button
                     type="button"
@@ -274,6 +278,16 @@ export function ProductGridDialog({
                 >
                   {pending ? t("product.routing") : t("checkout.channel.telegram")}
                 </button>
+                {showWhatsappChannel ? (
+                  <button
+                    type="button"
+                    onClick={() => handleCheckout("whatsapp", selectedVoucher?.id)}
+                    disabled={pending}
+                    className="button"
+                  >
+                    {pending ? t("product.routing") : t("checkout.channel.whatsapp")}
+                  </button>
+                ) : null}
               </div>
             </div>
           ) : null}

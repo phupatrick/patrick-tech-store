@@ -250,6 +250,12 @@ const formatAccountTypeForSheet = (value = "primary") => {
   return "Ch\u00ednh ch\u1ee7";
 };
 
+const formatDescriptionForSheet = (value = "") =>
+  sanitizeSheetText(value)
+    .replace(/\r?\n+/g, " | ")
+    .replace(/\s+\|\s+/g, " | ")
+    .trim();
+
 const toPublicAvailabilityCell = (value) => (value ? "y" : "n");
 
 const resolveUsdFallback = (amountVnd) => Math.round(amountVnd * DEFAULT_USD_PER_VND * 100) / 100;
@@ -375,8 +381,8 @@ const toSheetRow = (product) => [
   String(product.tierPrices?.regular ?? product.retailPrice ?? 0),
   String(resolveUsdRegularPrice(product, "customer", product.customerTierPrices?.regular ?? product.retailPrice ?? 0)),
   String(resolveUsdRegularPrice(product, "ctv", product.tierPrices?.regular ?? product.retailPrice ?? 0)),
-  product.shortDescription ?? "",
-  product.fullDescription ?? "",
+  formatDescriptionForSheet(product.shortDescription ?? ""),
+  formatDescriptionForSheet(product.fullDescription ?? ""),
   toPublicAvailabilityCell(Boolean(product.published))
 ];
 

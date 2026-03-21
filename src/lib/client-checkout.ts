@@ -48,7 +48,19 @@ export const openCheckoutWindow = async ({
     };
   }
 
-  window.open(payload.redirectUrl, "_blank", "noopener,noreferrer");
+  const isMobile =
+    typeof navigator !== "undefined" &&
+    /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    window.location.assign(payload.redirectUrl);
+  } else {
+    const popup = window.open(payload.redirectUrl, "_blank", "noopener,noreferrer");
+
+    if (!popup) {
+      window.location.assign(payload.redirectUrl);
+    }
+  }
 
   return {
     ok: true as const

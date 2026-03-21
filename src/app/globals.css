@@ -1800,6 +1800,15 @@ select {
   background: rgba(15, 23, 42, 0.76);
 }
 
+.checkout-quote-card {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(76, 101, 145, 0.32);
+  background: rgba(15, 23, 42, 0.58);
+}
+
 .checkout-summary-row {
   display: flex;
   justify-content: space-between;
@@ -2047,8 +2056,17 @@ select {
   gap: 18px;
 }
 
+.detail-panel-checkout {
+  gap: 14px;
+}
+
 .detail-panel-header {
   align-items: start;
+}
+
+.detail-close-button {
+  flex: 0 0 auto;
+  min-width: 88px;
 }
 
 .detail-panel-copy {
@@ -2620,6 +2638,40 @@ select {
     max-height: min(88dvh, 920px);
     padding: 18px 16px calc(18px + env(safe-area-inset-bottom));
     border-radius: 22px 22px 0 0;
+  }
+
+  .detail-panel-checkout {
+    gap: 12px;
+  }
+
+  .detail-panel-header {
+    align-items: center;
+  }
+
+  .detail-panel-header .stack {
+    min-width: 0;
+  }
+
+  .detail-panel-copy {
+    gap: 10px;
+  }
+
+  .detail-close-button {
+    min-width: 76px;
+    min-height: 38px;
+    padding: 9px 12px;
+    font-size: 0.82rem;
+  }
+
+  .checkout-summary-card,
+  .checkout-quote-card {
+    gap: 8px;
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .checkout-channel-panel {
+    gap: 12px;
   }
 }
 

@@ -72,11 +72,17 @@ export function ProductGridDialog({
     (voucher) => voucher.id === selectedVoucherId && voucher.isApplicable && !voucher.isReserved
   );
   const finalDisplayPrice = Math.max(0, product.displayVisiblePrice - toDisplayAmount(selectedVoucher?.discountAmount ?? 0));
+  const isQuoteOnlyProduct = product.displayVisiblePrice <= 0;
+  const hasVoucherDiscount = (selectedVoucher?.discountAmount ?? 0) > 0;
+  const showFullCheckoutBreakdown = hasVoucherDiscount || priceSummary.hasDiscount;
   const showZaloChannel = language === "vi";
   const showWhatsappChannel = language === "en";
   const checkoutChannelDescription = language === "vi"
     ? "Chọn kênh bạn muốn dùng để gửi sẵn nội dung đặt hàng."
     : "Choose the app you want to use for this order request.";
+  const checkoutQuoteDescription = language === "vi"
+    ? "San pham nay chua niem yet gia co dinh. Chon kenh lien he de nhan bao gia nhanh."
+    : "This item does not have a fixed public price yet. Choose a contact channel to get a quick quote.";
 
   const handleCheckout = async (contactMethod: "zalo" | "telegram" | "whatsapp", voucherId?: string) => {
     setPending(true);
@@ -115,7 +121,7 @@ export function ProductGridDialog({
         }
       }}
     >
-      <div className="detail-panel">
+      <div className={`detail-panel${panelMode === "checkout" ? " detail-panel-checkout" : ""}`}>
         <div className="row detail-panel-header">
           <div className="stack">
             <p className="eyebrow">{panelMode === "checkout" ? t("product.buyNow") : t("product.detailsTitle")}</p>
@@ -123,13 +129,13 @@ export function ProductGridDialog({
               {product.name}
             </h3>
           </div>
-          <button type="button" className="button" onClick={onClose}>
+          <button type="button" className="button detail-close-button" onClick={onClose}>
             {t("product.close")}
           </button>
         </div>
 
         <div className="detail-panel-copy">
-          {productCategories.length > 0 ? (
+          {panelMode === "detail" && productCategories.length > 0 ? (
             <div className="filter-chip-row">
               {productCategories.map((category) => (
                 <span key={`${product.id}-${category}`} className="pill product-category-pill">
@@ -139,23 +145,25 @@ export function ProductGridDialog({
             </div>
           ) : null}
 
-          <div className="product-price-stack product-price-stack-detail" aria-label={language === "vi" ? "Thong tin gia" : "Pricing details"}>
-            {priceSummary.hasDiscount ? (
-              <div className="product-price-topline">
-                <span className="product-price-label">{priceLabels.original}</span>
-                <div className="product-price-topline-values">
-                  <span className="product-price-value product-price-original is-struck">
-                    {formatDisplay(priceSummary.originalPrice)}
-                  </span>
-                  <span className="product-price-discount-badge">-{priceSummary.discountPercent}%</span>
+          {panelMode === "detail" || !isQuoteOnlyProduct ? (
+            <div className="product-price-stack product-price-stack-detail" aria-label={language === "vi" ? "Thong tin gia" : "Pricing details"}>
+              {priceSummary.hasDiscount ? (
+                <div className="product-price-topline">
+                  <span className="product-price-label">{priceLabels.original}</span>
+                  <div className="product-price-topline-values">
+                    <span className="product-price-value product-price-original is-struck">
+                      {formatDisplay(priceSummary.originalPrice)}
+                    </span>
+                    <span className="product-price-discount-badge">-{priceSummary.discountPercent}%</span>
+                  </div>
                 </div>
+              ) : null}
+              <div className="product-price-row product-price-row-sale product-price-row-compact">
+                <span className="product-price-label product-price-label-strong">{priceLabels.sale}</span>
+                <span className="product-price-value product-price-sale">{formatDisplay(priceSummary.salePrice)}</span>
               </div>
-            ) : null}
-            <div className="product-price-row product-price-row-sale product-price-row-compact">
-              <span className="product-price-label product-price-label-strong">{priceLabels.sale}</span>
-              <span className="product-price-value product-price-sale">{formatDisplay(priceSummary.salePrice)}</span>
             </div>
-          </div>
+          ) : null}
 
           <div className="product-public-meta product-public-meta-detail">
             <div className="product-public-meta-item">
@@ -170,10 +178,12 @@ export function ProductGridDialog({
             </div>
           </div>
 
-          <div className="detail-summary">
-            <p className="detail-copy-label">{t("product.summary")}</p>
-            <p className="muted">{product.shortDescription}</p>
-          </div>
+          {panelMode === "detail" ? (
+            <div className="detail-summary">
+              <p className="detail-copy-label">{t("product.summary")}</p>
+              <p className="muted">{product.shortDescription}</p>
+            </div>
+          ) : null}
 
           {panelMode === "detail" ? (
             <div className="detail-copy-block">
@@ -239,22 +249,33 @@ export function ProductGridDialog({
 
           {panelMode === "checkout" ? (
             <div className="checkout-channel-panel">
-              <div className="checkout-summary-card">
-                <div className="checkout-summary-row">
-                  <span>{t("checkout.originalPrice")}</span>
-                  <strong>{formatDisplay(product.displayVisiblePrice)}</strong>
+              {isQuoteOnlyProduct ? (
+                <div className="checkout-quote-card">
+                  <p className="detail-copy-label">{t("checkout.finalPrice")}</p>
+                  <p className="muted">{checkoutQuoteDescription}</p>
                 </div>
-                <div className="checkout-summary-row">
-                  <span>{t("checkout.discount")}</span>
-                  <strong>{format(selectedVoucher?.discountAmount ?? 0)}</strong>
+              ) : (
+                <div className="checkout-summary-card">
+                  {showFullCheckoutBreakdown ? (
+                    <>
+                      <div className="checkout-summary-row">
+                        <span>{t("checkout.originalPrice")}</span>
+                        <strong>{formatDisplay(product.displayVisiblePrice)}</strong>
+                      </div>
+                      <div className="checkout-summary-row">
+                        <span>{t("checkout.discount")}</span>
+                        <strong>{format(selectedVoucher?.discountAmount ?? 0)}</strong>
+                      </div>
+                    </>
+                  ) : null}
+                  <div className="checkout-summary-row checkout-summary-row-total">
+                    <span>{showFullCheckoutBreakdown ? t("checkout.finalPrice") : priceLabels.sale}</span>
+                    <strong>{formatDisplay(finalDisplayPrice)}</strong>
+                  </div>
                 </div>
-                <div className="checkout-summary-row checkout-summary-row-total">
-                  <span>{t("checkout.finalPrice")}</span>
-                  <strong>{formatDisplay(finalDisplayPrice)}</strong>
-                </div>
-              </div>
+              )}
 
-              <div className="detail-copy-block">
+              <div className="detail-copy-block checkout-channel-copy">
                 <p className="detail-copy-label">{t("checkout.channelTitle")}</p>
                 <p className="muted">{checkoutChannelDescription}</p>
               </div>

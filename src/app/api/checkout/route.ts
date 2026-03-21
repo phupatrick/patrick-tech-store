@@ -20,6 +20,9 @@ import { getVoucherWalletForAccessCode } from "@/lib/voucher-wallet";
 
 import { TELEGRAM_DIRECT_URL, WHATSAPP_DIRECT_URL, ZALO_DIRECT_URL } from "@/lib/contact-links";
 
+const createFallbackCheckoutReference = (productId: string) =>
+  `${productId.replace(/[^a-zA-Z0-9]/g, "").slice(-4)}${Date.now().toString(36).slice(-4)}`.toUpperCase();
+
 export async function POST(request: NextRequest) {
   const body = (await request.json()) as {
     productId?: string;
@@ -115,65 +118,93 @@ export async function POST(request: NextRequest) {
         discount: formattedDiscount
       })
     : translate(language, "checkout.voucherNone");
+  const orderContent = [
+    `${translate(language, "checkout.content.product")}: ${productView.name}`,
+    `${translate(language, "checkout.content.originalPrice")}: ${formattedOriginalPrice}`,
+    `${translate(language, "checkout.content.discount")}: ${formattedDiscount}`,
+    `${translate(language, "checkout.content.finalPrice")}: ${formattedFinalPrice}`,
+    `${translate(language, "checkout.content.channel")}: ${translate(language, `checkout.channel.${contactMethod}` as never)}`,
+    `${translate(language, "checkout.content.voucher")}: ${
+      voucherDefinitionId ? translate(language, `voucher.def.${voucherDefinitionId}.name` as never) : translate(language, "checkout.voucherNoneShort")
+    }`
+  ].join("\n");
 
-  const pendingCheckout = createPendingCheckoutRecord({
-    language,
-    countryCode: countryCode || "INTL",
-    accessCodeId: session?.subject ?? "guest",
-    customerLabel: session?.label ?? translate(language, "role.user.guest"),
-    customerRole: session?.role ?? "customer",
-    customerTier: session?.tier ?? "guest",
-    customerVip: Boolean(session?.vip),
-    productId: product.id,
-    productName: productView.name,
-    orderName: productView.name,
-    orderContent: [
-      `${translate(language, "checkout.content.product")}: ${productView.name}`,
-      `${translate(language, "checkout.content.originalPrice")}: ${formattedOriginalPrice}`,
-      `${translate(language, "checkout.content.discount")}: ${formattedDiscount}`,
-      `${translate(language, "checkout.content.finalPrice")}: ${formattedFinalPrice}`,
-      `${translate(language, "checkout.content.channel")}: ${translate(language, `checkout.channel.${contactMethod}` as never)}`,
-      `${translate(language, "checkout.content.voucher")}: ${
-        voucherDefinitionId ? translate(language, `voucher.def.${voucherDefinitionId}.name` as never) : translate(language, "checkout.voucherNoneShort")
-      }`
-    ].join("\n"),
-    originalPrice: productView.visiblePrice,
-    discountAmount,
-    finalPrice,
-    currencyCode: currencySettings.currency,
-    displayPrice: formattedFinalPrice,
-    contactUrl: baseContactUrl,
-    messageText: "",
-    customerIp: requestContext.clientIp,
-    customerAddress: requestContext.addressLabel,
-    voucherId,
-    voucherDefinitionId
-  });
+  let pendingCheckoutId: string | undefined;
+  let pendingCheckoutExpiresAt: string | undefined;
+  const fallbackReference = createFallbackCheckoutReference(product.id);
+
+  try {
+    const pendingCheckout = createPendingCheckoutRecord({
+      language,
+      countryCode: countryCode || "INTL",
+      accessCodeId: session?.subject ?? "guest",
+      customerLabel: session?.label ?? translate(language, "role.user.guest"),
+      customerRole: session?.role ?? "customer",
+      customerTier: session?.tier ?? "guest",
+      customerVip: Boolean(session?.vip),
+      productId: product.id,
+      productName: productView.name,
+      orderName: productView.name,
+      orderContent,
+      originalPrice: productView.visiblePrice,
+      discountAmount,
+      finalPrice,
+      currencyCode: currencySettings.currency,
+      displayPrice: formattedFinalPrice,
+      contactUrl: baseContactUrl,
+      messageText: "",
+      customerIp: requestContext.clientIp,
+      customerAddress: requestContext.addressLabel,
+      voucherId,
+      voucherDefinitionId
+    });
+
+    pendingCheckoutId = pendingCheckout.id;
+    pendingCheckoutExpiresAt = pendingCheckout.expiresAt;
+  } catch (error) {
+    console.error("checkout: could not persist pending checkout", error);
+
+    if (voucherId) {
+      return NextResponse.json({ error: translate(language, "checkout.error.generic") }, { status: 500 });
+    }
+  }
 
   const message = translate(language, "checkout.message", {
     productName: productView.name,
     price: formattedFinalPrice,
     originalPrice: formattedOriginalPrice,
     voucherLine,
-    requestId: pendingCheckout.id.slice(0, 8).toUpperCase()
+    requestId: (pendingCheckoutId?.slice(0, 8) ?? fallbackReference).toUpperCase()
   });
   const redirectUrl = `${baseContactUrl}${separator}text=${encodeURIComponent(message)}`;
-  const finalizedPendingCheckout = updatePendingCheckout(pendingCheckout.id, (record) => ({
-    ...record,
-    contactUrl: redirectUrl,
-    messageText: message
-  }));
 
-  if (!finalizedPendingCheckout) {
-    return NextResponse.json({ error: "Could not create pending checkout." }, { status: 500 });
+  if (pendingCheckoutId) {
+    try {
+      const finalizedPendingCheckout = updatePendingCheckout(pendingCheckoutId, (record) => ({
+        ...record,
+        contactUrl: redirectUrl,
+        messageText: message
+      }));
+
+      if (!finalizedPendingCheckout) {
+        throw new Error("Could not finalize pending checkout.");
+      }
+
+      pendingCheckoutExpiresAt = finalizedPendingCheckout.expiresAt;
+      await sendPendingCheckoutToTelegram(finalizedPendingCheckout, request.nextUrl.origin);
+    } catch (error) {
+      console.error("checkout: could not finalize pending checkout", error);
+
+      if (voucherId) {
+        return NextResponse.json({ error: translate(language, "checkout.error.generic") }, { status: 500 });
+      }
+    }
   }
-
-  await sendPendingCheckoutToTelegram(finalizedPendingCheckout, request.nextUrl.origin);
 
   return NextResponse.json({
     redirectUrl,
     contactMethod,
-    pendingCheckoutId: finalizedPendingCheckout.id,
-    expiresAt: finalizedPendingCheckout.expiresAt
+    pendingCheckoutId,
+    expiresAt: pendingCheckoutExpiresAt
   });
 }

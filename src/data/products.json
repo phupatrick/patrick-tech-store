@@ -31,8 +31,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.403Z",
-    "updatedAt": "2026-03-14T22:37:30.403Z",
+    "createdAt": "2026-03-21T02:27:16.424Z",
+    "updatedAt": "2026-03-21T02:27:16.425Z",
     "translations": {
       "en": {
         "name": "ChatGPT Plus 1 year primary account",
@@ -51,7 +51,7 @@
     "id": "zalo-2ba1429053d5ba8be3c4",
     "slug": "claude-max-20x-1-thang-chinh-chu-2ba14290",
     "name": "Claude Max 20x 1 tháng, chính chủ",
-    "shortDescription": "Claude Max 20x 1 tháng, chính chủ dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "shortDescription": "520",
     "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nHạn mức tin nhắn cực đại: Cung cấp dung lượng sử dụng gấp 20 lần so với gói Pro (tương đương khoảng 100 lần so với bản Miễn phí). Bạn có thể gửi tới khoảng 900 tin nhắn mỗi 5 giờ, gần như xóa bỏ nỗi lo bị chặn do hết lượt nhắn (rate limit).\n\nQuyền truy cập Opus 4.6: Luôn được ưu tiên sử dụng mô hình thông minh nhất của Anthropic với tốc độ xử lý nhanh nhất, ngay cả trong giờ cao điểm mà không bao giờ bị hạ cấp xuống các bản thấp hơn.\n\nTính năng Extended Thinking (Suy nghĩ mở rộng): Cho phép Claude dành nhiều thời gian \"suy nghĩ\" hơn trước khi trả lời. Điều này cực kỳ hữu ích cho các tác vụ lập trình hệ thống phức tạp hoặc giải quyết các vấn đề logic đa tầng mà các model thông thường dễ mắc lỗi.\n\nClaude Code chuyên sâu: Hỗ trợ đầy đủ bộ công cụ lập trình qua Terminal, cho phép AI đọc toàn bộ repo, chạy thử nghiệm và tự sửa lỗi trực tiếp trên môi trường phát triển của bạn.\n\nCửa sổ ngữ cảnh 1 triệu token: Khả năng ghi nhớ và xử lý lượng dữ liệu khổng lồ trong một phiên làm việc, phù hợp để phân tích các bộ mã nguồn lớn hoặc hàng chục tài liệu kỹ thuật cùng lúc.\n\nBộ nhớ dài hạn (Memory): Claude sẽ ghi nhớ các quy tắc, phong cách làm việc và bối cảnh dự án của bạn qua nhiều tháng, giúp bạn không phải giải thích lại từ đầu mỗi khi bắt đầu cuộc hội thoại mới.",
     "usageDuration": "1 thang",
     "costPrice": 3499000,
@@ -79,8 +79,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.404Z",
-    "updatedAt": "2026-03-14T22:37:30.404Z",
+    "createdAt": "2026-03-21T02:27:16.425Z",
+    "updatedAt": "2026-03-21T02:27:16.425Z",
     "translations": {
       "en": {
         "name": "Claude Max 20x 1 month, primary account",
@@ -127,8 +127,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.404Z",
-    "updatedAt": "2026-03-14T22:37:30.404Z",
+    "createdAt": "2026-03-21T02:27:16.425Z",
+    "updatedAt": "2026-03-21T02:27:16.425Z",
     "translations": {
       "en": {
         "name": "Claude Max 5x primary account 1 month",
@@ -175,8 +175,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.404Z",
-    "updatedAt": "2026-03-14T22:37:30.404Z",
+    "createdAt": "2026-03-21T02:27:16.425Z",
+    "updatedAt": "2026-03-21T02:27:16.425Z",
     "translations": {
       "en": {
         "name": "Claude Pro primary account 1 month",
@@ -223,8 +223,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.404Z",
-    "updatedAt": "2026-03-14T22:37:30.404Z",
+    "createdAt": "2026-03-21T02:27:16.425Z",
+    "updatedAt": "2026-03-21T02:27:16.425Z",
     "translations": {
       "en": {
         "name": "Claude Pro issued account 1 month",
@@ -271,8 +271,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.404Z",
-    "updatedAt": "2026-03-14T22:37:30.404Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "GitHub Pro 1 month issued account",
@@ -319,8 +319,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.404Z",
-    "updatedAt": "2026-03-14T22:37:30.404Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "Gemini Ultra 1 year primary account, per month 6000 credits",
@@ -367,8 +367,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.404Z",
-    "updatedAt": "2026-03-14T22:37:30.404Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "Gemini Ultra 1 year primary account, 0 credits",
@@ -415,8 +415,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.405Z",
-    "updatedAt": "2026-03-14T22:37:30.405Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "Gemini Ultra 1 month primary account, 12500 credits",
@@ -463,8 +463,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.405Z",
-    "updatedAt": "2026-03-14T22:37:30.405Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "Gemini Ultra 1 month, acc primary account 0 credits",
@@ -511,8 +511,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.405Z",
-    "updatedAt": "2026-03-14T22:37:30.405Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "ChatGPT Plus 1 month dedicated account",
@@ -559,8 +559,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.405Z",
-    "updatedAt": "2026-03-14T22:37:30.405Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "Adobe All Apps 3 months",
@@ -607,8 +607,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.405Z",
-    "updatedAt": "2026-03-14T22:37:30.405Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "Microsoft 365 Premium 1 year, primary account",
@@ -655,8 +655,8 @@
     "warrantyMonths": 3,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.405Z",
-    "updatedAt": "2026-03-14T22:37:30.405Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "Microsoft 365 Premium 1 year, primary account",
@@ -704,8 +704,8 @@
     "warrantyMonths": 6,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.405Z",
-    "updatedAt": "2026-03-14T22:37:30.405Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "Hot Microsoft 365 Premium 1 year, primary account",
@@ -753,8 +753,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "Netflit 1 month",
@@ -801,8 +801,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.426Z",
+    "updatedAt": "2026-03-21T02:27:16.426Z",
     "translations": {
       "en": {
         "name": "Canva Edu",
@@ -848,8 +848,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Custom account request",
@@ -895,8 +895,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Duolingo 1 year",
@@ -943,8 +943,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Capcut Pro 1 year",
@@ -991,8 +991,8 @@
     "warrantyMonths": 6,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Capcut Pro 6 months",
@@ -1039,8 +1039,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "CapCut Pro 1 month",
@@ -1087,8 +1087,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Adobe All Apps 1 year. 5 thiết bị",
@@ -1135,8 +1135,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Adobe All Apps 1 year, 2 thiết bị",
@@ -1183,8 +1183,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Adobe All Apps 1 year, 1 thiết bị",
@@ -1231,8 +1231,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Adobe All App 1 month",
@@ -1279,8 +1279,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.406Z",
-    "updatedAt": "2026-03-14T22:37:30.406Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Cursor Ultra 1 month, issued account",
@@ -1327,8 +1327,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Cursor Pro 1 year",
@@ -1375,8 +1375,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Cursor Pro+ 60$",
@@ -1423,8 +1423,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Cursor Pro 1 month, primary account",
@@ -1471,8 +1471,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Cursor Pro 1 month, issued account",
@@ -1519,8 +1519,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Super Grok 1 month, issued account",
@@ -1567,8 +1567,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Super Grok 1 month, primary account",
@@ -1615,8 +1615,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Veo Flow Ultra 45.000 credits",
@@ -1664,8 +1664,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Hot Gemini Pro primary account 1 year",
@@ -1713,8 +1713,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "Gemini Ultra primary account 1 month, 6000 credits",
@@ -1761,8 +1761,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.427Z",
+    "updatedAt": "2026-03-21T02:27:16.427Z",
     "translations": {
       "en": {
         "name": "ChatGPT Plus 1 month dedicated account",
@@ -1809,8 +1809,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.428Z",
+    "updatedAt": "2026-03-21T02:27:16.428Z",
     "translations": {
       "en": {
         "name": "ChatGPT Plus 1 month primary account",
@@ -1857,8 +1857,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.428Z",
+    "updatedAt": "2026-03-21T02:27:16.428Z",
     "translations": {
       "en": {
         "name": "ChatGPT Team(Business)",
@@ -1905,8 +1905,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T22:37:30.407Z",
-    "updatedAt": "2026-03-14T22:37:30.407Z",
+    "createdAt": "2026-03-21T02:27:16.428Z",
+    "updatedAt": "2026-03-21T02:27:16.428Z",
     "translations": {
       "en": {
         "name": "ChatGPT Team(Business)",

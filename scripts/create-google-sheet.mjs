@@ -7,7 +7,7 @@ const SHARED_EDITORS = (process.env.GOOGLE_SHEET_EDITORS ?? DEFAULT_SHARED_EDITO
   .filter(Boolean);
 
 const COLUMN_WIDTHS = [
-  180, 220, 240, 140, 140, 130, 120, 120, 120, 120, 120, 260, 420, 120
+  190, 260, 140, 140, 140, 120, 130, 130, 130, 130, 120
 ];
 
 const buildFormattingRequests = (sheetId, rowCount, columnCount) => [
@@ -82,7 +82,7 @@ const buildFormattingRequests = (sheetId, rowCount, columnCount) => [
         endIndex: rowCount
       },
       properties: {
-        pixelSize: 132
+        pixelSize: 42
       },
       fields: "pixelSize"
     }

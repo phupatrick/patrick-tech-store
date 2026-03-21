@@ -1,35 +1,38 @@
 # Google Sheet Catalog Sync
 
-This project now includes official Google Sheets and Drive scripts for product management.
+Project này hỗ trợ đồng bộ catalog sản phẩm từ Google Sheet vào web.
 
-## What the scripts do
+## Các lệnh chính
 
 - `npm run google-sheet:create`
-  - creates a new Google Sheet
-  - seeds it with the current product catalog
-  - grants writer access to:
+  - tạo một Google Sheet mới
+  - đổ sẵn catalog hiện tại vào sheet
+  - chia quyền sửa cho:
     - `hphumail@gmail.com`
     - `hoangphupatrick@gmail.com`
     - `phupunpin@gmail.com`
 
+- `npm run google-sheet:export-template`
+  - xuất file mẫu CSV mới nhất ở:
+    - `docs/google-sheet-template.csv`
+
 - `npm run google-sheet:sync -- <SPREADSHEET_ID>`
-  - reads the `Products` tab from Google Sheets
-  - rewrites `src/data/products.json`
-  - updates the web catalog on the next build or deployment
+  - đọc dữ liệu từ sheet
+  - cập nhật lại:
+    - `src/data/products.json`
 
 - `POST /api/admin/google-sheet/sync`
-  - pulls the latest rows from Google Sheets into `src/data/products.json`
-  - is designed for Google Apps Script or another webhook caller
-  - lets the web catalog refresh from the sheet without opening the server terminal
+  - kéo dữ liệu mới nhất từ Google Sheet về web
+  - phù hợp để gọi bằng Apps Script hoặc webhook
 
-## Required credentials
+## Biến môi trường
 
-Set one of these:
+Bắt buộc nếu muốn tạo sheet mới bằng service account:
 
 - `GOOGLE_SERVICE_ACCOUNT_JSON`
-- `GOOGLE_SERVICE_ACCOUNT_FILE`
+- hoặc `GOOGLE_SERVICE_ACCOUNT_FILE`
 
-Optional:
+Tùy chọn:
 
 - `GOOGLE_SHEET_TITLE`
 - `GOOGLE_SHEET_ID`
@@ -38,37 +41,41 @@ Optional:
 - `GOOGLE_SHEET_EDITORS`
 - `GOOGLE_SHEET_SYNC_SECRET`
 
-## Recommended service account scopes
+## Schema sheet hiện tại
 
-- `https://www.googleapis.com/auth/spreadsheets`
-- `https://www.googleapis.com/auth/drive.file`
+Tab `Products` dùng layout gọn này:
 
-## Product sheet columns
+`Mã sản phẩm | Tên sản phẩm | Thời gian sử dụng | Thời gian bảo hành | Loại acc | Giá vốn | Giá khách (VND) | Giá CTV (VND) | Giá khách (USD) | Giá CTV (USD) | Còn hàng (y/n)`
 
-The `Products` tab now uses this simplified layout:
+## Ghi chú
 
-`Mã sản phẩm, Hình ảnh, Tên sản phẩm, Thời gian sử dụng, Thời gian bảo hành, Loại acc, Giá vốn, Giá khách (VND), Giá CTV (VND), Giá khách (USD), Giá CTV (USD), Mô tả ngắn, Mô tả chi tiết, Còn hàng (y/n)`
+- `Thời gian sử dụng` và `Thời gian bảo hành` có thể nhập kiểu:
+  - `30 ngày`
+  - `1 tháng`
+  - `1 năm`
+- `Loại acc` hỗ trợ:
+  - `Chính chủ`
+  - `Cấp riêng`
+  - `Thuê`
+- `Còn hàng (y/n)` chấp nhận:
+  - `y`, `yes`
+  - `n`, `no`
+- `Giá khách (USD)` và `Giá CTV (USD)` được nhập riêng, không phụ thuộc giá VND.
+- `Hình ảnh`, `Mô tả ngắn`, `Mô tả chi tiết` không còn nằm trong sheet; các phần này sẽ quản lý trực tiếp trong web/admin.
+- Khi sync từ sheet, những trường không còn nằm trong sheet nhưng đã có sẵn trong catalog local sẽ được giữ lại.
 
-Notes:
+## Gọi API sync thủ công
 
-- `Hình ảnh` should store the real image URL.
-- `Còn hàng (y/n)` accepts `y/yes` or `n/no`.
-- If `Giá khách (USD)` or `Giá CTV (USD)` is left blank, the existing USD override is preserved. If there is no existing USD override, the app falls back to conversion.
-- VIP prices are automatically aligned to the regular customer/CTV prices when syncing from this simplified sheet.
-- Existing fields not shown in the sheet, such as categories, English translations, flash sale flags, and points, are preserved from the current local catalog when a matching product already exists.
-
-## Auto-update the web catalog from Google Sheets
-
-After you set `GOOGLE_SHEET_ID` and `GOOGLE_SHEET_SYNC_SECRET`, you can call:
+Sau khi cấu hình `GOOGLE_SHEET_ID` và `GOOGLE_SHEET_SYNC_SECRET`, gọi:
 
 `POST /api/admin/google-sheet/sync`
 
-Use one of these headers:
+Header hợp lệ:
 
 - `Authorization: Bearer <GOOGLE_SHEET_SYNC_SECRET>`
-- `x-google-sheet-secret: <GOOGLE_SHEET_SYNC_SECRET>`
+- hoặc `x-google-sheet-secret: <GOOGLE_SHEET_SYNC_SECRET>`
 
-Optional JSON body:
+Body tùy chọn:
 
 ```json
 {
@@ -76,9 +83,7 @@ Optional JSON body:
 }
 ```
 
-### Example Apps Script trigger
-
-You can attach this to the Google Sheet with an installable `onEdit` trigger:
+## Apps Script mẫu
 
 ```javascript
 function syncPatrickTechCatalog() {
@@ -98,19 +103,3 @@ function syncPatrickTechCatalog() {
   UrlFetchApp.fetch(url, options);
 }
 ```
-
-This is enough for Google Sheet -> Web auto-update once the sheet and credentials are configured.
-
-If your sheet is shared publicly by link, the web sync script can also read it through the public CSV export using `GOOGLE_SHEET_ID` and `GOOGLE_SHEET_GID`, without a service account for read-only sync.
-
-## Important note about Zalo
-
-This repo already supports importing products from the public Zalo catalog into the web catalog.
-
-However, the official Zalo OA materials we verified describe OA OpenAPI as a paid integration platform for OA management, messaging, customer sync, and service purchases. We did not verify an official product-catalog write endpoint that would safely update the public Zalo catalog from this app.
-
-Because of that, Google Sheet -> Web sync is ready in code, but Google Sheet -> Zalo catalog sync still needs one of these before it can be implemented safely:
-
-- official Zalo catalog write API docs and credentials
-- a supported partner integration
-- a browser automation workflow that you explicitly approve

@@ -46,7 +46,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.424Z",
-    "updatedAt": "2026-03-21T07:28:06.047Z",
+    "updatedAt": "2026-03-21T09:06:05.152Z",
     "translations": {
       "en": {
         "name": "ChatGPT Plus 1 year primary account",
@@ -108,7 +108,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.425Z",
-    "updatedAt": "2026-03-21T07:28:06.048Z",
+    "updatedAt": "2026-03-21T09:06:05.153Z",
     "translations": {
       "en": {
         "name": "Claude Max 20x 1 month, primary account",
@@ -170,7 +170,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.425Z",
-    "updatedAt": "2026-03-21T07:28:06.048Z",
+    "updatedAt": "2026-03-21T09:06:05.154Z",
     "translations": {
       "en": {
         "name": "Claude Max 5x primary account 1 month",
@@ -232,7 +232,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.425Z",
-    "updatedAt": "2026-03-21T07:28:06.048Z",
+    "updatedAt": "2026-03-21T09:06:05.154Z",
     "translations": {
       "en": {
         "name": "Claude Pro primary account 1 month",
@@ -294,7 +294,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.425Z",
-    "updatedAt": "2026-03-21T07:28:06.049Z",
+    "updatedAt": "2026-03-21T09:06:05.154Z",
     "translations": {
       "en": {
         "name": "Claude Pro issued account 1 month",
@@ -356,7 +356,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.049Z",
+    "updatedAt": "2026-03-21T09:06:05.154Z",
     "translations": {
       "en": {
         "name": "GitHub Pro 1 month issued account",
@@ -418,7 +418,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.049Z",
+    "updatedAt": "2026-03-21T09:06:05.154Z",
     "translations": {
       "en": {
         "name": "Gemini Ultra 1 year primary account, per month 6000 credits",
@@ -480,7 +480,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.049Z",
+    "updatedAt": "2026-03-21T09:06:05.155Z",
     "translations": {
       "en": {
         "name": "Gemini Ultra 1 year primary account, 0 credits",
@@ -542,7 +542,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.049Z",
+    "updatedAt": "2026-03-21T09:06:05.155Z",
     "translations": {
       "en": {
         "name": "Gemini Ultra 1 month primary account, 12500 credits",
@@ -604,7 +604,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.049Z",
+    "updatedAt": "2026-03-21T09:06:05.155Z",
     "translations": {
       "en": {
         "name": "Gemini Ultra 1 month, acc primary account 0 credits",
@@ -666,7 +666,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.049Z",
+    "updatedAt": "2026-03-21T09:06:05.155Z",
     "translations": {
       "en": {
         "name": "ChatGPT Plus 1 month dedicated account",
@@ -728,7 +728,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.049Z",
+    "updatedAt": "2026-03-21T09:06:05.155Z",
     "translations": {
       "en": {
         "name": "Adobe All Apps 3 months",
@@ -790,7 +790,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.155Z",
     "translations": {
       "en": {
         "name": "Microsoft 365 Premium 1 year, primary account",
@@ -852,7 +852,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.155Z",
     "translations": {
       "en": {
         "name": "Microsoft 365 Premium 1 year, primary account",
@@ -915,7 +915,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.156Z",
     "translations": {
       "en": {
         "name": "Hot Microsoft 365 Premium 1 year, primary account",
@@ -978,7 +978,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.156Z",
     "translations": {
       "en": {
         "name": "Netflit 1 month",
@@ -1040,7 +1040,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.426Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.156Z",
     "translations": {
       "en": {
         "name": "Canva Edu",
@@ -1101,7 +1101,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.156Z",
     "translations": {
       "en": {
         "name": "Custom account request",
@@ -1162,7 +1162,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.156Z",
     "translations": {
       "en": {
         "name": "Duolingo 1 year",
@@ -1224,7 +1224,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.156Z",
     "translations": {
       "en": {
         "name": "Capcut Pro 1 year",
@@ -1286,7 +1286,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.156Z",
     "translations": {
       "en": {
         "name": "Capcut Pro 6 months",
@@ -1348,7 +1348,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.156Z",
     "translations": {
       "en": {
         "name": "CapCut Pro 1 month",
@@ -1410,7 +1410,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Adobe All Apps 1 year. 5 thiết bị",
@@ -1472,7 +1472,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Adobe All Apps 1 year, 2 thiết bị",
@@ -1534,7 +1534,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Adobe All Apps 1 year, 1 thiết bị",
@@ -1596,7 +1596,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Adobe All App 1 month",
@@ -1658,7 +1658,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Cursor Ultra 1 month, issued account",
@@ -1720,7 +1720,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Cursor Pro 1 year",
@@ -1782,7 +1782,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Cursor Pro+ 60$",
@@ -1844,7 +1844,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.050Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Cursor Pro 1 month, primary account",
@@ -1906,7 +1906,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.051Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Cursor Pro 1 month, issued account",
@@ -1968,7 +1968,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.051Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Super Grok 1 month, issued account",
@@ -2030,7 +2030,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.051Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Super Grok 1 month, primary account",
@@ -2092,7 +2092,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.051Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Veo Flow Ultra 45.000 credits",
@@ -2155,7 +2155,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.051Z",
+    "updatedAt": "2026-03-21T09:06:05.157Z",
     "translations": {
       "en": {
         "name": "Hot Gemini Pro primary account 1 year",
@@ -2218,7 +2218,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.051Z",
+    "updatedAt": "2026-03-21T09:06:05.158Z",
     "translations": {
       "en": {
         "name": "Gemini Ultra primary account 1 month, 6000 credits",
@@ -2280,7 +2280,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.427Z",
-    "updatedAt": "2026-03-21T07:28:06.051Z",
+    "updatedAt": "2026-03-21T09:06:05.158Z",
     "translations": {
       "en": {
         "name": "ChatGPT Plus 1 month dedicated account",
@@ -2342,7 +2342,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.428Z",
-    "updatedAt": "2026-03-21T07:28:06.051Z",
+    "updatedAt": "2026-03-21T09:06:05.158Z",
     "translations": {
       "en": {
         "name": "ChatGPT Plus 1 month primary account",
@@ -2404,7 +2404,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.428Z",
-    "updatedAt": "2026-03-21T07:28:06.051Z",
+    "updatedAt": "2026-03-21T09:06:05.158Z",
     "translations": {
       "en": {
         "name": "ChatGPT Team(Business)",
@@ -2466,7 +2466,7 @@
     "stock": 1,
     "points": 0,
     "createdAt": "2026-03-21T02:27:16.428Z",
-    "updatedAt": "2026-03-21T07:28:06.051Z",
+    "updatedAt": "2026-03-21T09:06:05.158Z",
     "translations": {
       "en": {
         "name": "ChatGPT Team(Business)",

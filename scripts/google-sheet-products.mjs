@@ -18,7 +18,6 @@ const DEFAULT_USD_PER_VND = 0.000038;
 
 const PRODUCT_SHEET_COLUMNS = [
   { key: "id", label: "M\u00e3 s\u1ea3n ph\u1ea9m" },
-  { key: "image", label: "H\u00ecnh \u1ea3nh" },
   { key: "name", label: "T\u00ean s\u1ea3n ph\u1ea9m" },
   { key: "usageDuration", label: "Th\u1eddi gian s\u1eed d\u1ee5ng" },
   { key: "warrantyDuration", label: "Th\u1eddi gian b\u1ea3o h\u00e0nh" },
@@ -28,8 +27,6 @@ const PRODUCT_SHEET_COLUMNS = [
   { key: "ctvPriceVnd", label: "Gi\u00e1 CTV (VND)" },
   { key: "customerPriceUsd", label: "Gi\u00e1 kh\u00e1ch (USD)" },
   { key: "ctvPriceUsd", label: "Gi\u00e1 CTV (USD)" },
-  { key: "shortDescription", label: "M\u00f4 t\u1ea3 ng\u1eafn" },
-  { key: "fullDescription", label: "M\u00f4 t\u1ea3 chi ti\u1ebft" },
   { key: "published", label: "C\u00f2n h\u00e0ng (y/n)" }
 ];
 
@@ -250,12 +247,6 @@ const formatAccountTypeForSheet = (value = "primary") => {
   return "Ch\u00ednh ch\u1ee7";
 };
 
-const formatDescriptionForSheet = (value = "") =>
-  sanitizeSheetText(value)
-    .replace(/\r?\n+/g, " | ")
-    .replace(/\s+\|\s+/g, " | ")
-    .trim();
-
 const toPublicAvailabilityCell = (value) => (value ? "y" : "n");
 
 const resolveUsdFallback = (amountVnd) => Math.round(amountVnd * DEFAULT_USD_PER_VND * 100) / 100;
@@ -371,7 +362,6 @@ export const writeProductsFile = async (products) => {
 
 const toSheetRow = (product) => [
   product.id ?? "",
-  product.image ?? "",
   product.name ?? "",
   formatDurationForSheet(product.usageDuration ?? "30 day", "30", "day"),
   formatDurationForSheet(product.warrantyDuration ?? `${product.warrantyMonths ?? 1} month`, "1", "month"),
@@ -381,8 +371,6 @@ const toSheetRow = (product) => [
   String(product.tierPrices?.regular ?? product.retailPrice ?? 0),
   String(resolveUsdRegularPrice(product, "customer", product.customerTierPrices?.regular ?? product.retailPrice ?? 0)),
   String(resolveUsdRegularPrice(product, "ctv", product.tierPrices?.regular ?? product.retailPrice ?? 0)),
-  formatDescriptionForSheet(product.shortDescription ?? ""),
-  formatDescriptionForSheet(product.fullDescription ?? ""),
   toPublicAvailabilityCell(Boolean(product.published))
 ];
 

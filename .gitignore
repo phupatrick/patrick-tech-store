@@ -15,3 +15,5 @@ pnpm-debug.log*
 .tmp-server.pid
 .tmp-run/
 tmp-zalo-*
+
+.vercel

@@ -10,6 +10,7 @@
     "lint": "npm run typecheck",
     "google-sheet:create": "node scripts/create-google-sheet.mjs",
     "google-sheet:export-template": "node scripts/export-google-sheet-template.mjs",
+    "google-sheet:push": "node scripts/push-google-sheet-products.mjs",
     "google-sheet:sync": "node scripts/sync-google-sheet-products.mjs",
     "import:zalo-catalog": "node scripts/import-zalo-catalog.mjs",
     "smoke": "node scripts/smoke-test.mjs",

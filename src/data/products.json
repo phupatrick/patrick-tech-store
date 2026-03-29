@@ -1,5 +1,303 @@
 [
   {
+    "id": "custom-kling-standard-1100-full-credit",
+    "name": "Kling Standard 1100 credit - bảo hành full credit",
+    "slug": "kling-standard-1100-credit-full-credit",
+    "shortDescription": "Kling Standard 1100 credit dạng tài khoản cấp riêng, bảo hành full credit.",
+    "fullDescription": "Acc cấp, giao nhanh.\n\nGói Kling Standard 1100 credit với bảo hành full credit, phù hợp khi cần mức hỗ trợ đầy đủ hơn.",
+    "usageDuration": "30 ngày",
+    "warrantyDuration": "full credit",
+    "costPrice": 249000,
+    "retailPrice": 249000,
+    "customerTierPrices": {
+      "regular": 249000,
+      "vip": 249000
+    },
+    "category": "Tài khoản số",
+    "categories": [
+      "Tài khoản số",
+      "AI",
+      "Video"
+    ],
+    "accountType": "dedicated",
+    "featured": false,
+    "isFlashSale": false,
+    "published": true,
+    "tierPrices": {
+      "regular": 249000,
+      "vip": 249000
+    },
+    "overridePrices": {},
+    "image": "https://f1-zpprd.zdn.vn/780716833448467643/642e9b7a0fc1819fd8d0.jpg",
+    "warrantyMonths": 1,
+    "stock": 0,
+    "points": 0,
+    "createdAt": "2026-03-30T00:00:00.000Z",
+    "updatedAt": "2026-03-30T00:00:30.000Z",
+    "translations": {
+      "vi": {
+        "name": "Kling Standard 1100 credit - bảo hành full credit",
+        "shortDescription": "Kling Standard 1100 credit dạng tài khoản cấp riêng, bảo hành full credit.",
+        "fullDescription": "Acc cấp, giao nhanh.\n\nGói Kling Standard 1100 credit với bảo hành full credit, phù hợp khi cần mức hỗ trợ đầy đủ hơn.",
+        "category": "Tài khoản số",
+        "categories": [
+          "Tài khoản số",
+          "AI",
+          "Video"
+        ]
+      },
+      "en": {
+        "name": "Kling Standard 1100 credits - full credit warranty",
+        "shortDescription": "Kling Standard 1100 credits with dedicated account delivery and full credit warranty.",
+        "fullDescription": "Dedicated account delivery.\n\nKling Standard 1100 credits with full credit warranty for buyers who need stronger after-sales coverage.",
+        "category": "Digital accounts",
+        "categories": [
+          "Digital accounts",
+          "AI",
+          "Video"
+        ]
+      }
+    }
+  },
+  {
+    "id": "zalo-5955318723c2ca9c93d3",
+    "name": "Kling Pro 4500 credit",
+    "slug": "kling-pro-4500-credit-59553187",
+    "shortDescription": "Kling Pro 4500 credit dạng tài khoản cấp riêng, bảo hành 3 ngày.",
+    "fullDescription": "Acc cấp, giao nhanh.\n\nGói Kling Pro 4500 credit với bảo hành 3 ngày, phù hợp cho nhu cầu render/video bằng credit cao hơn.",
+    "usageDuration": "30 ngày",
+    "costPrice": 399000,
+    "retailPrice": 399000,
+    "customerTierPrices": {
+      "regular": 399000,
+      "vip": 399000
+    },
+    "category": "Tài khoản số",
+    "categories": [
+      "Tài khoản số",
+      "AI",
+      "Video"
+    ],
+    "accountType": "dedicated",
+    "featured": true,
+    "isFlashSale": false,
+    "published": true,
+    "tierPrices": {
+      "regular": 399000,
+      "vip": 399000
+    },
+    "overridePrices": {},
+    "image": "https://f1-zpprd.zdn.vn/1210098699799615800/a25042a0c31b4d45140a.jpg",
+    "warrantyMonths": 1,
+    "stock": 0,
+    "points": 0,
+    "createdAt": "2026-03-14T00:00:00.000Z",
+    "updatedAt": "2026-03-14T00:00:30.000Z",
+    "translations": {
+      "vi": {
+        "name": "Kling Pro 4500 credit",
+        "shortDescription": "Kling Pro 4500 credit dạng tài khoản cấp riêng, bảo hành 3 ngày.",
+        "fullDescription": "Acc cấp, giao nhanh.\n\nGói Kling Pro 4500 credit với bảo hành 3 ngày, phù hợp cho nhu cầu render/video bằng credit cao hơn.",
+        "category": "Tài khoản số",
+        "categories": [
+          "Tài khoản số",
+          "AI",
+          "Video"
+        ]
+      },
+      "en": {
+        "name": "Kling Pro 4500 credits",
+        "shortDescription": "Kling Pro 4500 credits with dedicated account delivery and 3-day warranty.",
+        "fullDescription": "Dedicated account delivery.\n\nKling Pro 4500 credits with 3-day warranty for higher-volume video generation.",
+        "category": "Digital accounts",
+        "categories": [
+          "Digital accounts",
+          "AI",
+          "Video"
+        ]
+      }
+    },
+    "warrantyDuration": "3 ngày"
+  },
+  {
+    "id": "zalo-6a57018513c0fa9ea3d1",
+    "name": "Kling Standard 1100 credit - bảo hành 24h",
+    "slug": "kling-standard-1100-credit-24h-6a570185",
+    "shortDescription": "Kling Standard 1100 credit dạng tài khoản cấp riêng, bảo hành 24 giờ.",
+    "fullDescription": "Acc cấp, giao nhanh.\n\nGói này dành cho Kling Standard 1100 credit với bảo hành 24 giờ, phù hợp để mua nhanh với mức giá tiết kiệm.",
+    "usageDuration": "30 ngày",
+    "costPrice": 180000,
+    "retailPrice": 180000,
+    "customerTierPrices": {
+      "regular": 180000,
+      "vip": 180000
+    },
+    "category": "Tài khoản số",
+    "categories": [
+      "Tài khoản số",
+      "AI",
+      "Video"
+    ],
+    "accountType": "dedicated",
+    "featured": true,
+    "isFlashSale": false,
+    "published": true,
+    "tierPrices": {
+      "regular": 180000,
+      "vip": 180000
+    },
+    "overridePrices": {},
+    "image": "https://f1-zpprd.zdn.vn/780716833448467643/642e9b7a0fc1819fd8d0.jpg",
+    "warrantyMonths": 1,
+    "stock": 0,
+    "points": 0,
+    "createdAt": "2026-03-14T00:01:00.000Z",
+    "updatedAt": "2026-03-14T00:01:30.000Z",
+    "translations": {
+      "vi": {
+        "name": "Kling Standard 1100 credit - bảo hành 24h",
+        "shortDescription": "Kling Standard 1100 credit dạng tài khoản cấp riêng, bảo hành 24 giờ.",
+        "fullDescription": "Acc cấp, giao nhanh.\n\nGói này dành cho Kling Standard 1100 credit với bảo hành 24 giờ, phù hợp để mua nhanh với mức giá tiết kiệm.",
+        "category": "Tài khoản số",
+        "categories": [
+          "Tài khoản số",
+          "AI",
+          "Video"
+        ]
+      },
+      "en": {
+        "name": "Kling Standard 1100 credits - 24h warranty",
+        "shortDescription": "Kling Standard 1100 credits with dedicated account delivery and 24-hour warranty.",
+        "fullDescription": "Dedicated account delivery.\n\nKling Standard 1100 credits with 24-hour warranty for quick purchases.",
+        "category": "Digital accounts",
+        "categories": [
+          "Digital accounts",
+          "AI",
+          "Video"
+        ]
+      }
+    },
+    "warrantyDuration": "24 giờ"
+  },
+  {
+    "id": "zalo-21164bc45981b0dfe990",
+    "name": "Kling Standard 215 credit",
+    "slug": "kling-standard-215-credit-21164bc4",
+    "shortDescription": "KlingStanda 215 credit dạng tài khoản cấp riêng, thời hạn 30 ngày, bảo hành 1 tháng.",
+    "fullDescription": "Acc cấp\nChế độ cân bằng: Là lựa chọn tối ưu giữa tốc độ xử lý nhanh và chất lượng hình ảnh sắc nét (thường là 1080p).\n\nChuyển động tự nhiên: Xử lý tốt các chuyển động vật lý như tóc bay, nước chảy hoặc cử động cơ thể người.\n\nĐa dạng nguồn vào: Hỗ trợ tạo video từ văn bản (Text-to-Video) hoặc làm ảnh tĩnh chuyển động (Image-to-Video).\n\nTùy chỉnh linh hoạt: Cho phép chọn tỉ lệ khung hình (ngang, dọc, vuông) và điều khiển góc quay camera (zoom, pan, tilt).\n\nTiết kiệm chi phí: Tiêu tốn ít credit hơn so với chế độ Professional, phù hợp để thử nghiệm nhiều ý tưởng.",
+    "usageDuration": "30 ngày",
+    "costPrice": 15000,
+    "retailPrice": 15000,
+    "customerTierPrices": {
+      "regular": 15000,
+      "vip": 15000
+    },
+    "category": "Tài khoản số",
+    "categories": [
+      "Tài khoản số",
+      "AI",
+      "Video"
+    ],
+    "accountType": "dedicated",
+    "featured": true,
+    "isFlashSale": false,
+    "published": true,
+    "tierPrices": {
+      "regular": 15000,
+      "vip": 15000
+    },
+    "overridePrices": {},
+    "image": "https://f1-zpprd.zdn.vn/6779499140816648654/5ea1a6f5324ebc10e55f.jpg",
+    "warrantyMonths": 1,
+    "stock": 0,
+    "points": 0,
+    "createdAt": "2026-03-14T00:02:00.000Z",
+    "updatedAt": "2026-03-14T00:02:30.000Z",
+    "translations": {
+      "vi": {
+        "name": "Kling Standard 215 credit",
+        "shortDescription": "KlingStanda 215 credit dạng tài khoản cấp riêng, thời hạn 30 ngày, bảo hành 1 tháng.",
+        "fullDescription": "Acc cấp\nChế độ cân bằng: Là lựa chọn tối ưu giữa tốc độ xử lý nhanh và chất lượng hình ảnh sắc nét (thường là 1080p).\n\nChuyển động tự nhiên: Xử lý tốt các chuyển động vật lý như tóc bay, nước chảy hoặc cử động cơ thể người.\n\nĐa dạng nguồn vào: Hỗ trợ tạo video từ văn bản (Text-to-Video) hoặc làm ảnh tĩnh chuyển động (Image-to-Video).\n\nTùy chỉnh linh hoạt: Cho phép chọn tỉ lệ khung hình (ngang, dọc, vuông) và điều khiển góc quay camera (zoom, pan, tilt).\n\nTiết kiệm chi phí: Tiêu tốn ít credit hơn so với chế độ Professional, phù hợp để thử nghiệm nhiều ý tưởng.",
+        "category": "Tài khoản số",
+        "categories": [
+          "Tài khoản số",
+          "AI",
+          "Video"
+        ]
+      },
+      "en": {
+        "name": "Kling Standard 215 credits",
+        "shortDescription": "KlingStanda 215 credits with dedicated account delivery, 30 days of use, and 1 month warranty.",
+        "fullDescription": "KlingStanda 215 credits with dedicated account delivery, 30 days of use, and 1 month warranty.\n\nDedicated account. Usage term: 30 days. Warranty: 1 month.\n\nKlingStanda 215 credits was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "category": "Digital accounts",
+        "categories": [
+          "Digital accounts",
+          "AI",
+          "Video"
+        ]
+      }
+    }
+  },
+  {
+    "id": "zalo-e05e858c97c97e9727d8",
+    "name": "Super Grok 3 tháng",
+    "slug": "super-grok-3-thang-e05e858c",
+    "shortDescription": "Super Grok 3 tháng dạng tài khoản cấp riêng, thời hạn 3 tháng, bảo hành 3 tháng.",
+    "fullDescription": "-Dạng acc cấp riêng có thể thành chính chủ, bảo mật, an toàn, bảo hành full 3 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Grok\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
+    "usageDuration": "3 tháng",
+    "costPrice": 299000,
+    "retailPrice": 299000,
+    "customerTierPrices": {
+      "regular": 299000,
+      "vip": 299000
+    },
+    "category": "Tài khoản số",
+    "categories": [
+      "Tài khoản số",
+      "Grok",
+      "AI"
+    ],
+    "accountType": "dedicated",
+    "featured": true,
+    "isFlashSale": false,
+    "published": true,
+    "tierPrices": {
+      "regular": 299000,
+      "vip": 299000
+    },
+    "overridePrices": {},
+    "image": "https://f1-zpprd.zdn.vn/8657132362204506746/96c46c90f82b76752f3a.jpg",
+    "warrantyMonths": 3,
+    "stock": 0,
+    "points": 0,
+    "createdAt": "2026-03-14T00:03:00.000Z",
+    "updatedAt": "2026-03-14T00:03:30.000Z",
+    "translations": {
+      "vi": {
+        "name": "Super Grok 3 tháng",
+        "shortDescription": "Super Grok 3 tháng dạng tài khoản cấp riêng, thời hạn 3 tháng, bảo hành 3 tháng.",
+        "fullDescription": "-Dạng acc cấp riêng có thể thành chính chủ, bảo mật, an toàn, bảo hành full 3 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Grok\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
+        "category": "Tài khoản số",
+        "categories": [
+          "Tài khoản số",
+          "Grok",
+          "AI"
+        ]
+      },
+      "en": {
+        "name": "Super Grok 3 months",
+        "shortDescription": "Super Grok 3 months with dedicated account delivery, 3 months of use, and 3 months warranty.",
+        "fullDescription": "Super Grok 3 months with dedicated account delivery, 3 months of use, and 3 months warranty.\n\nDedicated account. Usage term: 3 months. Warranty: 3 months.\n\nSuper Grok 3 months was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "category": "Digital accounts",
+        "categories": [
+          "Digital accounts",
+          "Grok",
+          "AI"
+        ]
+      }
+    }
+  },
+  {
     "id": "zalo-b1510ab418f1f1afa8e0",
     "name": "Youtube premium chính chủ 1 năm",
     "slug": "youtube-premium-chinh-chu-1-nam-b1510ab4",
@@ -30,8 +328,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:00:00.000Z",
-    "updatedAt": "2026-03-14T00:00:30.000Z",
+    "createdAt": "2026-03-14T00:04:00.000Z",
+    "updatedAt": "2026-03-14T00:04:30.000Z",
     "translations": {
       "vi": {
         "name": "Youtube premium chính chủ 1 năm",
@@ -86,8 +384,8 @@
     "warrantyMonths": 6,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:01:00.000Z",
-    "updatedAt": "2026-03-14T00:01:30.000Z",
+    "createdAt": "2026-03-14T00:05:00.000Z",
+    "updatedAt": "2026-03-14T00:05:30.000Z",
     "translations": {
       "vi": {
         "name": "Youtube Premium chính chủ 6 tháng",
@@ -130,7 +428,7 @@
       "Khác"
     ],
     "accountType": "primary",
-    "featured": true,
+    "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
@@ -142,8 +440,8 @@
     "warrantyMonths": 3,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:02:00.000Z",
-    "updatedAt": "2026-03-14T00:02:30.000Z",
+    "createdAt": "2026-03-14T00:06:00.000Z",
+    "updatedAt": "2026-03-14T00:06:30.000Z",
     "translations": {
       "vi": {
         "name": "Youtube Premium chính chủ 3 tháng",
@@ -186,7 +484,7 @@
       "Khác"
     ],
     "accountType": "primary",
-    "featured": true,
+    "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
@@ -198,8 +496,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:03:00.000Z",
-    "updatedAt": "2026-03-14T00:03:30.000Z",
+    "createdAt": "2026-03-14T00:07:00.000Z",
+    "updatedAt": "2026-03-14T00:07:30.000Z",
     "translations": {
       "vi": {
         "name": "Youtube Premium chính chủ 1 tháng",
@@ -243,7 +541,7 @@
       "AI"
     ],
     "accountType": "dedicated",
-    "featured": true,
+    "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
@@ -255,8 +553,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:04:00.000Z",
-    "updatedAt": "2026-03-14T00:04:30.000Z",
+    "createdAt": "2026-03-14T00:08:00.000Z",
+    "updatedAt": "2026-03-14T00:08:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 tháng acc cấp riêng",
@@ -302,7 +600,7 @@
       "AI"
     ],
     "accountType": "primary",
-    "featured": true,
+    "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
@@ -314,8 +612,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:05:00.000Z",
-    "updatedAt": "2026-03-14T00:05:30.000Z",
+    "createdAt": "2026-03-14T00:09:00.000Z",
+    "updatedAt": "2026-03-14T00:09:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 năm chính chủ",
@@ -373,8 +671,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:06:00.000Z",
-    "updatedAt": "2026-03-14T00:06:30.000Z",
+    "createdAt": "2026-03-14T00:10:00.000Z",
+    "updatedAt": "2026-03-14T00:10:30.000Z",
     "translations": {
       "vi": {
         "name": "Claude Max 20x 1 tháng, chính chủ",
@@ -432,8 +730,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:07:00.000Z",
-    "updatedAt": "2026-03-14T00:07:30.000Z",
+    "createdAt": "2026-03-14T00:11:00.000Z",
+    "updatedAt": "2026-03-14T00:11:30.000Z",
     "translations": {
       "vi": {
         "name": "Claude Max 5x chính chủ 1 tháng",
@@ -466,11 +764,11 @@
     "shortDescription": "Claude Pro chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nGiới hạn tin nhắn gấp 5 lần: Cho phép bạn làm việc liên tục với cường độ cao mà không lo bị ngắt quãng như bản miễn phí.\n\nMô hình thông minh nhất (Claude 3 Opus): Truy cập toàn bộ sức mạnh của Anthropic, đặc biệt là bản Opus chuyên giải quyết các vấn đề logic phức tạp, viết code chuyên sâu và phân tích dữ liệu đa tầng.\n\nTính năng Projects (Dự án): Đây là điểm \"ăn tiền\" nhất. Bạn có thể tạo các không gian riêng, tải lên hàng chục tệp tài liệu hoặc mã nguồn. Claude sẽ ghi nhớ toàn bộ nội dung đó để hỗ trợ xuyên suốt quá trình bạn thực hiện dự án đó.\n\nCửa sổ ngữ cảnh 200.000 token: Khả năng xử lý lượng dữ liệu khổng lồ (tương đương một cuốn sách hoặc kho code lớn) trong một lần yêu cầu mà không bị \"quên\" thông tin.\n\nArtifacts & Ưu tiên: Xem trực tiếp kết quả hiển thị (như code giao diện, biểu đồ) ngay bên cạnh khung chat và luôn được ưu tiên truy cập khi hệ thống quá tải.",
     "usageDuration": "1 tháng",
-    "costPrice": 379000,
-    "retailPrice": 379000,
+    "costPrice": 449000,
+    "retailPrice": 449000,
     "customerTierPrices": {
-      "regular": 379000,
-      "vip": 379000
+      "regular": 449000,
+      "vip": 449000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -483,16 +781,16 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 379000,
-      "vip": 379000
+      "regular": 449000,
+      "vip": 449000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/2344662788202406465/1fc19f3a52b3dced85a2.jpg",
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:08:00.000Z",
-    "updatedAt": "2026-03-14T00:08:30.000Z",
+    "createdAt": "2026-03-14T00:12:00.000Z",
+    "updatedAt": "2026-03-14T00:12:30.000Z",
     "translations": {
       "vi": {
         "name": "Claude Pro chính chủ 1 tháng",
@@ -550,8 +848,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:09:00.000Z",
-    "updatedAt": "2026-03-14T00:09:30.000Z",
+    "createdAt": "2026-03-14T00:13:00.000Z",
+    "updatedAt": "2026-03-14T00:13:30.000Z",
     "translations": {
       "vi": {
         "name": "Claude Pro acc cấp 1 tháng",
@@ -609,8 +907,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:10:00.000Z",
-    "updatedAt": "2026-03-14T00:10:30.000Z",
+    "createdAt": "2026-03-14T00:14:00.000Z",
+    "updatedAt": "2026-03-14T00:14:30.000Z",
     "translations": {
       "vi": {
         "name": "GitHub Pro 1 tháng acc cấp",
@@ -668,8 +966,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:11:00.000Z",
-    "updatedAt": "2026-03-14T00:11:30.000Z",
+    "createdAt": "2026-03-14T00:15:00.000Z",
+    "updatedAt": "2026-03-14T00:15:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 năm chính chủ, mỗi tháng 6000 credit",
@@ -727,8 +1025,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:12:00.000Z",
-    "updatedAt": "2026-03-14T00:12:30.000Z",
+    "createdAt": "2026-03-14T00:16:00.000Z",
+    "updatedAt": "2026-03-14T00:16:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 năm chính chủ, 0 credit",
@@ -786,8 +1084,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:13:00.000Z",
-    "updatedAt": "2026-03-14T00:13:30.000Z",
+    "createdAt": "2026-03-14T00:17:00.000Z",
+    "updatedAt": "2026-03-14T00:17:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 tháng chính chủ, 12500 credit",
@@ -845,8 +1143,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:14:00.000Z",
-    "updatedAt": "2026-03-14T00:14:30.000Z",
+    "createdAt": "2026-03-14T00:18:00.000Z",
+    "updatedAt": "2026-03-14T00:18:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 tháng, acc chính chủ 0 credit",
@@ -877,7 +1175,7 @@
     "name": "ChatGPT Plus 1 tháng acc cấp riêng",
     "slug": "chatgpt-plus-1-thang-acc-cap-rieng-d9a99f8a",
     "shortDescription": "ChatGPT Plus 1 tháng acc cấp riêng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
-    "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành 2 tuần\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
+    "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành 10 ngày\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
     "usageDuration": "1 tháng",
     "costPrice": 49000,
     "retailPrice": 49000,
@@ -904,13 +1202,13 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:15:00.000Z",
-    "updatedAt": "2026-03-14T00:15:30.000Z",
+    "createdAt": "2026-03-14T00:19:00.000Z",
+    "updatedAt": "2026-03-14T00:19:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 tháng acc cấp riêng",
         "shortDescription": "ChatGPT Plus 1 tháng acc cấp riêng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
-        "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành 2 tuần\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
+        "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành 10 ngày\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
         "category": "Tài khoản số",
         "categories": [
           "Tài khoản số",
@@ -963,8 +1261,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:16:00.000Z",
-    "updatedAt": "2026-03-14T00:16:30.000Z",
+    "createdAt": "2026-03-14T00:20:00.000Z",
+    "updatedAt": "2026-03-14T00:20:30.000Z",
     "translations": {
       "vi": {
         "name": "Adobe All Apps 3 tháng",
@@ -1022,8 +1320,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:17:00.000Z",
-    "updatedAt": "2026-03-14T00:17:30.000Z",
+    "createdAt": "2026-03-14T00:21:00.000Z",
+    "updatedAt": "2026-03-14T00:21:30.000Z",
     "translations": {
       "vi": {
         "name": "Microsoft 365 Premium 1 năm, chính chủ",
@@ -1081,8 +1379,8 @@
     "warrantyMonths": 3,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:18:00.000Z",
-    "updatedAt": "2026-03-14T00:18:30.000Z",
+    "createdAt": "2026-03-14T00:22:00.000Z",
+    "updatedAt": "2026-03-14T00:22:30.000Z",
     "translations": {
       "vi": {
         "name": "Microsoft 365 Premium 1 năm, chính chủ",
@@ -1141,8 +1439,8 @@
     "warrantyMonths": 6,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:19:00.000Z",
-    "updatedAt": "2026-03-14T00:19:30.000Z",
+    "createdAt": "2026-03-14T00:23:00.000Z",
+    "updatedAt": "2026-03-14T00:23:30.000Z",
     "translations": {
       "vi": {
         "name": "Microsoft 365 Premium 1 năm, chính chủ",
@@ -1202,8 +1500,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:20:00.000Z",
-    "updatedAt": "2026-03-14T00:20:30.000Z",
+    "createdAt": "2026-03-14T00:24:00.000Z",
+    "updatedAt": "2026-03-14T00:24:30.000Z",
     "translations": {
       "vi": {
         "name": "Netflit 1 tháng",
@@ -1261,8 +1559,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:21:00.000Z",
-    "updatedAt": "2026-03-14T00:21:30.000Z",
+    "createdAt": "2026-03-14T00:25:00.000Z",
+    "updatedAt": "2026-03-14T00:25:30.000Z",
     "translations": {
       "vi": {
         "name": "Canva Edu",
@@ -1319,8 +1617,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:22:00.000Z",
-    "updatedAt": "2026-03-14T00:22:30.000Z",
+    "createdAt": "2026-03-14T00:26:00.000Z",
+    "updatedAt": "2026-03-14T00:26:30.000Z",
     "translations": {
       "vi": {
         "name": "Tài khoản khác.",
@@ -1376,8 +1674,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:23:00.000Z",
-    "updatedAt": "2026-03-14T00:23:30.000Z",
+    "createdAt": "2026-03-14T00:27:00.000Z",
+    "updatedAt": "2026-03-14T00:27:30.000Z",
     "translations": {
       "vi": {
         "name": "Duolingo 1 năm",
@@ -1435,8 +1733,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:24:00.000Z",
-    "updatedAt": "2026-03-14T00:24:30.000Z",
+    "createdAt": "2026-03-14T00:28:00.000Z",
+    "updatedAt": "2026-03-14T00:28:30.000Z",
     "translations": {
       "vi": {
         "name": "Capcut Pro 1 năm",
@@ -1494,8 +1792,8 @@
     "warrantyMonths": 6,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:25:00.000Z",
-    "updatedAt": "2026-03-14T00:25:30.000Z",
+    "createdAt": "2026-03-14T00:29:00.000Z",
+    "updatedAt": "2026-03-14T00:29:30.000Z",
     "translations": {
       "vi": {
         "name": "Capcut Pro 6 Tháng",
@@ -1553,8 +1851,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:26:00.000Z",
-    "updatedAt": "2026-03-14T00:26:30.000Z",
+    "createdAt": "2026-03-14T00:30:00.000Z",
+    "updatedAt": "2026-03-14T00:30:30.000Z",
     "translations": {
       "vi": {
         "name": "CapCut Pro 1 tháng",
@@ -1612,8 +1910,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:27:00.000Z",
-    "updatedAt": "2026-03-14T00:27:30.000Z",
+    "createdAt": "2026-03-14T00:31:00.000Z",
+    "updatedAt": "2026-03-14T00:31:30.000Z",
     "translations": {
       "vi": {
         "name": "Adobe All Apps 1 năm. 5 thiết bị",
@@ -1671,8 +1969,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:28:00.000Z",
-    "updatedAt": "2026-03-14T00:28:30.000Z",
+    "createdAt": "2026-03-14T00:32:00.000Z",
+    "updatedAt": "2026-03-14T00:32:30.000Z",
     "translations": {
       "vi": {
         "name": "Adobe All Apps 1 năm, 2 thiết bị",
@@ -1730,8 +2028,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:29:00.000Z",
-    "updatedAt": "2026-03-14T00:29:30.000Z",
+    "createdAt": "2026-03-14T00:33:00.000Z",
+    "updatedAt": "2026-03-14T00:33:30.000Z",
     "translations": {
       "vi": {
         "name": "Adobe All Apps 1 năm, 1 thiết bị",
@@ -1789,8 +2087,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:30:00.000Z",
-    "updatedAt": "2026-03-14T00:30:30.000Z",
+    "createdAt": "2026-03-14T00:34:00.000Z",
+    "updatedAt": "2026-03-14T00:34:30.000Z",
     "translations": {
       "vi": {
         "name": "Adobe All App 1 tháng",
@@ -1848,8 +2146,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:31:00.000Z",
-    "updatedAt": "2026-03-14T00:31:30.000Z",
+    "createdAt": "2026-03-14T00:35:00.000Z",
+    "updatedAt": "2026-03-14T00:35:30.000Z",
     "translations": {
       "vi": {
         "name": "Cursor Ultra 1 tháng, acc cấp",
@@ -1907,8 +2205,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:32:00.000Z",
-    "updatedAt": "2026-03-14T00:32:30.000Z",
+    "createdAt": "2026-03-14T00:36:00.000Z",
+    "updatedAt": "2026-03-14T00:36:30.000Z",
     "translations": {
       "vi": {
         "name": "Cursor Pro 1 năm",
@@ -1966,8 +2264,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:33:00.000Z",
-    "updatedAt": "2026-03-14T00:33:30.000Z",
+    "createdAt": "2026-03-14T00:37:00.000Z",
+    "updatedAt": "2026-03-14T00:37:30.000Z",
     "translations": {
       "vi": {
         "name": "Cursor Pro+ 60$",
@@ -1995,9 +2293,9 @@
   },
   {
     "id": "zalo-ea1c57304675af2bf664",
-    "name": "Cursor Pro 1 tháng, chính chủ",
-    "slug": "cursor-pro-1-thang-chinh-chu-ea1c5730",
-    "shortDescription": "Cursor Pro 1 tháng, chính chủ dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "name": "Hết",
+    "slug": "het-ea1c5730",
+    "shortDescription": "Hết dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nMô hình AI mạnh nhất: Truy cập không giới hạn (hoặc hạn mức cao) vào các mô hình thông minh nhất: Claude 3.5 Sonnet, GPT-4o, o1.\n\nHiểu toàn bộ dự án (Context Awareness): Khả năng quét (Index) toàn bộ mã nguồn của bạn. Bạn có thể dùng @Codebase để AI hiểu cấu trúc dự án lớn, từ đó viết hoặc sửa code chính xác, đồng bộ trên nhiều tệp cùng lúc.\n\nTăng tốc lập trình (Composer): Công cụ Composer cho phép AI tự động viết/chỉnh sửa hàng loạt tệp tin, xử lý các tác vụ phức tạp chỉ với một câu lệnh (prompt), giúp giảm đáng kể thời gian viết code thủ công.",
     "usageDuration": "1 tháng",
     "costPrice": 450000,
@@ -2009,8 +2307,7 @@
     "category": "Tài khoản số",
     "categories": [
       "Tài khoản số",
-      "Lập trình",
-      "Developer"
+      "Khác"
     ],
     "accountType": "primary",
     "featured": false,
@@ -2025,29 +2322,27 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:34:00.000Z",
-    "updatedAt": "2026-03-14T00:34:30.000Z",
+    "createdAt": "2026-03-14T00:38:00.000Z",
+    "updatedAt": "2026-03-14T00:38:30.000Z",
     "translations": {
       "vi": {
-        "name": "Cursor Pro 1 tháng, chính chủ",
-        "shortDescription": "Cursor Pro 1 tháng, chính chủ dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "name": "Hết",
+        "shortDescription": "Hết dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
         "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nMô hình AI mạnh nhất: Truy cập không giới hạn (hoặc hạn mức cao) vào các mô hình thông minh nhất: Claude 3.5 Sonnet, GPT-4o, o1.\n\nHiểu toàn bộ dự án (Context Awareness): Khả năng quét (Index) toàn bộ mã nguồn của bạn. Bạn có thể dùng @Codebase để AI hiểu cấu trúc dự án lớn, từ đó viết hoặc sửa code chính xác, đồng bộ trên nhiều tệp cùng lúc.\n\nTăng tốc lập trình (Composer): Công cụ Composer cho phép AI tự động viết/chỉnh sửa hàng loạt tệp tin, xử lý các tác vụ phức tạp chỉ với một câu lệnh (prompt), giúp giảm đáng kể thời gian viết code thủ công.",
         "category": "Tài khoản số",
         "categories": [
           "Tài khoản số",
-          "Lập trình",
-          "Developer"
+          "Khác"
         ]
       },
       "en": {
-        "name": "Cursor Pro 1 month, primary account",
-        "shortDescription": "Cursor Pro 1 month, primary account with primary account delivery, 1 month of use, and 1 month warranty.",
-        "fullDescription": "Cursor Pro 1 month, primary account with primary account delivery, 1 month of use, and 1 month warranty.\n\nPrimary account. Usage term: 1 month. Warranty: 1 month.\n\nCursor Pro 1 month, primary account was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "name": "Hết",
+        "shortDescription": "Hết with primary account delivery, 1 month of use, and 1 month warranty.",
+        "fullDescription": "Hết with primary account delivery, 1 month of use, and 1 month warranty.\n\nPrimary account. Usage term: 1 month. Warranty: 1 month.\n\nHết was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
         "category": "Digital accounts",
         "categories": [
           "Digital accounts",
-          "Developer",
-          "Coding"
+          "Other"
         ]
       }
     }
@@ -2084,8 +2379,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:35:00.000Z",
-    "updatedAt": "2026-03-14T00:35:30.000Z",
+    "createdAt": "2026-03-14T00:39:00.000Z",
+    "updatedAt": "2026-03-14T00:39:30.000Z",
     "translations": {
       "vi": {
         "name": "Cursor Pro 1 tháng, acc cấp",
@@ -2113,16 +2408,16 @@
   },
   {
     "id": "zalo-7a37c11bd05e3900604f",
-    "name": "Super Grok 1 tháng, acc cấp",
-    "slug": "super-grok-1-thang-acc-cap-7a37c11b",
-    "shortDescription": "Super Grok 1 tháng, acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
-    "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Grok\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
+    "name": "Super Grok 1 tháng",
+    "slug": "super-grok-1-thang-7a37c11b",
+    "shortDescription": "Super Grok 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "fullDescription": "-Dạng acc cấp riêng có thể thành chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Grok\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
     "usageDuration": "1 tháng",
-    "costPrice": 299000,
-    "retailPrice": 299000,
+    "costPrice": 199000,
+    "retailPrice": 199000,
     "customerTierPrices": {
-      "regular": 299000,
-      "vip": 299000
+      "regular": 199000,
+      "vip": 199000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -2135,21 +2430,21 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 299000,
-      "vip": 299000
+      "regular": 199000,
+      "vip": 199000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/8528086493994462601/3cb641af585fd6018f4e.jpg",
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:36:00.000Z",
-    "updatedAt": "2026-03-14T00:36:30.000Z",
+    "createdAt": "2026-03-14T00:40:00.000Z",
+    "updatedAt": "2026-03-14T00:40:30.000Z",
     "translations": {
       "vi": {
-        "name": "Super Grok 1 tháng, acc cấp",
-        "shortDescription": "Super Grok 1 tháng, acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
-        "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Grok\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
+        "name": "Super Grok 1 tháng",
+        "shortDescription": "Super Grok 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "fullDescription": "-Dạng acc cấp riêng có thể thành chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Grok\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
         "category": "Tài khoản số",
         "categories": [
           "Tài khoản số",
@@ -2158,68 +2453,9 @@
         ]
       },
       "en": {
-        "name": "Super Grok 1 month, issued account",
-        "shortDescription": "Super Grok 1 month, issued account with dedicated account delivery, 1 month of use, and 1 month warranty.",
-        "fullDescription": "Super Grok 1 month, issued account with dedicated account delivery, 1 month of use, and 1 month warranty.\n\nDedicated account. Usage term: 1 month. Warranty: 1 month.\n\nSuper Grok 1 month, issued account was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
-        "category": "Digital accounts",
-        "categories": [
-          "Digital accounts",
-          "Grok",
-          "AI"
-        ]
-      }
-    }
-  },
-  {
-    "id": "zalo-1478ac54bd11544f0d00",
-    "name": "Super Grok 1 tháng, chính chủ",
-    "slug": "super-grok-1-thang-chinh-chu-1478ac54",
-    "shortDescription": "Super Grok 1 tháng, chính chủ dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
-    "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
-    "usageDuration": "1 tháng",
-    "costPrice": 349000,
-    "retailPrice": 349000,
-    "customerTierPrices": {
-      "regular": 349000,
-      "vip": 349000
-    },
-    "category": "Tài khoản số",
-    "categories": [
-      "Tài khoản số",
-      "Grok",
-      "AI"
-    ],
-    "accountType": "primary",
-    "featured": false,
-    "isFlashSale": false,
-    "published": true,
-    "tierPrices": {
-      "regular": 349000,
-      "vip": 349000
-    },
-    "overridePrices": {},
-    "image": "https://f1-zpprd.zdn.vn/7956096988896627277/08f674ef6d1fe341ba0e.jpg",
-    "warrantyMonths": 1,
-    "stock": 0,
-    "points": 0,
-    "createdAt": "2026-03-14T00:37:00.000Z",
-    "updatedAt": "2026-03-14T00:37:30.000Z",
-    "translations": {
-      "vi": {
-        "name": "Super Grok 1 tháng, chính chủ",
-        "shortDescription": "Super Grok 1 tháng, chính chủ dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
-        "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
-        "category": "Tài khoản số",
-        "categories": [
-          "Tài khoản số",
-          "Grok",
-          "AI"
-        ]
-      },
-      "en": {
-        "name": "Super Grok 1 month, primary account",
-        "shortDescription": "Super Grok 1 month, primary account with primary account delivery, 1 month of use, and 1 month warranty.",
-        "fullDescription": "Super Grok 1 month, primary account with primary account delivery, 1 month of use, and 1 month warranty.\n\nPrimary account. Usage term: 1 month. Warranty: 1 month.\n\nSuper Grok 1 month, primary account was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "name": "Super Grok 1 month",
+        "shortDescription": "Super Grok 1 month with dedicated account delivery, 1 month of use, and 1 month warranty.",
+        "fullDescription": "Super Grok 1 month with dedicated account delivery, 1 month of use, and 1 month warranty.\n\nDedicated account. Usage term: 1 month. Warranty: 1 month.\n\nSuper Grok 1 month was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
         "category": "Digital accounts",
         "categories": [
           "Digital accounts",
@@ -2233,14 +2469,14 @@
     "id": "zalo-fbf542d9539cbac2e38d",
     "name": "Veo Flow Ultra 45.000 credit",
     "slug": "veo-flow-ultra-45-000-credit-fbf542d9",
-    "shortDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng. Liên hệ để nhận báo giá chi tiết.",
-    "fullDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng. Liên hệ để nhận báo giá chi tiết.\n\nGiá trong catalog Zalo đang để trống hoặc là khoảng giá, vui lòng liên hệ để được báo giá chính xác.",
+    "shortDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng.",
+    "fullDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng.\n\nThông tin được đồng bộ từ catalog Zalo của cửa hàng.",
     "usageDuration": "30 ngày",
-    "costPrice": 0,
-    "retailPrice": 0,
+    "costPrice": 89000,
+    "retailPrice": 89000,
     "customerTierPrices": {
-      "regular": 0,
-      "vip": 0
+      "regular": 89000,
+      "vip": 89000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -2253,21 +2489,21 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 0,
-      "vip": 0
+      "regular": 89000,
+      "vip": 89000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/9088148142236296206/cd82b29bab6b25357c7a.jpg",
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:38:00.000Z",
-    "updatedAt": "2026-03-14T00:38:30.000Z",
+    "createdAt": "2026-03-14T00:41:00.000Z",
+    "updatedAt": "2026-03-14T00:41:30.000Z",
     "translations": {
       "vi": {
         "name": "Veo Flow Ultra 45.000 credit",
-        "shortDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng. Liên hệ để nhận báo giá chi tiết.",
-        "fullDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng. Liên hệ để nhận báo giá chi tiết.\n\nGiá trong catalog Zalo đang để trống hoặc là khoảng giá, vui lòng liên hệ để được báo giá chính xác.",
+        "shortDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng.",
+        "fullDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng.\n\nThông tin được đồng bộ từ catalog Zalo của cửa hàng.",
         "category": "Tài khoản số",
         "categories": [
           "Tài khoản số",
@@ -2277,8 +2513,8 @@
       },
       "en": {
         "name": "Veo Flow Ultra 45.000 credits",
-        "shortDescription": "Veo Flow Ultra 45.000 credits with primary account delivery, 30 days of use, and 1 month warranty. Contact us for a custom quote.",
-        "fullDescription": "Veo Flow Ultra 45.000 credits with primary account delivery, 30 days of use, and 1 month warranty. Contact us for a custom quote.\n\nPrimary account. Usage term: 30 days. Warranty: 1 month.\n\nVeo Flow Ultra 45.000 credits was imported from the store's Zalo catalog listing.\n\nThe Zalo catalog shows either a custom quote or no fixed price for this item. Contact support for the latest delivery details before checkout.",
+        "shortDescription": "Veo Flow Ultra 45.000 credits with primary account delivery, 30 days of use, and 1 month warranty.",
+        "fullDescription": "Veo Flow Ultra 45.000 credits with primary account delivery, 30 days of use, and 1 month warranty.\n\nPrimary account. Usage term: 30 days. Warranty: 1 month.\n\nVeo Flow Ultra 45.000 credits was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
         "category": "Digital accounts",
         "categories": [
           "Digital accounts",
@@ -2321,8 +2557,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:39:00.000Z",
-    "updatedAt": "2026-03-14T00:39:30.000Z",
+    "createdAt": "2026-03-14T00:42:00.000Z",
+    "updatedAt": "2026-03-14T00:42:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Pro chính chủ 1 năm",
@@ -2382,8 +2618,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:40:00.000Z",
-    "updatedAt": "2026-03-14T00:40:30.000Z",
+    "createdAt": "2026-03-14T00:43:00.000Z",
+    "updatedAt": "2026-03-14T00:43:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra chính chủ 1 tháng, 6000 credit",
@@ -2441,8 +2677,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:41:00.000Z",
-    "updatedAt": "2026-03-14T00:41:30.000Z",
+    "createdAt": "2026-03-14T00:44:00.000Z",
+    "updatedAt": "2026-03-14T00:44:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 tháng acc cấp riêng",
@@ -2500,8 +2736,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:42:00.000Z",
-    "updatedAt": "2026-03-14T00:42:30.000Z",
+    "createdAt": "2026-03-14T00:45:00.000Z",
+    "updatedAt": "2026-03-14T00:45:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 tháng chính chủ",
@@ -2559,8 +2795,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:43:00.000Z",
-    "updatedAt": "2026-03-14T00:43:30.000Z",
+    "createdAt": "2026-03-14T00:46:00.000Z",
+    "updatedAt": "2026-03-14T00:46:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Team(Business)",
@@ -2618,8 +2854,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:44:00.000Z",
-    "updatedAt": "2026-03-14T00:44:30.000Z",
+    "createdAt": "2026-03-14T00:47:00.000Z",
+    "updatedAt": "2026-03-14T00:47:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Team(Business)",

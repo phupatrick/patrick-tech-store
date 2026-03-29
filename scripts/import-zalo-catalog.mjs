@@ -10,6 +10,110 @@ const PLAN_UPGRADE_CATEGORY = "Plan upgrades";
 const DETAIL_CONCURRENCY = 6;
 const FEATURED_PRODUCT_COUNT = 6;
 const PRODUCT_FILE_PATH = path.join(process.cwd(), "src", "data", "products.json");
+const MANUAL_PRODUCT_OVERRIDES = {
+  "zalo-6a57018513c0fa9ea3d1": {
+    name: "Kling Standard 1100 credit - bảo hành 24h",
+    slug: "kling-standard-1100-credit-24h-6a570185",
+    retailPrice: 180000,
+    costPrice: 180000,
+    customerTierPrices: {
+      regular: 180000,
+      vip: 180000
+    },
+    tierPrices: {
+      regular: 180000,
+      vip: 180000
+    },
+    warrantyDuration: "24 giờ",
+    warrantyMonths: 1,
+    shortDescription: "Kling Standard 1100 credit dạng tài khoản cấp riêng, bảo hành 24 giờ.",
+    fullDescription:
+      "Acc cấp, giao nhanh.\n\nGói này dành cho Kling Standard 1100 credit với bảo hành 24 giờ, phù hợp để mua nhanh với mức giá tiết kiệm.",
+    categories: [ACCOUNT_CATEGORY, "AI", "Video"],
+    category: ACCOUNT_CATEGORY
+  },
+  "zalo-21164bc45981b0dfe990": {
+    name: "Kling Standard 215 credit",
+    slug: "kling-standard-215-credit-21164bc4",
+    categories: [ACCOUNT_CATEGORY, "AI", "Video"],
+    category: ACCOUNT_CATEGORY
+  },
+  "zalo-5955318723c2ca9c93d3": {
+    name: "Kling Pro 4500 credit",
+    slug: "kling-pro-4500-credit-59553187",
+    retailPrice: 399000,
+    costPrice: 399000,
+    customerTierPrices: {
+      regular: 399000,
+      vip: 399000
+    },
+    tierPrices: {
+      regular: 399000,
+      vip: 399000
+    },
+    warrantyDuration: "3 ngày",
+    warrantyMonths: 1,
+    shortDescription: "Kling Pro 4500 credit dạng tài khoản cấp riêng, bảo hành 3 ngày.",
+    fullDescription:
+      "Acc cấp, giao nhanh.\n\nGói Kling Pro 4500 credit với bảo hành 3 ngày, phù hợp cho nhu cầu render/video bằng credit cao hơn.",
+    categories: [ACCOUNT_CATEGORY, "AI", "Video"],
+    category: ACCOUNT_CATEGORY
+  }
+};
+
+const MANUAL_EXTRA_PRODUCTS = [
+  {
+    id: "custom-kling-standard-1100-full-credit",
+    name: "Kling Standard 1100 credit - bảo hành full credit",
+    slug: "kling-standard-1100-credit-full-credit",
+    shortDescription: "Kling Standard 1100 credit dạng tài khoản cấp riêng, bảo hành full credit.",
+    fullDescription:
+      "Acc cấp, giao nhanh.\n\nGói Kling Standard 1100 credit với bảo hành full credit, phù hợp khi cần mức hỗ trợ đầy đủ hơn.",
+    usageDuration: "30 ngày",
+    warrantyDuration: "full credit",
+    costPrice: 249000,
+    retailPrice: 249000,
+    customerTierPrices: {
+      regular: 249000,
+      vip: 249000
+    },
+    category: ACCOUNT_CATEGORY,
+    categories: [ACCOUNT_CATEGORY, "AI", "Video"],
+    accountType: "dedicated",
+    featured: false,
+    isFlashSale: false,
+    published: true,
+    tierPrices: {
+      regular: 249000,
+      vip: 249000
+    },
+    overridePrices: {},
+    image: "",
+    warrantyMonths: 1,
+    stock: 0,
+    points: 0,
+    createdAt: new Date(Date.UTC(2026, 2, 30, 0, 0, 0)).toISOString(),
+    updatedAt: new Date(Date.UTC(2026, 2, 30, 0, 0, 30)).toISOString(),
+    translations: {
+      vi: {
+        name: "Kling Standard 1100 credit - bảo hành full credit",
+        shortDescription: "Kling Standard 1100 credit dạng tài khoản cấp riêng, bảo hành full credit.",
+        fullDescription:
+          "Acc cấp, giao nhanh.\n\nGói Kling Standard 1100 credit với bảo hành full credit, phù hợp khi cần mức hỗ trợ đầy đủ hơn.",
+        category: ACCOUNT_CATEGORY,
+        categories: [ACCOUNT_CATEGORY, "AI", "Video"]
+      },
+      en: {
+        name: "Kling Standard 1100 credits - full credit warranty",
+        shortDescription: "Kling Standard 1100 credits with dedicated account delivery and full credit warranty.",
+        fullDescription:
+          "Dedicated account delivery.\n\nKling Standard 1100 credits with full credit warranty for buyers who need stronger after-sales coverage.",
+        category: DIGITAL_ACCOUNT_CATEGORY,
+        categories: [DIGITAL_ACCOUNT_CATEGORY, "AI", "Video"]
+      }
+    }
+  }
+];
 
 const BRAND_CATEGORIES = [
   {
@@ -568,6 +672,99 @@ const readExistingProducts = async () => {
   }
 };
 
+const getExistingZaloMatch = (existingProducts, product) =>
+  existingProducts.find((item) => item.id === product.id || item.slug === product.slug);
+
+const preserveExistingPricing = (product, existingProduct) => {
+  if (!existingProduct || product.retailPrice > 0 || (existingProduct.retailPrice ?? 0) <= 0) {
+    return product;
+  }
+
+  return {
+    ...product,
+    retailPrice: existingProduct.retailPrice,
+    costPrice: existingProduct.costPrice ?? existingProduct.retailPrice,
+    customerTierPrices: existingProduct.customerTierPrices ?? product.customerTierPrices,
+    tierPrices: existingProduct.tierPrices ?? product.tierPrices,
+    currencyPrices: existingProduct.currencyPrices ?? product.currencyPrices,
+    shortDescription: existingProduct.shortDescription ?? product.shortDescription,
+    fullDescription: existingProduct.fullDescription ?? product.fullDescription,
+    usageDuration: existingProduct.usageDuration ?? product.usageDuration,
+    warrantyDuration: existingProduct.warrantyDuration ?? product.warrantyDuration,
+    warrantyMonths: existingProduct.warrantyMonths ?? product.warrantyMonths,
+    category: existingProduct.category ?? product.category,
+    categories: existingProduct.categories ?? product.categories,
+    accountType: existingProduct.accountType ?? product.accountType,
+    translations: existingProduct.translations ?? product.translations
+  };
+};
+
+const applyManualProductOverride = (product) => {
+  const override = MANUAL_PRODUCT_OVERRIDES[product.id];
+
+  if (!override) {
+    return product;
+  }
+
+  return {
+    ...product,
+    ...override,
+    translations: {
+      ...product.translations,
+      vi: {
+        ...product.translations?.vi,
+        name: override.name ?? product.translations?.vi?.name ?? product.name,
+        shortDescription: override.shortDescription ?? product.translations?.vi?.shortDescription ?? product.shortDescription,
+        fullDescription: override.fullDescription ?? product.translations?.vi?.fullDescription ?? product.fullDescription,
+        category: override.category ?? product.translations?.vi?.category ?? product.category,
+        categories: override.categories ?? product.translations?.vi?.categories ?? product.categories
+      },
+      en: {
+        ...product.translations?.en,
+        name:
+          product.id === "zalo-6a57018513c0fa9ea3d1"
+            ? "Kling Standard 1100 credits - 24h warranty"
+            : product.id === "zalo-21164bc45981b0dfe990"
+              ? "Kling Standard 215 credits"
+              : product.id === "zalo-5955318723c2ca9c93d3"
+                ? "Kling Pro 4500 credits"
+                : product.translations?.en?.name,
+        shortDescription:
+          product.id === "zalo-6a57018513c0fa9ea3d1"
+            ? "Kling Standard 1100 credits with dedicated account delivery and 24-hour warranty."
+            : product.id === "zalo-5955318723c2ca9c93d3"
+              ? "Kling Pro 4500 credits with dedicated account delivery and 3-day warranty."
+              : product.translations?.en?.shortDescription,
+        fullDescription:
+          product.id === "zalo-6a57018513c0fa9ea3d1"
+            ? "Dedicated account delivery.\n\nKling Standard 1100 credits with 24-hour warranty for quick purchases."
+            : product.id === "zalo-5955318723c2ca9c93d3"
+              ? "Dedicated account delivery.\n\nKling Pro 4500 credits with 3-day warranty for higher-volume video generation."
+              : product.translations?.en?.fullDescription,
+        category: product.translations?.en?.category ?? DIGITAL_ACCOUNT_CATEGORY,
+        categories:
+          product.id === "zalo-6a57018513c0fa9ea3d1" || product.id === "zalo-21164bc45981b0dfe990" || product.id === "zalo-5955318723c2ca9c93d3"
+            ? [DIGITAL_ACCOUNT_CATEGORY, "AI", "Video"]
+            : product.translations?.en?.categories
+      }
+    }
+  };
+};
+
+const buildManualExtraProducts = (importedProducts) =>
+  MANUAL_EXTRA_PRODUCTS.map((product) => {
+    if (product.id !== "custom-kling-standard-1100-full-credit") {
+      return product;
+    }
+
+    const sourceProduct = importedProducts.find((item) => item.id === "zalo-6a57018513c0fa9ea3d1");
+
+    return {
+      ...product,
+      image: sourceProduct?.image ?? product.image
+    };
+  });
+
 const main = async () => {
   const catalogUrl = parseCatalogUrl(process.argv[2]);
   const catalogId = catalogUrl.searchParams.get("cid");
@@ -581,8 +778,11 @@ const main = async () => {
   console.log(`Found ${catalogItems.length} products in the Zalo catalog.`);
 
   const detailedItems = await mapWithConcurrency(catalogItems, DETAIL_CONCURRENCY, fetchProductDetail);
-  const importedProducts = detailedItems.map(mapProduct);
   const existingProducts = await readExistingProducts();
+  const importedProducts = detailedItems
+    .map(mapProduct)
+    .map((product) => preserveExistingPricing(product, getExistingZaloMatch(existingProducts, product)))
+    .map(applyManualProductOverride);
   const importedKeys = new Set(importedProducts.map((product) => createDedupKey(product.name, product.retailPrice)));
   const preservedProducts = existingProducts.filter((product) => {
     if (typeof product?.id !== "string" || product.id.startsWith("zalo-")) {
@@ -591,7 +791,12 @@ const main = async () => {
 
     return !importedKeys.has(createDedupKey(product.name ?? "", Number(product.retailPrice) || 0));
   });
-  const nextProducts = [...preservedProducts, ...importedProducts];
+  const manualExtraProducts = buildManualExtraProducts(importedProducts);
+  const nextProducts = [
+    ...preservedProducts,
+    ...manualExtraProducts.filter((product) => !preservedProducts.some((item) => item.id === product.id)),
+    ...importedProducts
+  ];
 
   await writeFile(PRODUCT_FILE_PATH, JSON.stringify(nextProducts, null, 2), "utf8");
 

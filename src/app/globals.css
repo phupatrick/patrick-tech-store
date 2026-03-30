@@ -464,7 +464,8 @@ select {
 
 .product-grid-public {
   align-items: stretch;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
 }
 
 .detail-grid {
@@ -585,7 +586,7 @@ select {
 }
 
 .card-image-public {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9.2;
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.1), transparent 42%),
     radial-gradient(circle at bottom, rgba(214, 178, 94, 0.12), transparent 54%),
@@ -638,13 +639,17 @@ select {
 }
 
 .card-body-public {
-  padding: 16px;
-  gap: 12px;
+  padding: 14px 14px 13px;
+  gap: 10px;
   align-content: space-between;
   min-height: 100%;
   background:
     linear-gradient(180deg, rgba(10, 17, 31, 0.22), rgba(10, 17, 31, 0)),
     transparent;
+}
+
+.product-card-public .stack {
+  gap: 6px;
 }
 
 .row {
@@ -950,7 +955,7 @@ select {
 .product-public-meta {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px;
 }
 
 .product-public-meta-detail {
@@ -960,9 +965,9 @@ select {
 .product-public-meta-item {
   display: grid;
   gap: 4px;
-  padding: 11px 12px;
+  padding: 9px 10px;
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 14px;
   background: rgba(14, 22, 38, 0.56);
 }
 
@@ -976,14 +981,14 @@ select {
 
 .product-public-meta-value {
   color: var(--text);
-  font-size: 0.94rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .product-actions {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px;
 }
 
 .pill {
@@ -1019,47 +1024,13 @@ select {
 }
 
 .card-title-public {
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 650;
-  line-height: 1.38;
+  line-height: 1.34;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.product-summary {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  min-height: 3.4em;
-}
-
-.product-summary.expanded {
-  display: block;
-  min-height: 0;
-}
-
-.product-summary-block {
-  display: grid;
-  gap: 8px;
-}
-
-.summary-toggle {
-  width: fit-content;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #d7e5fb;
-  font-size: 0.84rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.summary-toggle:hover {
-  color: #ffffff;
-  text-decoration: underline;
 }
 
 .meta {
@@ -2141,11 +2112,6 @@ select {
     line-height: 1.5;
   }
 
-  .product-summary {
-    -webkit-line-clamp: 3;
-    min-height: 4.9em;
-  }
-
   .price {
     font-size: 1.5rem;
   }
@@ -2542,7 +2508,7 @@ select {
   }
 
   .card-image-public {
-    aspect-ratio: 16 / 10.2;
+    aspect-ratio: 16 / 8.9;
   }
 
   .product-image-frame {
@@ -2558,13 +2524,13 @@ select {
   }
 
   .card-body-public {
-    padding: 10px 9px 10px;
-    gap: 7px;
+    padding: 9px 8px 9px;
+    gap: 6px;
   }
 
   .card-title-public {
-    font-size: 0.84rem;
-    line-height: 1.24;
+    font-size: 0.82rem;
+    line-height: 1.2;
   }
 
   .product-card-public .filter-chip-row {
@@ -2581,22 +2547,8 @@ select {
 
   .product-card-public .product-category-pill {
     flex: 0 0 auto;
-    padding: 5px 9px;
-    font-size: 0.66rem;
-  }
-
-  .product-summary {
-    font-size: 0.75rem;
-    line-height: 1.34;
-    min-height: 0;
-  }
-
-  .product-summary-block {
-    gap: 6px;
-  }
-
-  .summary-toggle {
-    font-size: 0.8rem;
+    padding: 4px 8px;
+    font-size: 0.63rem;
   }
 
   .product-price-label {
@@ -2613,34 +2565,34 @@ select {
 
   .product-public-meta {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 7px;
+    gap: 6px;
   }
 
   .product-public-meta-item {
     min-width: 0;
-    padding: 7px 8px;
-    border-radius: 11px;
+    padding: 6px 7px;
+    border-radius: 10px;
   }
 
   .product-public-meta-label {
-    font-size: 0.66rem;
+    font-size: 0.62rem;
     letter-spacing: 0.11em;
   }
 
   .product-public-meta-value {
-    font-size: 0.82rem;
-    line-height: 1.45;
+    font-size: 0.77rem;
+    line-height: 1.35;
   }
 
   .product-actions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+    gap: 6px;
   }
 
   .product-card-public .button {
-    min-height: 38px;
-    padding: 8px 9px;
-    font-size: 0.8rem;
+    min-height: 36px;
+    padding: 9px 8px;
+    font-size: 0.84rem;
   }
 
   .checkout-channel-actions {

@@ -19,8 +19,6 @@ type ProductGridProps = {
 };
 
 type ActivePanelMode = "detail" | "checkout";
-
-const SHORT_DESCRIPTION_PREVIEW_LENGTH = 140;
 const ProductGridDialog = dynamic(() => import("@/components/product-grid-dialog").then((module) => module.ProductGridDialog));
 
 const getProductCategories = (product: Pick<ProductView, "category" | "categories">) =>
@@ -38,7 +36,6 @@ export function ProductGrid({
   const [pendingId, setPendingId] = useState<string | null>(null);
   const [activeProduct, setActiveProduct] = useState<ProductView | null>(null);
   const [activePanelMode, setActivePanelMode] = useState<ActivePanelMode>("detail");
-  const [expandedDescriptions, setExpandedDescriptions] = useState<Record<string, boolean>>({});
   const isPublic = variant === "public";
   const isVoucherEligible = Boolean(session && ["customer", "reseller"].includes(session.role));
   const detailLabel = t("product.details");
@@ -84,12 +81,6 @@ export function ProductGrid({
       <div className={`product-grid${isPublic ? " product-grid-public" : ""}`}>
         {products.map((product, index) => {
           const productCategories = getProductCategories(product);
-          const isExpanded = Boolean(expandedDescriptions[product.id]);
-          const hasLongSummary = product.shortDescription.length > SHORT_DESCRIPTION_PREVIEW_LENGTH;
-          const visibleSummary =
-            hasLongSummary && !isExpanded
-              ? `${product.shortDescription.slice(0, SHORT_DESCRIPTION_PREVIEW_LENGTH).trimEnd()}...`
-              : product.shortDescription;
           const imageSrc = getRenderableProductImageSrc(product.image);
           const useUnoptimizedImage = isInlineImageSrc(imageSrc);
           const priceSummary = getProductPriceSummary(product);
@@ -125,23 +116,6 @@ export function ProductGrid({
                       </div>
                     ) : null}
                     <h3 className="card-title card-title-public">{product.name}</h3>
-                    <div className="product-summary-block">
-                      <p className={`muted product-summary${isExpanded ? " expanded" : ""}`}>{visibleSummary}</p>
-                      {hasLongSummary ? (
-                        <button
-                          type="button"
-                          className="summary-toggle"
-                          onClick={() =>
-                            setExpandedDescriptions((current) => ({
-                              ...current,
-                              [product.id]: !current[product.id]
-                            }))
-                          }
-                        >
-                          {isExpanded ? t("product.showLess") : t("product.showMore")}
-                        </button>
-                      ) : null}
-                    </div>
                   </div>
                 ) : (
                   <div className="stack">

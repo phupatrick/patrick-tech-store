@@ -15,7 +15,6 @@ import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import {
   getSiteUrl,
-  OFFICIAL_COMPANY_INFO_URL,
   SITE_DESCRIPTION,
   SITE_KEYWORDS,
   SITE_NAME,
@@ -80,7 +79,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 storeLabel={t("layout.nav.store")}
                 warrantyLabel={t("layout.nav.warranty")}
                 companyInfoLabel={language === "vi" ? "Thông tin công ty" : "Company info"}
-                companyInfoHref={OFFICIAL_COMPANY_INFO_URL}
+                companyInfoHref="/company"
                 resellerLabel={t("layout.nav.reseller")}
                 adminLabel={t("layout.nav.admin")}
                 showAdminLink={showAdminLink}

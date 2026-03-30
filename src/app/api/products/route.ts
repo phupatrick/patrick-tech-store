@@ -29,6 +29,8 @@ export async function GET(request: NextRequest) {
     image: product.image,
     shortDescription: product.shortDescription,
     fullDescription: product.fullDescription,
+    usageDuration: product.usageDuration,
+    warrantyDuration: product.warrantyDuration,
     retailPrice: product.retailPrice,
     customerRegularPrice: product.customerRegularPrice,
     visiblePrice: product.visiblePrice,

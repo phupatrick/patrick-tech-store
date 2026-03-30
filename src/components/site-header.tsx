@@ -9,6 +9,8 @@ type SiteHeaderProps = {
   brandTitle: string;
   storeLabel: string;
   warrantyLabel: string;
+  companyInfoLabel: string;
+  companyInfoHref: string;
   resellerLabel: string;
   adminLabel: string;
   showAdminLink: boolean;
@@ -20,6 +22,8 @@ export function SiteHeader({
   brandTitle,
   storeLabel,
   warrantyLabel,
+  companyInfoLabel,
+  companyInfoHref,
   resellerLabel,
   adminLabel,
   showAdminLink,
@@ -45,6 +49,9 @@ export function SiteHeader({
           <Link className={`nav-link${pathname === "/warranty" ? " active" : ""}`} href="/warranty">
             {warrantyLabel}
           </Link>
+          <a className="nav-link" href={companyInfoHref} target="_blank" rel="noreferrer">
+            {companyInfoLabel}
+          </a>
           {showReseller ? (
             <Link className="nav-link active" href="/reseller">
               {resellerLabel}

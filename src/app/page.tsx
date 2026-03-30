@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CatalogControls } from "@/components/catalog-controls";
@@ -15,12 +16,33 @@ import { getRequestCurrency } from "@/lib/currency/server";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { getStorefrontSnapshot } from "@/lib/pricing";
+import { getSiteUrl, OFFICIAL_COMPANY_INFO_URL, SITE_NAME } from "@/lib/site";
 import { getVoucherWalletForSession } from "@/lib/voucher-wallet";
 const CATALOG_PAGE_SIZE = 6;
 const PAGINATION_WINDOW = 5;
+const HOME_TITLE = "Cửa hàng tài khoản số, nâng cấp gói và AI tools";
+const HOME_DESCRIPTION =
+  "Mua tài khoản số, nâng cấp gói, Grok, YouTube Premium và nhiều dịch vụ số với giá rõ ràng, giao nhanh và hỗ trợ trực tiếp.";
 
 type HomeProps = {
   searchParams: Promise<{ q?: string; category?: string; sort?: string; page?: string }>;
+};
+
+export const metadata: Metadata = {
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: "/"
+  },
+  twitter: {
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION
+  }
 };
 
 const buildCatalogHref = ({
@@ -70,6 +92,7 @@ const getPaginationPages = (currentPage: number, totalPages: number) => {
 };
 
 export default async function Home({ searchParams }: HomeProps) {
+  const siteUrl = getSiteUrl();
   const language = await getRequestLanguage();
   const currency = await getRequestCurrency(language);
   const { t } = createTranslator(language);
@@ -119,9 +142,39 @@ export default async function Home({ searchParams }: HomeProps) {
       description: "home.feature.support.description"
     }
   ] as const;
+  const storeJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    name: SITE_NAME,
+    description: HOME_DESCRIPTION,
+    url: siteUrl,
+    telephone: "0933684560",
+    availableLanguage: ["vi", "en"],
+    sameAs: [OFFICIAL_COMPANY_INFO_URL]
+  };
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    url: siteUrl,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  };
 
   return (
     <main className="page-stack">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(storeJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+
       <section className="page-stack section-block section-surface home-product-section home-product-section-catalog">
         <div className="catalog-heading">
           <div className="section-head">

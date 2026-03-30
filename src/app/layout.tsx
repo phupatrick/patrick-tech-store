@@ -13,12 +13,50 @@ import { getCurrencySettings } from "@/lib/currency";
 import { getRequestCurrency } from "@/lib/currency/server";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
+import {
+  getSiteUrl,
+  OFFICIAL_COMPANY_INFO_URL,
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SITE_NAME,
+  SITE_TITLE_TEMPLATE
+} from "@/lib/site";
 
 import "./globals.css";
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
-  title: "Patrick Tech Store",
-  description: "Premium digital storefront with fast delivery, warranty coverage, and responsive support."
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: SITE_NAME,
+    template: SITE_TITLE_TEMPLATE
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: SITE_KEYWORDS,
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    locale: "vi_VN"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION
+  },
+  category: "technology",
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? {
+        google: process.env.GOOGLE_SITE_VERIFICATION
+      }
+    : undefined
 };
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -41,6 +79,8 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 brandTitle={t("layout.brand.title")}
                 storeLabel={t("layout.nav.store")}
                 warrantyLabel={t("layout.nav.warranty")}
+                companyInfoLabel={language === "vi" ? "Thông tin công ty" : "Company info"}
+                companyInfoHref={OFFICIAL_COMPANY_INFO_URL}
                 resellerLabel={t("layout.nav.reseller")}
                 adminLabel={t("layout.nav.admin")}
                 showAdminLink={showAdminLink}

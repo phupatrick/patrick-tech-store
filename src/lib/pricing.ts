@@ -23,6 +23,8 @@ type PreparedPublicProduct = {
   categories: string[];
 };
 
+const PUBLIC_HIDDEN_PRODUCT_KEYWORDS = ["chatgpt"];
+
 export const getUserById = (userId?: string | null): User | undefined =>
   users.find((user) => user.id === userId);
 
@@ -145,6 +147,23 @@ const getProductSearchPayload = (product: Product) => {
     normalizedCategoryAliases: categoryAliases.map((item) => normalizeText(item)),
     searchHaystack: normalizeText([...textAliases, ...categoryAliases].join(" "))
   };
+};
+
+const isHiddenOnPublicWeb = (product: Product) => {
+  const localizedCopies = Object.values(product.translations ?? {});
+  const haystack = normalizeText(
+    [
+      product.name,
+      product.slug,
+      product.category,
+      ...(product.categories ?? []),
+      ...localizedCopies.flatMap((copy) => [copy?.name, copy?.category, ...(copy?.categories ?? [])])
+    ]
+      .filter(Boolean)
+      .join(" ")
+  );
+
+  return PUBLIC_HIDDEN_PRODUCT_KEYWORDS.some((keyword) => haystack.includes(keyword));
 };
 
 export const buildProductView = async (
@@ -283,7 +302,7 @@ const getPreparedPublicProducts = async (
   const currencySettings = await getCurrencySettings(language, currency);
 
   return listProducts()
-    .filter((product) => product.published)
+    .filter((product) => product.published && !isHiddenOnPublicWeb(product))
     .map((product) => {
       const view = buildPublicProductView(product, language, currencySettings, session);
       return {

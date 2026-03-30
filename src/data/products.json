@@ -22,7 +22,7 @@
     "accountType": "dedicated",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 249000,
       "vip": 249000
@@ -430,7 +430,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 139000,
       "vip": 139000
@@ -486,7 +486,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 59000,
       "vip": 59000
@@ -543,7 +543,7 @@
     "accountType": "dedicated",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 29000,
       "vip": 29000
@@ -602,7 +602,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 1899000,
       "vip": 1899000
@@ -838,7 +838,7 @@
     "accountType": "dedicated",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 329000,
       "vip": 329000
@@ -897,7 +897,7 @@
     "accountType": "dedicated",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 79000,
       "vip": 79000
@@ -956,7 +956,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 2299000,
       "vip": 2299000
@@ -1015,7 +1015,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 1799000,
       "vip": 1799000
@@ -1074,7 +1074,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 549000,
       "vip": 549000
@@ -1192,7 +1192,7 @@
     "accountType": "dedicated",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 49000,
       "vip": 49000
@@ -1310,7 +1310,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 80000,
       "vip": 80000
@@ -1369,7 +1369,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 120000,
       "vip": 120000
@@ -1490,7 +1490,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 89000,
       "vip": 89000
@@ -2667,7 +2667,7 @@
     "accountType": "dedicated",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 99000,
       "vip": 99000
@@ -2726,7 +2726,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 299000,
       "vip": 299000
@@ -2785,7 +2785,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 69000,
       "vip": 69000
@@ -2844,7 +2844,7 @@
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 249000,
       "vip": 249000
@@ -2878,6 +2878,69 @@
           "ChatGPT",
           "AI"
         ]
+      }
+    }
+  },
+  {
+    "id": "flash-super-grok-40-50-ngay-79k",
+    "name": "Super Grok flash sale 40-50 ngày",
+    "slug": "super-grok-flash-sale-40-50-ngay-79k",
+    "shortDescription": "Super Grok dạng cấp/chính chủ, thời hạn 40-50 ngày, giá 79.000đ, bảo hành 10 ngày.",
+    "fullDescription": "- Flash sale giới hạn cho Super Grok\n- Dạng giao cấp/chính chủ tùy đợt, ưu tiên ổn định và dùng ngay\n- Thời hạn sử dụng 40-50 ngày\n- Bảo hành 10 ngày\n- Phù hợp cho nhu cầu dùng Grok mạnh với chi phí thấp hơn các gói dài hạn",
+    "usageDuration": "40-50 ngày",
+    "warrantyDuration": "10 ngày",
+    "costPrice": 79000,
+    "retailPrice": 79000,
+    "customerTierPrices": {
+      "regular": 79000,
+      "vip": 79000
+    },
+    "category": "Tài khoản số",
+    "categories": [
+      "Tài khoản số",
+      "Grok",
+      "AI"
+    ],
+    "accountType": "primary",
+    "featured": true,
+    "isFlashSale": true,
+    "flashSaleLabel": "Flash sale 79k",
+    "published": true,
+    "tierPrices": {
+      "regular": 79000,
+      "vip": 79000
+    },
+    "overridePrices": {},
+    "image": "https://f1-zpprd.zdn.vn/8528086493994462601/3cb641af585fd6018f4e.jpg",
+    "warrantyMonths": 1,
+    "stock": 0,
+    "points": 0,
+    "createdAt": "2026-03-31T12:00:00.000Z",
+    "updatedAt": "2026-03-31T12:00:00.000Z",
+    "translations": {
+      "vi": {
+        "name": "Super Grok flash sale 40-50 ngày",
+        "shortDescription": "Super Grok dạng cấp/chính chủ, thời hạn 40-50 ngày, giá 79.000đ, bảo hành 10 ngày.",
+        "fullDescription": "- Flash sale giới hạn cho Super Grok\n- Dạng giao cấp/chính chủ tùy đợt, ưu tiên ổn định và dùng ngay\n- Thời hạn sử dụng 40-50 ngày\n- Bảo hành 10 ngày\n- Phù hợp cho nhu cầu dùng Grok mạnh với chi phí thấp hơn các gói dài hạn",
+        "category": "Tài khoản số",
+        "categories": [
+          "Tài khoản số",
+          "Grok",
+          "AI"
+        ],
+        "flashSaleLabel": "Flash sale 79k"
+      },
+      "en": {
+        "name": "Super Grok flash sale 40-50 days",
+        "shortDescription": "Super Grok shared or primary delivery, 40-50 days of use, 79,000 VND, and 10 days warranty.",
+        "fullDescription": "- Limited flash sale for Super Grok\n- Shared or primary delivery depending on the available batch\n- Usage term: 40-50 days\n- Warranty: 10 days\n- Built for buyers who want Grok access at a lighter entry price",
+        "category": "Digital accounts",
+        "categories": [
+          "Digital accounts",
+          "Grok",
+          "AI"
+        ],
+        "flashSaleLabel": "Flash sale 79k"
       }
     }
   }

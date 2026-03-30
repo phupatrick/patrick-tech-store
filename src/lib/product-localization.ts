@@ -1,5 +1,6 @@
 import { parseDuration } from "@/lib/duration";
 import { Language } from "@/lib/i18n";
+import { normalizeText } from "@/lib/product-categories";
 import { Product, ProductTranslation } from "@/lib/types";
 
 export const getLocalizedProductCopy = (
@@ -24,6 +25,33 @@ const localizeDuration = (
   language: Language,
   defaults: { value?: number; unit?: "day" | "month" | "year" }
 ) => {
+  const rawValue = String(value ?? "").trim();
+  const normalized = normalizeText(rawValue);
+
+  if (rawValue) {
+    const rangeMatch = normalized.match(/(\d+)\s*[-–]\s*(\d+)/);
+    const hasDayUnit = /\b(day|days|ngay)\b/i.test(normalized);
+    const hasMonthUnit = /\b(month|months|thang)\b/i.test(normalized);
+    const hasYearUnit = /\b(year|years|nam)\b/i.test(normalized);
+
+    if (rangeMatch) {
+      const unitLabel =
+        hasYearUnit
+          ? language === "vi"
+            ? "năm"
+            : "years"
+          : hasMonthUnit
+            ? language === "vi"
+              ? "tháng"
+              : "months"
+            : language === "vi"
+              ? "ngày"
+              : "days";
+
+      return `${rangeMatch[1]}-${rangeMatch[2]} ${unitLabel}`;
+    }
+  }
+
   const parsed = parseDuration(value, defaults);
 
   if (parsed.isLifetime) {

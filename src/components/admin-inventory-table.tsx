@@ -96,7 +96,7 @@ export function AdminInventoryTable({ products, language, currencySettings }: Ad
                   <td>{formatCurrencyValue(displayPriceSet.customerTierPrices.vip, currencySettings)}</td>
                   <td>{formatCurrencyValue(displayPriceSet.tierPrices.regular, currencySettings)}</td>
                   <td>{formatCurrencyValue(displayPriceSet.tierPrices.vip, currencySettings)}</td>
-                  <td>{getLocalizedWarrantyDuration(product.warrantyMonths, language)}</td>
+                  <td>{getLocalizedWarrantyDuration(product.warrantyDuration ?? product.warrantyMonths, language)}</td>
                   <td className="inventory-description-cell">{localized.shortDescription}</td>
                   <td className="inventory-description-cell inventory-description-long">{localized.fullDescription}</td>
                   <td>{accountTypeLabels[product.accountType]}</td>

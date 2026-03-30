@@ -5,7 +5,6 @@ import { useEffect, useMemo, useState } from "react";
 
 import { useCurrency } from "@/components/currency-provider";
 import { useI18n } from "@/components/i18n-provider";
-import { getLocalizedWarrantyDuration } from "@/lib/product-localization";
 import { getProductPriceSummary, getPublicPriceLabels } from "@/lib/product-price-display";
 import { AuthSession, ProductView, VoucherView } from "@/lib/types";
 import { calculateVoucherDiscount } from "@/lib/vouchers";
@@ -170,12 +169,10 @@ export function ProductGridDialog({
               <span className="product-public-meta-label">{t("product.usageDuration")}</span>
               <span className="product-public-meta-value">{product.usageDuration}</span>
             </div>
-            <div className="product-public-meta-item">
-              <span className="product-public-meta-label">{t("product.warranty")}</span>
-              <span className="product-public-meta-value">
-                {getLocalizedWarrantyDuration(product.warrantyMonths, language)}
-              </span>
-            </div>
+              <div className="product-public-meta-item">
+                <span className="product-public-meta-label">{t("product.warranty")}</span>
+                <span className="product-public-meta-value">{product.warrantyDuration}</span>
+              </div>
           </div>
 
           {panelMode === "detail" ? (

@@ -13,13 +13,17 @@ type AdminProductsTableProps = {
   language: Language;
   currencySettings: CurrencySettings;
   highlightProductId?: string;
+  storageLocked?: boolean;
+  storageNotice?: string;
 };
 
 export function AdminProductsTable({
   products,
   language,
   currencySettings,
-  highlightProductId
+  highlightProductId,
+  storageLocked = false,
+  storageNotice
 }: AdminProductsTableProps) {
   const t = (key: Parameters<typeof translate>[1]) => translate(language, key);
 
@@ -34,6 +38,8 @@ export function AdminProductsTable({
           {t("admin.products.table.add")}
         </Link>
       </div>
+
+      {storageNotice ? <div className="notice admin-readonly-notice">{storageNotice}</div> : null}
 
       <div className="admin-cards-grid">
         {products.map((product) => {
@@ -84,7 +90,7 @@ export function AdminProductsTable({
                   {t("admin.products.table.edit")}
                 </Link>
                 <form action={deleteProductAction.bind(null, product.id)}>
-                  <DeleteProductButton productName={localized.name} />
+                  <DeleteProductButton productName={localized.name} disabled={storageLocked} />
                 </form>
               </div>
             </article>

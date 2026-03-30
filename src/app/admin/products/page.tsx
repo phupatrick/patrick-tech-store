@@ -5,10 +5,11 @@ import { getCurrencySettings } from "@/lib/currency";
 import { getRequestCurrency } from "@/lib/currency/server";
 import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
+import { getProductStoreReadOnlyNotice, isLiveProductStoreReadOnly } from "@/lib/product-persistence";
 import { listProducts } from "@/lib/product-store";
 
 type AdminProductsPageProps = {
-  searchParams: Promise<{ focus?: string }>;
+  searchParams: Promise<{ focus?: string; storage?: string }>;
 };
 
 export default async function AdminProductsPage({ searchParams }: AdminProductsPageProps) {
@@ -18,7 +19,9 @@ export default async function AdminProductsPage({ searchParams }: AdminProductsP
   const { t } = createTranslator(language);
   const adminUser = await requireAdminUser("/admin/products");
   const products = listProducts();
-  const { focus } = await searchParams;
+  const { focus, storage } = await searchParams;
+  const storageLocked = isLiveProductStoreReadOnly();
+  const storageNotice = storageLocked || storage === "readonly" ? getProductStoreReadOnlyNotice(language) : undefined;
 
   return (
     <main className="page-stack">
@@ -34,6 +37,8 @@ export default async function AdminProductsPage({ searchParams }: AdminProductsP
         highlightProductId={focus}
         language={language}
         currencySettings={currencySettings}
+        storageLocked={storageLocked}
+        storageNotice={storageNotice}
       />
     </main>
   );

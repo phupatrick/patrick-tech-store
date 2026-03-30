@@ -4,7 +4,7 @@ import { useFormStatus } from "react-dom";
 
 import { useI18n } from "@/components/i18n-provider";
 
-export function DeleteProductButton({ productName }: { productName: string }) {
+export function DeleteProductButton({ productName, disabled = false }: { productName: string; disabled?: boolean }) {
   const { pending } = useFormStatus();
   const { t } = useI18n();
 
@@ -12,8 +12,13 @@ export function DeleteProductButton({ productName }: { productName: string }) {
     <button
       type="submit"
       className="button button-danger"
-      disabled={pending}
+      disabled={pending || disabled}
       onClick={(event) => {
+        if (disabled) {
+          event.preventDefault();
+          return;
+        }
+
         if (window.confirm(t("admin.delete.confirm", { name: productName }))) {
           return;
         }

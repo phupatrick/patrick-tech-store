@@ -7,6 +7,10 @@ import { requireAdminUser } from "@/lib/auth";
 import { getCurrencySettings } from "@/lib/currency";
 import { getRequestCurrency } from "@/lib/currency/server";
 import { translate } from "@/lib/i18n";
+import {
+  getProductStoreWriteErrorMessage,
+  isReadOnlyProductPersistenceError
+} from "@/lib/product-persistence";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { ProductFormState } from "@/lib/product-form";
 import { removeStoredProductImage, resolveProductImageFromFormData } from "@/lib/product-images";
@@ -70,32 +74,42 @@ export const createProductAction = async (_prevState: ProductFormState, formData
     return { error: imageResult.error, values };
   }
 
-  createProductRecord(
-    {
-      name: validation.data.name,
-      slug: validation.data.slug,
-      shortDescription: validation.data.shortDescription,
-      fullDescription: validation.data.fullDescription,
-      usageDuration: validation.data.usageDuration,
-      costPrice: validation.data.costPrice,
-      image: imageResult.imagePath,
-      retailPrice: validation.data.vndPricing.retailPrice,
-      customerTierPrices: validation.data.vndPricing.customerTierPrices,
-      tierPrices: validation.data.vndPricing.tierPrices,
-      warrantyMonths: validation.data.warrantyMonths,
-      category: validation.data.category,
-      categories: validation.data.categories,
-      accountType: validation.data.accountType,
-      featured: validation.data.featured,
-      isFlashSale: validation.data.isFlashSale,
-      flashSaleLabel: validation.data.flashSaleLabel,
-      published: validation.data.published,
-      currencyPrices: mergeCurrencyPrices(undefined, validation.data.currencyPriceOverride)
-    },
-    language
-  );
-  revalidateProductViews();
-  redirect("/admin/products");
+  try {
+    createProductRecord(
+      {
+        name: validation.data.name,
+        slug: validation.data.slug,
+        shortDescription: validation.data.shortDescription,
+        fullDescription: validation.data.fullDescription,
+        usageDuration: validation.data.usageDuration,
+        costPrice: validation.data.costPrice,
+        image: imageResult.imagePath,
+        retailPrice: validation.data.vndPricing.retailPrice,
+        customerTierPrices: validation.data.vndPricing.customerTierPrices,
+        tierPrices: validation.data.vndPricing.tierPrices,
+        warrantyMonths: validation.data.warrantyMonths,
+        category: validation.data.category,
+        categories: validation.data.categories,
+        accountType: validation.data.accountType,
+        featured: validation.data.featured,
+        isFlashSale: validation.data.isFlashSale,
+        flashSaleLabel: validation.data.flashSaleLabel,
+        published: validation.data.published,
+        currencyPrices: mergeCurrencyPrices(undefined, validation.data.currencyPriceOverride)
+      },
+      language
+    );
+    revalidateProductViews();
+    redirect("/admin/products");
+  } catch (error) {
+    console.error("[admin/products] create failed", error);
+    return {
+      error: isReadOnlyProductPersistenceError(error)
+        ? getProductStoreWriteErrorMessage(language)
+        : translate(language, "admin.validation.productNotFound"),
+      values
+    };
+  }
 };
 
 export const updateProductAction = async (
@@ -132,45 +146,61 @@ export const updateProductAction = async (
     return { error: imageResult.error, values };
   }
 
-  updateProductRecord(
-    productId,
-    {
-      name: validation.data.name,
-      slug: validation.data.slug,
-      shortDescription: validation.data.shortDescription,
-      fullDescription: validation.data.fullDescription,
-      usageDuration: validation.data.usageDuration,
-      costPrice: validation.data.costPrice,
-      image: imageResult.imagePath,
-      retailPrice: currency === "USD" ? product.retailPrice : validation.data.vndPricing.retailPrice,
-      customerTierPrices: currency === "USD" ? product.customerTierPrices : validation.data.vndPricing.customerTierPrices,
-      tierPrices: currency === "USD" ? product.tierPrices : validation.data.vndPricing.tierPrices,
-      warrantyMonths: validation.data.warrantyMonths,
-      category: validation.data.category,
-      categories: validation.data.categories,
-      accountType: validation.data.accountType,
-      featured: validation.data.featured,
-      isFlashSale: validation.data.isFlashSale,
-      flashSaleLabel: validation.data.flashSaleLabel,
-      published: validation.data.published,
-      currencyPrices: mergeCurrencyPrices(product.currencyPrices, validation.data.currencyPriceOverride)
-    },
-    language
-  );
+  try {
+    updateProductRecord(
+      productId,
+      {
+        name: validation.data.name,
+        slug: validation.data.slug,
+        shortDescription: validation.data.shortDescription,
+        fullDescription: validation.data.fullDescription,
+        usageDuration: validation.data.usageDuration,
+        costPrice: validation.data.costPrice,
+        image: imageResult.imagePath,
+        retailPrice: currency === "USD" ? product.retailPrice : validation.data.vndPricing.retailPrice,
+        customerTierPrices: currency === "USD" ? product.customerTierPrices : validation.data.vndPricing.customerTierPrices,
+        tierPrices: currency === "USD" ? product.tierPrices : validation.data.vndPricing.tierPrices,
+        warrantyMonths: validation.data.warrantyMonths,
+        category: validation.data.category,
+        categories: validation.data.categories,
+        accountType: validation.data.accountType,
+        featured: validation.data.featured,
+        isFlashSale: validation.data.isFlashSale,
+        flashSaleLabel: validation.data.flashSaleLabel,
+        published: validation.data.published,
+        currencyPrices: mergeCurrencyPrices(product.currencyPrices, validation.data.currencyPriceOverride)
+      },
+      language
+    );
 
-  if (product.image !== imageResult.imagePath) {
-    removeStoredProductImage(product.image);
+    if (product.image !== imageResult.imagePath) {
+      removeStoredProductImage(product.image);
+    }
+
+    revalidateProductViews();
+    revalidatePath(`/admin/products/${productId}/edit`);
+    redirect("/admin/products");
+  } catch (error) {
+    console.error("[admin/products] update failed", { productId, error });
+    return {
+      error: isReadOnlyProductPersistenceError(error)
+        ? getProductStoreWriteErrorMessage(language)
+        : translate(language, "admin.validation.productNotFound"),
+      values
+    };
   }
-
-  revalidateProductViews();
-  revalidatePath(`/admin/products/${productId}/edit`);
-  redirect("/admin/products");
 };
 
 export const deleteProductAction = async (productId: string) => {
   await requireAdminUser("/admin/products");
   const product = getProductById(productId);
-  deleteProductRecord(productId);
-  removeStoredProductImage(product?.image);
-  revalidateProductViews();
+
+  try {
+    deleteProductRecord(productId);
+    removeStoredProductImage(product?.image);
+    revalidateProductViews();
+  } catch (error) {
+    console.error("[admin/products] delete failed", { productId, error });
+    redirect("/admin/products?storage=readonly");
+  }
 };

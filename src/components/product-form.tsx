@@ -14,23 +14,33 @@ type ProductFormProps = {
   submitLabel: string;
   heading: string;
   description: string;
+  storageLocked?: boolean;
+  storageNotice?: string;
 };
 
 const ACCOUNT_TYPE_VALUES = ["dedicated", "primary", "rental"] as const;
 const USAGE_DURATION_UNITS = ["day", "month"] as const;
 
-function SubmitButton({ label }: { label: string }) {
+function SubmitButton({ label, disabled = false }: { label: string; disabled?: boolean }) {
   const { pending } = useFormStatus();
   const { t } = useI18n();
 
   return (
-    <button type="submit" className="button button-primary" disabled={pending}>
+    <button type="submit" className="button button-primary" disabled={pending || disabled}>
       {pending ? t("admin.form.submit.saving") : label}
     </button>
   );
 }
 
-export function ProductForm({ action, initialValues, submitLabel, heading, description }: ProductFormProps) {
+export function ProductForm({
+  action,
+  initialValues,
+  submitLabel,
+  heading,
+  description,
+  storageLocked = false,
+  storageNotice
+}: ProductFormProps) {
   const { t } = useI18n();
   const { settings } = useCurrency();
   const [state, formAction] = useActionState(action, {
@@ -68,7 +78,9 @@ export function ProductForm({ action, initialValues, submitLabel, heading, descr
       </div>
 
       {state.error ? <div className="admin-form-error">{state.error}</div> : null}
+      {storageNotice ? <div className="notice admin-readonly-notice">{storageNotice}</div> : null}
 
+      <fieldset className="admin-form-fieldset" disabled={storageLocked}>
       <div className="admin-form-grid">
         <label className="field">
           <span className="field-label">{t("admin.form.field.name")}</span>
@@ -372,8 +384,9 @@ export function ProductForm({ action, initialValues, submitLabel, heading, descr
       </div>
 
       <div className="row row-actions">
-        <SubmitButton label={submitLabel} />
+        <SubmitButton label={submitLabel} disabled={storageLocked} />
       </div>
+      </fieldset>
     </form>
   );
 }

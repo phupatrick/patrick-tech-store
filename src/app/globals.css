@@ -1495,6 +1495,19 @@ select {
   gap: 24px;
 }
 
+.admin-form-fieldset {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.admin-form-fieldset[disabled] {
+  opacity: 0.78;
+}
+
 .admin-form-grid,
 .admin-auth-grid {
   display: grid;
@@ -1520,6 +1533,12 @@ select {
   background: rgba(127, 29, 29, 0.2);
   color: #fecaca;
   padding: 14px 16px;
+}
+
+.admin-readonly-notice {
+  border-color: rgba(245, 158, 11, 0.28);
+  background: linear-gradient(180deg, rgba(120, 53, 15, 0.22), rgba(69, 26, 3, 0.18));
+  color: #fde68a;
 }
 
 .toggle {

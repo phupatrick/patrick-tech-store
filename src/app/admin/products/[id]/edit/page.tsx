@@ -10,6 +10,7 @@ import { createTranslator } from "@/lib/i18n";
 import { getRequestLanguage } from "@/lib/i18n/server";
 import { productToFormValues } from "@/lib/product-form";
 import { getLocalizedProductCopy } from "@/lib/product-localization";
+import { getProductStoreReadOnlyNotice, isLiveProductStoreReadOnly } from "@/lib/product-persistence";
 import { getProductById } from "@/lib/product-store";
 
 type EditProductPageProps = {
@@ -24,6 +25,7 @@ export default async function EditProductPage({ params }: EditProductPageProps) 
   const adminUser = await requireAdminUser();
   const { id } = await params;
   const product = getProductById(id);
+  const storageLocked = isLiveProductStoreReadOnly();
 
   if (!product) {
     notFound();
@@ -40,6 +42,8 @@ export default async function EditProductPage({ params }: EditProductPageProps) 
         submitLabel={t("admin.form.edit.submit")}
         heading={t("admin.form.edit.heading", { name: localized.name })}
         description={t("admin.form.edit.description")}
+        storageLocked={storageLocked}
+        storageNotice={storageLocked ? getProductStoreReadOnlyNotice(language) : undefined}
       />
     </main>
   );

@@ -176,11 +176,30 @@ export default async function Home({ searchParams }: HomeProps) {
       />
 
       <section className="page-stack section-block section-surface home-product-section home-product-section-catalog">
-        <div className="catalog-heading">
-          <div className="section-head">
-            <h2 className="section-title">{t("home.catalog.title")}</h2>
-            <p className="muted section-subtitle">{t("home.catalog.description")}</p>
+        <div className="editorial-spotlight">
+          <div className="section-head editorial-spotlight-head">
+            <div>
+              <p className="eyebrow">Patrick Tech Media</p>
+              <h2 className="section-title">AI, công nghệ và những chủ đề đang kéo traffic</h2>
+              <p className="muted section-subtitle editorial-spotlight-subtitle">
+                Mặt tiền ưu tiên AI, công nghệ, ứng dụng số và nền tảng mới; các chủ đề hot vẫn được dùng để kéo thêm lượt xem
+                nhưng không làm lệch chất tech của hệ thống.
+              </p>
+            </div>
           </div>
+
+          <div className="editorial-pill-row" aria-label="Định hướng nội dung ưu tiên">
+            <span className="editorial-pill editorial-pill-primary">AI</span>
+            <span className="editorial-pill editorial-pill-primary">Công nghệ</span>
+            <span className="editorial-pill">Ứng dụng</span>
+            <span className="editorial-pill">Thiết bị</span>
+            <span className="editorial-pill">Mạng xã hội</span>
+            <span className="editorial-pill editorial-pill-soft">Game</span>
+            <span className="editorial-pill editorial-pill-soft">Trend</span>
+          </div>
+        </div>
+
+        <div className="catalog-heading">
           <div className="catalog-meta">
             <p className="catalog-result-count">{t("home.catalog.resultCount", { count: totalCatalogProducts })}</p>
             {totalPages > 1 ? (

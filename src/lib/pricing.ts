@@ -24,6 +24,7 @@ type PreparedPublicProduct = {
 };
 
 const PUBLIC_HIDDEN_PRODUCT_KEYWORDS = ["chatgpt"];
+const GROK_CATEGORY_KEYWORD = normalizeText("Grok");
 
 export const getUserById = (userId?: string | null): User | undefined =>
   users.find((user) => user.id === userId);
@@ -313,6 +314,32 @@ const getPreparedPublicProducts = async (
     });
 };
 
+const isGrokPreparedProduct = (product: PreparedPublicProduct) =>
+  product.searchPayload.normalizedCategoryAliases.includes(GROK_CATEGORY_KEYWORD) ||
+  normalizeText(product.view.name).includes("grok");
+
+const sortPromotionCandidates = (products: PreparedPublicProduct[], language: Language) =>
+  [...products].sort((left, right) => {
+    const grokPriority = Number(isGrokPreparedProduct(right)) - Number(isGrokPreparedProduct(left));
+
+    if (grokPriority !== 0) {
+      return grokPriority;
+    }
+
+    if (left.view.isFlashSale !== right.view.isFlashSale) {
+      return Number(right.view.isFlashSale) - Number(left.view.isFlashSale);
+    }
+
+    const rightDate = Date.parse(right.view.updatedAt ?? right.view.createdAt ?? "");
+    const leftDate = Date.parse(left.view.updatedAt ?? left.view.createdAt ?? "");
+
+    if (rightDate !== leftDate) {
+      return rightDate - leftDate;
+    }
+
+    return left.view.name.localeCompare(right.view.name, language === "en" ? "en" : "vi");
+  });
+
 export const getPublicProductView = async (
   product: Product,
   language: Language,
@@ -385,11 +412,11 @@ export const getStorefrontSnapshot = async ({ language, currency, query, categor
   const categories = Array.from(categorySet).sort((left, right) =>
     left.localeCompare(right, language === "en" ? "en" : "vi")
   );
-  const featuredProducts = (featuredSource.length > 0 ? featuredSource : preparedProducts)
+  const featuredProducts = sortPromotionCandidates(featuredSource.length > 0 ? featuredSource : preparedProducts, language)
     .slice(0, 4)
     .map((product) => product.view);
   const featuredIds = new Set(featuredProducts.map((product) => product.id));
-  const flashSaleProducts = flashSaleSource
+  const flashSaleProducts = sortPromotionCandidates(flashSaleSource, language)
     .filter((product) => !featuredIds.has(product.view.id))
     .slice(0, 4)
     .map((product) => product.view);

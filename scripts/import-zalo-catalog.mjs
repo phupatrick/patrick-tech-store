@@ -14,15 +14,15 @@ const MANUAL_PRODUCT_OVERRIDES = {
   "zalo-6a57018513c0fa9ea3d1": {
     name: "Kling Standard 1100 credit - bảo hành 24h",
     slug: "kling-standard-1100-credit-24h-6a570185",
-    retailPrice: 180000,
-    costPrice: 180000,
+    retailPrice: 189000,
+    costPrice: 189000,
     customerTierPrices: {
-      regular: 180000,
-      vip: 180000
+      regular: 189000,
+      vip: 189000
     },
     tierPrices: {
-      regular: 180000,
-      vip: 180000
+      regular: 189000,
+      vip: 189000
     },
     warrantyDuration: "24 giờ",
     warrantyMonths: 1,
@@ -41,15 +41,15 @@ const MANUAL_PRODUCT_OVERRIDES = {
   "zalo-5955318723c2ca9c93d3": {
     name: "Kling Pro 4500 credit",
     slug: "kling-pro-4500-credit-59553187",
-    retailPrice: 399000,
-    costPrice: 399000,
+    retailPrice: 499000,
+    costPrice: 499000,
     customerTierPrices: {
-      regular: 399000,
-      vip: 399000
+      regular: 499000,
+      vip: 499000
     },
     tierPrices: {
-      regular: 399000,
-      vip: 399000
+      regular: 499000,
+      vip: 499000
     },
     warrantyDuration: "3 ngày",
     warrantyMonths: 1,
@@ -509,7 +509,8 @@ const mapProduct = (entry, index) => {
   });
   const categories = inferCategories(name);
   const enCategories = translateCategories(categories, name);
-  const flashSale = /\[HOT\]/i.test(entry.name || "");
+  const isGrok = isGrokProduct(name, categories);
+  const flashSale = /\[HOT\]/i.test(entry.name || "") || isGrok;
   const createdAt = new Date(Date.UTC(2026, 2, 14, 0, index, 0)).toISOString();
   const updatedAt = new Date(Date.UTC(2026, 2, 14, 0, index, 30)).toISOString();
 
@@ -529,7 +530,7 @@ const mapProduct = (entry, index) => {
     category: categories[0],
     categories,
     accountType,
-    featured: index < FEATURED_PRODUCT_COUNT,
+    featured: isGrok || index < FEATURED_PRODUCT_COUNT,
     isFlashSale: flashSale,
     flashSaleLabel: flashSale ? "Nổi bật" : undefined,
     published: true,
@@ -764,6 +765,13 @@ const buildManualExtraProducts = (importedProducts) =>
       image: sourceProduct?.image ?? product.image
     };
   });
+
+const isGrokProduct = (name = "", categories = []) => {
+  const normalizedName = normalizeText(name);
+  const normalizedCategories = categories.map((item) => normalizeText(item));
+
+  return normalizedName.includes("grok") || normalizedCategories.includes("grok");
+};
 
 const main = async () => {
   const catalogUrl = parseCatalogUrl(process.argv[2]);

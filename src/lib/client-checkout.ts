@@ -48,9 +48,30 @@ export const openCheckoutWindow = async ({
     };
   }
 
+  const copyPrefilledMessage = async () => {
+    try {
+      if (!payload.redirectUrl || !navigator?.clipboard?.writeText) {
+        return;
+      }
+
+      const redirect = new URL(payload.redirectUrl);
+      const text = redirect.searchParams.get("text");
+
+      if (!text) {
+        return;
+      }
+
+      await navigator.clipboard.writeText(text);
+    } catch {
+      // Best-effort only. If clipboard access is blocked, continue redirect flow.
+    }
+  };
+
   const isMobile =
     typeof navigator !== "undefined" &&
     /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+
+  await copyPrefilledMessage();
 
   if (isMobile) {
     window.location.assign(payload.redirectUrl);

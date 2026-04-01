@@ -142,10 +142,10 @@
       "AI"
     ],
     "accountType": "primary",
-    "featured": true,
-    "isFlashSale": true,
+    "featured": false,
+    "isFlashSale": false,
     "flashSaleLabel": "Số lượng có hạn",
-    "published": true,
+    "published": false,
     "tierPrices": {
       "regular": 119000,
       "vip": 119000

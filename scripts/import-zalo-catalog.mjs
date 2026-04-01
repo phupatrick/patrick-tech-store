@@ -60,8 +60,9 @@ const MANUAL_PRODUCT_OVERRIDES = {
     category: ACCOUNT_CATEGORY
   },
   "zalo-2780a823ba6653380a77": {
-    flashSaleLabel: "S\u1ed1 l\u01b0\u1ee3ng c\u00f3 h\u1ea1n",
-    flashSaleLabelEn: "Limited slots"
+    featured: false,
+    isFlashSale: false,
+    published: false
   }
 };
 

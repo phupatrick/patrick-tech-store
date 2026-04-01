@@ -25,6 +25,7 @@ type PreparedPublicProduct = {
 
 const PUBLIC_HIDDEN_PRODUCT_KEYWORDS = ["chatgpt"];
 const GROK_CATEGORY_KEYWORD = normalizeText("Grok");
+const GROK_HEAVY_KEYWORD = normalizeText("Grok Heavy");
 
 export const getUserById = (userId?: string | null): User | undefined =>
   users.find((user) => user.id === userId);
@@ -261,6 +262,20 @@ const buildPublicProductView = (
 const getViewCategories = (product: Pick<ProductView, "category" | "categories">) =>
   product.categories ?? (product.category ? [product.category] : []);
 
+const getCatalogPromotionPriority = (product: Pick<ProductView, "name">, isGrokProduct = false) => {
+  const normalizedName = normalizeText(product.name);
+
+  if (normalizedName.includes(GROK_HEAVY_KEYWORD)) {
+    return 2;
+  }
+
+  if (isGrokProduct || normalizedName.includes("grok")) {
+    return 1;
+  }
+
+  return 0;
+};
+
 const sortPublicProducts = (products: ProductView[], sort: string | undefined, language: Language) => {
   const sortedProducts = [...products];
 
@@ -280,6 +295,12 @@ const sortPublicProducts = (products: ProductView[], sort: string | undefined, l
       break;
     default:
       sortedProducts.sort((left, right) => {
+        const promotionPriority = getCatalogPromotionPriority(right) - getCatalogPromotionPriority(left);
+
+        if (promotionPriority !== 0) {
+          return promotionPriority;
+        }
+
         if (left.featured !== right.featured) {
           return Number(right.featured) - Number(left.featured);
         }
@@ -320,7 +341,9 @@ const isGrokPreparedProduct = (product: PreparedPublicProduct) =>
 
 const sortPromotionCandidates = (products: PreparedPublicProduct[], language: Language) =>
   [...products].sort((left, right) => {
-    const grokPriority = Number(isGrokPreparedProduct(right)) - Number(isGrokPreparedProduct(left));
+    const grokPriority =
+      getCatalogPromotionPriority(right.view, isGrokPreparedProduct(right)) -
+      getCatalogPromotionPriority(left.view, isGrokPreparedProduct(left));
 
     if (grokPriority !== 0) {
       return grokPriority;

@@ -58,6 +58,10 @@ const MANUAL_PRODUCT_OVERRIDES = {
       "Acc cấp, giao nhanh.\n\nGói Kling Pro 4500 credit với bảo hành 3 ngày, phù hợp cho nhu cầu render/video bằng credit cao hơn.",
     categories: [ACCOUNT_CATEGORY, "AI", "Video"],
     category: ACCOUNT_CATEGORY
+  },
+  "zalo-2780a823ba6653380a77": {
+    flashSaleLabel: "S\u1ed1 l\u01b0\u1ee3ng c\u00f3 h\u1ea1n",
+    flashSaleLabelEn: "Limited slots"
   }
 };
 
@@ -718,7 +722,8 @@ const applyManualProductOverride = (product) => {
         shortDescription: override.shortDescription ?? product.translations?.vi?.shortDescription ?? product.shortDescription,
         fullDescription: override.fullDescription ?? product.translations?.vi?.fullDescription ?? product.fullDescription,
         category: override.category ?? product.translations?.vi?.category ?? product.category,
-        categories: override.categories ?? product.translations?.vi?.categories ?? product.categories
+        categories: override.categories ?? product.translations?.vi?.categories ?? product.categories,
+        flashSaleLabel: override.flashSaleLabel ?? product.translations?.vi?.flashSaleLabel ?? product.flashSaleLabel
       },
       en: {
         ...product.translations?.en,
@@ -746,7 +751,8 @@ const applyManualProductOverride = (product) => {
         categories:
           product.id === "zalo-6a57018513c0fa9ea3d1" || product.id === "zalo-21164bc45981b0dfe990" || product.id === "zalo-5955318723c2ca9c93d3"
             ? [DIGITAL_ACCOUNT_CATEGORY, "AI", "Video"]
-            : product.translations?.en?.categories
+            : product.translations?.en?.categories,
+        flashSaleLabel: override.flashSaleLabelEn ?? product.translations?.en?.flashSaleLabel ?? product.flashSaleLabel
       }
     }
   };

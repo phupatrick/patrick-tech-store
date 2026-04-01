@@ -144,7 +144,7 @@
     "accountType": "primary",
     "featured": true,
     "isFlashSale": true,
-    "flashSaleLabel": "Nổi bật",
+    "flashSaleLabel": "Số lượng có hạn",
     "published": true,
     "tierPrices": {
       "regular": 119000,
@@ -168,7 +168,7 @@
           "Grok",
           "AI"
         ],
-        "flashSaleLabel": "Nổi bật"
+        "flashSaleLabel": "Số lượng có hạn"
       },
       "en": {
         "name": "Grok Heavy 1 year",
@@ -180,7 +180,7 @@
           "Grok",
           "AI"
         ],
-        "flashSaleLabel": "Hot"
+        "flashSaleLabel": "Limited slots"
       }
     }
   },

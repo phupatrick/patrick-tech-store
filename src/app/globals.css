@@ -1870,6 +1870,31 @@ select {
   gap: 14px;
 }
 
+.checkout-meta-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.checkout-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.6);
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.checkout-meta-pill strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .checkout-channel-actions {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2660,13 +2685,13 @@ select {
 
   .detail-panel {
     width: 100%;
-    max-height: min(88dvh, 920px);
-    padding: 18px 16px calc(18px + env(safe-area-inset-bottom));
+    max-height: min(84dvh, 920px);
+    padding: 14px 14px calc(14px + env(safe-area-inset-bottom));
     border-radius: 22px 22px 0 0;
   }
 
   .detail-panel-checkout {
-    gap: 12px;
+    gap: 10px;
   }
 
   .detail-panel-header {
@@ -2678,7 +2703,7 @@ select {
   }
 
   .detail-panel-copy {
-    gap: 10px;
+    gap: 8px;
   }
 
   .detail-close-button {
@@ -2690,13 +2715,24 @@ select {
 
   .checkout-summary-card,
   .checkout-quote-card {
-    gap: 8px;
-    padding: 12px;
-    border-radius: 14px;
+    gap: 6px;
+    padding: 10px 12px;
+    border-radius: 12px;
   }
 
   .checkout-channel-panel {
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .checkout-meta-inline {
+    gap: 6px;
+  }
+
+  .checkout-meta-pill {
+    width: 100%;
+    min-height: 34px;
+    padding: 7px 10px;
+    font-size: 0.8rem;
   }
 }
 

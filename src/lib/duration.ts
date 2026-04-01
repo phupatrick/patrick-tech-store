@@ -1,6 +1,6 @@
 import { normalizeText } from "@/lib/product-categories";
 
-export type DurationUnit = "day" | "month" | "year";
+export type DurationUnit = "hour" | "day" | "month" | "year";
 
 type ParsedDuration = {
   value: number;
@@ -48,13 +48,14 @@ export const parseDuration = (
   }
 
   const numericValue = Number.parseInt(normalized.match(/\d+/)?.[0] ?? "", 10);
+  const hasHourUnit = /\b(hour|hours|hr|hrs|gio)\b/i.test(normalized);
   const hasDayUnit = /\b(day|days|ngay)\b/i.test(normalized);
   const hasMonthUnit = /\b(month|months|thang)\b/i.test(normalized);
   const hasYearUnit = /\b(year|years|nam)\b/i.test(normalized);
 
   return {
     value: Number.isFinite(numericValue) && numericValue > 0 ? numericValue : defaultValue,
-    unit: hasYearUnit ? "year" : hasMonthUnit ? "month" : hasDayUnit ? "day" : defaultUnit,
+    unit: hasYearUnit ? "year" : hasMonthUnit ? "month" : hasDayUnit ? "day" : hasHourUnit ? "hour" : defaultUnit,
     isLifetime: false
   };
 };
@@ -74,6 +75,10 @@ export const getApproximateMonths = (input: string | number | undefined) => {
     return Math.max(1, Math.ceil(parsed.value / 30));
   }
 
+  if (parsed.unit === "hour") {
+    return 1;
+  }
+
   return parsed.value;
 };
 
@@ -88,6 +93,11 @@ export const addDurationToDate = (date: Date, input: string | number | undefined
 
   if (parsed.unit === "day") {
     nextDate.setDate(nextDate.getDate() + parsed.value);
+    return nextDate;
+  }
+
+  if (parsed.unit === "hour") {
+    nextDate.setHours(nextDate.getHours() + parsed.value);
     return nextDate;
   }
 

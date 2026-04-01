@@ -33,6 +33,7 @@ export function ProductGridDialog({
   const [selectedVoucherId, setSelectedVoucherId] = useState("");
   const [pending, setPending] = useState(false);
   const [checkoutError, setCheckoutError] = useState<string | null>(null);
+
   const isVoucherEligible = Boolean(session && ["customer", "reseller"].includes(session.role));
   const productCategories = getProductCategories(product);
   const priceLabels = getPublicPriceLabels(language);
@@ -71,17 +72,15 @@ export function ProductGridDialog({
     (voucher) => voucher.id === selectedVoucherId && voucher.isApplicable && !voucher.isReserved
   );
   const finalDisplayPrice = Math.max(0, product.displayVisiblePrice - toDisplayAmount(selectedVoucher?.discountAmount ?? 0));
-  const isQuoteOnlyProduct = product.displayVisiblePrice <= 0;
+  const isQuoteOnlyProduct = product.visiblePrice <= 0 || product.displayVisiblePrice <= 0;
   const hasVoucherDiscount = (selectedVoucher?.discountAmount ?? 0) > 0;
   const showFullCheckoutBreakdown = hasVoucherDiscount || priceSummary.hasDiscount;
   const showZaloChannel = language === "vi";
   const showWhatsappChannel = language === "en";
-  const checkoutChannelDescription = language === "vi"
-    ? "Chọn kênh bạn muốn dùng để gửi sẵn nội dung đặt hàng."
-    : "Choose the app you want to use for this order request.";
-  const checkoutQuoteDescription = language === "vi"
-    ? "San pham nay chua niem yet gia co dinh. Chon kenh lien he de nhan bao gia nhanh."
-    : "This item does not have a fixed public price yet. Choose a contact channel to get a quick quote.";
+  const checkoutQuoteDescription =
+    language === "vi"
+      ? "S\u1ea3n ph\u1ea9m n\u00e0y ch\u01b0a ni\u00eam y\u1ebft gi\u00e1 c\u1ed1 \u0111\u1ecbnh. Ch\u1ecdn k\u00eanh li\u00ean h\u1ec7 \u0111\u1ec3 nh\u1eadn b\u00e1o gi\u00e1 nhanh."
+      : "This item does not have a fixed public price yet. Choose a contact channel to get a quick quote.";
 
   const handleCheckout = async (contactMethod: "zalo" | "telegram" | "whatsapp", voucherId?: string) => {
     setPending(true);
@@ -145,7 +144,10 @@ export function ProductGridDialog({
           ) : null}
 
           {panelMode === "detail" || !isQuoteOnlyProduct ? (
-            <div className="product-price-stack product-price-stack-detail" aria-label={language === "vi" ? "Thong tin gia" : "Pricing details"}>
+            <div
+              className="product-price-stack product-price-stack-detail"
+              aria-label={language === "vi" ? "Thong tin gia" : "Pricing details"}
+            >
               {priceSummary.hasDiscount ? (
                 <div className="product-price-topline">
                   <span className="product-price-label">{priceLabels.original}</span>
@@ -164,16 +166,27 @@ export function ProductGridDialog({
             </div>
           ) : null}
 
-          <div className="product-public-meta product-public-meta-detail">
-            <div className="product-public-meta-item">
-              <span className="product-public-meta-label">{t("product.usageDuration")}</span>
-              <span className="product-public-meta-value">{product.usageDuration}</span>
+          {panelMode === "checkout" ? (
+            <div className="checkout-meta-inline">
+              <span className="checkout-meta-pill">
+                <strong>{t("product.usageDuration")}:</strong> {product.usageDuration}
+              </span>
+              <span className="checkout-meta-pill">
+                <strong>{t("product.warranty")}:</strong> {product.warrantyDuration}
+              </span>
             </div>
+          ) : (
+            <div className="product-public-meta product-public-meta-detail">
+              <div className="product-public-meta-item">
+                <span className="product-public-meta-label">{t("product.usageDuration")}</span>
+                <span className="product-public-meta-value">{product.usageDuration}</span>
+              </div>
               <div className="product-public-meta-item">
                 <span className="product-public-meta-label">{t("product.warranty")}</span>
                 <span className="product-public-meta-value">{product.warrantyDuration}</span>
               </div>
-          </div>
+            </div>
+          )}
 
           {panelMode === "detail" ? (
             <div className="detail-summary">
@@ -240,7 +253,6 @@ export function ProductGridDialog({
                   <div className="notice">{t("checkout.voucherWalletEmpty")}</div>
                 )}
               </div>
-
             </div>
           ) : null}
 
@@ -272,10 +284,7 @@ export function ProductGridDialog({
                 </div>
               )}
 
-              <div className="detail-copy-block checkout-channel-copy">
-                <p className="detail-copy-label">{t("checkout.channelTitle")}</p>
-                <p className="muted">{checkoutChannelDescription}</p>
-              </div>
+              <p className="detail-copy-label">{t("checkout.channelTitle")}</p>
 
               <div className="checkout-channel-actions">
                 {showZaloChannel ? (

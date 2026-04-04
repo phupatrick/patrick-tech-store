@@ -179,6 +179,7 @@ export type VoucherView = {
 
 export type PendingCheckout = {
   id: string;
+  orderCode?: string;
   token: string;
   createdAt: string;
   expiresAt: string;

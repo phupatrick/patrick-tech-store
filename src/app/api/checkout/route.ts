@@ -9,7 +9,8 @@ import {
   roundCurrencyAmount
 } from "@/lib/currency";
 import { isLanguage, translate } from "@/lib/i18n";
-import { createPendingCheckoutRecord, getReservedVoucherMap, updatePendingCheckout } from "@/lib/pending-checkout-store";
+import { createPendingCheckoutRecord, getReservedVoucherMap, listPendingCheckouts, updatePendingCheckout } from "@/lib/pending-checkout-store";
+import { generateUniqueOrderCode, listOrders } from "@/lib/order-store";
 import { getPublicProductView } from "@/lib/pricing";
 import { getProductById } from "@/lib/product-store";
 import { getClientRequestContext } from "@/lib/request-context";
@@ -20,8 +21,17 @@ import { getVoucherWalletForAccessCode } from "@/lib/voucher-wallet";
 
 import { TELEGRAM_DIRECT_URL, WHATSAPP_DIRECT_URL, ZALO_DIRECT_URL } from "@/lib/contact-links";
 
-const createFallbackCheckoutReference = (productId: string) =>
-  `${productId.replace(/[^a-zA-Z0-9]/g, "").slice(-4)}${Date.now().toString(36).slice(-4)}`.toUpperCase();
+const createCheckoutOrderCode = () => {
+  const existingCodes = new Set(listOrders().map((order) => order.id));
+
+  listPendingCheckouts().forEach((pendingCheckout) => {
+    if (pendingCheckout.orderCode) {
+      existingCodes.add(pendingCheckout.orderCode);
+    }
+  });
+
+  return generateUniqueOrderCode(existingCodes);
+};
 
 export async function POST(request: NextRequest) {
   const body = (await request.json()) as {
@@ -112,13 +122,18 @@ export async function POST(request: NextRequest) {
   const formattedOriginalPrice = formatCurrencyValue(displayOriginalPrice, currencySettings);
   const formattedDiscount = formatCurrencyValue(displayDiscountAmount, currencySettings);
   const formattedFinalPrice = formatCurrencyValue(displayFinalPrice, currencySettings);
+  const orderCode = createCheckoutOrderCode();
   const voucherLine = voucherDefinitionId
     ? translate(language, "checkout.voucherApplied", {
         voucher: translate(language, `voucher.def.${voucherDefinitionId}.name` as never),
         discount: formattedDiscount
       })
     : translate(language, "checkout.voucherNone");
+  let pendingCheckoutId: string | undefined;
+  let pendingCheckoutExpiresAt: string | undefined;
+  const orderCodeLabel = language === "vi" ? "Mã đơn hàng" : "Order code";
   const orderContent = [
+    `${orderCodeLabel}: ${orderCode}`,
     `${translate(language, "checkout.content.product")}: ${productView.name}`,
     `${translate(language, "checkout.content.originalPrice")}: ${formattedOriginalPrice}`,
     `${translate(language, "checkout.content.discount")}: ${formattedDiscount}`,
@@ -129,12 +144,9 @@ export async function POST(request: NextRequest) {
     }`
   ].join("\n");
 
-  let pendingCheckoutId: string | undefined;
-  let pendingCheckoutExpiresAt: string | undefined;
-  const fallbackReference = createFallbackCheckoutReference(product.id);
-
   try {
     const pendingCheckout = createPendingCheckoutRecord({
+      orderCode,
       language,
       countryCode: countryCode || "INTL",
       accessCodeId: session?.subject ?? "guest",
@@ -169,13 +181,13 @@ export async function POST(request: NextRequest) {
     }
   }
 
-  const message = translate(language, "checkout.message", {
+  const message = `${orderCodeLabel}: ${orderCode}\n${translate(language, "checkout.message", {
     productName: productView.name,
     price: formattedFinalPrice,
     originalPrice: formattedOriginalPrice,
     voucherLine,
-    requestId: (pendingCheckoutId?.slice(0, 8) ?? fallbackReference).toUpperCase()
-  });
+    requestId: orderCode
+  })}`;
   const redirectUrl = `${baseContactUrl}${separator}text=${encodeURIComponent(message)}`;
 
   if (pendingCheckoutId) {
@@ -204,6 +216,7 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({
     redirectUrl,
     contactMethod,
+    orderCode,
     pendingCheckoutId,
     expiresAt: pendingCheckoutExpiresAt
   });

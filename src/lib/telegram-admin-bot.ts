@@ -99,6 +99,7 @@ const buildHelpText = () =>
 const buildPendingCheckoutText = (pendingCheckout: PendingCheckout) =>
   [
     "Don dang cho xac nhan",
+    `Ma don: ${pendingCheckout.orderCode ?? pendingCheckout.id.slice(0, 8).toUpperCase()}`,
     `Ma tam: ${pendingCheckout.id}`,
     `Khach: ${pendingCheckout.customerLabel}`,
     `Vai tro: ${pendingCheckout.customerRole}${pendingCheckout.customerVip ? " VIP" : ""}`,

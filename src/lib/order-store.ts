@@ -125,7 +125,7 @@ export const listOrders = () => {
 
 export const getOrderById = (orderId: string) => listOrders().find((order) => order.id === orderId);
 
-const generateUniqueOrderId = (existingIds: Set<string>) => {
+export const generateUniqueOrderCode = (existingIds: Set<string>) => {
   for (let attempt = 0; attempt < 100; attempt += 1) {
     const candidate = String(randomInt(0, 100000000)).padStart(8, "0");
 
@@ -170,7 +170,7 @@ export const createOrderRecord = ({
 }) => {
   const orders = listOrders();
   const now = new Date();
-  const orderId = generateUniqueOrderId(new Set(orders.map((order) => order.id)));
+  const orderId = generateUniqueOrderCode(new Set(orders.map((order) => order.id)));
   const createdAt = now.toISOString();
   const purchaseDate = formatDateInput(now);
   const order: Order = {
@@ -203,7 +203,11 @@ export const createOrderRecord = ({
 export const createOrderFromPendingCheckout = (pendingCheckout: PendingCheckout, product: Product) => {
   const orders = listOrders();
   const now = new Date();
-  const orderId = generateUniqueOrderId(new Set(orders.map((order) => order.id)));
+  const existingIds = new Set(orders.map((order) => order.id));
+  const orderId =
+    pendingCheckout.orderCode && !existingIds.has(pendingCheckout.orderCode)
+      ? pendingCheckout.orderCode
+      : generateUniqueOrderCode(existingIds);
   const createdAt = now.toISOString();
   const purchaseDate = formatDateInput(now);
   const warrantyUntil = formatDateInput(

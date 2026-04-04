@@ -150,6 +150,7 @@ export const sendPendingCheckoutToTelegram = async (pendingCheckout: PendingChec
 
   const message = [
     "Don hang moi",
+    `Ma don: ${pendingCheckout.orderCode ?? pendingCheckout.id.slice(0, 8).toUpperCase()}`,
     `Ma tam: ${pendingCheckout.id}`,
     `Khach: ${pendingCheckout.customerLabel}`,
     `Vai tro: ${pendingCheckout.customerRole}${pendingCheckout.customerVip ? " VIP" : ""}`,

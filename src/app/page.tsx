@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import type { ComponentProps } from "react";
 
 import { CatalogControls } from "@/components/catalog-controls";
 import { CommunityBubbles } from "@/components/community-bubbles";
@@ -26,6 +27,17 @@ const HOME_DESCRIPTION =
 
 type HomeProps = {
   searchParams: Promise<{ q?: string; category?: string; sort?: string; page?: string }>;
+};
+
+type ContactChannel = ComponentProps<typeof ContactChannelIcon>["channel"];
+
+type StorefrontContactAction = {
+  href: string;
+  label: string;
+  channel: ContactChannel;
+  external?: boolean;
+  pillClassName: string;
+  buttonClassName: string;
 };
 
 export const metadata: Metadata = {
@@ -91,6 +103,173 @@ const getPaginationPages = (currentPage: number, totalPages: number) => {
   return pages;
 };
 
+const createStorefrontContactContent = ({
+  isVietnamese,
+  t
+}: {
+  isVietnamese: boolean;
+  t: ReturnType<typeof createTranslator>["t"];
+}) => {
+  const primaryAction: StorefrontContactAction = isVietnamese
+    ? {
+        href: ZALO_DIRECT_URL,
+        label: t("home.contact.zalo"),
+        channel: "zalo",
+        external: true,
+        pillClassName: "contact-pill-zalo",
+        buttonClassName: "button-channel-zalo"
+      }
+    : {
+        href: TELEGRAM_DIRECT_URL,
+        label: t("home.contact.telegram"),
+        channel: "telegram",
+        external: true,
+        pillClassName: "contact-pill-telegram",
+        buttonClassName: "button-channel-telegram"
+      };
+
+  const secondaryAction: StorefrontContactAction = isVietnamese
+    ? {
+        href: DIRECT_PHONE_TEL_URL,
+        label: t("home.contact.call"),
+        channel: "phone",
+        pillClassName: "contact-pill-phone",
+        buttonClassName: "button-channel-phone"
+      }
+    : {
+        href: WHATSAPP_DIRECT_URL,
+        label: t("home.contact.whatsapp"),
+        channel: "whatsapp",
+        external: true,
+        pillClassName: "contact-pill-whatsapp",
+        buttonClassName: "button-channel-whatsapp"
+      };
+
+  return {
+    primaryAction,
+    secondaryAction
+  };
+};
+
+function StorefrontContactActionLink({
+  action,
+  variant
+}: {
+  action: StorefrontContactAction;
+  variant: "pill" | "button";
+}) {
+  const className =
+    variant === "pill" ? `contact-pill ${action.pillClassName}` : `button button-channel ${action.buttonClassName}`;
+  const content = (
+    <>
+      <ContactChannelIcon channel={action.channel} />
+      {action.label}
+    </>
+  );
+
+  if (action.external) {
+    return (
+      <a href={action.href} target="_blank" rel="noreferrer" className={className}>
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <a href={action.href} className={className}>
+      {content}
+    </a>
+  );
+}
+
+function CatalogPagination({
+  currentPage,
+  totalPages,
+  query,
+  category,
+  sort,
+  t
+}: {
+  currentPage: number;
+  totalPages: number;
+  query: string;
+  category: string;
+  sort: string;
+  t: ReturnType<typeof createTranslator>["t"];
+}) {
+  const paginationPages = getPaginationPages(currentPage, totalPages);
+
+  return (
+    <nav className="catalog-pagination" aria-label={t("home.catalog.paginationAria")}>
+      <Link
+        href={buildCatalogHref({ query, category, sort, page: Math.max(1, currentPage - 1) })}
+        className={`pagination-link${currentPage === 1 ? " disabled" : ""}`}
+        aria-disabled={currentPage === 1}
+        tabIndex={currentPage === 1 ? -1 : undefined}
+      >
+        {t("home.catalog.previousPage")}
+      </Link>
+
+      <div className="pagination-number-row">
+        {paginationPages.map((paginationPage) => (
+          <Link
+            key={paginationPage}
+            href={buildCatalogHref({ query, category, sort, page: paginationPage })}
+            className={`pagination-link${paginationPage === currentPage ? " active" : ""}`}
+            aria-current={paginationPage === currentPage ? "page" : undefined}
+          >
+            {paginationPage}
+          </Link>
+        ))}
+      </div>
+
+      <Link
+        href={buildCatalogHref({ query, category, sort, page: Math.min(totalPages, currentPage + 1) })}
+        className={`pagination-link${currentPage === totalPages ? " disabled" : ""}`}
+        aria-disabled={currentPage === totalPages}
+        tabIndex={currentPage === totalPages ? -1 : undefined}
+      >
+        {t("home.catalog.nextPage")}
+      </Link>
+    </nav>
+  );
+}
+
+function ProductShowcaseSection({
+  title,
+  description,
+  className,
+  products,
+  session,
+  vouchers,
+  priorityCount
+}: {
+  title: string;
+  description: string;
+  className: string;
+  products: ComponentProps<typeof ProductGrid>["products"];
+  session: ComponentProps<typeof ProductGrid>["session"];
+  vouchers: ComponentProps<typeof ProductGrid>["vouchers"];
+  priorityCount?: number;
+}) {
+  return (
+    <section className={`page-stack section-block section-surface home-product-section ${className}`}>
+      <div className="section-head">
+        <h2 className="section-title">{title}</h2>
+        <p className="muted section-subtitle">{description}</p>
+      </div>
+
+      <ProductGrid
+        products={products}
+        variant="public"
+        session={session}
+        vouchers={vouchers}
+        priorityCount={priorityCount}
+      />
+    </section>
+  );
+}
+
 export default async function Home({ searchParams }: HomeProps) {
   const siteUrl = getSiteUrl();
   const language = await getRequestLanguage();
@@ -117,10 +296,10 @@ export default async function Home({ searchParams }: HomeProps) {
     (safeCurrentPage - 1) * CATALOG_PAGE_SIZE,
     safeCurrentPage * CATALOG_PAGE_SIZE
   );
-  const paginationPages = getPaginationPages(safeCurrentPage, totalPages);
   const featuredShowcaseProducts = featuredProducts.slice(0, 4);
   const flashSaleShowcaseProducts = flashSaleProducts.slice(0, 4);
   const isVietnamese = language === "vi";
+  const { primaryAction, secondaryAction } = createStorefrontContactContent({ isVietnamese, t });
   const catalogHelpDescription = isVietnamese
     ? "Nhắn trực tiếp qua Zalo hoặc gọi số 0933684560 để được báo giá nhanh, kiểm tra còn hàng hoặc yêu cầu bổ sung sản phẩm."
     : "Message us directly on Telegram or WhatsApp for fast pricing, stock checks, and product requests.";
@@ -230,38 +409,7 @@ export default async function Home({ searchParams }: HomeProps) {
         )}
 
         {totalPages > 1 ? (
-          <nav className="catalog-pagination" aria-label={t("home.catalog.paginationAria")}>
-            <Link
-              href={buildCatalogHref({ query: q, category, sort, page: Math.max(1, safeCurrentPage - 1) })}
-              className={`pagination-link${safeCurrentPage === 1 ? " disabled" : ""}`}
-              aria-disabled={safeCurrentPage === 1}
-              tabIndex={safeCurrentPage === 1 ? -1 : undefined}
-            >
-              {t("home.catalog.previousPage")}
-            </Link>
-
-            <div className="pagination-number-row">
-              {paginationPages.map((paginationPage) => (
-                <Link
-                  key={paginationPage}
-                  href={buildCatalogHref({ query: q, category, sort, page: paginationPage })}
-                  className={`pagination-link${paginationPage === safeCurrentPage ? " active" : ""}`}
-                  aria-current={paginationPage === safeCurrentPage ? "page" : undefined}
-                >
-                  {paginationPage}
-                </Link>
-              ))}
-            </div>
-
-            <Link
-              href={buildCatalogHref({ query: q, category, sort, page: Math.min(totalPages, safeCurrentPage + 1) })}
-              className={`pagination-link${safeCurrentPage === totalPages ? " disabled" : ""}`}
-              aria-disabled={safeCurrentPage === totalPages}
-              tabIndex={safeCurrentPage === totalPages ? -1 : undefined}
-            >
-              {t("home.catalog.nextPage")}
-            </Link>
-          </nav>
+          <CatalogPagination currentPage={safeCurrentPage} totalPages={totalPages} query={q} category={category} sort={sort} t={t} />
         ) : null}
 
         <div className="catalog-help-card">
@@ -272,38 +420,14 @@ export default async function Home({ searchParams }: HomeProps) {
           </div>
 
           <div className="catalog-help-actions">
-            {isVietnamese ? (
-              <a href={ZALO_DIRECT_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
-                <ContactChannelIcon channel="zalo" />
-                {t("home.catalog.contactZalo")}
-              </a>
-            ) : (
-              <a
-                href={TELEGRAM_DIRECT_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="contact-pill contact-pill-telegram"
-              >
-                <ContactChannelIcon channel="telegram" />
-                {t("home.catalog.contactTelegram")}
-              </a>
-            )}
-            {isVietnamese ? (
-              <a href={DIRECT_PHONE_TEL_URL} className="contact-pill contact-pill-phone">
-                <ContactChannelIcon channel="phone" />
-                {t("home.catalog.contactCall")}
-              </a>
-            ) : (
-              <a
-                href={WHATSAPP_DIRECT_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="contact-pill contact-pill-whatsapp"
-              >
-                <ContactChannelIcon channel="whatsapp" />
-                {t("home.catalog.contactWhatsApp")}
-              </a>
-            )}
+            <StorefrontContactActionLink
+              action={{ ...primaryAction, label: isVietnamese ? t("home.catalog.contactZalo") : t("home.catalog.contactTelegram") }}
+              variant="pill"
+            />
+            <StorefrontContactActionLink
+              action={{ ...secondaryAction, label: isVietnamese ? t("home.catalog.contactCall") : t("home.catalog.contactWhatsApp") }}
+              variant="pill"
+            />
           </div>
         </div>
       </section>
@@ -315,38 +439,8 @@ export default async function Home({ searchParams }: HomeProps) {
           <p className="lead hero-lead">{t("home.hero.description")}</p>
 
           <div className="hero-actions home-hero-actions">
-            {isVietnamese ? (
-              <a href={ZALO_DIRECT_URL} target="_blank" rel="noreferrer" className="button button-channel button-channel-zalo">
-                <ContactChannelIcon channel="zalo" />
-                {t("home.contact.zalo")}
-              </a>
-            ) : (
-              <a
-                href={TELEGRAM_DIRECT_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="button button-channel button-channel-telegram"
-              >
-                <ContactChannelIcon channel="telegram" />
-                {t("home.contact.telegram")}
-              </a>
-            )}
-            {isVietnamese ? (
-              <a href={DIRECT_PHONE_TEL_URL} className="button button-channel button-channel-phone">
-                <ContactChannelIcon channel="phone" />
-                {t("home.contact.call")}
-              </a>
-            ) : (
-              <a
-                href={WHATSAPP_DIRECT_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="button button-channel button-channel-whatsapp"
-              >
-                <ContactChannelIcon channel="whatsapp" />
-                {t("home.contact.whatsapp")}
-              </a>
-            )}
+            <StorefrontContactActionLink action={primaryAction} variant="button" />
+            <StorefrontContactActionLink action={secondaryAction} variant="button" />
             <Link href="/warranty" className="button">
               {t("layout.nav.warranty")}
             </Link>
@@ -365,35 +459,25 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
       </section>
 
-      <section className="page-stack section-block section-surface home-product-section home-product-section-featured">
-        <div className="section-head">
-          <h2 className="section-title">{t("home.featured.title")}</h2>
-          <p className="muted section-subtitle">{t("home.featured.description")}</p>
-        </div>
-
-        <ProductGrid
-          products={featuredShowcaseProducts}
-          variant="public"
-          session={session}
-          vouchers={voucherWallet?.activeDiscountVouchers}
-          priorityCount={2}
-        />
-      </section>
+      <ProductShowcaseSection
+        title={t("home.featured.title")}
+        description={t("home.featured.description")}
+        className="home-product-section-featured"
+        products={featuredShowcaseProducts}
+        session={session}
+        vouchers={voucherWallet?.activeDiscountVouchers}
+        priorityCount={2}
+      />
 
       {flashSaleProducts.length > 0 ? (
-        <section className="page-stack section-block section-surface home-product-section home-product-section-offers">
-          <div className="section-head">
-            <h2 className="section-title">{t("home.offers.title")}</h2>
-            <p className="muted section-subtitle">{t("home.offers.description")}</p>
-          </div>
-
-          <ProductGrid
-            products={flashSaleShowcaseProducts}
-            variant="public"
-            session={session}
-            vouchers={voucherWallet?.activeDiscountVouchers}
-          />
-        </section>
+        <ProductShowcaseSection
+          title={t("home.offers.title")}
+          description={t("home.offers.description")}
+          className="home-product-section-offers"
+          products={flashSaleShowcaseProducts}
+          session={session}
+          vouchers={voucherWallet?.activeDiscountVouchers}
+        />
       ) : null}
 
       <section className="footer-contact home-footer-contact">
@@ -402,28 +486,8 @@ export default async function Home({ searchParams }: HomeProps) {
           <p className="muted section-subtitle">{quickContactDescription}</p>
         </div>
         <div className="footer-actions">
-          {isVietnamese ? (
-            <a href={ZALO_DIRECT_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-zalo">
-              <ContactChannelIcon channel="zalo" />
-              {t("home.contact.zalo")}
-            </a>
-          ) : (
-            <a href={TELEGRAM_DIRECT_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-telegram">
-              <ContactChannelIcon channel="telegram" />
-              {t("home.contact.telegram")}
-            </a>
-          )}
-          {isVietnamese ? (
-            <a href={DIRECT_PHONE_TEL_URL} className="contact-pill contact-pill-phone">
-              <ContactChannelIcon channel="phone" />
-              {t("home.contact.call")}
-            </a>
-          ) : (
-            <a href={WHATSAPP_DIRECT_URL} target="_blank" rel="noreferrer" className="contact-pill contact-pill-whatsapp">
-              <ContactChannelIcon channel="whatsapp" />
-              {t("home.contact.whatsapp")}
-            </a>
-          )}
+          <StorefrontContactActionLink action={primaryAction} variant="pill" />
+          <StorefrontContactActionLink action={secondaryAction} variant="pill" />
         </div>
       </section>
 

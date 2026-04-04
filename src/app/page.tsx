@@ -19,11 +19,9 @@ import { getRequestLanguage } from "@/lib/i18n/server";
 import { getStorefrontSnapshot } from "@/lib/pricing";
 import { getSiteUrl, OFFICIAL_COMPANY_INFO_URL, SITE_NAME } from "@/lib/site";
 import { getVoucherWalletForSession } from "@/lib/voucher-wallet";
+
 const CATALOG_PAGE_SIZE = 6;
 const PAGINATION_WINDOW = 5;
-const HOME_TITLE = "Cửa hàng tài khoản số, nâng cấp gói và AI tools";
-const HOME_DESCRIPTION =
-  "Mua tài khoản số, nâng cấp gói, Grok, YouTube Premium và nhiều dịch vụ số với giá rõ ràng, giao nhanh và hỗ trợ trực tiếp.";
 
 type HomeProps = {
   searchParams: Promise<{ q?: string; category?: string; sort?: string; page?: string }>;
@@ -40,22 +38,36 @@ type StorefrontContactAction = {
   buttonClassName: string;
 };
 
-export const metadata: Metadata = {
-  title: HOME_TITLE,
-  description: HOME_DESCRIPTION,
-  alternates: {
-    canonical: "/"
-  },
-  openGraph: {
-    title: HOME_TITLE,
-    description: HOME_DESCRIPTION,
-    url: "/"
-  },
-  twitter: {
-    title: HOME_TITLE,
-    description: HOME_DESCRIPTION
-  }
-};
+const getHomeMetadataContent = (isVietnamese: boolean) => ({
+  title: isVietnamese
+    ? "Cửa hàng tài khoản số, nâng cấp gói và AI tools"
+    : "Digital accounts, package upgrades, and AI tools",
+  description: isVietnamese
+    ? "Mua tài khoản số, nâng cấp gói, Grok, YouTube Premium và nhiều dịch vụ số với giá rõ ràng, giao nhanh và hỗ trợ trực tiếp."
+    : "Buy digital accounts, package upgrades, Grok, YouTube Premium, and more digital services with clear pricing, fast delivery, and direct support."
+});
+
+export async function generateMetadata(): Promise<Metadata> {
+  const language = await getRequestLanguage();
+  const { title, description } = getHomeMetadataContent(language === "vi");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: "/"
+    },
+    openGraph: {
+      title,
+      description,
+      url: "/"
+    },
+    twitter: {
+      title,
+      description
+    }
+  };
+}
 
 const buildCatalogHref = ({
   query,
@@ -275,6 +287,8 @@ export default async function Home({ searchParams }: HomeProps) {
   const language = await getRequestLanguage();
   const currency = await getRequestCurrency(language);
   const { t } = createTranslator(language);
+  const isVietnamese = language === "vi";
+  const { description: homeDescription } = getHomeMetadataContent(isVietnamese);
   const session = await getAuthSession();
   const voucherWallet = getVoucherWalletForSession(session);
   const { q = "", category = "", sort: requestedSort, page = "1" } = await searchParams;
@@ -298,15 +312,24 @@ export default async function Home({ searchParams }: HomeProps) {
   );
   const featuredShowcaseProducts = featuredProducts.slice(0, 4);
   const flashSaleShowcaseProducts = flashSaleProducts.slice(0, 4);
-  const isVietnamese = language === "vi";
   const { primaryAction, secondaryAction } = createStorefrontContactContent({ isVietnamese, t });
   const catalogHelpDescription = isVietnamese
-    ? "Nhắn trực tiếp qua Zalo hoặc gọi số 0933684560 để được báo giá nhanh, kiểm tra còn hàng hoặc yêu cầu bổ sung sản phẩm."
+    ? "Nhắn trực tiếp qua Zalo hoặc gọi 0933684560 để được báo giá nhanh, kiểm tra còn hàng hoặc yêu cầu bổ sung sản phẩm."
     : "Message us directly on Telegram or WhatsApp for fast pricing, stock checks, and product requests.";
-  const quickContactTitle = isVietnamese ? "Liên hệ nhanh" : "Quick contact";
+  const quickContactTitle = t("home.contact.title");
   const quickContactDescription = isVietnamese
     ? "Chọn đúng kênh liên hệ để được hỗ trợ nhanh hơn."
     : "Choose the contact channel you prefer for a faster response.";
+  const editorialTitle = isVietnamese
+    ? "AI, công nghệ và những chủ đề đang kéo traffic"
+    : "AI, technology, and the topics currently driving traffic";
+  const editorialDescription = isVietnamese
+    ? "Mặt tiền ưu tiên AI, công nghệ, ứng dụng số và nền tảng mới; các chủ đề hot vẫn được dùng để kéo thêm lượt xem nhưng không làm lệch chất tech của hệ thống."
+    : "The storefront prioritizes AI, technology, digital tools, and emerging platforms; trending topics still help bring traffic in without diluting the tech-first positioning.";
+  const editorialAriaLabel = isVietnamese ? "Định hướng nội dung ưu tiên" : "Priority content direction";
+  const editorialPills = isVietnamese
+    ? ["AI", "Công nghệ", "Ứng dụng", "Thiết bị", "Mạng xã hội", "Game", "Trend"]
+    : ["AI", "Technology", "Apps", "Devices", "Social", "Gaming", "Trends"];
   const featureKeys = [
     {
       title: "home.feature.pricing.title",
@@ -325,7 +348,7 @@ export default async function Home({ searchParams }: HomeProps) {
     "@context": "https://schema.org",
     "@type": "Store",
     name: SITE_NAME,
-    description: HOME_DESCRIPTION,
+    description: homeDescription,
     url: siteUrl,
     telephone: "0933684560",
     availableLanguage: ["vi", "en"],
@@ -359,22 +382,20 @@ export default async function Home({ searchParams }: HomeProps) {
           <div className="section-head editorial-spotlight-head">
             <div>
               <p className="eyebrow">Patrick Tech Media</p>
-              <h2 className="section-title">AI, công nghệ và những chủ đề đang kéo traffic</h2>
-              <p className="muted section-subtitle editorial-spotlight-subtitle">
-                Mặt tiền ưu tiên AI, công nghệ, ứng dụng số và nền tảng mới; các chủ đề hot vẫn được dùng để kéo thêm lượt xem
-                nhưng không làm lệch chất tech của hệ thống.
-              </p>
+              <h2 className="section-title">{editorialTitle}</h2>
+              <p className="muted section-subtitle editorial-spotlight-subtitle">{editorialDescription}</p>
             </div>
           </div>
 
-          <div className="editorial-pill-row" aria-label="Định hướng nội dung ưu tiên">
-            <span className="editorial-pill editorial-pill-primary">AI</span>
-            <span className="editorial-pill editorial-pill-primary">Công nghệ</span>
-            <span className="editorial-pill">Ứng dụng</span>
-            <span className="editorial-pill">Thiết bị</span>
-            <span className="editorial-pill">Mạng xã hội</span>
-            <span className="editorial-pill editorial-pill-soft">Game</span>
-            <span className="editorial-pill editorial-pill-soft">Trend</span>
+          <div className="editorial-pill-row" aria-label={editorialAriaLabel}>
+            {editorialPills.map((pill, index) => (
+              <span
+                key={pill}
+                className={`editorial-pill${index < 2 ? " editorial-pill-primary" : ""}${index >= 5 ? " editorial-pill-soft" : ""}`}
+              >
+                {pill}
+              </span>
+            ))}
           </div>
         </div>
 

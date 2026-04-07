@@ -8,6 +8,7 @@ export const en = {
   "layout.brand.kicker": "Patrick Tech Store",
   "layout.brand.title": "Digital accounts and package upgrades",
   "layout.nav.store": "Store",
+  "layout.nav.media": "Media",
   "layout.nav.warranty": "Warranty Lookup",
   "layout.nav.reseller": "Reseller",
   "layout.nav.admin": "Website admin",

@@ -8,6 +8,7 @@ export const vi = {
   "layout.brand.kicker": "Patrick Tech Store",
   "layout.brand.title": "Tài khoản số và nâng cấp gói",
   "layout.nav.store": "Cửa hàng",
+  "layout.nav.media": "Media",
   "layout.nav.warranty": "Tra cứu bảo hành",
   "layout.nav.reseller": "Đại lý",
   "layout.nav.admin": "Quản lý web",

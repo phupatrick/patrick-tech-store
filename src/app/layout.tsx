@@ -78,7 +78,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 brandTitle={t("layout.brand.title")}
                 storeLabel={t("layout.nav.store")}
                 warrantyLabel={t("layout.nav.warranty")}
-                companyInfoLabel={language === "vi" ? "Thông tin công ty" : "Company info"}
+                companyInfoLabel={language === "vi" ? "Media" : t("layout.nav.media")}
                 companyInfoHref="/company"
                 resellerLabel={t("layout.nav.reseller")}
                 adminLabel={t("layout.nav.admin")}

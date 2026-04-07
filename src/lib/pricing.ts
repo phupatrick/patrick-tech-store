@@ -1,5 +1,11 @@
 import { users } from "@/lib/data";
-import { CurrencySettings, convertVndToDisplayAmount, getCurrencySettings, roundCurrencyAmount } from "@/lib/currency";
+import {
+  CurrencySettings,
+  convertDisplayAmountToVnd,
+  convertVndToDisplayAmount,
+  getCurrencySettings,
+  roundCurrencyAmount
+} from "@/lib/currency";
 import { getForeignPricingOverride } from "@/lib/foreign-pricing";
 import { Language, translate } from "@/lib/i18n";
 import { getMemberTierKey } from "@/lib/member-status";
@@ -23,6 +29,7 @@ type PreparedPublicProduct = {
   searchPayload: ReturnType<typeof getProductSearchPayload>;
   categories: string[];
 };
+const FOREIGN_CUSTOMER_MIN_PREMIUM_PERCENT = 5;
 
 const PUBLIC_HIDDEN_PRODUCT_KEYWORDS = ["chatgpt"];
 const GROK_CATEGORY_KEYWORD = normalizeText("Grok");
@@ -114,6 +121,8 @@ const computePublicVisibleDisplayPrice = (
 };
 
 const getPublicPriceSelection = (
+  product: Product,
+  currencySettings: CurrencySettings,
   storedPriceSet: ProductPriceSet,
   displayPriceSet: ProductPriceSet,
   session?: PublicPricingSession,
@@ -138,12 +147,40 @@ const getPublicPriceSelection = (
   }
 
   const visible = computePublicVisiblePriceFromSet(storedPriceSet, session);
+  const fallbackDisplayVisiblePrice = computePublicVisibleDisplayPrice(displayPriceSet, session);
+  const isForeignCustomerContext = currencySettings.currency === "USD" && (!session || session.role === "customer");
+
+  if (isForeignCustomerContext) {
+    const vnCustomerDisplayPrice = roundCurrencyAmount(
+      convertVndToDisplayAmount(product.customerTierPrices.regular, currencySettings),
+      currencySettings.currency
+    );
+    const minForeignCustomerDisplayPrice = roundCurrencyAmount(
+      vnCustomerDisplayPrice * (1 + FOREIGN_CUSTOMER_MIN_PREMIUM_PERCENT / 100),
+      currencySettings.currency
+    );
+    const adjustedDisplayVisiblePrice =
+      fallbackDisplayVisiblePrice > minForeignCustomerDisplayPrice
+        ? fallbackDisplayVisiblePrice
+        : minForeignCustomerDisplayPrice + 0.01;
+    const adjustedStoredVisiblePrice = roundCurrencyAmount(
+      convertDisplayAmountToVnd(adjustedDisplayVisiblePrice, currencySettings),
+      "VND"
+    );
+
+    return {
+      storedPriceSet,
+      displayPriceSet,
+      visiblePrice: adjustedStoredVisiblePrice,
+      displayVisiblePrice: adjustedDisplayVisiblePrice
+    };
+  }
 
   return {
     storedPriceSet,
     displayPriceSet,
     visiblePrice: visible.price,
-    displayVisiblePrice: computePublicVisibleDisplayPrice(displayPriceSet, session)
+    displayVisiblePrice: fallbackDisplayVisiblePrice
   };
 };
 
@@ -262,7 +299,14 @@ const buildPublicProductView = async (
   const defaultDisplayPriceSet = getDisplayPriceSet(product, currencySettings);
   const defaultStoredPriceSet = getStoredPriceSetForCurrency(product, currencySettings);
   const foreignPricing = await getForeignPricingOverride(product, currencySettings, session);
-  const selectedPricing = getPublicPriceSelection(defaultStoredPriceSet, defaultDisplayPriceSet, session, foreignPricing);
+  const selectedPricing = getPublicPriceSelection(
+    product,
+    currencySettings,
+    defaultStoredPriceSet,
+    defaultDisplayPriceSet,
+    session,
+    foreignPricing
+  );
 
   return {
     id: product.id,

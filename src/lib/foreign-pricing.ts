@@ -9,6 +9,7 @@ const FOREIGN_RESELLER_ACCESS_CODE_ID = "seed-ctv-foreign-sp201";
 const FOREIGN_PRICE_SHEET_EXPORT_URL =
   "https://docs.google.com/spreadsheets/d/1-lCZ8VHcxdqqBMSr82S_ErOR0b-lVhFcXdZpNKTBgTA/export?format=csv&gid=0";
 const FOREIGN_PRICE_REFRESH_SECONDS = 60 * 30;
+const FOREIGN_CUSTOMER_MIN_PREMIUM_PERCENT = 5;
 
 type ForeignPricingContext = "foreign_customer" | "foreign_reseller";
 
@@ -456,7 +457,13 @@ export const getForeignPricingOverride = async (
   }
 
   const customerMarkupPercent = getForeignCustomerMarkupPercent(row.resellerUsd);
-  const customerUsd = roundCurrencyAmount(row.resellerUsd * (1 + customerMarkupPercent / 100), "USD");
+  const customerUsdFromSheet = roundCurrencyAmount(row.resellerUsd * (1 + customerMarkupPercent / 100), "USD");
+  const vietnamCustomerUsd = roundCurrencyAmount(product.customerTierPrices.regular * settings.usdPerVnd, "USD");
+  const minForeignCustomerUsd = roundCurrencyAmount(
+    vietnamCustomerUsd * (1 + FOREIGN_CUSTOMER_MIN_PREMIUM_PERCENT / 100),
+    "USD"
+  );
+  const customerUsd = customerUsdFromSheet > minForeignCustomerUsd ? customerUsdFromSheet : minForeignCustomerUsd + 0.01;
   const usdPriceSet = toUsdPriceSet(row.resellerUsd, customerUsd);
   const storedPriceSet = convertDisplayPriceSetToStored(usdPriceSet, {
     ...settings,

@@ -1,5 +1,17 @@
 [
   {
+    "id": "seed-ctv-foreign-sp201",
+    "codeHash": "14709e35f503414b907f4f6ce9359667df373abbeefe9b4c5e7f5ea15f5ac4f0",
+    "codeSalt": "f8949f3d32c92200a4e4aa98324c5baf",
+    "label": "CTV nuoc ngoai SP201",
+    "role": "reseller",
+    "tier": "regular",
+    "points": 0,
+    "active": true,
+    "createdAt": "2026-04-07T03:00:00.000Z",
+    "updatedAt": "2026-04-07T03:00:00.000Z"
+  },
+  {
     "id": "seed-customer-000001",
     "codeHash": "86e924d75e1651123a81b64fbc12cea3b30bb43d4b848c64847966483d668741",
     "codeSalt": "125007f765dddd222ff6977ee663b496",

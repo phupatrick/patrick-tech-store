@@ -1,5 +1,6 @@
 import { users } from "@/lib/data";
 import { CurrencySettings, convertVndToDisplayAmount, getCurrencySettings, roundCurrencyAmount } from "@/lib/currency";
+import { getForeignPricingOverride } from "@/lib/foreign-pricing";
 import { Language, translate } from "@/lib/i18n";
 import { getMemberTierKey } from "@/lib/member-status";
 import { normalizeText } from "@/lib/product-categories";
@@ -8,7 +9,7 @@ import { getDisplayPriceSet, getStoredPriceSetForCurrency } from "@/lib/product-
 import { getProductById, listProducts } from "@/lib/product-store";
 import { AuthSession, CurrencyCode, Product, ProductPriceSet, ProductView, ResellerTier, User } from "@/lib/types";
 
-type PublicPricingSession = Pick<AuthSession, "role" | "tier" | "points" | "vip">;
+type PublicPricingSession = Pick<AuthSession, "subject" | "role" | "tier" | "points" | "vip">;
 type StorefrontSnapshotOptions = {
   language: Language;
   currency?: CurrencyCode;
@@ -110,6 +111,40 @@ const computePublicVisibleDisplayPrice = (
   }
 
   return displayPriceSet.retailPrice;
+};
+
+const getPublicPriceSelection = (
+  storedPriceSet: ProductPriceSet,
+  displayPriceSet: ProductPriceSet,
+  session?: PublicPricingSession,
+  foreignPricing?: Awaited<ReturnType<typeof getForeignPricingOverride>>
+) => {
+  if (foreignPricing?.context === "foreign_reseller") {
+    return {
+      storedPriceSet: foreignPricing.storedPriceSet,
+      displayPriceSet: foreignPricing.displayPriceSet,
+      visiblePrice: foreignPricing.storedPriceSet.tierPrices.regular,
+      displayVisiblePrice: foreignPricing.displayPriceSet.tierPrices.regular
+    };
+  }
+
+  if (foreignPricing?.context === "foreign_customer") {
+    return {
+      storedPriceSet: foreignPricing.storedPriceSet,
+      displayPriceSet: foreignPricing.displayPriceSet,
+      visiblePrice: foreignPricing.storedPriceSet.customerTierPrices.regular,
+      displayVisiblePrice: foreignPricing.displayPriceSet.customerTierPrices.regular
+    };
+  }
+
+  const visible = computePublicVisiblePriceFromSet(storedPriceSet, session);
+
+  return {
+    storedPriceSet,
+    displayPriceSet,
+    visiblePrice: visible.price,
+    displayVisiblePrice: computePublicVisibleDisplayPrice(displayPriceSet, session)
+  };
 };
 
 const getPricingLabel = (language: Language, product: Product, tier: ResellerTier, user?: User) => {
@@ -217,16 +252,17 @@ export const buildProductView = async (
   };
 };
 
-const buildPublicProductView = (
+const buildPublicProductView = async (
   product: Product,
   language: Language,
   currencySettings: CurrencySettings,
   session?: PublicPricingSession
-): ProductView => {
+): Promise<ProductView> => {
   const localized = getLocalizedProductCopy(product, language);
-  const displayPriceSet = getDisplayPriceSet(product, currencySettings);
-  const storedPriceSet = getStoredPriceSetForCurrency(product, currencySettings);
-  const visible = computePublicVisiblePriceFromSet(storedPriceSet, session);
+  const defaultDisplayPriceSet = getDisplayPriceSet(product, currencySettings);
+  const defaultStoredPriceSet = getStoredPriceSetForCurrency(product, currencySettings);
+  const foreignPricing = await getForeignPricingOverride(product, currencySettings, session);
+  const selectedPricing = getPublicPriceSelection(defaultStoredPriceSet, defaultDisplayPriceSet, session, foreignPricing);
 
   return {
     id: product.id,
@@ -237,13 +273,13 @@ const buildPublicProductView = (
     usageDuration: getLocalizedUsageDuration(product.usageDuration, language),
     warrantyDuration: getLocalizedWarrantyDuration(product.warrantyDuration ?? product.warrantyMonths, language),
     image: product.image,
-    retailPrice: storedPriceSet.retailPrice,
-    customerRegularPrice: storedPriceSet.customerTierPrices.regular,
-    visiblePrice: visible.price,
+    retailPrice: selectedPricing.storedPriceSet.retailPrice,
+    customerRegularPrice: selectedPricing.storedPriceSet.customerTierPrices.regular,
+    visiblePrice: selectedPricing.visiblePrice,
     displayCurrency: currencySettings.currency,
-    displayRetailPrice: displayPriceSet.retailPrice,
-    displayCustomerRegularPrice: displayPriceSet.customerTierPrices.regular,
-    displayVisiblePrice: computePublicVisibleDisplayPrice(displayPriceSet, session),
+    displayRetailPrice: selectedPricing.displayPriceSet.retailPrice,
+    displayCustomerRegularPrice: selectedPricing.displayPriceSet.customerTierPrices.regular,
+    displayVisiblePrice: selectedPricing.displayVisiblePrice,
     label: undefined,
     stock: product.stock,
     warrantyMonths: product.warrantyMonths,
@@ -301,17 +337,18 @@ const getPreparedPublicProducts = async (
   session?: PublicPricingSession
 ): Promise<PreparedPublicProduct[]> => {
   const currencySettings = await getCurrencySettings(language, currency);
+  const visibleProducts = listProducts().filter((product) => product.published && !isHiddenOnPublicWeb(product));
 
-  return listProducts()
-    .filter((product) => product.published && !isHiddenOnPublicWeb(product))
-    .map((product) => {
-      const view = buildPublicProductView(product, language, currencySettings, session);
+  return Promise.all(
+    visibleProducts.map(async (product) => {
+      const view = await buildPublicProductView(product, language, currencySettings, session);
       return {
         view,
         searchPayload: getProductSearchPayload(product),
         categories: getViewCategories(view).map((category) => category.trim()).filter(Boolean)
       };
-    });
+    })
+  );
 };
 
 const isGrokPreparedProduct = (product: PreparedPublicProduct) =>
@@ -347,7 +384,7 @@ export const getPublicProductView = async (
   currency?: CurrencyCode
 ) => {
   const currencySettings = await getCurrencySettings(language, currency);
-  return buildPublicProductView(product, language, currencySettings, session);
+  return await buildPublicProductView(product, language, currencySettings, session);
 };
 
 export const getVisibleProducts = async (

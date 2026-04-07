@@ -34,6 +34,8 @@ const FOREIGN_CUSTOMER_MIN_PREMIUM_PERCENT = 5;
 const PUBLIC_HIDDEN_PRODUCT_KEYWORDS = ["chatgpt"];
 const GROK_CATEGORY_KEYWORD = normalizeText("Grok");
 
+const PRIORITY_PRODUCT_KEYWORDS = ["gemini", "grok", "capcut"] as const;
+
 export const getUserById = (userId?: string | null): User | undefined =>
   users.find((user) => user.id === userId);
 
@@ -341,6 +343,42 @@ const buildPublicProductView = async (
 const getViewCategories = (product: Pick<ProductView, "category" | "categories">) =>
   product.categories ?? (product.category ? [product.category] : []);
 
+const getPriorityRankFromHaystack = (haystack: string) => {
+  const matchedPriorityIndex = PRIORITY_PRODUCT_KEYWORDS.findIndex((keyword) => haystack.includes(keyword));
+
+  if (matchedPriorityIndex >= 0) {
+    return matchedPriorityIndex;
+  }
+
+  const isClaudePro365 =
+    haystack.includes("claude pro 365") ||
+    (haystack.includes("claude") && haystack.includes("pro")) ||
+    haystack.includes("microsoft 365") ||
+    haystack.includes("365 premium");
+
+  return isClaudePro365 ? PRIORITY_PRODUCT_KEYWORDS.length : Number.POSITIVE_INFINITY;
+};
+
+const getProductViewPriorityRank = (product: Pick<ProductView, "name" | "slug" | "category" | "categories">) =>
+  getPriorityRankFromHaystack(
+    normalizeText([product.name, product.slug, product.category, ...(product.categories ?? [])].filter(Boolean).join(" "))
+  );
+
+const getPreparedProductPriorityRank = (product: PreparedPublicProduct) =>
+  getPriorityRankFromHaystack(
+    normalizeText(
+      [
+        product.view.name,
+        product.view.slug,
+        product.view.category,
+        ...(product.view.categories ?? []),
+        ...product.searchPayload.categoryAliases
+      ]
+        .filter(Boolean)
+        .join(" ")
+    )
+  );
+
 const sortPublicProducts = (products: ProductView[], sort: string | undefined, language: Language) => {
   const sortedProducts = [...products];
 
@@ -360,6 +398,12 @@ const sortPublicProducts = (products: ProductView[], sort: string | undefined, l
       break;
     default:
       sortedProducts.sort((left, right) => {
+        const priorityRank = getProductViewPriorityRank(left) - getProductViewPriorityRank(right);
+
+        if (priorityRank !== 0) {
+          return priorityRank;
+        }
+
         if (left.featured !== right.featured) {
           return Number(right.featured) - Number(left.featured);
         }
@@ -401,6 +445,12 @@ const isGrokPreparedProduct = (product: PreparedPublicProduct) =>
 
 const sortPromotionCandidates = (products: PreparedPublicProduct[], language: Language) =>
   [...products].sort((left, right) => {
+    const priorityRank = getPreparedProductPriorityRank(left) - getPreparedProductPriorityRank(right);
+
+    if (priorityRank !== 0) {
+      return priorityRank;
+    }
+
     const grokPriority = Number(isGrokPreparedProduct(right)) - Number(isGrokPreparedProduct(left));
 
     if (grokPriority !== 0) {

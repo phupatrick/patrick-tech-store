@@ -113,10 +113,8 @@ export const listOrders = () => {
   const orders = orderStore.read();
   const cleanedOrders = cleanupOrders(orders);
 
-  if (cleanedOrders.length !== orders.length) {
-    saveNormalizedOrders(cleanedOrders);
-  }
-
+  // Rendering pages should not write back to bundled JSON files on serverless
+  // runtimes; we only filter expired records in memory here.
   return sortOrders(cleanedOrders).map((order) => ({
     ...order,
     status: getOrderStatus(order.warrantyUntil)

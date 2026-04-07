@@ -38,13 +38,9 @@ const savePendingCheckouts = (records: PendingCheckout[]) => {
 
 export const listPendingCheckouts = () => {
   const records = pendingCheckoutStore.read();
-  const activeRecords = records.filter((record) => isPendingCheckoutActive(record));
-
-  if (activeRecords.length !== records.length) {
-    savePendingCheckouts(activeRecords);
-  }
-
-  return activeRecords;
+  // Avoid mutating the file system during read paths so production page renders
+  // can safely filter expired reservations even on read-only serverless storage.
+  return records.filter((record) => isPendingCheckoutActive(record));
 };
 
 export const createPendingCheckoutRecord = (

@@ -23,7 +23,7 @@ export default async function AdminInventoryPage() {
         <p className="lead">{t("admin.inventory.hero.description")}</p>
       </section>
 
-      <AdminSessionBar adminName={adminUser.label} role={adminUser.role} language={language} fixed={adminUser.fixed} />
+      <AdminSessionBar adminName={adminUser.label} role={adminUser.role} language={language} />
       <AdminInventoryTable products={products} language={language} currencySettings={currencySettings} />
     </main>
   );

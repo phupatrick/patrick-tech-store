@@ -35,7 +35,7 @@ export default async function EditProductPage({ params }: EditProductPageProps) 
 
   return (
     <main className="page-stack">
-      <AdminSessionBar adminName={adminUser.label} role={adminUser.role} language={language} fixed={adminUser.fixed} />
+      <AdminSessionBar adminName={adminUser.label} role={adminUser.role} language={language} />
       <ProductForm
         action={updateProductAction.bind(null, product.id)}
         initialValues={productToFormValues(product, currencySettings, language)}

@@ -52,7 +52,7 @@ export default async function AccessCodesPage({ searchParams }: AccessCodesPageP
         <p className="lead">{t("admin.accessCodes.description")}</p>
       </section>
 
-      <AdminSessionBar adminName={adminSession.label} role={adminSession.role} language={language} fixed={adminSession.fixed} />
+      <AdminSessionBar adminName={adminSession.label} role={adminSession.role} language={language} />
 
       <section className="admin-grid">
         <section className="surface page-stack">

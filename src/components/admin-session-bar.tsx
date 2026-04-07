@@ -7,10 +7,9 @@ type AdminSessionBarProps = {
   adminName: string;
   role: AccessRole;
   language: Language;
-  fixed?: boolean;
 };
 
-export function AdminSessionBar({ adminName, role, language, fixed }: AdminSessionBarProps) {
+export function AdminSessionBar({ adminName, role, language }: AdminSessionBarProps) {
   const t = (key: Parameters<typeof translate>[1]) => translate(language, key);
   const resolvedName = adminName.trim() || t("admin.fixedAccountLabel");
 

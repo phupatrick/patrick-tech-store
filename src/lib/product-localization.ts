@@ -31,7 +31,6 @@ const localizeDuration = (
   if (rawValue) {
     const rangeMatch = normalized.match(/(\d+)\s*[-–]\s*(\d+)/);
     const hasHourUnit = /\b(hour|hours|hr|hrs|gio)\b/i.test(normalized);
-    const hasDayUnit = /\b(day|days|ngay)\b/i.test(normalized);
     const hasMonthUnit = /\b(month|months|thang)\b/i.test(normalized);
     const hasYearUnit = /\b(year|years|nam)\b/i.test(normalized);
 

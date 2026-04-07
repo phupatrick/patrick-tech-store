@@ -15,7 +15,7 @@ export default async function NewProductPage() {
 
   return (
     <main className="page-stack">
-      <AdminSessionBar adminName={adminUser.label} role={adminUser.role} language={language} fixed={adminUser.fixed} />
+      <AdminSessionBar adminName={adminUser.label} role={adminUser.role} language={language} />
       <ProductForm
         action={createProductAction}
         submitLabel={t("admin.form.new.submit")}

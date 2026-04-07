@@ -25,7 +25,7 @@ export default async function AdminOrdersPage() {
         <p className="lead">{t("admin.orders.hero.description")}</p>
       </section>
 
-      <AdminSessionBar adminName={adminUser.label} role={adminUser.role} language={language} fixed={adminUser.fixed} />
+      <AdminSessionBar adminName={adminUser.label} role={adminUser.role} language={language} />
 
       <section className="admin-grid">
         <AdminOrdersTable orders={orders} language={language} currencySettings={currencySettings} />

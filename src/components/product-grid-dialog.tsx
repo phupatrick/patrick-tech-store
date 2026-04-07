@@ -37,7 +37,7 @@ export function ProductGridDialog({
   const isVoucherEligible = Boolean(session && ["customer", "reseller"].includes(session.role));
   const productCategories = getProductCategories(product);
   const priceLabels = getPublicPriceLabels(language);
-  const priceSummary = getProductPriceSummary(product);
+  const priceSummary = getProductPriceSummary(product, session);
   const reservedUntilFormatter = useMemo(
     () =>
       new Intl.DateTimeFormat(language === "en" ? "en-US" : "vi-VN", {

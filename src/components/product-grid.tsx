@@ -37,7 +37,6 @@ export function ProductGrid({
   const [activeProduct, setActiveProduct] = useState<ProductView | null>(null);
   const [activePanelMode, setActivePanelMode] = useState<ActivePanelMode>("detail");
   const isPublic = variant === "public";
-  const isVoucherEligible = Boolean(session && ["customer", "reseller"].includes(session.role));
   const detailLabel = t("product.details");
   const priceLabels = getPublicPriceLabels(language);
 
@@ -83,7 +82,7 @@ export function ProductGrid({
           const productCategories = getProductCategories(product);
           const imageSrc = getRenderableProductImageSrc(product.image);
           const useUnoptimizedImage = isInlineImageSrc(imageSrc);
-          const priceSummary = getProductPriceSummary(product);
+          const priceSummary = getProductPriceSummary(product, session);
           const shouldPrioritizeImage = index < priorityCount;
 
           return (

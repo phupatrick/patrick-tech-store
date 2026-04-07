@@ -20,7 +20,7 @@ const ensureStore = () => {
 
 const hashAccessCode = (code: string, salt: string) => scryptSync(code, salt, 32).toString("hex");
 
-const resolveTierByRole = (role: AccessRole, tier?: string): ResellerTier => {
+const resolveTierByRole = (role: AccessRole): ResellerTier => {
   if (role === "reseller" || role === "customer") {
     return "regular";
   }
@@ -37,7 +37,7 @@ const normalizeOwnedVoucher = (voucher: OwnedVoucher): OwnedVoucher => ({
 
 const normalizeAccessCodeRecord = (record: AccessCodeRecord) => ({
   ...record,
-  tier: resolveTierByRole(record.role, record.tier),
+  tier: resolveTierByRole(record.role),
   points: Number.isFinite(record.points) ? Math.max(0, Math.floor(record.points)) : 0,
   vip: Boolean(record.vip),
   vouchers: Array.isArray(record.vouchers) ? record.vouchers.map(normalizeOwnedVoucher) : []
@@ -120,7 +120,7 @@ export const createAccessCodeRecord = (input: AccessCodeInput) => {
     codeSalt: salt,
     label: input.label.trim(),
     role: input.role,
-    tier: resolveTierByRole(input.role, input.tier),
+    tier: resolveTierByRole(input.role),
     points: Math.max(0, Math.floor(input.points)),
     vip: false,
     vouchers: [],
@@ -152,7 +152,7 @@ export const updateAccessCodeRecord = (accessCodeId: string, input: AccessCodeUp
       codeHash: input.code ? hashAccessCode(input.code, nextSalt) : existing.codeHash,
       label: input.label.trim(),
       role: input.role,
-      tier: resolveTierByRole(input.role, input.tier),
+      tier: resolveTierByRole(input.role),
       points: Math.max(0, Math.floor(input.points)),
       active: input.active,
       updatedAt: new Date().toISOString()

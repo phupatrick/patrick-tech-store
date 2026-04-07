@@ -123,64 +123,61 @@
     }
   },
   {
-    "id": "zalo-2780a823ba6653380a77",
-    "name": "Grok Heavy 1 năm",
-    "slug": "grok-heavy-1-nam-2780a823",
-    "shortDescription": "Grok Heavy 1 năm dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
-    "fullDescription": "Không bảo hành\nCó thể đổi sang mail chính chủ\nMạnh gấp 10 Super Grok",
-    "usageDuration": "1 năm",
-    "costPrice": 119000,
-    "retailPrice": 119000,
+    "id": "zalo-3f7e77fe65bb8ce5d5aa",
+    "name": "ChatGPT Plus 1 tháng chính chủ",
+    "slug": "chatgpt-plus-1-thang-chinh-chu-3f7e77fe",
+    "shortDescription": "ChatGPT Plus 1 tháng chính chủ dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành 10 ngày\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
+    "usageDuration": "1 tháng",
+    "costPrice": 149000,
+    "retailPrice": 149000,
     "customerTierPrices": {
-      "regular": 119000,
-      "vip": 119000
+      "regular": 149000,
+      "vip": 149000
     },
     "category": "Tài khoản số",
     "categories": [
       "Tài khoản số",
-      "Grok",
+      "ChatGPT",
       "AI"
     ],
     "accountType": "primary",
-    "featured": false,
+    "featured": true,
     "isFlashSale": false,
-    "flashSaleLabel": "Số lượng có hạn",
-    "published": false,
+    "published": true,
     "tierPrices": {
-      "regular": 119000,
-      "vip": 119000
+      "regular": 149000,
+      "vip": 149000
     },
     "overridePrices": {},
-    "image": "https://f1-zpprd.zdn.vn/2959161398228721032/d193ddaa1ce99db7c4f8.jpg",
-    "warrantyMonths": 12,
+    "image": "https://f1-zpprd.zdn.vn/6736020120517512082/98ad14611d319c6fc520.jpg",
+    "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
     "createdAt": "2026-03-14T00:00:00.000Z",
     "updatedAt": "2026-03-14T00:00:30.000Z",
     "translations": {
       "vi": {
-        "name": "Grok Heavy 1 năm",
-        "shortDescription": "Grok Heavy 1 năm dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
-        "fullDescription": "Không bảo hành\nCó thể đổi sang mail chính chủ\nMạnh gấp 10 Super Grok",
+        "name": "ChatGPT Plus 1 tháng chính chủ",
+        "shortDescription": "ChatGPT Plus 1 tháng chính chủ dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành 10 ngày\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
         "category": "Tài khoản số",
         "categories": [
           "Tài khoản số",
-          "Grok",
+          "ChatGPT",
           "AI"
-        ],
-        "flashSaleLabel": "Số lượng có hạn"
+        ]
       },
       "en": {
-        "name": "Grok Heavy 1 year",
-        "shortDescription": "Grok Heavy 1 year with primary account delivery, 1 year of use, and 1 year warranty.",
-        "fullDescription": "Grok Heavy 1 year with primary account delivery, 1 year of use, and 1 year warranty.\n\nPrimary account. Usage term: 1 year. Warranty: 1 year.\n\nGrok Heavy 1 year was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "name": "ChatGPT Plus 1 month primary account",
+        "shortDescription": "ChatGPT Plus 1 month primary account with primary account delivery, 1 month of use, and 1 month warranty.",
+        "fullDescription": "ChatGPT Plus 1 month primary account with primary account delivery, 1 month of use, and 1 month warranty.\n\nPrimary account. Usage term: 1 month. Warranty: 1 month.\n\nChatGPT Plus 1 month primary account was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
         "category": "Digital accounts",
         "categories": [
           "Digital accounts",
-          "Grok",
+          "ChatGPT",
           "AI"
-        ],
-        "flashSaleLabel": "Limited slots"
+        ]
       }
     }
   },
@@ -892,11 +889,11 @@
     "shortDescription": "Claude Pro chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nGiới hạn tin nhắn gấp 5 lần: Cho phép bạn làm việc liên tục với cường độ cao mà không lo bị ngắt quãng như bản miễn phí.\n\nMô hình thông minh nhất (Claude 3 Opus): Truy cập toàn bộ sức mạnh của Anthropic, đặc biệt là bản Opus chuyên giải quyết các vấn đề logic phức tạp, viết code chuyên sâu và phân tích dữ liệu đa tầng.\n\nTính năng Projects (Dự án): Đây là điểm \"ăn tiền\" nhất. Bạn có thể tạo các không gian riêng, tải lên hàng chục tệp tài liệu hoặc mã nguồn. Claude sẽ ghi nhớ toàn bộ nội dung đó để hỗ trợ xuyên suốt quá trình bạn thực hiện dự án đó.\n\nCửa sổ ngữ cảnh 200.000 token: Khả năng xử lý lượng dữ liệu khổng lồ (tương đương một cuốn sách hoặc kho code lớn) trong một lần yêu cầu mà không bị \"quên\" thông tin.\n\nArtifacts & Ưu tiên: Xem trực tiếp kết quả hiển thị (như code giao diện, biểu đồ) ngay bên cạnh khung chat và luôn được ưu tiên truy cập khi hệ thống quá tải.",
     "usageDuration": "1 tháng",
-    "costPrice": 449000,
-    "retailPrice": 449000,
+    "costPrice": 429000,
+    "retailPrice": 429000,
     "customerTierPrices": {
-      "regular": 449000,
-      "vip": 449000
+      "regular": 429000,
+      "vip": 429000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -909,8 +906,8 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 449000,
-      "vip": 449000
+      "regular": 429000,
+      "vip": 429000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/2344662788202406465/1fc19f3a52b3dced85a2.jpg",
@@ -1836,11 +1833,11 @@
     "shortDescription": "Capcut Pro 1 năm dạng tài khoản cấp riêng, thời hạn 1 năm, bảo hành 1 năm.",
     "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 năm\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n-Đăng nhập trên 2 điện thoại và 1 pc\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Capcut\n\nTính năng:\n\n- Không Watermark: Xuất video sạch, không có logo CapCut.\n\n- Kho tài nguyên cao cấp: Truy cập không giới hạn các hiệu ứng, bộ lọc, phông chữ, mẫu template và thư viện nhạc bản quyền chất lượng cao.\n\n- Công cụ AI nâng cao: Xóa nền thông minh, cách ly giọng nói (tách lời khỏi nhạc), xóa vật thể, và các hiệu ứng chuyển động chuyên sâu.\n\n- Xuất video chất lượng cao: Hỗ trợ xuất 4K, HDR, 60fps với độ nét tối đa.\n\n- Chỉnh sửa chuyên nghiệp: Chỉnh màu nâng cao (Color Grading/LUTs), làm việc với nhiều lớp video (multi-layer), và sử dụng keyframe chi tiết.\n\n- Đồng bộ hóa & Lưu trữ: Dung lượng đám mây (Cloud) lớn, giúp bạn bắt đầu dựng trên điện thoại và tiếp tục trên máy tính (PC) mượt mà.",
     "usageDuration": "1 năm",
-    "costPrice": 399000,
-    "retailPrice": 399000,
+    "costPrice": 299000,
+    "retailPrice": 299000,
     "customerTierPrices": {
-      "regular": 399000,
-      "vip": 399000
+      "regular": 299000,
+      "vip": 299000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -1853,8 +1850,8 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 399000,
-      "vip": 399000
+      "regular": 299000,
+      "vip": 299000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/6620227365683040346/023b73226ad2e48cbdc3.jpg",
@@ -1895,11 +1892,11 @@
     "shortDescription": "Capcut Pro 6 Tháng dạng tài khoản cấp riêng, thời hạn 6 tháng, bảo hành 6 tháng.",
     "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 6 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n-Đăng nhập trên 2 điện thoại và 1 pc\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Capcut\n\nTính năng:\n\n- Không Watermark: Xuất video sạch, không có logo CapCut.\n\n- Kho tài nguyên cao cấp: Truy cập không giới hạn các hiệu ứng, bộ lọc, phông chữ, mẫu template và thư viện nhạc bản quyền chất lượng cao.\n\n- Công cụ AI nâng cao: Xóa nền thông minh, cách ly giọng nói (tách lời khỏi nhạc), xóa vật thể, và các hiệu ứng chuyển động chuyên sâu.\n\n- Xuất video chất lượng cao: Hỗ trợ xuất 4K, HDR, 60fps với độ nét tối đa.\n\n- Chỉnh sửa chuyên nghiệp: Chỉnh màu nâng cao (Color Grading/LUTs), làm việc với nhiều lớp video (multi-layer), và sử dụng keyframe chi tiết.\n\n- Đồng bộ hóa & Lưu trữ: Dung lượng đám mây (Cloud) lớn, giúp bạn bắt đầu dựng trên điện thoại và tiếp tục trên máy tính (PC) mượt mà.",
     "usageDuration": "6 tháng",
-    "costPrice": 249000,
-    "retailPrice": 249000,
+    "costPrice": 179000,
+    "retailPrice": 179000,
     "customerTierPrices": {
-      "regular": 249000,
-      "vip": 249000
+      "regular": 179000,
+      "vip": 179000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -1912,8 +1909,8 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 249000,
-      "vip": 249000
+      "regular": 179000,
+      "vip": 179000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/8259466568578407474/e021903889c807965ed9.jpg",
@@ -1954,11 +1951,11 @@
     "shortDescription": "CapCut Pro 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n-Đăng nhập trên 2 điện thoại và 1 pc\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Capcut\n\nTính năng:\n\n- Không Watermark: Xuất video sạch, không có logo CapCut.\n\n- Kho tài nguyên cao cấp: Truy cập không giới hạn các hiệu ứng, bộ lọc, phông chữ, mẫu template và thư viện nhạc bản quyền chất lượng cao.\n\n- Công cụ AI nâng cao: Xóa nền thông minh, cách ly giọng nói (tách lời khỏi nhạc), xóa vật thể, và các hiệu ứng chuyển động chuyên sâu.\n\n- Xuất video chất lượng cao: Hỗ trợ xuất 4K, HDR, 60fps với độ nét tối đa.\n\n- Chỉnh sửa chuyên nghiệp: Chỉnh màu nâng cao (Color Grading/LUTs), làm việc với nhiều lớp video (multi-layer), và sử dụng keyframe chi tiết.\n\n- Đồng bộ hóa & Lưu trữ: Dung lượng đám mây (Cloud) lớn, giúp bạn bắt đầu dựng trên điện thoại và tiếp tục trên máy tính (PC) mượt mà.",
     "usageDuration": "1 tháng",
-    "costPrice": 45000,
-    "retailPrice": 45000,
+    "costPrice": 35000,
+    "retailPrice": 35000,
     "customerTierPrices": {
-      "regular": 45000,
-      "vip": 45000
+      "regular": 35000,
+      "vip": 35000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -1971,8 +1968,8 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 45000,
-      "vip": 45000
+      "regular": 35000,
+      "vip": 35000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/6073242372759581790/651c16050ff581abd8e4.jpg",

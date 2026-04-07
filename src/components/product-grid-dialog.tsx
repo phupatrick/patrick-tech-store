@@ -72,7 +72,8 @@ export function ProductGridDialog({
     (voucher) => voucher.id === selectedVoucherId && voucher.isApplicable && !voucher.isReserved
   );
   const finalDisplayPrice = Math.max(0, product.displayVisiblePrice - toDisplayAmount(selectedVoucher?.discountAmount ?? 0));
-  const isQuoteOnlyProduct = product.visiblePrice <= 0 || product.displayVisiblePrice <= 0;
+  const isQuoteOnlyProduct = priceSummary.mode === "contact";
+  const isFreeProduct = priceSummary.mode === "free";
   const hasVoucherDiscount = (selectedVoucher?.discountAmount ?? 0) > 0;
   const showFullCheckoutBreakdown = hasVoucherDiscount || priceSummary.hasDiscount;
   const showZaloChannel = language === "vi";
@@ -161,7 +162,13 @@ export function ProductGridDialog({
               ) : null}
               <div className="product-price-row product-price-row-sale product-price-row-compact">
                 <span className="product-price-label product-price-label-strong">{priceLabels.sale}</span>
-                <span className="product-price-value product-price-sale">{formatDisplay(priceSummary.salePrice)}</span>
+                <span className="product-price-value product-price-sale">
+                  {priceSummary.mode === "contact"
+                    ? t("pricing.contact")
+                    : priceSummary.mode === "free"
+                      ? t("pricing.free")
+                      : formatDisplay(priceSummary.salePrice)}
+                </span>
               </div>
             </div>
           ) : null}
@@ -269,7 +276,7 @@ export function ProductGridDialog({
                     <>
                       <div className="checkout-summary-row">
                         <span>{t("checkout.originalPrice")}</span>
-                        <strong>{formatDisplay(product.displayVisiblePrice)}</strong>
+                        <strong>{isFreeProduct ? t("pricing.free") : formatDisplay(product.displayVisiblePrice)}</strong>
                       </div>
                       <div className="checkout-summary-row">
                         <span>{t("checkout.discount")}</span>
@@ -279,7 +286,7 @@ export function ProductGridDialog({
                   ) : null}
                   <div className="checkout-summary-row checkout-summary-row-total">
                     <span>{showFullCheckoutBreakdown ? t("checkout.finalPrice") : priceLabels.sale}</span>
-                    <strong>{formatDisplay(finalDisplayPrice)}</strong>
+                    <strong>{isFreeProduct ? t("pricing.free") : formatDisplay(finalDisplayPrice)}</strong>
                   </div>
                 </div>
               )}

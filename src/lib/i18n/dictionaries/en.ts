@@ -83,6 +83,8 @@ export const en = {
   "pricing.label.special": "Special reseller price",
   "pricing.label.retail": "Retail price",
   "pricing.label.tier": "{tier}",
+  "pricing.free": "Free",
+  "pricing.contact": "Contact us",
   "product.meta": "{months} months warranty / {points} pts",
   "product.stock": "{count} in stock",
   "product.buyNow": "Buy now",

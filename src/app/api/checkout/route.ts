@@ -11,6 +11,7 @@ import {
 import { isLanguage, translate } from "@/lib/i18n";
 import { createPendingCheckoutRecord, getReservedVoucherMap, listPendingCheckouts, updatePendingCheckout } from "@/lib/pending-checkout-store";
 import { generateUniqueOrderCode, listOrders } from "@/lib/order-store";
+import { getProductPriceSummary } from "@/lib/product-price-display";
 import { getPublicProductView } from "@/lib/pricing";
 import { getProductById } from "@/lib/product-store";
 import { getClientRequestContext } from "@/lib/request-context";
@@ -59,6 +60,7 @@ export async function POST(request: NextRequest) {
   const currency = resolveCurrencyCode(language, request.cookies.get("preferred-currency")?.value);
   const currencySettings = await getCurrencySettings(language, currency);
   const productView = await getPublicProductView(product, language, session, currency);
+  const priceSummary = getProductPriceSummary(productView, session);
   const contactMethod =
     body.contactMethod === "zalo" || body.contactMethod === "telegram" || body.contactMethod === "whatsapp"
       ? body.contactMethod
@@ -119,9 +121,20 @@ export async function POST(request: NextRequest) {
     Math.max(0, displayOriginalPrice - displayDiscountAmount),
     currencySettings.currency
   );
-  const formattedOriginalPrice = formatCurrencyValue(displayOriginalPrice, currencySettings);
+  const formatPublicPriceText = (amount: number) => {
+    if (priceSummary.mode === "contact") {
+      return translate(language, "pricing.contact");
+    }
+
+    if (amount <= 0) {
+      return translate(language, "pricing.free");
+    }
+
+    return formatCurrencyValue(amount, currencySettings);
+  };
+  const formattedOriginalPrice = formatPublicPriceText(displayOriginalPrice);
   const formattedDiscount = formatCurrencyValue(displayDiscountAmount, currencySettings);
-  const formattedFinalPrice = formatCurrencyValue(displayFinalPrice, currencySettings);
+  const formattedFinalPrice = formatPublicPriceText(displayFinalPrice);
   const orderCode = createCheckoutOrderCode();
   const voucherLine = voucherDefinitionId
     ? translate(language, "checkout.voucherApplied", {

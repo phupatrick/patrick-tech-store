@@ -83,6 +83,8 @@ export const vi = {
   "pricing.label.special": "Giá đại lý đặc biệt",
   "pricing.label.retail": "Giá bán lẻ",
   "pricing.label.tier": "{tier}",
+  "pricing.free": "Free",
+  "pricing.contact": "Liên hệ",
   "product.meta": "Bảo hành {months} tháng / {points} điểm",
   "product.stock": "Còn {count} sản phẩm",
   "product.buyNow": "Mua ngay",

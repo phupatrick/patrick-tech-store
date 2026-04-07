@@ -143,7 +143,13 @@ export function ProductGrid({
                         ) : null}
                         <div className="product-price-row product-price-row-sale product-price-row-compact">
                           <span className="product-price-label product-price-label-strong">{priceLabels.sale}</span>
-                          <span className="product-price-value product-price-sale">{formatDisplay(priceSummary.salePrice)}</span>
+                          <span className="product-price-value product-price-sale">
+                            {priceSummary.mode === "contact"
+                              ? t("pricing.contact")
+                              : priceSummary.mode === "free"
+                                ? t("pricing.free")
+                                : formatDisplay(priceSummary.salePrice)}
+                          </span>
                         </div>
                       </div>
                     ) : (

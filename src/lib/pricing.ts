@@ -224,6 +224,18 @@ const getProductSearchPayload = (product: Product) => {
   };
 };
 
+const hasPublicPrice = (product: Product) => {
+  const priceCandidates = [
+    product.retailPrice,
+    product.customerTierPrices?.regular,
+    product.customerTierPrices?.vip,
+    product.tierPrices?.regular,
+    product.tierPrices?.vip
+  ];
+
+  return priceCandidates.some((value) => typeof value === "number" && Number.isFinite(value) && value > 0);
+};
+
 const isHiddenOnPublicWeb = (product: Product) => {
   const localizedCopies = Object.values(product.translations ?? {});
   const haystack = normalizeText(
@@ -238,7 +250,11 @@ const isHiddenOnPublicWeb = (product: Product) => {
       .join(" ")
   );
 
-  return PUBLIC_HIDDEN_PRODUCT_KEYWORDS.some((keyword) => haystack.includes(keyword));
+  if (!PUBLIC_HIDDEN_PRODUCT_KEYWORDS.some((keyword) => haystack.includes(keyword))) {
+    return false;
+  }
+
+  return !hasPublicPrice(product);
 };
 
 export const buildProductView = async (

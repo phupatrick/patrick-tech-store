@@ -123,17 +123,77 @@
     }
   },
   {
+    "id": "zalo-f800a091b2d45b8a02c5",
+    "name": "Canva Pro 1 năm",
+    "slug": "canva-pro-1-nam-f800a091",
+    "shortDescription": "Canva Pro 1 năm dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
+    "fullDescription": "Bảo hành full",
+    "usageDuration": "12 tháng",
+    "costPrice": 99000,
+    "retailPrice": 99000,
+    "customerTierPrices": {
+      "regular": 99000,
+      "vip": 99000
+    },
+    "category": "Tài khoản số",
+    "categories": [
+      "Tài khoản số",
+      "Thiết kế",
+      "Sáng tạo"
+    ],
+    "accountType": "primary",
+    "featured": true,
+    "isFlashSale": false,
+    "published": true,
+    "tierPrices": {
+      "regular": 99000,
+      "vip": 99000
+    },
+    "overridePrices": {},
+    "image": "https://f1-zpprd.zdn.vn/2537719038416277704/87973b686430e56ebc21.jpg",
+    "warrantyMonths": 12,
+    "stock": 1,
+    "points": 0,
+    "createdAt": "2026-03-14T00:00:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.628Z",
+    "translations": {
+      "vi": {
+        "name": "Canva Pro 1 năm",
+        "shortDescription": "Canva Pro 1 năm dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
+        "fullDescription": "Bảo hành full",
+        "category": "Tài khoản số",
+        "categories": [
+          "Tài khoản số",
+          "Thiết kế",
+          "Sáng tạo"
+        ]
+      },
+      "en": {
+        "name": "Canva Pro 1 year",
+        "shortDescription": "Canva Pro 1 year with primary account delivery, 1 year of use, and 1 year warranty.",
+        "fullDescription": "Canva Pro 1 year with primary account delivery, 1 year of use, and 1 year warranty.\n\nPrimary account. Usage term: 1 year. Warranty: 1 year.\n\nCanva Pro 1 year was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "category": "Digital accounts",
+        "categories": [
+          "Digital accounts",
+          "Design",
+          "Creative"
+        ]
+      }
+    },
+    "warrantyDuration": "12 tháng"
+  },
+  {
     "id": "zalo-3f7e77fe65bb8ce5d5aa",
     "name": "ChatGPT Plus 1 tháng chính chủ",
     "slug": "chatgpt-plus-1-thang-chinh-chu-3f7e77fe",
     "shortDescription": "ChatGPT Plus 1 tháng chính chủ dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành 10 ngày\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
     "usageDuration": "1 tháng",
-    "costPrice": 149000,
-    "retailPrice": 149000,
+    "costPrice": 199000,
+    "retailPrice": 199000,
     "customerTierPrices": {
-      "regular": 149000,
-      "vip": 149000
+      "regular": 199000,
+      "vip": 199000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -146,16 +206,16 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 149000,
-      "vip": 149000
+      "regular": 199000,
+      "vip": 199000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/6736020120517512082/98ad14611d319c6fc520.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:00:00.000Z",
-    "updatedAt": "2026-03-14T00:00:30.000Z",
+    "createdAt": "2026-03-14T00:01:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.628Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 tháng chính chủ",
@@ -179,80 +239,21 @@
           "AI"
         ]
       }
-    }
-  },
-  {
-    "id": "zalo-5955318723c2ca9c93d3",
-    "name": "Kling Pro 4500 credit",
-    "slug": "kling-pro-4500-credit-59553187",
-    "shortDescription": "Kling Pro 4500 credit dạng tài khoản cấp riêng, bảo hành 3 ngày.",
-    "fullDescription": "Acc cấp, giao nhanh.\n\nGói Kling Pro 4500 credit với bảo hành 3 ngày, phù hợp cho nhu cầu render/video bằng credit cao hơn.",
-    "usageDuration": "30 ngày",
-    "costPrice": 499000,
-    "retailPrice": 499000,
-    "customerTierPrices": {
-      "regular": 499000,
-      "vip": 499000
     },
-    "category": "Tài khoản số",
-    "categories": [
-      "Tài khoản số",
-      "AI",
-      "Video"
-    ],
-    "accountType": "dedicated",
-    "featured": true,
-    "isFlashSale": false,
-    "published": true,
-    "tierPrices": {
-      "regular": 499000,
-      "vip": 499000
-    },
-    "overridePrices": {},
-    "image": "https://f1-zpprd.zdn.vn/1210098699799615800/a25042a0c31b4d45140a.jpg",
-    "warrantyMonths": 1,
-    "stock": 0,
-    "points": 0,
-    "createdAt": "2026-03-14T00:01:00.000Z",
-    "updatedAt": "2026-03-14T00:01:30.000Z",
-    "translations": {
-      "vi": {
-        "name": "Kling Pro 4500 credit",
-        "shortDescription": "Kling Pro 4500 credit dạng tài khoản cấp riêng, bảo hành 3 ngày.",
-        "fullDescription": "Acc cấp, giao nhanh.\n\nGói Kling Pro 4500 credit với bảo hành 3 ngày, phù hợp cho nhu cầu render/video bằng credit cao hơn.",
-        "category": "Tài khoản số",
-        "categories": [
-          "Tài khoản số",
-          "AI",
-          "Video"
-        ]
-      },
-      "en": {
-        "name": "Kling Pro 4500 credits",
-        "shortDescription": "Kling Pro 4500 credits with dedicated account delivery and 3-day warranty.",
-        "fullDescription": "Dedicated account delivery.\n\nKling Pro 4500 credits with 3-day warranty for higher-volume video generation.",
-        "category": "Digital accounts",
-        "categories": [
-          "Digital accounts",
-          "AI",
-          "Video"
-        ]
-      }
-    },
-    "warrantyDuration": "3 ngày"
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-6a57018513c0fa9ea3d1",
-    "name": "Kling Standard 1100 credit - bảo hành 24h",
+    "name": "Kling Standard 1100 credit",
     "slug": "kling-standard-1100-credit-24h-6a570185",
-    "shortDescription": "Kling Standard 1100 credit dạng tài khoản cấp riêng, bảo hành 24 giờ.",
+    "shortDescription": "Kling Standard 1100 credit dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 3 ngày.",
     "fullDescription": "Acc cấp, giao nhanh.\n\nGói này dành cho Kling Standard 1100 credit với bảo hành 24 giờ, phù hợp để mua nhanh với mức giá tiết kiệm.",
-    "usageDuration": "30 ngày",
+    "usageDuration": "1 tháng",
     "costPrice": 189000,
-    "retailPrice": 189000,
+    "retailPrice": 249000,
     "customerTierPrices": {
-      "regular": 189000,
-      "vip": 189000
+      "regular": 249000,
+      "vip": 249000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -265,20 +266,20 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 189000,
-      "vip": 189000
+      "regular": 249000,
+      "vip": 249000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/780716833448467643/642e9b7a0fc1819fd8d0.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
     "createdAt": "2026-03-14T00:02:00.000Z",
-    "updatedAt": "2026-03-14T00:02:30.000Z",
+    "updatedAt": "2026-04-10T12:55:14.629Z",
     "translations": {
       "vi": {
-        "name": "Kling Standard 1100 credit - bảo hành 24h",
-        "shortDescription": "Kling Standard 1100 credit dạng tài khoản cấp riêng, bảo hành 24 giờ.",
+        "name": "Kling Standard 1100 credit",
+        "shortDescription": "Kling Standard 1100 credit dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 3 ngày.",
         "fullDescription": "Acc cấp, giao nhanh.\n\nGói này dành cho Kling Standard 1100 credit với bảo hành 24 giờ, phù hợp để mua nhanh với mức giá tiết kiệm.",
         "category": "Tài khoản số",
         "categories": [
@@ -299,20 +300,20 @@
         ]
       }
     },
-    "warrantyDuration": "24 giờ"
+    "warrantyDuration": "3 ngày"
   },
   {
     "id": "zalo-21164bc45981b0dfe990",
     "name": "Kling Standard 215 credit",
     "slug": "kling-standard-215-credit-21164bc4",
-    "shortDescription": "KlingStanda 215 credit dạng tài khoản cấp riêng, thời hạn 30 ngày, bảo hành 1 tháng.",
+    "shortDescription": "Kling Standard 215 credit dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 0 ngày.",
     "fullDescription": "Acc cấp\nChế độ cân bằng: Là lựa chọn tối ưu giữa tốc độ xử lý nhanh và chất lượng hình ảnh sắc nét (thường là 1080p).\n\nChuyển động tự nhiên: Xử lý tốt các chuyển động vật lý như tóc bay, nước chảy hoặc cử động cơ thể người.\n\nĐa dạng nguồn vào: Hỗ trợ tạo video từ văn bản (Text-to-Video) hoặc làm ảnh tĩnh chuyển động (Image-to-Video).\n\nTùy chỉnh linh hoạt: Cho phép chọn tỉ lệ khung hình (ngang, dọc, vuông) và điều khiển góc quay camera (zoom, pan, tilt).\n\nTiết kiệm chi phí: Tiêu tốn ít credit hơn so với chế độ Professional, phù hợp để thử nghiệm nhiều ý tưởng.",
-    "usageDuration": "30 ngày",
-    "costPrice": 15000,
-    "retailPrice": 15000,
+    "usageDuration": "1 tháng",
+    "costPrice": 35000,
+    "retailPrice": 35000,
     "customerTierPrices": {
-      "regular": 15000,
-      "vip": 15000
+      "regular": 35000,
+      "vip": 35000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -325,20 +326,20 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 15000,
-      "vip": 15000
+      "regular": 35000,
+      "vip": 35000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/6779499140816648654/5ea1a6f5324ebc10e55f.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
     "createdAt": "2026-03-14T00:03:00.000Z",
-    "updatedAt": "2026-03-14T00:03:30.000Z",
+    "updatedAt": "2026-04-10T12:55:14.629Z",
     "translations": {
       "vi": {
         "name": "Kling Standard 215 credit",
-        "shortDescription": "KlingStanda 215 credit dạng tài khoản cấp riêng, thời hạn 30 ngày, bảo hành 1 tháng.",
+        "shortDescription": "Kling Standard 215 credit dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 0 ngày.",
         "fullDescription": "Acc cấp\nChế độ cân bằng: Là lựa chọn tối ưu giữa tốc độ xử lý nhanh và chất lượng hình ảnh sắc nét (thường là 1080p).\n\nChuyển động tự nhiên: Xử lý tốt các chuyển động vật lý như tóc bay, nước chảy hoặc cử động cơ thể người.\n\nĐa dạng nguồn vào: Hỗ trợ tạo video từ văn bản (Text-to-Video) hoặc làm ảnh tĩnh chuyển động (Image-to-Video).\n\nTùy chỉnh linh hoạt: Cho phép chọn tỉ lệ khung hình (ngang, dọc, vuông) và điều khiển góc quay camera (zoom, pan, tilt).\n\nTiết kiệm chi phí: Tiêu tốn ít credit hơn so với chế độ Professional, phù hợp để thử nghiệm nhiều ý tưởng.",
         "category": "Tài khoản số",
         "categories": [
@@ -358,69 +359,8 @@
           "Video"
         ]
       }
-    }
-  },
-  {
-    "id": "zalo-e05e858c97c97e9727d8",
-    "name": "Super Grok 3 tháng",
-    "slug": "super-grok-3-thang-e05e858c",
-    "shortDescription": "Super Grok 3 tháng dạng tài khoản cấp riêng, thời hạn 3 tháng, bảo hành 3 tháng.",
-    "fullDescription": "-Dạng acc cấp riêng có thể thành chính chủ, bảo mật, an toàn, bảo hành full 3 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Grok\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
-    "usageDuration": "3 tháng",
-    "costPrice": 299000,
-    "retailPrice": 299000,
-    "customerTierPrices": {
-      "regular": 299000,
-      "vip": 299000
     },
-    "category": "Tài khoản số",
-    "categories": [
-      "Tài khoản số",
-      "Grok",
-      "AI"
-    ],
-    "accountType": "dedicated",
-    "featured": true,
-    "isFlashSale": true,
-    "flashSaleLabel": "Nổi bật",
-    "published": true,
-    "tierPrices": {
-      "regular": 299000,
-      "vip": 299000
-    },
-    "overridePrices": {},
-    "image": "https://f1-zpprd.zdn.vn/8657132362204506746/96c46c90f82b76752f3a.jpg",
-    "warrantyMonths": 3,
-    "stock": 0,
-    "points": 0,
-    "createdAt": "2026-03-14T00:04:00.000Z",
-    "updatedAt": "2026-03-14T00:04:30.000Z",
-    "translations": {
-      "vi": {
-        "name": "Super Grok 3 tháng",
-        "shortDescription": "Super Grok 3 tháng dạng tài khoản cấp riêng, thời hạn 3 tháng, bảo hành 3 tháng.",
-        "fullDescription": "-Dạng acc cấp riêng có thể thành chính chủ, bảo mật, an toàn, bảo hành full 3 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Grok\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
-        "category": "Tài khoản số",
-        "categories": [
-          "Tài khoản số",
-          "Grok",
-          "AI"
-        ],
-        "flashSaleLabel": "Nổi bật"
-      },
-      "en": {
-        "name": "Super Grok 3 months",
-        "shortDescription": "Super Grok 3 months with dedicated account delivery, 3 months of use, and 3 months warranty.",
-        "fullDescription": "Super Grok 3 months with dedicated account delivery, 3 months of use, and 3 months warranty.\n\nDedicated account. Usage term: 3 months. Warranty: 3 months.\n\nSuper Grok 3 months was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
-        "category": "Digital accounts",
-        "categories": [
-          "Digital accounts",
-          "Grok",
-          "AI"
-        ],
-        "flashSaleLabel": "Hot"
-      }
-    }
+    "warrantyDuration": "0 ngày"
   },
   {
     "id": "zalo-b1510ab418f1f1afa8e0",
@@ -451,10 +391,10 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/6839778610901980998/afad8794c0394e671728.jpg",
     "warrantyMonths": 12,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:05:00.000Z",
-    "updatedAt": "2026-03-14T00:05:30.000Z",
+    "createdAt": "2026-03-14T00:04:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.639Z",
     "translations": {
       "vi": {
         "name": "Youtube premium chính chủ 1 năm",
@@ -476,7 +416,8 @@
           "Other"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 năm"
   },
   {
     "id": "zalo-c72b70ce628b8bd5d29a",
@@ -497,7 +438,7 @@
       "Khác"
     ],
     "accountType": "primary",
-    "featured": false,
+    "featured": true,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
@@ -509,8 +450,8 @@
     "warrantyMonths": 6,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:06:00.000Z",
-    "updatedAt": "2026-03-14T00:06:30.000Z",
+    "createdAt": "2026-03-14T00:05:00.000Z",
+    "updatedAt": "2026-03-14T00:05:30.000Z",
     "translations": {
       "vi": {
         "name": "Youtube Premium chính chủ 6 tháng",
@@ -541,11 +482,11 @@
     "shortDescription": "Youtube Premium chính chủ 3 tháng dạng tài khoản chính chủ, thời hạn 3 tháng, bảo hành 3 tháng.",
     "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full .\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Youtube không cần mật khẩu\nTính Năng:\nXem video không quảng cáo trên YouTube.\nTải video và playlist để xem offline, có cả Smart Downloads.\nPhát trong nền và Picture-in-picture (PiP) trên điện thoại.\nKèm YouTube Music Premium: nghe nhạc không quảng cáo, tải offline, phát nền, chuyển nhanh giữa audio và video.\nXem tiếp trên nhiều thiết bị từ đúng vị trí đang dở.\nMột số quyền lợi thêm tùy thiết bị/khu vực: Jump ahead, 1080p Premium, âm thanh chất lượng cao, hàng đợi video trên mobile, ưu đãi/thử nghiệm tính năng mới.",
     "usageDuration": "3 tháng",
-    "costPrice": 139000,
-    "retailPrice": 139000,
+    "costPrice": 149000,
+    "retailPrice": 149000,
     "customerTierPrices": {
-      "regular": 139000,
-      "vip": 139000
+      "regular": 149000,
+      "vip": 149000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -557,16 +498,16 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 139000,
-      "vip": 139000
+      "regular": 149000,
+      "vip": 149000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/1998455410373351360/1970a803e1ae6ff036bf.jpg",
     "warrantyMonths": 3,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:07:00.000Z",
-    "updatedAt": "2026-03-14T00:07:30.000Z",
+    "createdAt": "2026-03-14T00:06:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.638Z",
     "translations": {
       "vi": {
         "name": "Youtube Premium chính chủ 3 tháng",
@@ -588,7 +529,8 @@
           "Other"
         ]
       }
-    }
+    },
+    "warrantyDuration": "3 tháng"
   },
   {
     "id": "zalo-0994bb71a934406a1925",
@@ -621,8 +563,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:08:00.000Z",
-    "updatedAt": "2026-03-14T00:08:30.000Z",
+    "createdAt": "2026-03-14T00:07:00.000Z",
+    "updatedAt": "2026-03-14T00:07:30.000Z",
     "translations": {
       "vi": {
         "name": "Youtube Premium chính chủ 1 tháng",
@@ -647,76 +589,17 @@
     }
   },
   {
-    "id": "zalo-8cca202f326adb34827b",
-    "name": "ChatGPT Plus 1 tháng acc cấp riêng",
-    "slug": "chatgpt-plus-1-thang-acc-cap-rieng-8cca202f",
-    "shortDescription": "ChatGPT Plus 1 tháng acc cấp riêng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
-    "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, KHÔNG BẢO HÀNH\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
-    "usageDuration": "1 tháng",
-    "costPrice": 29000,
-    "retailPrice": 29000,
-    "customerTierPrices": {
-      "regular": 29000,
-      "vip": 29000
-    },
-    "category": "Tài khoản số",
-    "categories": [
-      "Tài khoản số",
-      "ChatGPT",
-      "AI"
-    ],
-    "accountType": "dedicated",
-    "featured": false,
-    "isFlashSale": false,
-    "published": true,
-    "tierPrices": {
-      "regular": 29000,
-      "vip": 29000
-    },
-    "overridePrices": {},
-    "image": "https://f1-zpprd.zdn.vn/1534297584170695805/a5961ee55748d9168059.jpg",
-    "warrantyMonths": 1,
-    "stock": 0,
-    "points": 0,
-    "createdAt": "2026-03-14T00:09:00.000Z",
-    "updatedAt": "2026-03-14T00:09:30.000Z",
-    "translations": {
-      "vi": {
-        "name": "ChatGPT Plus 1 tháng acc cấp riêng",
-        "shortDescription": "ChatGPT Plus 1 tháng acc cấp riêng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
-        "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, KHÔNG BẢO HÀNH\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
-        "category": "Tài khoản số",
-        "categories": [
-          "Tài khoản số",
-          "ChatGPT",
-          "AI"
-        ]
-      },
-      "en": {
-        "name": "ChatGPT Plus 1 month dedicated account",
-        "shortDescription": "ChatGPT Plus 1 month dedicated account with dedicated account delivery, 1 month of use, and 1 month warranty.",
-        "fullDescription": "ChatGPT Plus 1 month dedicated account with dedicated account delivery, 1 month of use, and 1 month warranty.\n\nDedicated account. Usage term: 1 month. Warranty: 1 month.\n\nChatGPT Plus 1 month dedicated account was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
-        "category": "Digital accounts",
-        "categories": [
-          "Digital accounts",
-          "ChatGPT",
-          "AI"
-        ]
-      }
-    }
-  },
-  {
     "id": "zalo-2089b5bfa4fa4da414eb",
     "name": "ChatGPT Plus 1 năm chính chủ",
     "slug": "chatgpt-plus-1-nam-chinh-chu-2089b5bf",
-    "shortDescription": "ChatGPT Plus 1 năm chính chủ dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
+    "shortDescription": "ChatGPT Plus 1 năm chính chủ dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 năm\n-Gia hạn tiếp được\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
     "usageDuration": "1 năm",
-    "costPrice": 1899000,
-    "retailPrice": 1899000,
+    "costPrice": 1799000,
+    "retailPrice": 1799000,
     "customerTierPrices": {
-      "regular": 1899000,
-      "vip": 1899000
+      "regular": 1799000,
+      "vip": 1799000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -729,20 +612,20 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 1899000,
-      "vip": 1899000
+      "regular": 1799000,
+      "vip": 1799000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/3127785050278133097/4eed02e4646cea32b37d.jpg",
-    "warrantyMonths": 12,
-    "stock": 0,
+    "warrantyMonths": 1,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:10:00.000Z",
-    "updatedAt": "2026-03-14T00:10:30.000Z",
+    "createdAt": "2026-03-14T00:08:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.629Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 năm chính chủ",
-        "shortDescription": "ChatGPT Plus 1 năm chính chủ dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
+        "shortDescription": "ChatGPT Plus 1 năm chính chủ dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 tháng.",
         "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 năm\n-Gia hạn tiếp được\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
         "category": "Tài khoản số",
         "categories": [
@@ -762,7 +645,8 @@
           "AI"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-2ba1429053d5ba8be3c4",
@@ -796,8 +680,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:11:00.000Z",
-    "updatedAt": "2026-03-14T00:11:30.000Z",
+    "createdAt": "2026-03-14T00:09:00.000Z",
+    "updatedAt": "2026-03-14T00:09:30.000Z",
     "translations": {
       "vi": {
         "name": "Claude Max 20x 1 tháng, chính chủ",
@@ -827,14 +711,14 @@
     "id": "zalo-e523831292577b092246",
     "name": "Claude Max 5x chính chủ 1 tháng",
     "slug": "claude-max-5x-chinh-chu-1-thang-e5238312",
-    "shortDescription": "Claude Max 5x chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "shortDescription": "Claude Max 5x chính chủ 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nGiới hạn cực đại (5x Pro): Bạn có khoảng 225 tin nhắn mỗi 5 giờ (so với Pro chỉ khoảng 45 tin). Đây là lý do nó được gọi là \"Max\" – gần như không thể dùng hết nếu chỉ chat thông thường.\n\nHệ thống 50 Sessions/tháng: Thay vì dùng thoải mái không giới hạn, gói Max quản lý theo \"phiên làm việc\". Bạn có 50 phiên (mỗi phiên 5 tiếng) hoạt động ở cường độ cao nhất mỗi tháng.\n\nƯu tiên Opus 4.6: Đây là gói luôn được ưu tiên sử dụng các model nặng nhất, thông minh nhất (như Opus 4.6) mà không bị bóp băng thông hay bắt chuyển sang các model nhẹ hơn (Sonnet/Haiku) khi hệ thống quá tải.\n\nExtra Usage (Dùng thêm): Khi hết gói 5x, bạn có tính năng nạp thêm tiền (pay-as-you-go) để duy trì công việc mà không cần đợi reset 5 tiếng.\n\nClaude Code & CLI: Hỗ trợ đầy đủ các công cụ lập trình chuyên sâu qua dòng lệnh (Terminal), cho phép AI can thiệp trực tiếp vào file hệ thống và chạy lệnh kiểm thử (test).",
     "usageDuration": "1 tháng",
-    "costPrice": 1999000,
-    "retailPrice": 1999000,
+    "costPrice": 2449000,
+    "retailPrice": 2449000,
     "customerTierPrices": {
-      "regular": 1999000,
-      "vip": 1999000
+      "regular": 2449000,
+      "vip": 2449000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -842,25 +726,25 @@
       "Claude",
       "AI"
     ],
-    "accountType": "primary",
+    "accountType": "dedicated",
     "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 1999000,
-      "vip": 1999000
+      "regular": 2449000,
+      "vip": 2449000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/6221985543051099983/2aec9917549edac0838f.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:12:00.000Z",
-    "updatedAt": "2026-03-14T00:12:30.000Z",
+    "createdAt": "2026-03-14T00:10:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.629Z",
     "translations": {
       "vi": {
         "name": "Claude Max 5x chính chủ 1 tháng",
-        "shortDescription": "Claude Max 5x chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "shortDescription": "Claude Max 5x chính chủ 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
         "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nGiới hạn cực đại (5x Pro): Bạn có khoảng 225 tin nhắn mỗi 5 giờ (so với Pro chỉ khoảng 45 tin). Đây là lý do nó được gọi là \"Max\" – gần như không thể dùng hết nếu chỉ chat thông thường.\n\nHệ thống 50 Sessions/tháng: Thay vì dùng thoải mái không giới hạn, gói Max quản lý theo \"phiên làm việc\". Bạn có 50 phiên (mỗi phiên 5 tiếng) hoạt động ở cường độ cao nhất mỗi tháng.\n\nƯu tiên Opus 4.6: Đây là gói luôn được ưu tiên sử dụng các model nặng nhất, thông minh nhất (như Opus 4.6) mà không bị bóp băng thông hay bắt chuyển sang các model nhẹ hơn (Sonnet/Haiku) khi hệ thống quá tải.\n\nExtra Usage (Dùng thêm): Khi hết gói 5x, bạn có tính năng nạp thêm tiền (pay-as-you-go) để duy trì công việc mà không cần đợi reset 5 tiếng.\n\nClaude Code & CLI: Hỗ trợ đầy đủ các công cụ lập trình chuyên sâu qua dòng lệnh (Terminal), cho phép AI can thiệp trực tiếp vào file hệ thống và chạy lệnh kiểm thử (test).",
         "category": "Tài khoản số",
         "categories": [
@@ -880,7 +764,8 @@
           "AI"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-281e4d2f5c6ab534ec7b",
@@ -890,10 +775,10 @@
     "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nGiới hạn tin nhắn gấp 5 lần: Cho phép bạn làm việc liên tục với cường độ cao mà không lo bị ngắt quãng như bản miễn phí.\n\nMô hình thông minh nhất (Claude 3 Opus): Truy cập toàn bộ sức mạnh của Anthropic, đặc biệt là bản Opus chuyên giải quyết các vấn đề logic phức tạp, viết code chuyên sâu và phân tích dữ liệu đa tầng.\n\nTính năng Projects (Dự án): Đây là điểm \"ăn tiền\" nhất. Bạn có thể tạo các không gian riêng, tải lên hàng chục tệp tài liệu hoặc mã nguồn. Claude sẽ ghi nhớ toàn bộ nội dung đó để hỗ trợ xuyên suốt quá trình bạn thực hiện dự án đó.\n\nCửa sổ ngữ cảnh 200.000 token: Khả năng xử lý lượng dữ liệu khổng lồ (tương đương một cuốn sách hoặc kho code lớn) trong một lần yêu cầu mà không bị \"quên\" thông tin.\n\nArtifacts & Ưu tiên: Xem trực tiếp kết quả hiển thị (như code giao diện, biểu đồ) ngay bên cạnh khung chat và luôn được ưu tiên truy cập khi hệ thống quá tải.",
     "usageDuration": "1 tháng",
     "costPrice": 429000,
-    "retailPrice": 429000,
+    "retailPrice": 399000,
     "customerTierPrices": {
-      "regular": 429000,
-      "vip": 429000
+      "regular": 399000,
+      "vip": 399000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -906,16 +791,16 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 429000,
-      "vip": 429000
+      "regular": 399000,
+      "vip": 399000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/2344662788202406465/1fc19f3a52b3dced85a2.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:13:00.000Z",
-    "updatedAt": "2026-03-14T00:13:30.000Z",
+    "createdAt": "2026-03-14T00:11:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.629Z",
     "translations": {
       "vi": {
         "name": "Claude Pro chính chủ 1 tháng",
@@ -939,7 +824,8 @@
           "AI"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-14df0aee1babf2f5abba",
@@ -973,8 +859,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:14:00.000Z",
-    "updatedAt": "2026-03-14T00:14:30.000Z",
+    "createdAt": "2026-03-14T00:12:00.000Z",
+    "updatedAt": "2026-03-14T00:12:30.000Z",
     "translations": {
       "vi": {
         "name": "Claude Pro acc cấp 1 tháng",
@@ -1002,9 +888,9 @@
   },
   {
     "id": "zalo-13bd2d8c3cc9d5978cd8",
-    "name": "GitHub Pro 1 tháng acc cấp",
+    "name": "GitHub Copilot Pro 1 tháng acc cấp",
     "slug": "github-pro-1-thang-acc-cap-13bd2d8c",
-    "shortDescription": "GitHub Pro 1 tháng acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "shortDescription": "GitHub Copilot Pro 1 tháng acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\nTính năng\n1. Tính năng quản lý Code (Trong Repo Riêng tư)\nĐây là nâng cấp quan trọng nhất so với bản Miễn phí:\n\nBảo vệ nhánh (Protected branches): Ngăn chặn việc xóa hoặc đẩy code trực tiếp vào nhánh chính khi chưa được kiểm duyệt.\n\nYêu cầu Review: Bắt buộc phải có người khác xác nhận (Approve) mã nguồn trước khi gộp (Merge).\n\nChỉ định chủ sở hữu (Code Owners): Tự động phân quyền cho người chịu trách nhiệm kiểm tra các phần code cụ thể.\n\nWiki & GitHub Pages: Cho phép tạo tài liệu hướng dẫn và website giới thiệu ngay cả trong dự án riêng tư.\n\n2. Tăng định mức tài nguyên (Quotas)\nGitHub Actions: Tăng lên 3.000 phút chạy automation mỗi tháng (so với 2.000 của bản Free).\n\nGitHub Packages: Tăng lên 2 GB lưu trữ mã nguồn và thư viện.\n\nCodespaces: Hỗ trợ lưu trữ môi trường lập trình đám mây lên đến 20 GB.\n\n3. Phân tích & Hỗ trợ\nInsights: Xem biểu đồ chi tiết về lưu lượng truy cập (Traffic) và đóng góp của các thành viên trong các dự án riêng tư.\n\nHỗ trợ ưu tiên: Được đội ngũ GitHub phản hồi qua email nhanh hơn khi gặp sự cố kỹ thuật.",
     "usageDuration": "1 tháng",
     "costPrice": 79000,
@@ -1030,14 +916,14 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/1661773102357547765/98bbf89fd4165a480307.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:15:00.000Z",
-    "updatedAt": "2026-03-14T00:15:30.000Z",
+    "createdAt": "2026-03-14T00:13:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.639Z",
     "translations": {
       "vi": {
-        "name": "GitHub Pro 1 tháng acc cấp",
-        "shortDescription": "GitHub Pro 1 tháng acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "name": "GitHub Copilot Pro 1 tháng acc cấp",
+        "shortDescription": "GitHub Copilot Pro 1 tháng acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
         "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\nTính năng\n1. Tính năng quản lý Code (Trong Repo Riêng tư)\nĐây là nâng cấp quan trọng nhất so với bản Miễn phí:\n\nBảo vệ nhánh (Protected branches): Ngăn chặn việc xóa hoặc đẩy code trực tiếp vào nhánh chính khi chưa được kiểm duyệt.\n\nYêu cầu Review: Bắt buộc phải có người khác xác nhận (Approve) mã nguồn trước khi gộp (Merge).\n\nChỉ định chủ sở hữu (Code Owners): Tự động phân quyền cho người chịu trách nhiệm kiểm tra các phần code cụ thể.\n\nWiki & GitHub Pages: Cho phép tạo tài liệu hướng dẫn và website giới thiệu ngay cả trong dự án riêng tư.\n\n2. Tăng định mức tài nguyên (Quotas)\nGitHub Actions: Tăng lên 3.000 phút chạy automation mỗi tháng (so với 2.000 của bản Free).\n\nGitHub Packages: Tăng lên 2 GB lưu trữ mã nguồn và thư viện.\n\nCodespaces: Hỗ trợ lưu trữ môi trường lập trình đám mây lên đến 20 GB.\n\n3. Phân tích & Hỗ trợ\nInsights: Xem biểu đồ chi tiết về lưu lượng truy cập (Traffic) và đóng góp của các thành viên trong các dự án riêng tư.\n\nHỗ trợ ưu tiên: Được đội ngũ GitHub phản hồi qua email nhanh hơn khi gặp sự cố kỹ thuật.",
         "category": "Tài khoản số",
         "categories": [
@@ -1057,15 +943,16 @@
           "Coding"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-c9839bbe8afb63a53aea",
     "name": "Gemini Ultra 1 năm chính chủ, mỗi tháng 6000 credit",
     "slug": "gemini-ultra-1-nam-chinh-chu-moi-thang-6000-credit-c9839bbe",
-    "shortDescription": "Gemini Ultra 1 năm chính chủ, mỗi tháng 6000 credit dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
+    "shortDescription": "Gemini Ultra 1 năm chính chủ, mỗi tháng 6000 credit dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
     "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full 1 năm.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Sức mạnh AI tối đa: Truy cập mô hình Gemini 3 Pro/Ultra, Deep Think, các mô hình tạo video (Veo 3.1) và công cụ làm phim chuyên sâu (Flow, Whisk).\n\n- Tích hợp & Làm việc: Hạn mức cao nhất cho Gemini trong bộ ứng dụng Google (Docs, Gmail, Vids, NotebookLM), nền tảng tác nhân (Antigravity) và bộ công cụ lập trình (Gemini Code Assist, CLI, Jules).\n\n- Tài nguyên & Giải trí: 30 TB bộ nhớ đám mây và gói YouTube Premium (không quảng cáo).\n\n- Đặc quyền: 6000 tín dụng AI hằng tháng để sử dụng các tính năng nâng cao và ưu tiên quyền truy cập cho nhà phát triển (Google Developer Program).",
-    "usageDuration": "1 năm",
+    "usageDuration": "12 tháng",
     "costPrice": 2299000,
     "retailPrice": 2299000,
     "customerTierPrices": {
@@ -1089,14 +976,14 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/4293707418511120030/092a8c1f6d9ce3c2ba8d.jpg",
     "warrantyMonths": 12,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:16:00.000Z",
-    "updatedAt": "2026-03-14T00:16:30.000Z",
+    "createdAt": "2026-03-14T00:14:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.634Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 năm chính chủ, mỗi tháng 6000 credit",
-        "shortDescription": "Gemini Ultra 1 năm chính chủ, mỗi tháng 6000 credit dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
+        "shortDescription": "Gemini Ultra 1 năm chính chủ, mỗi tháng 6000 credit dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
         "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full 1 năm.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Sức mạnh AI tối đa: Truy cập mô hình Gemini 3 Pro/Ultra, Deep Think, các mô hình tạo video (Veo 3.1) và công cụ làm phim chuyên sâu (Flow, Whisk).\n\n- Tích hợp & Làm việc: Hạn mức cao nhất cho Gemini trong bộ ứng dụng Google (Docs, Gmail, Vids, NotebookLM), nền tảng tác nhân (Antigravity) và bộ công cụ lập trình (Gemini Code Assist, CLI, Jules).\n\n- Tài nguyên & Giải trí: 30 TB bộ nhớ đám mây và gói YouTube Premium (không quảng cáo).\n\n- Đặc quyền: 6000 tín dụng AI hằng tháng để sử dụng các tính năng nâng cao và ưu tiên quyền truy cập cho nhà phát triển (Google Developer Program).",
         "category": "Tài khoản số",
         "categories": [
@@ -1116,15 +1003,16 @@
           "AI"
         ]
       }
-    }
+    },
+    "warrantyDuration": "12 tháng"
   },
   {
     "id": "zalo-bd07ec3afd7f14214d6e",
     "name": "Gemini Ultra 1 năm chính chủ, 0 credit",
     "slug": "gemini-ultra-1-nam-chinh-chu-0-credit-bd07ec3a",
-    "shortDescription": "Gemini Ultra 1 năm chính chủ, 0 credit dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
+    "shortDescription": "Gemini Ultra 1 năm chính chủ, 0 credit dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
     "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full .\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Sức mạnh AI tối đa: Truy cập mô hình Gemini 3 Pro/Ultra, Deep Think, các mô hình tạo video (Veo 3.1) và công cụ làm phim chuyên sâu (Flow, Whisk).\n\n- Tích hợp & Làm việc: Hạn mức cao nhất cho Gemini trong bộ ứng dụng Google (Docs, Gmail, Vids, NotebookLM), nền tảng tác nhân (Antigravity) và bộ công cụ lập trình (Gemini Code Assist, CLI, Jules).\n\n- Tài nguyên & Giải trí: 30 TB bộ nhớ đám mây và gói YouTube Premium (không quảng cáo).",
-    "usageDuration": "1 năm",
+    "usageDuration": "12 tháng",
     "costPrice": 1799000,
     "retailPrice": 1799000,
     "customerTierPrices": {
@@ -1148,14 +1036,14 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/4855132581971255754/3b079d2367a0e9feb0b1.jpg",
     "warrantyMonths": 12,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:17:00.000Z",
-    "updatedAt": "2026-03-14T00:17:30.000Z",
+    "createdAt": "2026-03-14T00:15:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.633Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 năm chính chủ, 0 credit",
-        "shortDescription": "Gemini Ultra 1 năm chính chủ, 0 credit dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
+        "shortDescription": "Gemini Ultra 1 năm chính chủ, 0 credit dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
         "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full .\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Sức mạnh AI tối đa: Truy cập mô hình Gemini 3 Pro/Ultra, Deep Think, các mô hình tạo video (Veo 3.1) và công cụ làm phim chuyên sâu (Flow, Whisk).\n\n- Tích hợp & Làm việc: Hạn mức cao nhất cho Gemini trong bộ ứng dụng Google (Docs, Gmail, Vids, NotebookLM), nền tảng tác nhân (Antigravity) và bộ công cụ lập trình (Gemini Code Assist, CLI, Jules).\n\n- Tài nguyên & Giải trí: 30 TB bộ nhớ đám mây và gói YouTube Premium (không quảng cáo).",
         "category": "Tài khoản số",
         "categories": [
@@ -1175,7 +1063,8 @@
           "AI"
         ]
       }
-    }
+    },
+    "warrantyDuration": "12 tháng"
   },
   {
     "id": "zalo-a834a208b34d5a13035c",
@@ -1207,10 +1096,10 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/7662985577936666186/c9bedb106391edcfb480.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:18:00.000Z",
-    "updatedAt": "2026-03-14T00:18:30.000Z",
+    "createdAt": "2026-03-14T00:16:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.633Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 tháng chính chủ, 12500 credit",
@@ -1234,7 +1123,8 @@
           "AI"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-813e8802994770192956",
@@ -1266,10 +1156,10 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/8118936955017641189/3f5d99c315429b1cc253.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:19:00.000Z",
-    "updatedAt": "2026-03-14T00:19:30.000Z",
+    "createdAt": "2026-03-14T00:17:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.631Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 tháng, acc chính chủ 0 credit",
@@ -1293,66 +1183,8 @@
           "AI"
         ]
       }
-    }
-  },
-  {
-    "id": "zalo-d9a99f8a8ecf67913ede",
-    "name": "ChatGPT Plus 1 tháng acc cấp riêng",
-    "slug": "chatgpt-plus-1-thang-acc-cap-rieng-d9a99f8a",
-    "shortDescription": "ChatGPT Plus 1 tháng acc cấp riêng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
-    "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành 10 ngày\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
-    "usageDuration": "1 tháng",
-    "costPrice": 49000,
-    "retailPrice": 49000,
-    "customerTierPrices": {
-      "regular": 49000,
-      "vip": 49000
     },
-    "category": "Tài khoản số",
-    "categories": [
-      "Tài khoản số",
-      "ChatGPT",
-      "AI"
-    ],
-    "accountType": "dedicated",
-    "featured": false,
-    "isFlashSale": false,
-    "published": true,
-    "tierPrices": {
-      "regular": 49000,
-      "vip": 49000
-    },
-    "overridePrices": {},
-    "image": "https://f1-zpprd.zdn.vn/1414630139641242417/919f9dd5162d9873c13c.jpg",
-    "warrantyMonths": 1,
-    "stock": 0,
-    "points": 0,
-    "createdAt": "2026-03-14T00:20:00.000Z",
-    "updatedAt": "2026-03-14T00:20:30.000Z",
-    "translations": {
-      "vi": {
-        "name": "ChatGPT Plus 1 tháng acc cấp riêng",
-        "shortDescription": "ChatGPT Plus 1 tháng acc cấp riêng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
-        "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành 10 ngày\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
-        "category": "Tài khoản số",
-        "categories": [
-          "Tài khoản số",
-          "ChatGPT",
-          "AI"
-        ]
-      },
-      "en": {
-        "name": "ChatGPT Plus 1 month dedicated account",
-        "shortDescription": "ChatGPT Plus 1 month dedicated account with dedicated account delivery, 1 month of use, and 1 month warranty.",
-        "fullDescription": "ChatGPT Plus 1 month dedicated account with dedicated account delivery, 1 month of use, and 1 month warranty.\n\nDedicated account. Usage term: 1 month. Warranty: 1 month.\n\nChatGPT Plus 1 month dedicated account was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
-        "category": "Digital accounts",
-        "categories": [
-          "Digital accounts",
-          "ChatGPT",
-          "AI"
-        ]
-      }
-    }
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-0f35dd17cc52250c7c43",
@@ -1386,8 +1218,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:21:00.000Z",
-    "updatedAt": "2026-03-14T00:21:30.000Z",
+    "createdAt": "2026-03-14T00:18:00.000Z",
+    "updatedAt": "2026-03-14T00:18:30.000Z",
     "translations": {
       "vi": {
         "name": "Adobe All Apps 3 tháng",
@@ -1409,65 +1241,6 @@
           "Digital accounts",
           "Design",
           "Creative"
-        ]
-      }
-    }
-  },
-  {
-    "id": "zalo-e6836aaf7bea92b4cbfb",
-    "name": "Microsoft 365 Premium 1 năm, chính chủ",
-    "slug": "microsoft-365-premium-1-nam-chinh-chu-e6836aaf",
-    "shortDescription": "Microsoft 365 Premium 1 năm, chính chủ dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 tháng.",
-    "fullDescription": "Dạng add mail, bảo mật, an toàn, bảo hành 1 tháng\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng 365, không cần mật khẩu\n\nTính Năng:\nHạn mức AI \"cực hạn\": Bạn được ưu tiên sử dụng các tính năng Copilot với hạn mức cực cao (extensive usage) trong Word, Excel, PowerPoint và Outlook. Điều này giúp bạn xử lý các tài liệu dài, phân tích dữ liệu lớn mà không lo bị chặn giữa chừng.\n\nTính năng AI độc quyền: Được quyền truy cập sớm hoặc duy nhất vào các công cụ AI nâng cao mà người dùng gói thường chưa có (như các Agent chuyên dụng, công cụ phân tích sâu, và các tính năng AI thử nghiệm).\n\nCông cụ AI chuyên nghiệp: Sử dụng thoải mái hơn cho các tác vụ như: tạo ảnh AI, xử lý vision (hình ảnh), voice (giọng nói) và các tính năng tự động hóa công việc thông minh.\n\nCơ bản vẫn đầy đủ: Bạn vẫn nhận được tất cả quyền lợi của gói Family: bộ ứng dụng Office (Word, Excel, PowerPoint...), 1 TB lưu trữ OneDrive mỗi người, bảo mật nâng cao và sử dụng trên nhiều thiết bị.",
-    "usageDuration": "1 năm",
-    "costPrice": 80000,
-    "retailPrice": 80000,
-    "customerTierPrices": {
-      "regular": 80000,
-      "vip": 80000
-    },
-    "category": "Tài khoản số",
-    "categories": [
-      "Tài khoản số",
-      "Văn phòng",
-      "Office"
-    ],
-    "accountType": "primary",
-    "featured": false,
-    "isFlashSale": false,
-    "published": true,
-    "tierPrices": {
-      "regular": 80000,
-      "vip": 80000
-    },
-    "overridePrices": {},
-    "image": "https://f1-zpprd.zdn.vn/5253621783270816234/09b24f995769d9378078.jpg",
-    "warrantyMonths": 1,
-    "stock": 0,
-    "points": 0,
-    "createdAt": "2026-03-14T00:22:00.000Z",
-    "updatedAt": "2026-03-14T00:22:30.000Z",
-    "translations": {
-      "vi": {
-        "name": "Microsoft 365 Premium 1 năm, chính chủ",
-        "shortDescription": "Microsoft 365 Premium 1 năm, chính chủ dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 tháng.",
-        "fullDescription": "Dạng add mail, bảo mật, an toàn, bảo hành 1 tháng\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng 365, không cần mật khẩu\n\nTính Năng:\nHạn mức AI \"cực hạn\": Bạn được ưu tiên sử dụng các tính năng Copilot với hạn mức cực cao (extensive usage) trong Word, Excel, PowerPoint và Outlook. Điều này giúp bạn xử lý các tài liệu dài, phân tích dữ liệu lớn mà không lo bị chặn giữa chừng.\n\nTính năng AI độc quyền: Được quyền truy cập sớm hoặc duy nhất vào các công cụ AI nâng cao mà người dùng gói thường chưa có (như các Agent chuyên dụng, công cụ phân tích sâu, và các tính năng AI thử nghiệm).\n\nCông cụ AI chuyên nghiệp: Sử dụng thoải mái hơn cho các tác vụ như: tạo ảnh AI, xử lý vision (hình ảnh), voice (giọng nói) và các tính năng tự động hóa công việc thông minh.\n\nCơ bản vẫn đầy đủ: Bạn vẫn nhận được tất cả quyền lợi của gói Family: bộ ứng dụng Office (Word, Excel, PowerPoint...), 1 TB lưu trữ OneDrive mỗi người, bảo mật nâng cao và sử dụng trên nhiều thiết bị.",
-        "category": "Tài khoản số",
-        "categories": [
-          "Tài khoản số",
-          "Văn phòng",
-          "Office"
-        ]
-      },
-      "en": {
-        "name": "Microsoft 365 Premium 1 year, primary account",
-        "shortDescription": "Microsoft 365 Premium 1 year, primary account with primary account delivery, 1 year of use, and 1 month warranty.",
-        "fullDescription": "Microsoft 365 Premium 1 year, primary account with primary account delivery, 1 year of use, and 1 month warranty.\n\nPrimary account. Usage term: 1 year. Warranty: 1 month.\n\nMicrosoft 365 Premium 1 year, primary account was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
-        "category": "Digital accounts",
-        "categories": [
-          "Digital accounts",
-          "Office",
-          "Productivity"
         ]
       }
     }
@@ -1504,8 +1277,8 @@
     "warrantyMonths": 3,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:23:00.000Z",
-    "updatedAt": "2026-03-14T00:23:30.000Z",
+    "createdAt": "2026-03-14T00:19:00.000Z",
+    "updatedAt": "2026-03-14T00:19:30.000Z",
     "translations": {
       "vi": {
         "name": "Microsoft 365 Premium 1 năm, chính chủ",
@@ -1535,14 +1308,14 @@
     "id": "zalo-6006ea2afb6f12314b7e",
     "name": "Microsoft 365 Premium 1 năm, chính chủ",
     "slug": "microsoft-365-premium-1-nam-chinh-chu-6006ea2a",
-    "shortDescription": "Microsoft 365 Premium 1 năm, chính chủ dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 6 tháng.",
+    "shortDescription": "Microsoft 365 Premium 1 năm, chính chủ dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 6 tháng.",
     "fullDescription": "Dạng add mail, bảo mật, an toàn, bảo hành 6 tháng\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng 365, không cần mật khẩu\n\nTính Năng:\nHạn mức AI \"cực hạn\": Bạn được ưu tiên sử dụng các tính năng Copilot với hạn mức cực cao (extensive usage) trong Word, Excel, PowerPoint và Outlook. Điều này giúp bạn xử lý các tài liệu dài, phân tích dữ liệu lớn mà không lo bị chặn giữa chừng.\n\nTính năng AI độc quyền: Được quyền truy cập sớm hoặc duy nhất vào các công cụ AI nâng cao mà người dùng gói thường chưa có (như các Agent chuyên dụng, công cụ phân tích sâu, và các tính năng AI thử nghiệm).\n\nCông cụ AI chuyên nghiệp: Sử dụng thoải mái hơn cho các tác vụ như: tạo ảnh AI, xử lý vision (hình ảnh), voice (giọng nói) và các tính năng tự động hóa công việc thông minh.\n\nCơ bản vẫn đầy đủ: Bạn vẫn nhận được tất cả quyền lợi của gói Family: bộ ứng dụng Office (Word, Excel, PowerPoint...), 1 TB lưu trữ OneDrive mỗi người, bảo mật nâng cao và sử dụng trên nhiều thiết bị.",
-    "usageDuration": "1 năm",
+    "usageDuration": "12 tháng",
     "costPrice": 189000,
-    "retailPrice": 189000,
+    "retailPrice": 199000,
     "customerTierPrices": {
-      "regular": 189000,
-      "vip": 189000
+      "regular": 199000,
+      "vip": 199000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -1556,20 +1329,20 @@
     "flashSaleLabel": "Nổi bật",
     "published": true,
     "tierPrices": {
-      "regular": 189000,
-      "vip": 189000
+      "regular": 199000,
+      "vip": 199000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/5073897470662025535/92889f918661083f5170.jpg",
     "warrantyMonths": 6,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:24:00.000Z",
-    "updatedAt": "2026-03-14T00:24:30.000Z",
+    "createdAt": "2026-03-14T00:20:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.635Z",
     "translations": {
       "vi": {
         "name": "Microsoft 365 Premium 1 năm, chính chủ",
-        "shortDescription": "Microsoft 365 Premium 1 năm, chính chủ dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 6 tháng.",
+        "shortDescription": "Microsoft 365 Premium 1 năm, chính chủ dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 6 tháng.",
         "fullDescription": "Dạng add mail, bảo mật, an toàn, bảo hành 6 tháng\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng 365, không cần mật khẩu\n\nTính Năng:\nHạn mức AI \"cực hạn\": Bạn được ưu tiên sử dụng các tính năng Copilot với hạn mức cực cao (extensive usage) trong Word, Excel, PowerPoint và Outlook. Điều này giúp bạn xử lý các tài liệu dài, phân tích dữ liệu lớn mà không lo bị chặn giữa chừng.\n\nTính năng AI độc quyền: Được quyền truy cập sớm hoặc duy nhất vào các công cụ AI nâng cao mà người dùng gói thường chưa có (như các Agent chuyên dụng, công cụ phân tích sâu, và các tính năng AI thử nghiệm).\n\nCông cụ AI chuyên nghiệp: Sử dụng thoải mái hơn cho các tác vụ như: tạo ảnh AI, xử lý vision (hình ảnh), voice (giọng nói) và các tính năng tự động hóa công việc thông minh.\n\nCơ bản vẫn đầy đủ: Bạn vẫn nhận được tất cả quyền lợi của gói Family: bộ ứng dụng Office (Word, Excel, PowerPoint...), 1 TB lưu trữ OneDrive mỗi người, bảo mật nâng cao và sử dụng trên nhiều thiết bị.",
         "category": "Tài khoản số",
         "categories": [
@@ -1591,13 +1364,14 @@
         ],
         "flashSaleLabel": "Hot"
       }
-    }
+    },
+    "warrantyDuration": "6 tháng"
   },
   {
     "id": "zalo-d6bd5d914cd4a58afcc5",
-    "name": "Netflit 1 tháng",
+    "name": "Netflix Slot 1 tháng",
     "slug": "netflit-1-thang-d6bd5d91",
-    "shortDescription": "Netflit 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "shortDescription": "Netflix Slot 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "Netflit 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.\n\nThông tin được đồng bộ từ catalog Zalo của cửa hàng.",
     "usageDuration": "1 tháng",
     "costPrice": 89000,
@@ -1612,7 +1386,7 @@
       "Giải trí",
       "Streaming"
     ],
-    "accountType": "primary",
+    "accountType": "dedicated",
     "featured": false,
     "isFlashSale": false,
     "published": true,
@@ -1623,14 +1397,14 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/3746654530049347711/ebeae7f3fe03705d2912.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:25:00.000Z",
-    "updatedAt": "2026-03-14T00:25:30.000Z",
+    "createdAt": "2026-03-14T00:21:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.635Z",
     "translations": {
       "vi": {
-        "name": "Netflit 1 tháng",
-        "shortDescription": "Netflit 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "name": "Netflix Slot 1 tháng",
+        "shortDescription": "Netflix Slot 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
         "fullDescription": "Netflit 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.\n\nThông tin được đồng bộ từ catalog Zalo của cửa hàng.",
         "category": "Tài khoản số",
         "categories": [
@@ -1650,15 +1424,16 @@
           "Streaming"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-823f0a131b56f208ab47",
     "name": "Canva Edu",
     "slug": "canva-edu-823f0a13",
-    "shortDescription": "Canva Edu dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng. Liên hệ để nhận báo giá chi tiết.",
+    "shortDescription": "Canva Edu dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
     "fullDescription": "Giống Pro",
-    "usageDuration": "30 ngày",
+    "usageDuration": "12 tháng",
     "costPrice": 0,
     "retailPrice": 0,
     "customerTierPrices": {
@@ -1681,15 +1456,15 @@
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/2729801891096328848/a1f9aee0b710394e6001.jpg",
-    "warrantyMonths": 1,
-    "stock": 0,
+    "warrantyMonths": 12,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:26:00.000Z",
-    "updatedAt": "2026-03-14T00:26:30.000Z",
+    "createdAt": "2026-03-14T00:22:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.627Z",
     "translations": {
       "vi": {
         "name": "Canva Edu",
-        "shortDescription": "Canva Edu dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng. Liên hệ để nhận báo giá chi tiết.",
+        "shortDescription": "Canva Edu dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
         "fullDescription": "Giống Pro",
         "category": "Tài khoản số",
         "categories": [
@@ -1709,15 +1484,16 @@
           "Creative"
         ]
       }
-    }
+    },
+    "warrantyDuration": "12 tháng"
   },
   {
     "id": "zalo-6c08e524f4611d3f4470",
-    "name": "Tài khoản khác.",
+    "name": "Tài khoản khác",
     "slug": "tai-khoan-khac-6c08e524",
-    "shortDescription": "Tài khoản khác. dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng. Liên hệ để nhận báo giá chi tiết.",
+    "shortDescription": "Khách gửi gói cần đăng ký để Patrick Tech Store kiểm tra và báo giá chính xác.",
     "fullDescription": "Gửi link app, web, ai để được tư vấn",
-    "usageDuration": "30 ngày",
+    "usageDuration": "1 tháng",
     "costPrice": 0,
     "retailPrice": 0,
     "customerTierPrices": {
@@ -1740,14 +1516,14 @@
     "overridePrices": {},
     "image": "",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:27:00.000Z",
-    "updatedAt": "2026-03-14T00:27:30.000Z",
+    "createdAt": "2026-03-14T00:23:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.640Z",
     "translations": {
       "vi": {
-        "name": "Tài khoản khác.",
-        "shortDescription": "Tài khoản khác. dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng. Liên hệ để nhận báo giá chi tiết.",
+        "name": "Tài khoản khác",
+        "shortDescription": "Khách gửi gói cần đăng ký để Patrick Tech Store kiểm tra và báo giá chính xác.",
         "fullDescription": "Gửi link app, web, ai để được tư vấn",
         "category": "Tài khoản số",
         "categories": [
@@ -1765,15 +1541,16 @@
           "Other"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-776af146e003095d5012",
-    "name": "Duolingo 1 năm",
+    "name": "Duolingo Super 1 năm",
     "slug": "duolingo-1-nam-776af146",
-    "shortDescription": "Duolingo 1 năm dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 tháng.",
+    "shortDescription": "Duolingo Super 1 năm dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
     "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail\n\nTính năng:\nFull tính năng Duolingo\n\nChia sẻ\n\nL",
-    "usageDuration": "1 năm",
+    "usageDuration": "12 tháng",
     "costPrice": 199000,
     "retailPrice": 199000,
     "customerTierPrices": {
@@ -1796,15 +1573,15 @@
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/5734162563206490990/c537cb2ed2de5c8005cf.jpg",
-    "warrantyMonths": 1,
-    "stock": 0,
+    "warrantyMonths": 12,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:28:00.000Z",
-    "updatedAt": "2026-03-14T00:28:30.000Z",
+    "createdAt": "2026-03-14T00:24:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.630Z",
     "translations": {
       "vi": {
-        "name": "Duolingo 1 năm",
-        "shortDescription": "Duolingo 1 năm dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 tháng.",
+        "name": "Duolingo Super 1 năm",
+        "shortDescription": "Duolingo Super 1 năm dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
         "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail\n\nTính năng:\nFull tính năng Duolingo\n\nChia sẻ\n\nL",
         "category": "Tài khoản số",
         "categories": [
@@ -1824,13 +1601,14 @@
           "Learning"
         ]
       }
-    }
+    },
+    "warrantyDuration": "12 tháng"
   },
   {
     "id": "zalo-c7744058511db843e10c",
     "name": "Capcut Pro 1 năm",
     "slug": "capcut-pro-1-nam-c7744058",
-    "shortDescription": "Capcut Pro 1 năm dạng tài khoản cấp riêng, thời hạn 1 năm, bảo hành 1 năm.",
+    "shortDescription": "Capcut Pro 1 năm dạng tài khoản cấp riêng, thời hạn 1 năm, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 năm\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n-Đăng nhập trên 2 điện thoại và 1 pc\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Capcut\n\nTính năng:\n\n- Không Watermark: Xuất video sạch, không có logo CapCut.\n\n- Kho tài nguyên cao cấp: Truy cập không giới hạn các hiệu ứng, bộ lọc, phông chữ, mẫu template và thư viện nhạc bản quyền chất lượng cao.\n\n- Công cụ AI nâng cao: Xóa nền thông minh, cách ly giọng nói (tách lời khỏi nhạc), xóa vật thể, và các hiệu ứng chuyển động chuyên sâu.\n\n- Xuất video chất lượng cao: Hỗ trợ xuất 4K, HDR, 60fps với độ nét tối đa.\n\n- Chỉnh sửa chuyên nghiệp: Chỉnh màu nâng cao (Color Grading/LUTs), làm việc với nhiều lớp video (multi-layer), và sử dụng keyframe chi tiết.\n\n- Đồng bộ hóa & Lưu trữ: Dung lượng đám mây (Cloud) lớn, giúp bạn bắt đầu dựng trên điện thoại và tiếp tục trên máy tính (PC) mượt mà.",
     "usageDuration": "1 năm",
     "costPrice": 299000,
@@ -1855,15 +1633,15 @@
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/6620227365683040346/023b73226ad2e48cbdc3.jpg",
-    "warrantyMonths": 12,
-    "stock": 0,
+    "warrantyMonths": 1,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:29:00.000Z",
-    "updatedAt": "2026-03-14T00:29:30.000Z",
+    "createdAt": "2026-03-14T00:25:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.628Z",
     "translations": {
       "vi": {
         "name": "Capcut Pro 1 năm",
-        "shortDescription": "Capcut Pro 1 năm dạng tài khoản cấp riêng, thời hạn 1 năm, bảo hành 1 năm.",
+        "shortDescription": "Capcut Pro 1 năm dạng tài khoản cấp riêng, thời hạn 1 năm, bảo hành 1 tháng.",
         "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 năm\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n-Đăng nhập trên 2 điện thoại và 1 pc\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Capcut\n\nTính năng:\n\n- Không Watermark: Xuất video sạch, không có logo CapCut.\n\n- Kho tài nguyên cao cấp: Truy cập không giới hạn các hiệu ứng, bộ lọc, phông chữ, mẫu template và thư viện nhạc bản quyền chất lượng cao.\n\n- Công cụ AI nâng cao: Xóa nền thông minh, cách ly giọng nói (tách lời khỏi nhạc), xóa vật thể, và các hiệu ứng chuyển động chuyên sâu.\n\n- Xuất video chất lượng cao: Hỗ trợ xuất 4K, HDR, 60fps với độ nét tối đa.\n\n- Chỉnh sửa chuyên nghiệp: Chỉnh màu nâng cao (Color Grading/LUTs), làm việc với nhiều lớp video (multi-layer), và sử dụng keyframe chi tiết.\n\n- Đồng bộ hóa & Lưu trữ: Dung lượng đám mây (Cloud) lớn, giúp bạn bắt đầu dựng trên điện thoại và tiếp tục trên máy tính (PC) mượt mà.",
         "category": "Tài khoản số",
         "categories": [
@@ -1883,7 +1661,8 @@
           "Creative"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-c0e344cf558abcd4e59b",
@@ -1915,10 +1694,10 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/8259466568578407474/e021903889c807965ed9.jpg",
     "warrantyMonths": 6,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:30:00.000Z",
-    "updatedAt": "2026-03-14T00:30:30.000Z",
+    "createdAt": "2026-03-14T00:26:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.628Z",
     "translations": {
       "vi": {
         "name": "Capcut Pro 6 Tháng",
@@ -1942,7 +1721,8 @@
           "Creative"
         ]
       }
-    }
+    },
+    "warrantyDuration": "6 tháng"
   },
   {
     "id": "zalo-a532201e315bd805814a",
@@ -1974,10 +1754,10 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/6073242372759581790/651c16050ff581abd8e4.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:31:00.000Z",
-    "updatedAt": "2026-03-14T00:31:30.000Z",
+    "createdAt": "2026-03-14T00:27:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.628Z",
     "translations": {
       "vi": {
         "name": "CapCut Pro 1 tháng",
@@ -2001,7 +1781,8 @@
           "Creative"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-99791b550a10e34eba01",
@@ -2035,8 +1816,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:32:00.000Z",
-    "updatedAt": "2026-03-14T00:32:30.000Z",
+    "createdAt": "2026-03-14T00:28:00.000Z",
+    "updatedAt": "2026-03-14T00:28:30.000Z",
     "translations": {
       "vi": {
         "name": "Adobe All Apps 1 năm. 5 thiết bị",
@@ -2066,14 +1847,14 @@
     "id": "zalo-5261d14dc00829567019",
     "name": "Adobe All Apps 1 năm, 2 thiết bị",
     "slug": "adobe-all-apps-1-nam-2-thiet-bi-5261d14d",
-    "shortDescription": "Adobe All Apps 1 năm, 2 thiết bị dạng tài khoản cấp riêng, thời hạn 1 năm, bảo hành 1 tháng.",
+    "shortDescription": "Adobe All Apps 1 năm, 2 thiết bị dạng tài khoản cấp riêng, thời hạn 12 tháng, bảo hành 12 tháng.",
     "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 tháng\n\nĐịnh dạng khi giao acc:\n- Đăng nhập qua Ultra View, 2 thiết bị \n\nTính năng:\nNội dung gói:\nToàn bộ 20+ ứng dụng: Photoshop, Illustrator, Premiere Pro, After Effects, InDesign, Acrobat Pro, Audition, v.v.\n\nHỗ trợ chuyên sâu: Tích hợp AI (Adobe Firefly) trong mọi ứng dụng để tạo/chỉnh sửa nội dung tự động.\n\nTài nguyên: 100GB lưu trữ đám mây, kho 20.000+ Font chữ, công cụ làm Website (Portfolio) và thư viện tài nguyên chung (Library).\n\nƯu điểm vượt trội:\nĐồng bộ hóa (Dynamic Link): Các phần mềm làm việc liền mạch với nhau (VD: Chỉnh ảnh từ Photoshop sang Premiere dựng phim ngay mà không cần xuất file).\n\nLuôn cập nhật: Tự động lên phiên bản mới nhất ngay khi phát hành.",
-    "usageDuration": "1 năm",
+    "usageDuration": "12 tháng",
     "costPrice": 899000,
-    "retailPrice": 899000,
+    "retailPrice": 1299000,
     "customerTierPrices": {
-      "regular": 899000,
-      "vip": 899000
+      "regular": 1299000,
+      "vip": 1299000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -2086,20 +1867,20 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 899000,
-      "vip": 899000
+      "regular": 1299000,
+      "vip": 1299000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/2765332362895208711/21db54c24d32c36c9a23.jpg",
-    "warrantyMonths": 1,
-    "stock": 0,
+    "warrantyMonths": 12,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:33:00.000Z",
-    "updatedAt": "2026-03-14T00:33:30.000Z",
+    "createdAt": "2026-03-14T00:29:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.627Z",
     "translations": {
       "vi": {
         "name": "Adobe All Apps 1 năm, 2 thiết bị",
-        "shortDescription": "Adobe All Apps 1 năm, 2 thiết bị dạng tài khoản cấp riêng, thời hạn 1 năm, bảo hành 1 tháng.",
+        "shortDescription": "Adobe All Apps 1 năm, 2 thiết bị dạng tài khoản cấp riêng, thời hạn 12 tháng, bảo hành 12 tháng.",
         "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 tháng\n\nĐịnh dạng khi giao acc:\n- Đăng nhập qua Ultra View, 2 thiết bị \n\nTính năng:\nNội dung gói:\nToàn bộ 20+ ứng dụng: Photoshop, Illustrator, Premiere Pro, After Effects, InDesign, Acrobat Pro, Audition, v.v.\n\nHỗ trợ chuyên sâu: Tích hợp AI (Adobe Firefly) trong mọi ứng dụng để tạo/chỉnh sửa nội dung tự động.\n\nTài nguyên: 100GB lưu trữ đám mây, kho 20.000+ Font chữ, công cụ làm Website (Portfolio) và thư viện tài nguyên chung (Library).\n\nƯu điểm vượt trội:\nĐồng bộ hóa (Dynamic Link): Các phần mềm làm việc liền mạch với nhau (VD: Chỉnh ảnh từ Photoshop sang Premiere dựng phim ngay mà không cần xuất file).\n\nLuôn cập nhật: Tự động lên phiên bản mới nhất ngay khi phát hành.",
         "category": "Tài khoản số",
         "categories": [
@@ -2119,7 +1900,8 @@
           "Creative"
         ]
       }
-    }
+    },
+    "warrantyDuration": "12 tháng"
   },
   {
     "id": "zalo-57fbd7d7c6922fcc7683",
@@ -2153,8 +1935,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:34:00.000Z",
-    "updatedAt": "2026-03-14T00:34:30.000Z",
+    "createdAt": "2026-03-14T00:30:00.000Z",
+    "updatedAt": "2026-03-14T00:30:30.000Z",
     "translations": {
       "vi": {
         "name": "Adobe All Apps 1 năm, 1 thiết bị",
@@ -2182,16 +1964,16 @@
   },
   {
     "id": "zalo-ee0d6f217e64973ace75",
-    "name": "Adobe All App 1 tháng",
+    "name": "Adobe All Apps 1 tháng",
     "slug": "adobe-all-app-1-thang-ee0d6f21",
-    "shortDescription": "Adobe All App 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "shortDescription": "Adobe All Apps 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Adobe\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nNội dung gói:\nToàn bộ 20+ ứng dụng: Photoshop, Illustrator, Premiere Pro, After Effects, InDesign, Acrobat Pro, Audition, v.v.\n\nHỗ trợ chuyên sâu: Tích hợp AI (Adobe Firefly) trong mọi ứng dụng để tạo/chỉnh sửa nội dung tự động.\n\nTài nguyên: 100GB lưu trữ đám mây, kho 20.000+ Font chữ, công cụ làm Website (Portfolio) và thư viện tài nguyên chung (Library).\n\nƯu điểm vượt trội:\nĐồng bộ hóa (Dynamic Link): Các phần mềm làm việc liền mạch với nhau (VD: Chỉnh ảnh từ Photoshop sang Premiere dựng phim ngay mà không cần xuất file).\n\nLuôn cập nhật: Tự động lên phiên bản mới nhất ngay khi phát hành.\n\nLinh hoạt: Cài đặt trên nhiều thiết bị (đăng nhập tối đa 2, sử dụng cùng lúc 1).",
     "usageDuration": "1 tháng",
     "costPrice": 69000,
-    "retailPrice": 69000,
+    "retailPrice": 99000,
     "customerTierPrices": {
-      "regular": 69000,
-      "vip": 69000
+      "regular": 99000,
+      "vip": 99000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -2204,20 +1986,20 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 69000,
-      "vip": 69000
+      "regular": 99000,
+      "vip": 99000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/6120621269116114707/4277356e2c9ea2c0fb8f.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:35:00.000Z",
-    "updatedAt": "2026-03-14T00:35:30.000Z",
+    "createdAt": "2026-03-14T00:31:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.626Z",
     "translations": {
       "vi": {
-        "name": "Adobe All App 1 tháng",
-        "shortDescription": "Adobe All App 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "name": "Adobe All Apps 1 tháng",
+        "shortDescription": "Adobe All Apps 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
         "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Adobe\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nNội dung gói:\nToàn bộ 20+ ứng dụng: Photoshop, Illustrator, Premiere Pro, After Effects, InDesign, Acrobat Pro, Audition, v.v.\n\nHỗ trợ chuyên sâu: Tích hợp AI (Adobe Firefly) trong mọi ứng dụng để tạo/chỉnh sửa nội dung tự động.\n\nTài nguyên: 100GB lưu trữ đám mây, kho 20.000+ Font chữ, công cụ làm Website (Portfolio) và thư viện tài nguyên chung (Library).\n\nƯu điểm vượt trội:\nĐồng bộ hóa (Dynamic Link): Các phần mềm làm việc liền mạch với nhau (VD: Chỉnh ảnh từ Photoshop sang Premiere dựng phim ngay mà không cần xuất file).\n\nLuôn cập nhật: Tự động lên phiên bản mới nhất ngay khi phát hành.\n\nLinh hoạt: Cài đặt trên nhiều thiết bị (đăng nhập tối đa 2, sử dụng cùng lúc 1).",
         "category": "Tài khoản số",
         "categories": [
@@ -2237,7 +2019,8 @@
           "Creative"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-fcf242de539bbac5e38a",
@@ -2271,8 +2054,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:36:00.000Z",
-    "updatedAt": "2026-03-14T00:36:30.000Z",
+    "createdAt": "2026-03-14T00:32:00.000Z",
+    "updatedAt": "2026-03-14T00:32:30.000Z",
     "translations": {
       "vi": {
         "name": "Cursor Ultra 1 tháng, acc cấp",
@@ -2330,8 +2113,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:37:00.000Z",
-    "updatedAt": "2026-03-14T00:37:30.000Z",
+    "createdAt": "2026-03-14T00:33:00.000Z",
+    "updatedAt": "2026-03-14T00:33:30.000Z",
     "translations": {
       "vi": {
         "name": "Cursor Pro 1 năm",
@@ -2389,8 +2172,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:38:00.000Z",
-    "updatedAt": "2026-03-14T00:38:30.000Z",
+    "createdAt": "2026-03-14T00:34:00.000Z",
+    "updatedAt": "2026-03-14T00:34:30.000Z",
     "translations": {
       "vi": {
         "name": "Cursor Pro+ 60$",
@@ -2447,8 +2230,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:39:00.000Z",
-    "updatedAt": "2026-03-14T00:39:30.000Z",
+    "createdAt": "2026-03-14T00:35:00.000Z",
+    "updatedAt": "2026-03-14T00:35:30.000Z",
     "translations": {
       "vi": {
         "name": "Hết",
@@ -2476,14 +2259,14 @@
     "id": "zalo-a58d1fa10ee4e7babef5",
     "name": "Cursor Pro 1 tháng, acc cấp",
     "slug": "cursor-pro-1-thang-acc-cap-a58d1fa1",
-    "shortDescription": "Cursor Pro 1 tháng, acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "shortDescription": "Cursor Pro 1 tháng, acc cấp dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nMô hình AI mạnh nhất: Truy cập không giới hạn (hoặc hạn mức cao) vào các mô hình thông minh nhất: Claude 3.5 Sonnet, GPT-4o, o1.\n\nHiểu toàn bộ dự án (Context Awareness): Khả năng quét (Index) toàn bộ mã nguồn của bạn. Bạn có thể dùng @Codebase để AI hiểu cấu trúc dự án lớn, từ đó viết hoặc sửa code chính xác, đồng bộ trên nhiều tệp cùng lúc.\n\nTăng tốc lập trình (Composer): Công cụ Composer cho phép AI tự động viết/chỉnh sửa hàng loạt tệp tin, xử lý các tác vụ phức tạp chỉ với một câu lệnh (prompt), giúp giảm đáng kể thời gian viết code thủ công.",
     "usageDuration": "1 tháng",
     "costPrice": 419000,
-    "retailPrice": 419000,
+    "retailPrice": 429000,
     "customerTierPrices": {
-      "regular": 419000,
-      "vip": 419000
+      "regular": 429000,
+      "vip": 429000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -2491,25 +2274,25 @@
       "Lập trình",
       "Developer"
     ],
-    "accountType": "dedicated",
+    "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 419000,
-      "vip": 419000
+      "regular": 429000,
+      "vip": 429000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/5063662553142998702/bff1c5e8dc1852460b09.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:40:00.000Z",
-    "updatedAt": "2026-03-14T00:40:30.000Z",
+    "createdAt": "2026-03-14T00:36:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.630Z",
     "translations": {
       "vi": {
         "name": "Cursor Pro 1 tháng, acc cấp",
-        "shortDescription": "Cursor Pro 1 tháng, acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "shortDescription": "Cursor Pro 1 tháng, acc cấp dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
         "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nMô hình AI mạnh nhất: Truy cập không giới hạn (hoặc hạn mức cao) vào các mô hình thông minh nhất: Claude 3.5 Sonnet, GPT-4o, o1.\n\nHiểu toàn bộ dự án (Context Awareness): Khả năng quét (Index) toàn bộ mã nguồn của bạn. Bạn có thể dùng @Codebase để AI hiểu cấu trúc dự án lớn, từ đó viết hoặc sửa code chính xác, đồng bộ trên nhiều tệp cùng lúc.\n\nTăng tốc lập trình (Composer): Công cụ Composer cho phép AI tự động viết/chỉnh sửa hàng loạt tệp tin, xử lý các tác vụ phức tạp chỉ với một câu lệnh (prompt), giúp giảm đáng kể thời gian viết code thủ công.",
         "category": "Tài khoản số",
         "categories": [
@@ -2529,13 +2312,14 @@
           "Coding"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-7a37c11bd05e3900604f",
     "name": "Super Grok 1 tháng",
     "slug": "super-grok-1-thang-7a37c11b",
-    "shortDescription": "Super Grok 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "shortDescription": "Super Grok 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc cấp riêng có thể thành chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Grok\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
     "usageDuration": "1 tháng",
     "costPrice": 199000,
@@ -2550,7 +2334,7 @@
       "Grok",
       "AI"
     ],
-    "accountType": "dedicated",
+    "accountType": "primary",
     "featured": true,
     "isFlashSale": true,
     "flashSaleLabel": "Nổi bật",
@@ -2562,14 +2346,14 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/8528086493994462601/3cb641af585fd6018f4e.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:41:00.000Z",
-    "updatedAt": "2026-03-14T00:41:30.000Z",
+    "createdAt": "2026-03-14T00:37:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.630Z",
     "translations": {
       "vi": {
         "name": "Super Grok 1 tháng",
-        "shortDescription": "Super Grok 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "shortDescription": "Super Grok 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
         "fullDescription": "-Dạng acc cấp riêng có thể thành chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu Grok\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\nTư duy & Logic cấp cao: Truy cập mô hình Grok 3 (mới nhất), mạnh mẽ trong lập trình, giải toán và suy luận logic phức tạp.\n\nDữ liệu thời gian thực từ X: Khả năng truy cập và phân tích toàn bộ bài đăng trên mạng xã hội X theo thời gian thực (real-time), lý tưởng để theo dõi tin tức nóng, xu hướng tài chính và chứng khoán.\n\nPhong cách phản hồi tự do: Trả lời trực diện, thẳng thắn, có tính châm biếm (\"Fun Mode\"), ít bị giới hạn bởi các bộ lọc đạo đức khắt khe so với các AI khác.\n\nĐa phương tiện (Multimodal): Phân tích hình ảnh, tài liệu và tạo ảnh chất lượng cao bằng mô hình FLUX (độ chân thực cao, ít kiểm duyệt).\n\nQuyền truy cập API: Cho phép lập trình viên tích hợp Grok vào các ứng dụng hoặc bot riêng.",
         "category": "Tài khoản số",
         "categories": [
@@ -2591,20 +2375,21 @@
         ],
         "flashSaleLabel": "Hot"
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-fbf542d9539cbac2e38d",
-    "name": "Veo Flow Ultra 45.000 credit",
+    "name": "Veo Flow 25k credit + Gemini Ultra full 1 tháng",
     "slug": "veo-flow-ultra-45-000-credit-fbf542d9",
-    "shortDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng.",
+    "shortDescription": "Veo Flow 25k credit + Gemini Ultra full 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 3 ngày.",
     "fullDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng.\n\nThông tin được đồng bộ từ catalog Zalo của cửa hàng.",
-    "usageDuration": "30 ngày",
+    "usageDuration": "1 tháng",
     "costPrice": 89000,
-    "retailPrice": 89000,
+    "retailPrice": 129000,
     "customerTierPrices": {
-      "regular": 89000,
-      "vip": 89000
+      "regular": 129000,
+      "vip": 129000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -2612,25 +2397,25 @@
       "Gemini",
       "AI"
     ],
-    "accountType": "primary",
+    "accountType": "dedicated",
     "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 89000,
-      "vip": 89000
+      "regular": 129000,
+      "vip": 129000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/9088148142236296206/cd82b29bab6b25357c7a.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:42:00.000Z",
-    "updatedAt": "2026-03-14T00:42:30.000Z",
+    "createdAt": "2026-03-14T00:38:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.636Z",
     "translations": {
       "vi": {
-        "name": "Veo Flow Ultra 45.000 credit",
-        "shortDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng.",
+        "name": "Veo Flow 25k credit + Gemini Ultra full 1 tháng",
+        "shortDescription": "Veo Flow 25k credit + Gemini Ultra full 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 3 ngày.",
         "fullDescription": "Veo Flow Ultra 45.000 credit dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng.\n\nThông tin được đồng bộ từ catalog Zalo của cửa hàng.",
         "category": "Tài khoản số",
         "categories": [
@@ -2650,15 +2435,16 @@
           "AI"
         ]
       }
-    }
+    },
+    "warrantyDuration": "3 ngày"
   },
   {
     "id": "zalo-37fe81d2909779c92086",
-    "name": "Gemini Pro chính chủ 1 năm",
+    "name": "Google One 2TB + Gemini Pro 1 năm",
     "slug": "gemini-pro-chinh-chu-1-nam-37fe81d2",
-    "shortDescription": "Gemini Pro chính chủ 1 năm dạng tài khoản thuê, thời hạn 1 năm, bảo hành 1 năm.",
+    "shortDescription": "Google One 2TB + Gemini Pro 1 năm dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
     "fullDescription": "Dạng add Family, bảo mật, an toàn, bảo hành full 1 năm\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Công cụ làm việc & Sáng tạo nâng cao (2TB)\nSức mạnh AI cốt lõi: Truy cập Gemini 3.1 Pro, Deep Research, tạo ảnh (Nano Banana Pro) và video (Veo 3.1/3).\n\nBộ công cụ sáng tạo (Video/Phim): Ưu tiên truy cập Flow (làm phim điện ảnh) và Whisk (tạo video từ hình ảnh).\n\n- Hỗ trợ công việc: Tích hợp Gemini trực tiếp vào Google Docs, Gmail, Vids và NotebookLM (nghiên cứu, tóm tắt âm thanh/video, bài kiểm tra).\n\n- Hệ sinh thái lập trình & Tác nhân: Hạn mức cao cho nền tảng tác nhân tự chủ Google Antigravity và gói Google Developer Program (Gemini CLI, Code Assist, Jules, tín dụng Cloud).\n\n- Tài nguyên: 2 TB bộ nhớ dùng chung (Drive, Gmail, Photos) và 200 tín dụng AI hằng tháng để mở rộng các tính năng chuyên sâu.",
-    "usageDuration": "1 năm",
+    "usageDuration": "12 tháng",
     "costPrice": 199000,
     "retailPrice": 199000,
     "customerTierPrices": {
@@ -2671,7 +2457,7 @@
       "Gemini",
       "AI"
     ],
-    "accountType": "rental",
+    "accountType": "primary",
     "featured": false,
     "isFlashSale": true,
     "flashSaleLabel": "Nổi bật",
@@ -2683,14 +2469,14 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/4019585795713088073/7c0902101be095beccf1.jpg",
     "warrantyMonths": 12,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:43:00.000Z",
-    "updatedAt": "2026-03-14T00:43:30.000Z",
+    "createdAt": "2026-03-14T00:39:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.631Z",
     "translations": {
       "vi": {
-        "name": "Gemini Pro chính chủ 1 năm",
-        "shortDescription": "Gemini Pro chính chủ 1 năm dạng tài khoản thuê, thời hạn 1 năm, bảo hành 1 năm.",
+        "name": "Google One 2TB + Gemini Pro 1 năm",
+        "shortDescription": "Google One 2TB + Gemini Pro 1 năm dạng tài khoản chính chủ, thời hạn 12 tháng, bảo hành 12 tháng.",
         "fullDescription": "Dạng add Family, bảo mật, an toàn, bảo hành full 1 năm\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Công cụ làm việc & Sáng tạo nâng cao (2TB)\nSức mạnh AI cốt lõi: Truy cập Gemini 3.1 Pro, Deep Research, tạo ảnh (Nano Banana Pro) và video (Veo 3.1/3).\n\nBộ công cụ sáng tạo (Video/Phim): Ưu tiên truy cập Flow (làm phim điện ảnh) và Whisk (tạo video từ hình ảnh).\n\n- Hỗ trợ công việc: Tích hợp Gemini trực tiếp vào Google Docs, Gmail, Vids và NotebookLM (nghiên cứu, tóm tắt âm thanh/video, bài kiểm tra).\n\n- Hệ sinh thái lập trình & Tác nhân: Hạn mức cao cho nền tảng tác nhân tự chủ Google Antigravity và gói Google Developer Program (Gemini CLI, Code Assist, Jules, tín dụng Cloud).\n\n- Tài nguyên: 2 TB bộ nhớ dùng chung (Drive, Gmail, Photos) và 200 tín dụng AI hằng tháng để mở rộng các tính năng chuyên sâu.",
         "category": "Tài khoản số",
         "categories": [
@@ -2712,7 +2498,8 @@
         ],
         "flashSaleLabel": "Hot"
       }
-    }
+    },
+    "warrantyDuration": "12 tháng"
   },
   {
     "id": "zalo-025db571a4344d6a1425",
@@ -2744,10 +2531,10 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/4014308112701577650/bcc3d1ceca3e44601d2f.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:44:00.000Z",
-    "updatedAt": "2026-03-14T00:44:30.000Z",
+    "createdAt": "2026-03-14T00:40:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.632Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra chính chủ 1 tháng, 6000 credit",
@@ -2771,7 +2558,8 @@
           "AI"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-d48360af71ea98b4c1fb",
@@ -2803,10 +2591,10 @@
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/3286945458594084943/5e00320d29fda7a3feec.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:45:00.000Z",
-    "updatedAt": "2026-03-14T00:45:30.000Z",
+    "createdAt": "2026-03-14T00:41:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.628Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 tháng acc cấp riêng",
@@ -2830,7 +2618,8 @@
           "AI"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-1808ad24bc61553f0c70",
@@ -2839,11 +2628,11 @@
     "shortDescription": "ChatGPT Plus 1 tháng chính chủ dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
     "usageDuration": "1 tháng",
-    "costPrice": 299000,
-    "retailPrice": 299000,
+    "costPrice": 199000,
+    "retailPrice": 199000,
     "customerTierPrices": {
-      "regular": 299000,
-      "vip": 299000
+      "regular": 199000,
+      "vip": 199000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -2856,16 +2645,16 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 299000,
-      "vip": 299000
+      "regular": 199000,
+      "vip": 199000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/4792346351307468854/dee78dea961a1844410b.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:46:00.000Z",
-    "updatedAt": "2026-03-14T00:46:30.000Z",
+    "createdAt": "2026-03-14T00:42:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.628Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 tháng chính chủ",
@@ -2889,7 +2678,8 @@
           "AI"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   },
   {
     "id": "zalo-37b3859f94da7d8424cb",
@@ -2923,8 +2713,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:47:00.000Z",
-    "updatedAt": "2026-03-14T00:47:30.000Z",
+    "createdAt": "2026-03-14T00:43:00.000Z",
+    "updatedAt": "2026-03-14T00:43:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Team(Business)",
@@ -2954,14 +2744,14 @@
     "id": "zalo-6240d16cc02929777038",
     "name": "ChatGPT Team(Business)",
     "slug": "chatgpt-team-business-6240d16c",
-    "shortDescription": "ChatGPT Team(Business) dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng.",
+    "shortDescription": "ChatGPT Team(Business) dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành 30 ngày\n-Gia hạn tiếp được\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng ChatGPT không cần mật khẩu\n\nTính năng:\n- Tiến hành phân tích chuyên nghiệp\n- Nhắn tin không giới hạn với GPT-5\n- Tạo hình ảnh, video, trang chiếu và nhiều nội dung khác\n- Bảo mật không gian của bạn với SSO, MFA và nhiều phương thức khác\n- Bảo vệ quyền riêng tư; tuyệt đối không sử dụng dữ liệu cho huấn luyện\n- Tích hợp với SharePoint và các công cụ khác\n- Triển khai các tác nhân để viết mã và nghiên cứu\n- Mạnh hơn Plus\n- Không lưu lịch sử trò chuyện",
-    "usageDuration": "30 ngày",
+    "usageDuration": "1 tháng",
     "costPrice": 249000,
-    "retailPrice": 249000,
+    "retailPrice": 149000,
     "customerTierPrices": {
-      "regular": 249000,
-      "vip": 249000
+      "regular": 149000,
+      "vip": 149000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -2974,20 +2764,20 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 249000,
-      "vip": 249000
+      "regular": 149000,
+      "vip": 149000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/4239094613799255357/e63cb731acc1229f7bd0.jpg",
     "warrantyMonths": 1,
-    "stock": 0,
+    "stock": 1,
     "points": 0,
-    "createdAt": "2026-03-14T00:48:00.000Z",
-    "updatedAt": "2026-03-14T00:48:30.000Z",
+    "createdAt": "2026-03-14T00:44:00.000Z",
+    "updatedAt": "2026-04-10T12:55:14.629Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Team(Business)",
-        "shortDescription": "ChatGPT Team(Business) dạng tài khoản chính chủ, thời hạn 30 ngày, bảo hành 1 tháng.",
+        "shortDescription": "ChatGPT Team(Business) dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
         "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành 30 ngày\n-Gia hạn tiếp được\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng ChatGPT không cần mật khẩu\n\nTính năng:\n- Tiến hành phân tích chuyên nghiệp\n- Nhắn tin không giới hạn với GPT-5\n- Tạo hình ảnh, video, trang chiếu và nhiều nội dung khác\n- Bảo mật không gian của bạn với SSO, MFA và nhiều phương thức khác\n- Bảo vệ quyền riêng tư; tuyệt đối không sử dụng dữ liệu cho huấn luyện\n- Tích hợp với SharePoint và các công cụ khác\n- Triển khai các tác nhân để viết mã và nghiên cứu\n- Mạnh hơn Plus\n- Không lưu lịch sử trò chuyện",
         "category": "Tài khoản số",
         "categories": [
@@ -3007,6 +2797,7 @@
           "AI"
         ]
       }
-    }
+    },
+    "warrantyDuration": "1 tháng"
   }
 ]

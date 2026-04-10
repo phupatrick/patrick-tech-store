@@ -232,8 +232,13 @@ const parseRetailPrice = (rawPrice) => {
     return 0;
   }
 
-  if (/^\d{1,3}(?:[.,]\d{3})+$/.test(value) || /^\d+$/.test(value)) {
+  if (/^\d{1,3}(?:[.,]\d{3})+$/.test(value)) {
     return Number.parseInt(value.replace(/[^\d]/g, ""), 10);
+  }
+
+  if (/^\d+$/.test(value)) {
+    const numericPrice = Number.parseInt(value, 10);
+    return numericPrice > 0 && numericPrice < 10000 ? numericPrice * 1000 : numericPrice;
   }
 
   return 0;

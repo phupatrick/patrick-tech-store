@@ -321,15 +321,15 @@ export default async function Home({ searchParams }: HomeProps) {
     ? "Chọn đúng kênh liên hệ để được hỗ trợ nhanh hơn."
     : "Choose the contact channel you prefer for a faster response.";
   const editorialTitle = isVietnamese
-    ? "AI, công nghệ và những chủ đề đang kéo traffic"
-    : "AI, technology, and the topics currently driving traffic";
+    ? "Cửa hàng AI tools và tài khoản số"
+    : "AI tools and digital account store";
   const editorialDescription = isVietnamese
-    ? "Mặt tiền ưu tiên AI, công nghệ, ứng dụng số và nền tảng mới; các chủ đề hot vẫn được dùng để kéo thêm lượt xem nhưng không làm lệch chất tech của hệ thống."
-    : "The storefront prioritizes AI, technology, digital tools, and emerging platforms; trending topics still help bring traffic in without diluting the tech-first positioning.";
-  const editorialAriaLabel = isVietnamese ? "Định hướng nội dung ưu tiên" : "Priority content direction";
+    ? "Tuyển chọn các gói Gemini, Grok, CapCut, Claude, Office và nền tảng số đang được dùng nhiều; giá rõ ràng, giao nhanh và có hỗ trợ trực tiếp."
+    : "Curated Gemini, Grok, CapCut, Claude, Office, and high-demand digital tools with clear pricing, fast delivery, and direct support.";
+  const editorialAriaLabel = isVietnamese ? "Chủ đề công nghệ nổi bật" : "Featured technology topics";
   const editorialPills = isVietnamese
-    ? ["AI", "Công nghệ", "Ứng dụng", "Thiết bị", "Mạng xã hội", "Game", "Trend"]
-    : ["AI", "Technology", "Apps", "Devices", "Social", "Gaming", "Trends"];
+    ? ["AI", "Gemini", "Grok", "CapCut", "Claude", "Office", "Streaming"]
+    : ["AI", "Gemini", "Grok", "CapCut", "Claude", "Office", "Streaming"];
   const featureKeys = [
     {
       title: "home.feature.pricing.title",

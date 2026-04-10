@@ -8,6 +8,7 @@ const imageHosts = (process.env.NEXT_PUBLIC_IMAGE_HOSTS ?? "f1-zpprd.zdn.vn,wsrv
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [75, 95],
     remotePatterns: imageHosts.map((hostname) => ({
       protocol: "https",
       hostname

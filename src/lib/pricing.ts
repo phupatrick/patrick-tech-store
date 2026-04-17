@@ -257,6 +257,16 @@ const isHiddenOnPublicWeb = (product: Product) => {
   return !hasPublicPrice(product);
 };
 
+const isZaloCatalogProduct = (product: Product) => product.id.startsWith("zalo-");
+
+const isVisibleForLanguage = (product: Product, language: Language) => {
+  if (language === "vi") {
+    return true;
+  }
+
+  return !isZaloCatalogProduct(product);
+};
+
 export const buildProductView = async (
   product: Product,
   tier: ResellerTier,
@@ -441,7 +451,9 @@ const getPreparedPublicProducts = async (
   session?: PublicPricingSession
 ): Promise<PreparedPublicProduct[]> => {
   const currencySettings = await getCurrencySettings(language, currency);
-  const visibleProducts = listProducts().filter((product) => product.published && !isHiddenOnPublicWeb(product));
+  const visibleProducts = listProducts().filter(
+    (product) => product.published && !isHiddenOnPublicWeb(product) && isVisibleForLanguage(product, language)
+  );
 
   return Promise.all(
     visibleProducts.map(async (product) => {

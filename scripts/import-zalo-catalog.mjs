@@ -10,6 +10,7 @@ const PLAN_UPGRADE_CATEGORY = "Plan upgrades";
 const DETAIL_CONCURRENCY = 6;
 const FEATURED_PRODUCT_COUNT = 6;
 const PRODUCT_FILE_PATH = path.join(process.cwd(), "src", "data", "products.json");
+const MOJIBAKE_PATTERN = /(?:\u00c3.|\u00c2.|\u00c4.|\u00c6.|\u00e1\u00bb|\u00e1\u00ba|\u00e2\u20ac)/;
 const MANUAL_PRODUCT_OVERRIDES = {
   "zalo-6a57018513c0fa9ea3d1": {
     name: "Kling Standard 1100 credit - bảo hành 24h",
@@ -182,6 +183,51 @@ const slugify = (value) =>
 
 const createDedupKey = (name, retailPrice) => `${slugify(name).replace(/-/g, "")}:${retailPrice}`;
 
+const countMojibakeTokens = (value = "") => {
+  const matches = String(value).match(MOJIBAKE_PATTERN);
+  return matches ? matches.length : 0;
+};
+
+const repairMojibakeText = (value = "") => {
+  let repaired = String(value ?? "");
+
+  if (!MOJIBAKE_PATTERN.test(repaired)) {
+    return repaired;
+  }
+
+  for (let pass = 0; pass < 2; pass += 1) {
+    const candidate = Buffer.from(repaired, "latin1").toString("utf8");
+
+    if (candidate.includes("\ufffd")) {
+      break;
+    }
+
+    if (countMojibakeTokens(candidate) >= countMojibakeTokens(repaired)) {
+      break;
+    }
+
+    repaired = candidate;
+  }
+
+  return repaired;
+};
+
+const repairDeepStrings = (value) => {
+  if (typeof value === "string") {
+    return repairMojibakeText(value);
+  }
+
+  if (Array.isArray(value)) {
+    return value.map(repairDeepStrings);
+  }
+
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, entry]) => [key, repairDeepStrings(entry)]));
+  }
+
+  return value;
+};
+
 const parseCatalogUrl = (input) => {
   if (!input) {
     return new URL(DEFAULT_CATALOG_URL);
@@ -245,7 +291,7 @@ const parseRetailPrice = (rawPrice) => {
 };
 
 const cleanText = (value = "") =>
-  value
+  repairMojibakeText(String(value ?? ""))
     .replace(/\r\n/g, "\n")
     .replace(/\r/g, "\n")
     .replace(/\n{3,}/g, "\n\n")
@@ -812,11 +858,11 @@ const main = async () => {
     return !importedKeys.has(createDedupKey(product.name ?? "", Number(product.retailPrice) || 0));
   });
   const manualExtraProducts = buildManualExtraProducts(importedProducts);
-  const nextProducts = [
+  const nextProducts = repairDeepStrings([
     ...preservedProducts,
     ...manualExtraProducts.filter((product) => !preservedProducts.some((item) => item.id === product.id)),
     ...importedProducts
-  ];
+  ]);
 
   await writeFile(PRODUCT_FILE_PATH, JSON.stringify(nextProducts, null, 2), "utf8");
 

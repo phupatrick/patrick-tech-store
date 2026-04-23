@@ -136,7 +136,7 @@ const main = async () => {
     const adminLogin = await fetchText("/admin/login");
     assert(adminLogin.includes("Đăng nhập"), "Admin login page did not render expected Vietnamese text.");
 
-    const products = await fetchJson("/api/products?q=chatgpt");
+    const products = await fetchJson("/api/products?q=gemini");
     assert(Array.isArray(products.products), "Products payload is missing products array.");
     assert(products.products.length > 0, "Expected at least one product from /api/products.");
     assert(
@@ -146,8 +146,9 @@ const main = async () => {
       "Unexpected first product name in /api/products."
     );
 
-    const productsEnglish = await fetchJson("/api/products?q=chatgpt", "en-US,en;q=0.9");
+    const productsEnglish = await fetchJson("/api/products?q=kling", "en-US,en;q=0.9");
     assert(Array.isArray(productsEnglish.products), "English products payload is missing products array.");
+    assert(productsEnglish.products.length > 0, "Expected at least one English product from /api/products.");
     assert(
       String(productsEnglish.products[0]?.name ?? "").includes("year") ||
         String(productsEnglish.products[0]?.name ?? "").includes("month") ||
@@ -156,7 +157,7 @@ const main = async () => {
     );
 
     const cookieDrivenProductsResponse = await fetchJsonResponse(
-      "/api/products?q=chatgpt",
+      "/api/products?q=kling",
       "vi-VN,vi;q=0.9",
       "preferred-language=en"
     );

@@ -60,6 +60,245 @@
     }
   },
   {
+    "id": "zalo-a393d4bbc6fe2fa076ef",
+    "name": "Gemini Pro + GG1 5TB",
+    "slug": "gemini-pro-gg1-5tb-a393d4bb",
+    "shortDescription": "Gemini Pro + GG1 5TB dạng tài khoản thuê, thời hạn 18 tháng, bảo hành 2 năm.",
+    "fullDescription": "Dạng add Family, bảo mật, an toàn, bảo hành full 18 tháng\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Công cụ làm việc & Sáng tạo nâng cao (5TB)\nSức mạnh AI cốt lõi: Truy cập Gemini 3.1 Pro, Deep Research, tạo ảnh (Nano Banana Pro) và video (Veo 3.1/3).\n\nBộ công cụ sáng tạo (Video/Phim): Ưu tiên truy cập Flow (làm phim điện ảnh) và Whisk (tạo video từ hình ảnh).\n\n- Hỗ trợ công việc: Tích hợp Gemini trực tiếp vào Google Docs, Gmail, Vids và NotebookLM (nghiên cứu, tóm tắt âm thanh/video, bài kiểm tra).\n\n- Hệ sinh thái lập trình & Tác nhân: Hạn mức cao cho nền tảng tác nhân tự chủ Google Antigravity và gói Google Developer Program (Gemini CLI, Code Assist, Jules, tín dụng Cloud).\n\n- Tài nguyên: 5 TB bộ nhớ dùng chung (Drive, Gmail, Photos) và 200 tín dụng AI hằng tháng để mở rộng các tính năng chuyên sâu.",
+    "usageDuration": "18 tháng",
+    "costPrice": 299000,
+    "retailPrice": 299000,
+    "customerTierPrices": {
+      "regular": 299000,
+      "vip": 299000
+    },
+    "category": "Tài khoản số",
+    "categories": [
+      "Tài khoản số",
+      "Gemini",
+      "AI"
+    ],
+    "accountType": "rental",
+    "featured": true,
+    "isFlashSale": true,
+    "flashSaleLabel": "Nổi bật",
+    "published": true,
+    "tierPrices": {
+      "regular": 299000,
+      "vip": 299000
+    },
+    "overridePrices": {},
+    "image": "https://f1-zpprd.zdn.vn/8557849757468166570/35de323b7349f217ab58.jpg",
+    "warrantyMonths": 18,
+    "stock": 0,
+    "points": 0,
+    "createdAt": "2026-03-14T00:00:00.000Z",
+    "updatedAt": "2026-03-14T00:00:30.000Z",
+    "translations": {
+      "vi": {
+        "name": "Gemini Pro + GG1 5TB",
+        "shortDescription": "Gemini Pro + GG1 5TB dạng tài khoản thuê, thời hạn 18 tháng, bảo hành 2 năm.",
+        "fullDescription": "Dạng add Family, bảo mật, an toàn, bảo hành full 18 tháng\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Công cụ làm việc & Sáng tạo nâng cao (5TB)\nSức mạnh AI cốt lõi: Truy cập Gemini 3.1 Pro, Deep Research, tạo ảnh (Nano Banana Pro) và video (Veo 3.1/3).\n\nBộ công cụ sáng tạo (Video/Phim): Ưu tiên truy cập Flow (làm phim điện ảnh) và Whisk (tạo video từ hình ảnh).\n\n- Hỗ trợ công việc: Tích hợp Gemini trực tiếp vào Google Docs, Gmail, Vids và NotebookLM (nghiên cứu, tóm tắt âm thanh/video, bài kiểm tra).\n\n- Hệ sinh thái lập trình & Tác nhân: Hạn mức cao cho nền tảng tác nhân tự chủ Google Antigravity và gói Google Developer Program (Gemini CLI, Code Assist, Jules, tín dụng Cloud).\n\n- Tài nguyên: 5 TB bộ nhớ dùng chung (Drive, Gmail, Photos) và 200 tín dụng AI hằng tháng để mở rộng các tính năng chuyên sâu.",
+        "category": "Tài khoản số",
+        "categories": [
+          "Tài khoản số",
+          "Gemini",
+          "AI"
+        ],
+        "flashSaleLabel": "Nổi bật"
+      },
+      "en": {
+        "name": "Hot Gemini Pro + GG1 5TB",
+        "shortDescription": "Gemini Pro + GG1 5TB with rental account delivery, 18 months of use, and 2 years warranty.",
+        "fullDescription": "Gemini Pro + GG1 5TB with rental account delivery, 18 months of use, and 2 years warranty.\n\nRental account. Usage term: 18 months. Warranty: 2 years.\n\nGemini Pro + GG1 5TB was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "category": "Digital accounts",
+        "categories": [
+          "Digital accounts",
+          "Gemini",
+          "AI"
+        ],
+        "flashSaleLabel": "Hot"
+      }
+    }
+  },
+  {
+    "id": "zalo-38aa2b8239c7d09989d6",
+    "name": "ChatGPT Plus 1 tháng acc cấp",
+    "slug": "chatgpt-plus-1-thang-acc-cap-38aa2b82",
+    "shortDescription": "ChatGPT Plus 1 tháng acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "fullDescription": "Acc cấp\nĐổi mật khẩu thoãi mái, KHÔNG BẢO HÀNH\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
+    "usageDuration": "1 tháng",
+    "costPrice": 39000,
+    "retailPrice": 39000,
+    "customerTierPrices": {
+      "regular": 39000,
+      "vip": 39000
+    },
+    "category": "Tài khoản số",
+    "categories": [
+      "Tài khoản số",
+      "ChatGPT",
+      "AI"
+    ],
+    "accountType": "dedicated",
+    "featured": true,
+    "isFlashSale": false,
+    "published": true,
+    "tierPrices": {
+      "regular": 39000,
+      "vip": 39000
+    },
+    "overridePrices": {},
+    "image": "https://f1-zpprd.zdn.vn/2109302813239376364/37f7c27e930c12524b1d.jpg",
+    "warrantyMonths": 1,
+    "stock": 0,
+    "points": 0,
+    "createdAt": "2026-03-14T00:01:00.000Z",
+    "updatedAt": "2026-03-14T00:01:30.000Z",
+    "translations": {
+      "vi": {
+        "name": "ChatGPT Plus 1 tháng acc cấp",
+        "shortDescription": "ChatGPT Plus 1 tháng acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "fullDescription": "Acc cấp\nĐổi mật khẩu thoãi mái, KHÔNG BẢO HÀNH\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
+        "category": "Tài khoản số",
+        "categories": [
+          "Tài khoản số",
+          "ChatGPT",
+          "AI"
+        ]
+      },
+      "en": {
+        "name": "ChatGPT Plus 1 month issued account",
+        "shortDescription": "ChatGPT Plus 1 month issued account with dedicated account delivery, 1 month of use, and 1 month warranty.",
+        "fullDescription": "ChatGPT Plus 1 month issued account with dedicated account delivery, 1 month of use, and 1 month warranty.\n\nDedicated account. Usage term: 1 month. Warranty: 1 month.\n\nChatGPT Plus 1 month issued account was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "category": "Digital accounts",
+        "categories": [
+          "Digital accounts",
+          "ChatGPT",
+          "AI"
+        ]
+      }
+    }
+  },
+  {
+    "id": "zalo-7a935ccb4e8ea7d0fe9f",
+    "name": "Cursor Pro acc cấp 1 tháng",
+    "slug": "cursor-pro-acc-cap-1-thang-7a935ccb",
+    "shortDescription": "Cursor Pro acc cấp 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "fullDescription": "Bảo hành full\nKhông bảo hành nếu khách dùng vượt bill",
+    "usageDuration": "1 tháng",
+    "costPrice": 429000,
+    "retailPrice": 429000,
+    "customerTierPrices": {
+      "regular": 429000,
+      "vip": 429000
+    },
+    "category": "Tài khoản số",
+    "categories": [
+      "Tài khoản số",
+      "Lập trình",
+      "Developer"
+    ],
+    "accountType": "dedicated",
+    "featured": true,
+    "isFlashSale": false,
+    "published": true,
+    "tierPrices": {
+      "regular": 429000,
+      "vip": 429000
+    },
+    "overridePrices": {},
+    "image": "https://f1-zpprd.zdn.vn/5467297566682405862/507fcaf5f78176df2f90.jpg",
+    "warrantyMonths": 1,
+    "stock": 0,
+    "points": 0,
+    "createdAt": "2026-03-14T00:02:00.000Z",
+    "updatedAt": "2026-03-14T00:02:30.000Z",
+    "translations": {
+      "vi": {
+        "name": "Cursor Pro acc cấp 1 tháng",
+        "shortDescription": "Cursor Pro acc cấp 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "fullDescription": "Bảo hành full\nKhông bảo hành nếu khách dùng vượt bill",
+        "category": "Tài khoản số",
+        "categories": [
+          "Tài khoản số",
+          "Lập trình",
+          "Developer"
+        ]
+      },
+      "en": {
+        "name": "Cursor Pro issued account 1 month",
+        "shortDescription": "Cursor Pro issued account 1 month with dedicated account delivery, 1 month of use, and 1 month warranty.",
+        "fullDescription": "Cursor Pro issued account 1 month with dedicated account delivery, 1 month of use, and 1 month warranty.\n\nDedicated account. Usage term: 1 month. Warranty: 1 month.\n\nCursor Pro issued account 1 month was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "category": "Digital accounts",
+        "categories": [
+          "Digital accounts",
+          "Developer",
+          "Coding"
+        ]
+      }
+    }
+  },
+  {
+    "id": "zalo-f7d9d681c4c42d9a74d5",
+    "name": "Claude Pro acc cấp",
+    "slug": "claude-pro-acc-cap-f7d9d681",
+    "shortDescription": "Claude Pro acc cấp dạng tài khoản cấp riêng, thời hạn 30 ngày, bảo hành 1 tháng.",
+    "fullDescription": "Bảo hành full\nĐịnh dạng khi giao acc:\nacc cấp\nTính năng:\n\nGiới hạn tin nhắn gấp 5 lần: Cho phép bạn làm việc liên tục với cường độ cao mà không lo bị ngắt quãng như bản miễn phí.\n\nMô hình thông minh nhất (Claude 3 Opus): Truy cập toàn bộ sức mạnh của Anthropic, đặc biệt là bản Opus chuyên giải quyết các vấn đề logic phức tạp, viết code chuyên sâu và phân tích dữ liệu đa tầng.\n\nTính năng Projects (Dự án): Đây là điểm \"ăn tiền\" nhất. Bạn có thể tạo các không gian riêng, tải lên hàng chục tệp tài liệu hoặc mã nguồn. Claude sẽ ghi nhớ toàn bộ nội dung đó để hỗ trợ xuyên suốt quá trình bạn thực hiện dự án đó.\n\nCửa sổ ngữ cảnh 200.000 token: Khả năng xử lý lượng dữ liệu khổng lồ (tương đương một cuốn sách hoặc kho code lớn) trong một lần yêu cầu mà không bị \"quên\" thông tin.\n\nArtifacts & Ưu tiên: Xem trực tiếp kết quả hiển thị (như code giao diện, biểu đồ) ngay bên cạnh khung chat và luôn được ưu tiên truy cập khi hệ thống quá tải.",
+    "usageDuration": "30 ngày",
+    "costPrice": 369000,
+    "retailPrice": 369000,
+    "customerTierPrices": {
+      "regular": 369000,
+      "vip": 369000
+    },
+    "category": "Tài khoản số",
+    "categories": [
+      "Tài khoản số",
+      "Claude",
+      "AI"
+    ],
+    "accountType": "dedicated",
+    "featured": true,
+    "isFlashSale": false,
+    "published": true,
+    "tierPrices": {
+      "regular": 369000,
+      "vip": 369000
+    },
+    "overridePrices": {},
+    "image": "https://f1-zpprd.zdn.vn/6003924322112738427/996707ed3a99bbc7e288.jpg",
+    "warrantyMonths": 1,
+    "stock": 0,
+    "points": 0,
+    "createdAt": "2026-03-14T00:03:00.000Z",
+    "updatedAt": "2026-03-14T00:03:30.000Z",
+    "translations": {
+      "vi": {
+        "name": "Claude Pro acc cấp",
+        "shortDescription": "Claude Pro acc cấp dạng tài khoản cấp riêng, thời hạn 30 ngày, bảo hành 1 tháng.",
+        "fullDescription": "Bảo hành full\nĐịnh dạng khi giao acc:\nacc cấp\nTính năng:\n\nGiới hạn tin nhắn gấp 5 lần: Cho phép bạn làm việc liên tục với cường độ cao mà không lo bị ngắt quãng như bản miễn phí.\n\nMô hình thông minh nhất (Claude 3 Opus): Truy cập toàn bộ sức mạnh của Anthropic, đặc biệt là bản Opus chuyên giải quyết các vấn đề logic phức tạp, viết code chuyên sâu và phân tích dữ liệu đa tầng.\n\nTính năng Projects (Dự án): Đây là điểm \"ăn tiền\" nhất. Bạn có thể tạo các không gian riêng, tải lên hàng chục tệp tài liệu hoặc mã nguồn. Claude sẽ ghi nhớ toàn bộ nội dung đó để hỗ trợ xuyên suốt quá trình bạn thực hiện dự án đó.\n\nCửa sổ ngữ cảnh 200.000 token: Khả năng xử lý lượng dữ liệu khổng lồ (tương đương một cuốn sách hoặc kho code lớn) trong một lần yêu cầu mà không bị \"quên\" thông tin.\n\nArtifacts & Ưu tiên: Xem trực tiếp kết quả hiển thị (như code giao diện, biểu đồ) ngay bên cạnh khung chat và luôn được ưu tiên truy cập khi hệ thống quá tải.",
+        "category": "Tài khoản số",
+        "categories": [
+          "Tài khoản số",
+          "Claude",
+          "AI"
+        ]
+      },
+      "en": {
+        "name": "Claude Pro issued account",
+        "shortDescription": "Claude Pro issued account with dedicated account delivery, 30 days of use, and 1 month warranty.",
+        "fullDescription": "Claude Pro issued account with dedicated account delivery, 30 days of use, and 1 month warranty.\n\nDedicated account. Usage term: 30 days. Warranty: 1 month.\n\nClaude Pro issued account was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "category": "Digital accounts",
+        "categories": [
+          "Digital accounts",
+          "Claude",
+          "AI"
+        ]
+      }
+    }
+  },
+  {
     "id": "zalo-b515135e011be845b10a",
     "name": "Super Grok 3 ngày acc cấp",
     "slug": "super-grok-3-ngay-acc-cap-b515135e",
@@ -92,8 +331,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:00:00.000Z",
-    "updatedAt": "2026-03-14T00:00:30.000Z",
+    "createdAt": "2026-03-14T00:04:00.000Z",
+    "updatedAt": "2026-03-14T00:04:30.000Z",
     "translations": {
       "vi": {
         "name": "Super Grok 3 ngày acc cấp",
@@ -153,8 +392,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:01:00.000Z",
-    "updatedAt": "2026-03-14T00:01:30.000Z",
+    "createdAt": "2026-03-14T00:05:00.000Z",
+    "updatedAt": "2026-03-14T00:05:30.000Z",
     "translations": {
       "vi": {
         "name": "[COMBO] Youtube Pre + Gemini Pro + 5TB GG1 1 tháng",
@@ -200,7 +439,7 @@
       "Sáng tạo"
     ],
     "accountType": "primary",
-    "featured": true,
+    "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
@@ -212,8 +451,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:02:00.000Z",
-    "updatedAt": "2026-03-14T00:02:30.000Z",
+    "createdAt": "2026-03-14T00:06:00.000Z",
+    "updatedAt": "2026-03-14T00:06:30.000Z",
     "translations": {
       "vi": {
         "name": "Canva Pro 1 năm",
@@ -259,7 +498,7 @@
       "AI"
     ],
     "accountType": "dedicated",
-    "featured": true,
+    "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
@@ -271,8 +510,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:03:00.000Z",
-    "updatedAt": "2026-03-14T00:03:30.000Z",
+    "createdAt": "2026-03-14T00:07:00.000Z",
+    "updatedAt": "2026-03-14T00:07:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 tháng acc cấp",
@@ -318,7 +557,7 @@
       "Video"
     ],
     "accountType": "dedicated",
-    "featured": true,
+    "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
@@ -330,8 +569,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:04:00.000Z",
-    "updatedAt": "2026-03-14T00:04:30.000Z",
+    "createdAt": "2026-03-14T00:08:00.000Z",
+    "updatedAt": "2026-03-14T00:08:30.000Z",
     "translations": {
       "vi": {
         "name": "Kling Standard 1100 credit - bảo hành 24h",
@@ -378,7 +617,7 @@
       "Video"
     ],
     "accountType": "dedicated",
-    "featured": true,
+    "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
@@ -390,8 +629,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:05:00.000Z",
-    "updatedAt": "2026-03-14T00:05:30.000Z",
+    "createdAt": "2026-03-14T00:09:00.000Z",
+    "updatedAt": "2026-03-14T00:09:30.000Z",
     "translations": {
       "vi": {
         "name": "Kling Standard 215 credit",
@@ -419,224 +658,236 @@
   },
   {
     "id": "zalo-b1510ab418f1f1afa8e0",
-    "name": "Youtube premium chính chủ 1 năm",
-    "slug": "youtube-premium-chinh-chu-1-nam-b1510ab4",
-    "shortDescription": "Youtube premium chính chủ 1 năm dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
+    "name": "Youtube premium + Gemini Pro 5TB chính chủ 1 năm",
+    "slug": "youtube-premium-gemini-pro-5tb-chinh-chu-1-nam-b1510ab4",
+    "shortDescription": "Youtube premium + Gemini Pro 5TB chính chủ 1 năm dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
     "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full .\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Youtube không cần mật khẩu\nTính Năng:\nXem video không quảng cáo trên YouTube.\nTải video và playlist để xem offline, có cả Smart Downloads.\nPhát trong nền và Picture-in-picture (PiP) trên điện thoại.\nKèm YouTube Music Premium: nghe nhạc không quảng cáo, tải offline, phát nền, chuyển nhanh giữa audio và video.\nXem tiếp trên nhiều thiết bị từ đúng vị trí đang dở.\nMột số quyền lợi thêm tùy thiết bị/khu vực: Jump ahead, 1080p Premium, âm thanh chất lượng cao, hàng đợi video trên mobile, ưu đãi/thử nghiệm tính năng mới.",
     "usageDuration": "1 năm",
-    "costPrice": 499000,
-    "retailPrice": 499000,
+    "costPrice": 519000,
+    "retailPrice": 519000,
     "customerTierPrices": {
-      "regular": 499000,
-      "vip": 499000
+      "regular": 519000,
+      "vip": 519000
     },
     "category": "Tài khoản số",
     "categories": [
       "Tài khoản số",
-      "Khác"
+      "Gemini",
+      "AI"
     ],
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 499000,
-      "vip": 499000
+      "regular": 519000,
+      "vip": 519000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/6839778610901980998/afad8794c0394e671728.jpg",
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:06:00.000Z",
-    "updatedAt": "2026-03-14T00:06:30.000Z",
+    "createdAt": "2026-03-14T00:10:00.000Z",
+    "updatedAt": "2026-03-14T00:10:30.000Z",
     "translations": {
       "vi": {
-        "name": "Youtube premium chính chủ 1 năm",
-        "shortDescription": "Youtube premium chính chủ 1 năm dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
+        "name": "Youtube premium + Gemini Pro 5TB chính chủ 1 năm",
+        "shortDescription": "Youtube premium + Gemini Pro 5TB chính chủ 1 năm dạng tài khoản chính chủ, thời hạn 1 năm, bảo hành 1 năm.",
         "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full .\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Youtube không cần mật khẩu\nTính Năng:\nXem video không quảng cáo trên YouTube.\nTải video và playlist để xem offline, có cả Smart Downloads.\nPhát trong nền và Picture-in-picture (PiP) trên điện thoại.\nKèm YouTube Music Premium: nghe nhạc không quảng cáo, tải offline, phát nền, chuyển nhanh giữa audio và video.\nXem tiếp trên nhiều thiết bị từ đúng vị trí đang dở.\nMột số quyền lợi thêm tùy thiết bị/khu vực: Jump ahead, 1080p Premium, âm thanh chất lượng cao, hàng đợi video trên mobile, ưu đãi/thử nghiệm tính năng mới.",
         "category": "Tài khoản số",
         "categories": [
           "Tài khoản số",
-          "Khác"
+          "Gemini",
+          "AI"
         ]
       },
       "en": {
-        "name": "Youtube premium primary account 1 year",
-        "shortDescription": "Youtube premium primary account 1 year with primary account delivery, 1 year of use, and 1 year warranty.",
-        "fullDescription": "Youtube premium primary account 1 year with primary account delivery, 1 year of use, and 1 year warranty.\n\nPrimary account. Usage term: 1 year. Warranty: 1 year.\n\nYoutube premium primary account 1 year was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "name": "Youtube premium + Gemini Pro 5TB primary account 1 year",
+        "shortDescription": "Youtube premium + Gemini Pro 5TB primary account 1 year with primary account delivery, 1 year of use, and 1 year warranty.",
+        "fullDescription": "Youtube premium + Gemini Pro 5TB primary account 1 year with primary account delivery, 1 year of use, and 1 year warranty.\n\nPrimary account. Usage term: 1 year. Warranty: 1 year.\n\nYoutube premium + Gemini Pro 5TB primary account 1 year was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
         "category": "Digital accounts",
         "categories": [
           "Digital accounts",
-          "Other"
+          "Gemini",
+          "AI"
         ]
       }
     }
   },
   {
     "id": "zalo-c72b70ce628b8bd5d29a",
-    "name": "Youtube Premium chính chủ 6 tháng",
-    "slug": "youtube-premium-chinh-chu-6-thang-c72b70ce",
-    "shortDescription": "Youtube Premium chính chủ 6 tháng dạng tài khoản chính chủ, thời hạn 6 tháng, bảo hành 6 tháng.",
+    "name": "Youtube premium + Gemini Pro 5TB chính chủ 6 tháng",
+    "slug": "youtube-premium-gemini-pro-5tb-chinh-chu-6-thang-c72b70ce",
+    "shortDescription": "Youtube premium + Gemini Pro 5TB chính chủ 6 tháng dạng tài khoản chính chủ, thời hạn 6 tháng, bảo hành 6 tháng.",
     "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full .\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Youtube không cần mật khẩu\nTính Năng:\nXem video không quảng cáo trên YouTube.\nTải video và playlist để xem offline, có cả Smart Downloads.\nPhát trong nền và Picture-in-picture (PiP) trên điện thoại.\nKèm YouTube Music Premium: nghe nhạc không quảng cáo, tải offline, phát nền, chuyển nhanh giữa audio và video.\nXem tiếp trên nhiều thiết bị từ đúng vị trí đang dở.\nMột số quyền lợi thêm tùy thiết bị/khu vực: Jump ahead, 1080p Premium, âm thanh chất lượng cao, hàng đợi video trên mobile, ưu đãi/thử nghiệm tính năng mới.\n\nChia sẻ\n\nLiên",
     "usageDuration": "6 tháng",
-    "costPrice": 269000,
-    "retailPrice": 269000,
+    "costPrice": 299000,
+    "retailPrice": 299000,
     "customerTierPrices": {
-      "regular": 269000,
-      "vip": 269000
+      "regular": 299000,
+      "vip": 299000
     },
     "category": "Tài khoản số",
     "categories": [
       "Tài khoản số",
-      "Khác"
+      "Gemini",
+      "AI"
     ],
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 269000,
-      "vip": 269000
+      "regular": 299000,
+      "vip": 299000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/4468052884677265148/e5b1db889c25127b4b34.jpg",
     "warrantyMonths": 6,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:07:00.000Z",
-    "updatedAt": "2026-03-14T00:07:30.000Z",
+    "createdAt": "2026-03-14T00:11:00.000Z",
+    "updatedAt": "2026-03-14T00:11:30.000Z",
     "translations": {
       "vi": {
-        "name": "Youtube Premium chính chủ 6 tháng",
-        "shortDescription": "Youtube Premium chính chủ 6 tháng dạng tài khoản chính chủ, thời hạn 6 tháng, bảo hành 6 tháng.",
+        "name": "Youtube premium + Gemini Pro 5TB chính chủ 6 tháng",
+        "shortDescription": "Youtube premium + Gemini Pro 5TB chính chủ 6 tháng dạng tài khoản chính chủ, thời hạn 6 tháng, bảo hành 6 tháng.",
         "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full .\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Youtube không cần mật khẩu\nTính Năng:\nXem video không quảng cáo trên YouTube.\nTải video và playlist để xem offline, có cả Smart Downloads.\nPhát trong nền và Picture-in-picture (PiP) trên điện thoại.\nKèm YouTube Music Premium: nghe nhạc không quảng cáo, tải offline, phát nền, chuyển nhanh giữa audio và video.\nXem tiếp trên nhiều thiết bị từ đúng vị trí đang dở.\nMột số quyền lợi thêm tùy thiết bị/khu vực: Jump ahead, 1080p Premium, âm thanh chất lượng cao, hàng đợi video trên mobile, ưu đãi/thử nghiệm tính năng mới.\n\nChia sẻ\n\nLiên",
         "category": "Tài khoản số",
         "categories": [
           "Tài khoản số",
-          "Khác"
+          "Gemini",
+          "AI"
         ]
       },
       "en": {
-        "name": "Youtube Premium primary account 6 months",
-        "shortDescription": "Youtube Premium primary account 6 months with primary account delivery, 6 months of use, and 6 months warranty.",
-        "fullDescription": "Youtube Premium primary account 6 months with primary account delivery, 6 months of use, and 6 months warranty.\n\nPrimary account. Usage term: 6 months. Warranty: 6 months.\n\nYoutube Premium primary account 6 months was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "name": "Youtube premium + Gemini Pro 5TB primary account 6 months",
+        "shortDescription": "Youtube premium + Gemini Pro 5TB primary account 6 months with primary account delivery, 6 months of use, and 6 months warranty.",
+        "fullDescription": "Youtube premium + Gemini Pro 5TB primary account 6 months with primary account delivery, 6 months of use, and 6 months warranty.\n\nPrimary account. Usage term: 6 months. Warranty: 6 months.\n\nYoutube premium + Gemini Pro 5TB primary account 6 months was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
         "category": "Digital accounts",
         "categories": [
           "Digital accounts",
-          "Other"
+          "Gemini",
+          "AI"
         ]
       }
     }
   },
   {
     "id": "zalo-8e6c3e892cccc5929cdd",
-    "name": "Youtube Premium chính chủ 3 tháng",
-    "slug": "youtube-premium-chinh-chu-3-thang-8e6c3e89",
-    "shortDescription": "Youtube Premium chính chủ 3 tháng dạng tài khoản chính chủ, thời hạn 3 tháng, bảo hành 3 tháng.",
+    "name": "Youtube premium + Gemini Pro 5TB chính chủ 3 tháng",
+    "slug": "youtube-premium-gemini-pro-5tb-chinh-chu-3-thang-8e6c3e89",
+    "shortDescription": "Youtube premium + Gemini Pro 5TB chính chủ 3 tháng dạng tài khoản chính chủ, thời hạn 3 tháng, bảo hành 3 tháng.",
     "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full .\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Youtube không cần mật khẩu\nTính Năng:\nXem video không quảng cáo trên YouTube.\nTải video và playlist để xem offline, có cả Smart Downloads.\nPhát trong nền và Picture-in-picture (PiP) trên điện thoại.\nKèm YouTube Music Premium: nghe nhạc không quảng cáo, tải offline, phát nền, chuyển nhanh giữa audio và video.\nXem tiếp trên nhiều thiết bị từ đúng vị trí đang dở.\nMột số quyền lợi thêm tùy thiết bị/khu vực: Jump ahead, 1080p Premium, âm thanh chất lượng cao, hàng đợi video trên mobile, ưu đãi/thử nghiệm tính năng mới.",
     "usageDuration": "3 tháng",
-    "costPrice": 149000,
-    "retailPrice": 149000,
+    "costPrice": 179000,
+    "retailPrice": 179000,
     "customerTierPrices": {
-      "regular": 149000,
-      "vip": 149000
+      "regular": 179000,
+      "vip": 179000
     },
     "category": "Tài khoản số",
     "categories": [
       "Tài khoản số",
-      "Khác"
+      "Gemini",
+      "AI"
     ],
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 149000,
-      "vip": 149000
+      "regular": 179000,
+      "vip": 179000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/1998455410373351360/1970a803e1ae6ff036bf.jpg",
     "warrantyMonths": 3,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:08:00.000Z",
-    "updatedAt": "2026-03-14T00:08:30.000Z",
+    "createdAt": "2026-03-14T00:12:00.000Z",
+    "updatedAt": "2026-03-14T00:12:30.000Z",
     "translations": {
       "vi": {
-        "name": "Youtube Premium chính chủ 3 tháng",
-        "shortDescription": "Youtube Premium chính chủ 3 tháng dạng tài khoản chính chủ, thời hạn 3 tháng, bảo hành 3 tháng.",
+        "name": "Youtube premium + Gemini Pro 5TB chính chủ 3 tháng",
+        "shortDescription": "Youtube premium + Gemini Pro 5TB chính chủ 3 tháng dạng tài khoản chính chủ, thời hạn 3 tháng, bảo hành 3 tháng.",
         "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full .\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Youtube không cần mật khẩu\nTính Năng:\nXem video không quảng cáo trên YouTube.\nTải video và playlist để xem offline, có cả Smart Downloads.\nPhát trong nền và Picture-in-picture (PiP) trên điện thoại.\nKèm YouTube Music Premium: nghe nhạc không quảng cáo, tải offline, phát nền, chuyển nhanh giữa audio và video.\nXem tiếp trên nhiều thiết bị từ đúng vị trí đang dở.\nMột số quyền lợi thêm tùy thiết bị/khu vực: Jump ahead, 1080p Premium, âm thanh chất lượng cao, hàng đợi video trên mobile, ưu đãi/thử nghiệm tính năng mới.",
         "category": "Tài khoản số",
         "categories": [
           "Tài khoản số",
-          "Khác"
+          "Gemini",
+          "AI"
         ]
       },
       "en": {
-        "name": "Youtube Premium primary account 3 months",
-        "shortDescription": "Youtube Premium primary account 3 months with primary account delivery, 3 months of use, and 3 months warranty.",
-        "fullDescription": "Youtube Premium primary account 3 months with primary account delivery, 3 months of use, and 3 months warranty.\n\nPrimary account. Usage term: 3 months. Warranty: 3 months.\n\nYoutube Premium primary account 3 months was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "name": "Youtube premium + Gemini Pro 5TB primary account 3 months",
+        "shortDescription": "Youtube premium + Gemini Pro 5TB primary account 3 months with primary account delivery, 3 months of use, and 3 months warranty.",
+        "fullDescription": "Youtube premium + Gemini Pro 5TB primary account 3 months with primary account delivery, 3 months of use, and 3 months warranty.\n\nPrimary account. Usage term: 3 months. Warranty: 3 months.\n\nYoutube premium + Gemini Pro 5TB primary account 3 months was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
         "category": "Digital accounts",
         "categories": [
           "Digital accounts",
-          "Other"
+          "Gemini",
+          "AI"
         ]
       }
     }
   },
   {
     "id": "zalo-0994bb71a934406a1925",
-    "name": "Youtube Premium chính chủ 1 tháng",
-    "slug": "youtube-premium-chinh-chu-1-thang-0994bb71",
-    "shortDescription": "Youtube Premium chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "name": "Youtube premium + Gemini Pro 5TB chính chủ 1 tháng",
+    "slug": "youtube-premium-gemini-pro-5tb-chinh-chu-1-thang-0994bb71",
+    "shortDescription": "Youtube premium + Gemini Pro 5TB chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full .\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Youtube không cần mật khẩu\nTính Năng:\nXem video không quảng cáo trên YouTube.\nTải video và playlist để xem offline, có cả Smart Downloads.\nPhát trong nền và Picture-in-picture (PiP) trên điện thoại.\nKèm YouTube Music Premium: nghe nhạc không quảng cáo, tải offline, phát nền, chuyển nhanh giữa audio và video.\nXem tiếp trên nhiều thiết bị từ đúng vị trí đang dở.\nMột số quyền lợi thêm tùy thiết bị/khu vực: Jump ahead, 1080p Premium, âm thanh chất lượng cao, hàng đợi video trên mobile, ưu đãi/thử nghiệm tính năng mới.",
     "usageDuration": "1 tháng",
-    "costPrice": 59000,
-    "retailPrice": 59000,
+    "costPrice": 79000,
+    "retailPrice": 79000,
     "customerTierPrices": {
-      "regular": 59000,
-      "vip": 59000
+      "regular": 79000,
+      "vip": 79000
     },
     "category": "Tài khoản số",
     "categories": [
       "Tài khoản số",
-      "Khác"
+      "Gemini",
+      "AI"
     ],
     "accountType": "primary",
     "featured": false,
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 59000,
-      "vip": 59000
+      "regular": 79000,
+      "vip": 79000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/8202241411887168664/090bbe78f7d5798b20c4.jpg",
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:09:00.000Z",
-    "updatedAt": "2026-03-14T00:09:30.000Z",
+    "createdAt": "2026-03-14T00:13:00.000Z",
+    "updatedAt": "2026-03-14T00:13:30.000Z",
     "translations": {
       "vi": {
-        "name": "Youtube Premium chính chủ 1 tháng",
-        "shortDescription": "Youtube Premium chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "name": "Youtube premium + Gemini Pro 5TB chính chủ 1 tháng",
+        "shortDescription": "Youtube premium + Gemini Pro 5TB chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
         "fullDescription": "Dạng add family, bảo mật, an toàn, bảo hành full .\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Youtube không cần mật khẩu\nTính Năng:\nXem video không quảng cáo trên YouTube.\nTải video và playlist để xem offline, có cả Smart Downloads.\nPhát trong nền và Picture-in-picture (PiP) trên điện thoại.\nKèm YouTube Music Premium: nghe nhạc không quảng cáo, tải offline, phát nền, chuyển nhanh giữa audio và video.\nXem tiếp trên nhiều thiết bị từ đúng vị trí đang dở.\nMột số quyền lợi thêm tùy thiết bị/khu vực: Jump ahead, 1080p Premium, âm thanh chất lượng cao, hàng đợi video trên mobile, ưu đãi/thử nghiệm tính năng mới.",
         "category": "Tài khoản số",
         "categories": [
           "Tài khoản số",
-          "Khác"
+          "Gemini",
+          "AI"
         ]
       },
       "en": {
-        "name": "Youtube Premium primary account 1 month",
-        "shortDescription": "Youtube Premium primary account 1 month with primary account delivery, 1 month of use, and 1 month warranty.",
-        "fullDescription": "Youtube Premium primary account 1 month with primary account delivery, 1 month of use, and 1 month warranty.\n\nPrimary account. Usage term: 1 month. Warranty: 1 month.\n\nYoutube Premium primary account 1 month was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "name": "Youtube premium + Gemini Pro 5TB primary account 1 month",
+        "shortDescription": "Youtube premium + Gemini Pro 5TB primary account 1 month with primary account delivery, 1 month of use, and 1 month warranty.",
+        "fullDescription": "Youtube premium + Gemini Pro 5TB primary account 1 month with primary account delivery, 1 month of use, and 1 month warranty.\n\nPrimary account. Usage term: 1 month. Warranty: 1 month.\n\nYoutube premium + Gemini Pro 5TB primary account 1 month was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
         "category": "Digital accounts",
         "categories": [
           "Digital accounts",
-          "Other"
+          "Gemini",
+          "AI"
         ]
       }
     }
@@ -673,8 +924,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:10:00.000Z",
-    "updatedAt": "2026-03-14T00:10:30.000Z",
+    "createdAt": "2026-03-14T00:14:00.000Z",
+    "updatedAt": "2026-03-14T00:14:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 năm chính chủ",
@@ -732,8 +983,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:11:00.000Z",
-    "updatedAt": "2026-03-14T00:11:30.000Z",
+    "createdAt": "2026-03-14T00:15:00.000Z",
+    "updatedAt": "2026-03-14T00:15:30.000Z",
     "translations": {
       "vi": {
         "name": "Claude Max 20x 1 tháng, chính chủ",
@@ -791,8 +1042,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:12:00.000Z",
-    "updatedAt": "2026-03-14T00:12:30.000Z",
+    "createdAt": "2026-03-14T00:16:00.000Z",
+    "updatedAt": "2026-03-14T00:16:30.000Z",
     "translations": {
       "vi": {
         "name": "Claude Max 5x chính chủ 1 tháng",
@@ -820,10 +1071,10 @@
   },
   {
     "id": "zalo-281e4d2f5c6ab534ec7b",
-    "name": "Claude Pro chính chủ 1 tháng",
-    "slug": "claude-pro-chinh-chu-1-thang-281e4d2f",
-    "shortDescription": "Claude Pro chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
-    "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nGiới hạn tin nhắn gấp 5 lần: Cho phép bạn làm việc liên tục với cường độ cao mà không lo bị ngắt quãng như bản miễn phí.\n\nMô hình thông minh nhất (Claude 3 Opus): Truy cập toàn bộ sức mạnh của Anthropic, đặc biệt là bản Opus chuyên giải quyết các vấn đề logic phức tạp, viết code chuyên sâu và phân tích dữ liệu đa tầng.\n\nTính năng Projects (Dự án): Đây là điểm \"ăn tiền\" nhất. Bạn có thể tạo các không gian riêng, tải lên hàng chục tệp tài liệu hoặc mã nguồn. Claude sẽ ghi nhớ toàn bộ nội dung đó để hỗ trợ xuyên suốt quá trình bạn thực hiện dự án đó.\n\nCửa sổ ngữ cảnh 200.000 token: Khả năng xử lý lượng dữ liệu khổng lồ (tương đương một cuốn sách hoặc kho code lớn) trong một lần yêu cầu mà không bị \"quên\" thông tin.\n\nArtifacts & Ưu tiên: Xem trực tiếp kết quả hiển thị (như code giao diện, biểu đồ) ngay bên cạnh khung chat và luôn được ưu tiên truy cập khi hệ thống quá tải.",
+    "name": "Claude Pro Team chính chủ 1 tháng",
+    "slug": "claude-pro-team-chinh-chu-1-thang-281e4d2f",
+    "shortDescription": "Claude Pro Team chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nHơn 25% quota pro\nGiới hạn tin nhắn gấp 5 lần: Cho phép bạn làm việc liên tục với cường độ cao mà không lo bị ngắt quãng như bản miễn phí.\n\nMô hình thông minh nhất (Claude 3 Opus): Truy cập toàn bộ sức mạnh của Anthropic, đặc biệt là bản Opus chuyên giải quyết các vấn đề logic phức tạp, viết code chuyên sâu và phân tích dữ liệu đa tầng.\n\nTính năng Projects (Dự án): Đây là điểm \"ăn tiền\" nhất. Bạn có thể tạo các không gian riêng, tải lên hàng chục tệp tài liệu hoặc mã nguồn. Claude sẽ ghi nhớ toàn bộ nội dung đó để hỗ trợ xuyên suốt quá trình bạn thực hiện dự án đó.\n\nCửa sổ ngữ cảnh 200.000 token: Khả năng xử lý lượng dữ liệu khổng lồ (tương đương một cuốn sách hoặc kho code lớn) trong một lần yêu cầu mà không bị \"quên\" thông tin.\n\nArtifacts & Ưu tiên: Xem trực tiếp kết quả hiển thị (như code giao diện, biểu đồ) ngay bên cạnh khung chat và luôn được ưu tiên truy cập khi hệ thống quá tải.",
     "usageDuration": "1 tháng",
     "costPrice": 429000,
     "retailPrice": 429000,
@@ -850,13 +1101,13 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:13:00.000Z",
-    "updatedAt": "2026-03-14T00:13:30.000Z",
+    "createdAt": "2026-03-14T00:17:00.000Z",
+    "updatedAt": "2026-03-14T00:17:30.000Z",
     "translations": {
       "vi": {
-        "name": "Claude Pro chính chủ 1 tháng",
-        "shortDescription": "Claude Pro chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
-        "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nGiới hạn tin nhắn gấp 5 lần: Cho phép bạn làm việc liên tục với cường độ cao mà không lo bị ngắt quãng như bản miễn phí.\n\nMô hình thông minh nhất (Claude 3 Opus): Truy cập toàn bộ sức mạnh của Anthropic, đặc biệt là bản Opus chuyên giải quyết các vấn đề logic phức tạp, viết code chuyên sâu và phân tích dữ liệu đa tầng.\n\nTính năng Projects (Dự án): Đây là điểm \"ăn tiền\" nhất. Bạn có thể tạo các không gian riêng, tải lên hàng chục tệp tài liệu hoặc mã nguồn. Claude sẽ ghi nhớ toàn bộ nội dung đó để hỗ trợ xuyên suốt quá trình bạn thực hiện dự án đó.\n\nCửa sổ ngữ cảnh 200.000 token: Khả năng xử lý lượng dữ liệu khổng lồ (tương đương một cuốn sách hoặc kho code lớn) trong một lần yêu cầu mà không bị \"quên\" thông tin.\n\nArtifacts & Ưu tiên: Xem trực tiếp kết quả hiển thị (như code giao diện, biểu đồ) ngay bên cạnh khung chat và luôn được ưu tiên truy cập khi hệ thống quá tải.",
+        "name": "Claude Pro Team chính chủ 1 tháng",
+        "shortDescription": "Claude Pro Team chính chủ 1 tháng dạng tài khoản chính chủ, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "fullDescription": "-Dạng acc chính chủ, bảo mật, an toàn, bảo hành full 1 tháng\n-Gia hạn tiếp được\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail, mật khẩu\n- Gửi mã code cho Shop được gửi đến thư.\n\nTính năng:\nHơn 25% quota pro\nGiới hạn tin nhắn gấp 5 lần: Cho phép bạn làm việc liên tục với cường độ cao mà không lo bị ngắt quãng như bản miễn phí.\n\nMô hình thông minh nhất (Claude 3 Opus): Truy cập toàn bộ sức mạnh của Anthropic, đặc biệt là bản Opus chuyên giải quyết các vấn đề logic phức tạp, viết code chuyên sâu và phân tích dữ liệu đa tầng.\n\nTính năng Projects (Dự án): Đây là điểm \"ăn tiền\" nhất. Bạn có thể tạo các không gian riêng, tải lên hàng chục tệp tài liệu hoặc mã nguồn. Claude sẽ ghi nhớ toàn bộ nội dung đó để hỗ trợ xuyên suốt quá trình bạn thực hiện dự án đó.\n\nCửa sổ ngữ cảnh 200.000 token: Khả năng xử lý lượng dữ liệu khổng lồ (tương đương một cuốn sách hoặc kho code lớn) trong một lần yêu cầu mà không bị \"quên\" thông tin.\n\nArtifacts & Ưu tiên: Xem trực tiếp kết quả hiển thị (như code giao diện, biểu đồ) ngay bên cạnh khung chat và luôn được ưu tiên truy cập khi hệ thống quá tải.",
         "category": "Tài khoản số",
         "categories": [
           "Tài khoản số",
@@ -865,9 +1116,9 @@
         ]
       },
       "en": {
-        "name": "Claude Pro primary account 1 month",
-        "shortDescription": "Claude Pro primary account 1 month with primary account delivery, 1 month of use, and 1 month warranty.",
-        "fullDescription": "Claude Pro primary account 1 month with primary account delivery, 1 month of use, and 1 month warranty.\n\nPrimary account. Usage term: 1 month. Warranty: 1 month.\n\nClaude Pro primary account 1 month was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "name": "Claude Pro Team primary account 1 month",
+        "shortDescription": "Claude Pro Team primary account 1 month with primary account delivery, 1 month of use, and 1 month warranty.",
+        "fullDescription": "Claude Pro Team primary account 1 month with primary account delivery, 1 month of use, and 1 month warranty.\n\nPrimary account. Usage term: 1 month. Warranty: 1 month.\n\nClaude Pro Team primary account 1 month was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
         "category": "Digital accounts",
         "categories": [
           "Digital accounts",
@@ -881,14 +1132,14 @@
     "id": "zalo-13bd2d8c3cc9d5978cd8",
     "name": "GitHub Pro 1 tháng acc cấp",
     "slug": "github-pro-1-thang-acc-cap-13bd2d8c",
-    "shortDescription": "GitHub Copilot Pro 1 tháng acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+    "shortDescription": "GitHub Pro 1 tháng acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng. Liên hệ để nhận báo giá chi tiết.",
     "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\nTính năng\n1. Tính năng quản lý Code (Trong Repo Riêng tư)\nĐây là nâng cấp quan trọng nhất so với bản Miễn phí:\n\nBảo vệ nhánh (Protected branches): Ngăn chặn việc xóa hoặc đẩy code trực tiếp vào nhánh chính khi chưa được kiểm duyệt.\n\nYêu cầu Review: Bắt buộc phải có người khác xác nhận (Approve) mã nguồn trước khi gộp (Merge).\n\nChỉ định chủ sở hữu (Code Owners): Tự động phân quyền cho người chịu trách nhiệm kiểm tra các phần code cụ thể.\n\nWiki & GitHub Pages: Cho phép tạo tài liệu hướng dẫn và website giới thiệu ngay cả trong dự án riêng tư.\n\n2. Tăng định mức tài nguyên (Quotas)\nGitHub Actions: Tăng lên 3.000 phút chạy automation mỗi tháng (so với 2.000 của bản Free).\n\nGitHub Packages: Tăng lên 2 GB lưu trữ mã nguồn và thư viện.\n\nCodespaces: Hỗ trợ lưu trữ môi trường lập trình đám mây lên đến 20 GB.\n\n3. Phân tích & Hỗ trợ\nInsights: Xem biểu đồ chi tiết về lưu lượng truy cập (Traffic) và đóng góp của các thành viên trong các dự án riêng tư.\n\nHỗ trợ ưu tiên: Được đội ngũ GitHub phản hồi qua email nhanh hơn khi gặp sự cố kỹ thuật.",
     "usageDuration": "1 tháng",
-    "costPrice": 79000,
-    "retailPrice": 79000,
+    "costPrice": 0,
+    "retailPrice": 0,
     "customerTierPrices": {
-      "regular": 79000,
-      "vip": 79000
+      "regular": 0,
+      "vip": 0
     },
     "category": "Tài khoản số",
     "categories": [
@@ -901,20 +1152,20 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 79000,
-      "vip": 79000
+      "regular": 0,
+      "vip": 0
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/1661773102357547765/98bbf89fd4165a480307.jpg",
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:14:00.000Z",
-    "updatedAt": "2026-03-14T00:14:30.000Z",
+    "createdAt": "2026-03-14T00:18:00.000Z",
+    "updatedAt": "2026-03-14T00:18:30.000Z",
     "translations": {
       "vi": {
-        "name": "GitHub Copilot Pro 1 tháng acc cấp",
-        "shortDescription": "GitHub Copilot Pro 1 tháng acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
+        "name": "GitHub Pro 1 tháng acc cấp",
+        "shortDescription": "GitHub Pro 1 tháng acc cấp dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng. Liên hệ để nhận báo giá chi tiết.",
         "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\nTính năng\n1. Tính năng quản lý Code (Trong Repo Riêng tư)\nĐây là nâng cấp quan trọng nhất so với bản Miễn phí:\n\nBảo vệ nhánh (Protected branches): Ngăn chặn việc xóa hoặc đẩy code trực tiếp vào nhánh chính khi chưa được kiểm duyệt.\n\nYêu cầu Review: Bắt buộc phải có người khác xác nhận (Approve) mã nguồn trước khi gộp (Merge).\n\nChỉ định chủ sở hữu (Code Owners): Tự động phân quyền cho người chịu trách nhiệm kiểm tra các phần code cụ thể.\n\nWiki & GitHub Pages: Cho phép tạo tài liệu hướng dẫn và website giới thiệu ngay cả trong dự án riêng tư.\n\n2. Tăng định mức tài nguyên (Quotas)\nGitHub Actions: Tăng lên 3.000 phút chạy automation mỗi tháng (so với 2.000 của bản Free).\n\nGitHub Packages: Tăng lên 2 GB lưu trữ mã nguồn và thư viện.\n\nCodespaces: Hỗ trợ lưu trữ môi trường lập trình đám mây lên đến 20 GB.\n\n3. Phân tích & Hỗ trợ\nInsights: Xem biểu đồ chi tiết về lưu lượng truy cập (Traffic) và đóng góp của các thành viên trong các dự án riêng tư.\n\nHỗ trợ ưu tiên: Được đội ngũ GitHub phản hồi qua email nhanh hơn khi gặp sự cố kỹ thuật.",
         "category": "Tài khoản số",
         "categories": [
@@ -925,8 +1176,8 @@
       },
       "en": {
         "name": "GitHub Pro 1 month issued account",
-        "shortDescription": "GitHub Pro 1 month issued account with dedicated account delivery, 1 month of use, and 1 month warranty.",
-        "fullDescription": "GitHub Pro 1 month issued account with dedicated account delivery, 1 month of use, and 1 month warranty.\n\nDedicated account. Usage term: 1 month. Warranty: 1 month.\n\nGitHub Pro 1 month issued account was imported from the store's Zalo catalog listing.\n\nRetail pricing is synced from the official Zalo catalog. Contact support for the latest delivery details before checkout.",
+        "shortDescription": "GitHub Pro 1 month issued account with dedicated account delivery, 1 month of use, and 1 month warranty. Contact us for a custom quote.",
+        "fullDescription": "GitHub Pro 1 month issued account with dedicated account delivery, 1 month of use, and 1 month warranty. Contact us for a custom quote.\n\nDedicated account. Usage term: 1 month. Warranty: 1 month.\n\nGitHub Pro 1 month issued account was imported from the store's Zalo catalog listing.\n\nThe Zalo catalog shows either a custom quote or no fixed price for this item. Contact support for the latest delivery details before checkout.",
         "category": "Digital accounts",
         "categories": [
           "Digital accounts",
@@ -934,8 +1185,7 @@
           "Coding"
         ]
       }
-    },
-    "warrantyDuration": "1 tháng"
+    }
   },
   {
     "id": "zalo-c9839bbe8afb63a53aea",
@@ -969,8 +1219,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:15:00.000Z",
-    "updatedAt": "2026-03-14T00:15:30.000Z",
+    "createdAt": "2026-03-14T00:19:00.000Z",
+    "updatedAt": "2026-03-14T00:19:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 năm chính chủ, mỗi tháng 6000 credit",
@@ -1028,8 +1278,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:16:00.000Z",
-    "updatedAt": "2026-03-14T00:16:30.000Z",
+    "createdAt": "2026-03-14T00:20:00.000Z",
+    "updatedAt": "2026-03-14T00:20:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 năm chính chủ, 0 credit",
@@ -1087,8 +1337,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:17:00.000Z",
-    "updatedAt": "2026-03-14T00:17:30.000Z",
+    "createdAt": "2026-03-14T00:21:00.000Z",
+    "updatedAt": "2026-03-14T00:21:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 tháng chính chủ, 12500 credit",
@@ -1146,8 +1396,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:18:00.000Z",
-    "updatedAt": "2026-03-14T00:18:30.000Z",
+    "createdAt": "2026-03-14T00:22:00.000Z",
+    "updatedAt": "2026-03-14T00:22:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra 1 tháng, acc chính chủ 0 credit",
@@ -1205,8 +1455,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:19:00.000Z",
-    "updatedAt": "2026-03-14T00:19:30.000Z",
+    "createdAt": "2026-03-14T00:23:00.000Z",
+    "updatedAt": "2026-03-14T00:23:30.000Z",
     "translations": {
       "vi": {
         "name": "Adobe All Apps 4 tháng",
@@ -1264,8 +1514,8 @@
     "warrantyMonths": 3,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:20:00.000Z",
-    "updatedAt": "2026-03-14T00:20:30.000Z",
+    "createdAt": "2026-03-14T00:24:00.000Z",
+    "updatedAt": "2026-03-14T00:24:30.000Z",
     "translations": {
       "vi": {
         "name": "Microsoft 365 Premium 1 năm, chính chủ",
@@ -1324,8 +1574,8 @@
     "warrantyMonths": 6,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:21:00.000Z",
-    "updatedAt": "2026-03-14T00:21:30.000Z",
+    "createdAt": "2026-03-14T00:25:00.000Z",
+    "updatedAt": "2026-03-14T00:25:30.000Z",
     "translations": {
       "vi": {
         "name": "Microsoft 365 Premium 1 năm, chính chủ",
@@ -1385,8 +1635,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:22:00.000Z",
-    "updatedAt": "2026-03-14T00:22:30.000Z",
+    "createdAt": "2026-03-14T00:26:00.000Z",
+    "updatedAt": "2026-03-14T00:26:30.000Z",
     "translations": {
       "vi": {
         "name": "Netflit 1 tháng",
@@ -1444,8 +1694,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:23:00.000Z",
-    "updatedAt": "2026-03-14T00:23:30.000Z",
+    "createdAt": "2026-03-14T00:27:00.000Z",
+    "updatedAt": "2026-03-14T00:27:30.000Z",
     "translations": {
       "vi": {
         "name": "Canva Edu",
@@ -1502,8 +1752,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:24:00.000Z",
-    "updatedAt": "2026-03-14T00:24:30.000Z",
+    "createdAt": "2026-03-14T00:28:00.000Z",
+    "updatedAt": "2026-03-14T00:28:30.000Z",
     "translations": {
       "vi": {
         "name": "Tài khoản khác.",
@@ -1559,8 +1809,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:25:00.000Z",
-    "updatedAt": "2026-03-14T00:25:30.000Z",
+    "createdAt": "2026-03-14T00:29:00.000Z",
+    "updatedAt": "2026-03-14T00:29:30.000Z",
     "translations": {
       "vi": {
         "name": "Duolingo 1 năm",
@@ -1618,8 +1868,8 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:26:00.000Z",
-    "updatedAt": "2026-03-14T00:26:30.000Z",
+    "createdAt": "2026-03-14T00:30:00.000Z",
+    "updatedAt": "2026-03-14T00:30:30.000Z",
     "translations": {
       "vi": {
         "name": "Capcut Pro 1 năm",
@@ -1677,8 +1927,8 @@
     "warrantyMonths": 6,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:27:00.000Z",
-    "updatedAt": "2026-03-14T00:27:30.000Z",
+    "createdAt": "2026-03-14T00:31:00.000Z",
+    "updatedAt": "2026-03-14T00:31:30.000Z",
     "translations": {
       "vi": {
         "name": "Capcut Pro 6 Tháng",
@@ -1711,11 +1961,11 @@
     "shortDescription": "CapCut Pro 1 tháng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n-Đăng nhập trên 2 điện thoại và 1 pc\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Capcut\n\nTính năng:\n\n- Không Watermark: Xuất video sạch, không có logo CapCut.\n\n- Kho tài nguyên cao cấp: Truy cập không giới hạn các hiệu ứng, bộ lọc, phông chữ, mẫu template và thư viện nhạc bản quyền chất lượng cao.\n\n- Công cụ AI nâng cao: Xóa nền thông minh, cách ly giọng nói (tách lời khỏi nhạc), xóa vật thể, và các hiệu ứng chuyển động chuyên sâu.\n\n- Xuất video chất lượng cao: Hỗ trợ xuất 4K, HDR, 60fps với độ nét tối đa.\n\n- Chỉnh sửa chuyên nghiệp: Chỉnh màu nâng cao (Color Grading/LUTs), làm việc với nhiều lớp video (multi-layer), và sử dụng keyframe chi tiết.\n\n- Đồng bộ hóa & Lưu trữ: Dung lượng đám mây (Cloud) lớn, giúp bạn bắt đầu dựng trên điện thoại và tiếp tục trên máy tính (PC) mượt mà.",
     "usageDuration": "1 tháng",
-    "costPrice": 35000,
-    "retailPrice": 35000,
+    "costPrice": 39000,
+    "retailPrice": 39000,
     "customerTierPrices": {
-      "regular": 35000,
-      "vip": 35000
+      "regular": 39000,
+      "vip": 39000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -1728,16 +1978,16 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 35000,
-      "vip": 35000
+      "regular": 39000,
+      "vip": 39000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/6073242372759581790/651c16050ff581abd8e4.jpg",
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:28:00.000Z",
-    "updatedAt": "2026-03-14T00:28:30.000Z",
+    "createdAt": "2026-03-14T00:32:00.000Z",
+    "updatedAt": "2026-03-14T00:32:30.000Z",
     "translations": {
       "vi": {
         "name": "CapCut Pro 1 tháng",
@@ -1795,8 +2045,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:29:00.000Z",
-    "updatedAt": "2026-03-14T00:29:30.000Z",
+    "createdAt": "2026-03-14T00:33:00.000Z",
+    "updatedAt": "2026-03-14T00:33:30.000Z",
     "translations": {
       "vi": {
         "name": "Adobe All Apps 1 năm, 2 thiết bị",
@@ -1854,8 +2104,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:30:00.000Z",
-    "updatedAt": "2026-03-14T00:30:30.000Z",
+    "createdAt": "2026-03-14T00:34:00.000Z",
+    "updatedAt": "2026-03-14T00:34:30.000Z",
     "translations": {
       "vi": {
         "name": "Adobe All App 1 tháng",
@@ -1914,8 +2164,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:31:00.000Z",
-    "updatedAt": "2026-03-14T00:31:30.000Z",
+    "createdAt": "2026-03-14T00:35:00.000Z",
+    "updatedAt": "2026-03-14T00:35:30.000Z",
     "translations": {
       "vi": {
         "name": "Super Grok 1 tháng",
@@ -1975,8 +2225,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:32:00.000Z",
-    "updatedAt": "2026-03-14T00:32:30.000Z",
+    "createdAt": "2026-03-14T00:36:00.000Z",
+    "updatedAt": "2026-03-14T00:36:30.000Z",
     "translations": {
       "vi": {
         "name": "Veo Flow Ultra 25.000 credit + anti",
@@ -2007,7 +2257,7 @@
     "name": "Gemini Pro chính chủ 1 năm",
     "slug": "gemini-pro-chinh-chu-1-nam-37fe81d2",
     "shortDescription": "Gemini Pro chính chủ 1 năm dạng tài khoản thuê, thời hạn 1 năm, bảo hành 1 năm.",
-    "fullDescription": "Dạng add Family, bảo mật, an toàn, bảo hành full 1 năm\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Công cụ làm việc & Sáng tạo nâng cao (2TB)\nSức mạnh AI cốt lõi: Truy cập Gemini 3.1 Pro, Deep Research, tạo ảnh (Nano Banana Pro) và video (Veo 3.1/3).\n\nBộ công cụ sáng tạo (Video/Phim): Ưu tiên truy cập Flow (làm phim điện ảnh) và Whisk (tạo video từ hình ảnh).\n\n- Hỗ trợ công việc: Tích hợp Gemini trực tiếp vào Google Docs, Gmail, Vids và NotebookLM (nghiên cứu, tóm tắt âm thanh/video, bài kiểm tra).\n\n- Hệ sinh thái lập trình & Tác nhân: Hạn mức cao cho nền tảng tác nhân tự chủ Google Antigravity và gói Google Developer Program (Gemini CLI, Code Assist, Jules, tín dụng Cloud).\n\n- Tài nguyên: 2 TB bộ nhớ dùng chung (Drive, Gmail, Photos) và 200 tín dụng AI hằng tháng để mở rộng các tính năng chuyên sâu.",
+    "fullDescription": "Dạng add Family, bảo mật, an toàn, bảo hành full 1 năm\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Công cụ làm việc & Sáng tạo nâng cao (5TB)\nSức mạnh AI cốt lõi: Truy cập Gemini 3.1 Pro, Deep Research, tạo ảnh (Nano Banana Pro) và video (Veo 3.1/3).\n\nBộ công cụ sáng tạo (Video/Phim): Ưu tiên truy cập Flow (làm phim điện ảnh) và Whisk (tạo video từ hình ảnh).\n\n- Hỗ trợ công việc: Tích hợp Gemini trực tiếp vào Google Docs, Gmail, Vids và NotebookLM (nghiên cứu, tóm tắt âm thanh/video, bài kiểm tra).\n\n- Hệ sinh thái lập trình & Tác nhân: Hạn mức cao cho nền tảng tác nhân tự chủ Google Antigravity và gói Google Developer Program (Gemini CLI, Code Assist, Jules, tín dụng Cloud).\n\n- Tài nguyên: 5 TB bộ nhớ dùng chung (Drive, Gmail, Photos) và 200 tín dụng AI hằng tháng để mở rộng các tính năng chuyên sâu.",
     "usageDuration": "1 năm",
     "costPrice": 199000,
     "retailPrice": 199000,
@@ -2035,13 +2285,13 @@
     "warrantyMonths": 12,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:33:00.000Z",
-    "updatedAt": "2026-03-14T00:33:30.000Z",
+    "createdAt": "2026-03-14T00:37:00.000Z",
+    "updatedAt": "2026-03-14T00:37:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Pro chính chủ 1 năm",
         "shortDescription": "Gemini Pro chính chủ 1 năm dạng tài khoản thuê, thời hạn 1 năm, bảo hành 1 năm.",
-        "fullDescription": "Dạng add Family, bảo mật, an toàn, bảo hành full 1 năm\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Công cụ làm việc & Sáng tạo nâng cao (2TB)\nSức mạnh AI cốt lõi: Truy cập Gemini 3.1 Pro, Deep Research, tạo ảnh (Nano Banana Pro) và video (Veo 3.1/3).\n\nBộ công cụ sáng tạo (Video/Phim): Ưu tiên truy cập Flow (làm phim điện ảnh) và Whisk (tạo video từ hình ảnh).\n\n- Hỗ trợ công việc: Tích hợp Gemini trực tiếp vào Google Docs, Gmail, Vids và NotebookLM (nghiên cứu, tóm tắt âm thanh/video, bài kiểm tra).\n\n- Hệ sinh thái lập trình & Tác nhân: Hạn mức cao cho nền tảng tác nhân tự chủ Google Antigravity và gói Google Developer Program (Gemini CLI, Code Assist, Jules, tín dụng Cloud).\n\n- Tài nguyên: 2 TB bộ nhớ dùng chung (Drive, Gmail, Photos) và 200 tín dụng AI hằng tháng để mở rộng các tính năng chuyên sâu.",
+        "fullDescription": "Dạng add Family, bảo mật, an toàn, bảo hành full 1 năm\n\nĐịnh dạng khi giao acc:\n- Khách hàng gửi Gmail dùng Gemini không cần mật khẩu\n\nTính Năng:\n- Công cụ làm việc & Sáng tạo nâng cao (5TB)\nSức mạnh AI cốt lõi: Truy cập Gemini 3.1 Pro, Deep Research, tạo ảnh (Nano Banana Pro) và video (Veo 3.1/3).\n\nBộ công cụ sáng tạo (Video/Phim): Ưu tiên truy cập Flow (làm phim điện ảnh) và Whisk (tạo video từ hình ảnh).\n\n- Hỗ trợ công việc: Tích hợp Gemini trực tiếp vào Google Docs, Gmail, Vids và NotebookLM (nghiên cứu, tóm tắt âm thanh/video, bài kiểm tra).\n\n- Hệ sinh thái lập trình & Tác nhân: Hạn mức cao cho nền tảng tác nhân tự chủ Google Antigravity và gói Google Developer Program (Gemini CLI, Code Assist, Jules, tín dụng Cloud).\n\n- Tài nguyên: 5 TB bộ nhớ dùng chung (Drive, Gmail, Photos) và 200 tín dụng AI hằng tháng để mở rộng các tính năng chuyên sâu.",
         "category": "Tài khoản số",
         "categories": [
           "Tài khoản số",
@@ -2096,8 +2346,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:34:00.000Z",
-    "updatedAt": "2026-03-14T00:34:30.000Z",
+    "createdAt": "2026-03-14T00:38:00.000Z",
+    "updatedAt": "2026-03-14T00:38:30.000Z",
     "translations": {
       "vi": {
         "name": "Gemini Ultra chính chủ 1 tháng, 6000 credit",
@@ -2130,11 +2380,11 @@
     "shortDescription": "ChatGPT Plus 1 tháng acc cấp riêng dạng tài khoản cấp riêng, thời hạn 1 tháng, bảo hành 1 tháng.",
     "fullDescription": "-Dạng acc cấp riêng, bảo mật, an toàn, bảo hành full 1 tháng\n-Không gia hạn tiếp được phải mua acc mới\n-Đăng nhập bằng Email.\n\nĐịnh dạng khi giao acc:\n- Email | Mật khẩu Email | Mật khẩu ChatGPT\n- Mã Token nhận thư + web nhận thư, coppy token rồi dán vào web nhận thư để nhận thư từ mail.\n\nTính năng:\n-Giải quyết các vấn đề phức tạp\n-Thực hiện các đoạn chat kéo dài qua nhiều phiên\n-Tạo nhiều hình ảnh hơn và nhanh hơn\n-Ghi nhớ các mục tiêu và cuộc trò chuyện trước đây\n-Lên kế hoạch đi lại và nhiệm vụ với chế độ tác nhân\n-Tổ chức các dự án và tùy chỉnh GPT\n-Sản xuất và chia sẻ video trên Sora\n-Viết mã và xây dựng ứng dụng với Codex",
     "usageDuration": "1 tháng",
-    "costPrice": 99000,
-    "retailPrice": 99000,
+    "costPrice": 149000,
+    "retailPrice": 149000,
     "customerTierPrices": {
-      "regular": 99000,
-      "vip": 99000
+      "regular": 149000,
+      "vip": 149000
     },
     "category": "Tài khoản số",
     "categories": [
@@ -2147,16 +2397,16 @@
     "isFlashSale": false,
     "published": true,
     "tierPrices": {
-      "regular": 99000,
-      "vip": 99000
+      "regular": 149000,
+      "vip": 149000
     },
     "overridePrices": {},
     "image": "https://f1-zpprd.zdn.vn/3286945458594084943/5e00320d29fda7a3feec.jpg",
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:35:00.000Z",
-    "updatedAt": "2026-03-14T00:35:30.000Z",
+    "createdAt": "2026-03-14T00:39:00.000Z",
+    "updatedAt": "2026-03-14T00:39:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 tháng acc cấp riêng",
@@ -2214,8 +2464,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:36:00.000Z",
-    "updatedAt": "2026-03-14T00:36:30.000Z",
+    "createdAt": "2026-03-14T00:40:00.000Z",
+    "updatedAt": "2026-03-14T00:40:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Plus 1 tháng chính chủ",
@@ -2273,8 +2523,8 @@
     "warrantyMonths": 1,
     "stock": 0,
     "points": 0,
-    "createdAt": "2026-03-14T00:37:00.000Z",
-    "updatedAt": "2026-03-14T00:37:30.000Z",
+    "createdAt": "2026-03-14T00:41:00.000Z",
+    "updatedAt": "2026-03-14T00:41:30.000Z",
     "translations": {
       "vi": {
         "name": "ChatGPT Team(Business)",

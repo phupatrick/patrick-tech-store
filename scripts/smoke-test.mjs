@@ -130,7 +130,8 @@ const main = async () => {
     assert(homeEnglish.includes("Digital accounts"), "English homepage did not switch content.");
 
     const warranty = await fetchText("/warranty");
-    assert(warranty.length > 1000, "Warranty page response is unexpectedly short.");
+    assert(warranty.includes("Tra cứu bảo hành"), "Warranty page does not contain expected heading.");
+    assert(warranty.includes("Kiểm tra tình trạng hỗ trợ"), "Warranty page does not contain expected support copy.");
 
     const adminLogin = await fetchText("/admin/login");
     assert(adminLogin.includes("Đăng nhập"), "Admin login page did not render expected Vietnamese text.");

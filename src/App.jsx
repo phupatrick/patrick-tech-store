@@ -228,8 +228,17 @@ const feeFor = (value) => Math.max((value / 25000) * 0.01, 0.5);
 
 function normalizeDescription(text) {
   if (!text || typeof text !== 'string') return '';
-  const cleaned = text.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
-  return cleaned;
+  return text
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/p>/gi, '\n\n')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/\r\n?/g, '\n')
+    .split('\n')
+    .map((line) => line.replace(/[\t ]+/g, ' ').trim())
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 }
 
 function isDescriptionNoise(text, priceText = '') {

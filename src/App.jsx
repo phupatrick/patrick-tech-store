@@ -206,11 +206,7 @@ const englishTerms = [
 function translateCatalogText(text, language) {
   if (!text || language === 'vi') return text;
   const translatedPhrases = englishCatalogPhrases.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), text);
-  const translatedTerms = englishTerms.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), translatedPhrases);
-  if (/[\u00c0-\u1ef9]/.test(translatedTerms)) {
-    return 'Product details are available from the official catalog. Contact Patrick Tech Media for purchase and support information.';
-  }
-  return translatedTerms;
+  return englishTerms.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), translatedPhrases);
 }
 
 function localizedCategory(language) {
@@ -337,6 +333,7 @@ export default function App() {
   const [catalogStatus, setCatalogStatus] = useState('loading');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [activePage, setActivePage] = useState('store');
+  const [translatedCatalog, setTranslatedCatalog] = useState({});
 
   const t = copy[language];
   const tabs = pageTabs[language];
@@ -344,7 +341,6 @@ export default function App() {
     ...product,
     title: translateCatalogText(product.title, language),
     category: localizedCategory(language),
-    description: translateCatalogText(product.description, language),
   })), [products, language]);
   const priceInput = Number(sellPrice.replace(/\D/g, '')) || 0;
   const pageNote = activePage === 'seller'
@@ -357,6 +353,30 @@ export default function App() {
     () => localizedProducts.filter((product) => `${product.title} ${product.category} ${product.description || ''}`.toLowerCase().includes(query.toLowerCase())),
     [localizedProducts, query]
   );
+
+  useEffect(() => {
+    if (language !== 'en' || !selectedProduct?.description) return;
+    const productKey = String(selectedProduct.id || selectedProduct.path || selectedProduct.title);
+    if (translatedCatalog[productKey]) return;
+
+    let active = true;
+    fetch('/api/translate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: selectedProduct.description }),
+    })
+      .then((response) => (response.ok ? response.json() : Promise.reject(new Error('translation unavailable'))))
+      .then((data) => {
+        if (active && data.translated) {
+          setTranslatedCatalog((current) => ({ ...current, [productKey]: data.translated }));
+        }
+      })
+      .catch(() => {
+        if (active) setTranslatedCatalog((current) => ({ ...current, [productKey]: translateCatalogText(selectedProduct.description, 'en') }));
+      });
+
+    return () => { active = false; };
+  }, [language, selectedProduct, translatedCatalog]);
 
   const showNotice = (message) => {
     setNotice(message);
@@ -596,7 +616,13 @@ export default function App() {
                     </dl>
                   </div>
                 </div>
-                <div className="description-sheet">{selectedProduct?.description ? <CatalogDescription text={selectedProduct.description} /> : t.noDescription}</div>
+                <div className="description-sheet">
+                  {selectedProduct?.description
+                    ? <CatalogDescription text={language === 'en'
+                      ? (translatedCatalog[String(selectedProduct.id || selectedProduct.path || selectedProduct.title)] || 'Translating product details...')
+                      : selectedProduct.description} />
+                    : t.noDescription}
+                </div>
                 {selectedProduct?.path ? <a className="catalog-link" href={selectedProduct.path} target="_blank" rel="noreferrer">{t.catalogLink}</a> : null}
                 <button className="button button-primary button-full" onClick={() => setModal('contact')}>{t.buyNow}</button>
               </div>

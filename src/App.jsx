@@ -162,7 +162,32 @@ const copy = {
 
 const VND_PER_USD = 26000;
 
+// Catalog descriptions are authored in Vietnamese. Translate complete support
+// sentences before individual terms so English product details remain readable.
+const englishCatalogPhrases = [
+  [/📦\s*Định dạng:\s*Link Ưu Đãi/gi, '📦 Format: Discount link'],
+  [/⚠️\s*Lưu ý:/gi, '⚠️ Notes:'],
+  [/Sản phẩm này không bảo hành\s*,?\s*dán link lên là nhận được Plan\.?/gi, 'This product has no warranty. Paste the link to receive the plan.'],
+  [/Link nhận Plan Gemini AI Pro hạn\s*(\d+)\s*months?\.?/gi, 'Gemini AI Pro plan link valid for $1 months.'],
+  [/Không cần thêm thẻ\s*,?\s*không cần sử dụng vpn\.?/gi, 'No card needs to be added and no VPN is required.'],
+  [/Mua về chỉ cần login gmail\s*→\s*dán link\s*→\s*activation Plan\.?/gi, 'After purchase, sign in to Gmail, paste the link, and activate the plan.'],
+  [/Bảo hành 24 giờ mua về sử dụng liền không bảo hành những trường hợp ngâm link quá 24h kể từ lúc mua\.?/gi, 'The link is covered for 24 hours after purchase. Links left unused for more than 24 hours are not covered.'],
+  [/SẢN PHẨM NÀY KHÔNG BẢO HÀNH NẾU BỊ MẤT PLAN HOẶC BAN ACC, VÌ KHÔNG PHẢI ADD FAM MÀ LÀ NÂNG CẤP TRỰC TIẾP TRÊN ACC NÊN CÓ NGUY CƠ BỊ BAN ACC/gi, 'THIS PRODUCT IS NOT COVERED IF THE PLAN IS LOST OR THE ACCOUNT IS BANNED. IT IS A DIRECT ACCOUNT UPGRADE, NOT A FAMILY-PLAN ADDITION, SO ACCOUNT-BAN RISK MAY APPLY.'],
+];
+
 const englishTerms = [
+  [/không bảo hành/gi, 'no warranty'],
+  [/bảo hành/gi, 'warranty'],
+  [/link ưu đãi/gi, 'discount link'],
+  [/định dạng/gi, 'Format'],
+  [/lưu ý/gi, 'Notes'],
+  [/người dùng/gi, 'user'],
+  [/người mua/gi, 'buyer'],
+  [/sử dụng/gi, 'use'],
+  [/không cần/gi, 'not required'],
+  [/mua về/gi, 'after purchase'],
+  [/mất plan/gi, 'lose the plan'],
+  [/ban acc/gi, 'account ban'],
   [/nâng gói/gi, 'Upgrade'],
   [/tài khoản/gi, 'Account'],
   [/bản quyền/gi, 'License'],
@@ -180,7 +205,12 @@ const englishTerms = [
 
 function translateCatalogText(text, language) {
   if (!text || language === 'vi') return text;
-  return englishTerms.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), text);
+  const translatedPhrases = englishCatalogPhrases.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), text);
+  const translatedTerms = englishTerms.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), translatedPhrases);
+  if (/[\u00c0-\u1ef9]/.test(translatedTerms)) {
+    return 'Product details are available from the official catalog. Contact Patrick Tech Media for purchase and support information.';
+  }
+  return translatedTerms;
 }
 
 function localizedCategory(language) {

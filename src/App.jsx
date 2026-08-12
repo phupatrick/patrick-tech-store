@@ -343,14 +343,17 @@ export default function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [activePage, setActivePage] = useState('store');
   const [translatedCatalog, setTranslatedCatalog] = useState({});
+  const [translatedTitles, setTranslatedTitles] = useState({});
 
   const t = copy[language];
   const tabs = pageTabs[language];
   const localizedProducts = useMemo(() => products.map((product) => ({
     ...product,
-    title: translateCatalogText(product.title, language),
+    title: language === 'en'
+      ? (translatedTitles[String(product.id || product.path || product.title)] || translateCatalogText(product.title, language))
+      : product.title,
     category: localizedCategory(language),
-  })), [products, language]);
+  })), [products, language, translatedTitles]);
   const priceInput = Number(sellPrice.replace(/\D/g, '')) || 0;
   const pageNote = activePage === 'seller'
     ? { title: t.sellerNoteTitle, text: t.sellerNoteText }
@@ -362,6 +365,32 @@ export default function App() {
     () => localizedProducts.filter((product) => `${product.title} ${product.category} ${product.description || ''}`.toLowerCase().includes(query.toLowerCase())),
     [localizedProducts, query]
   );
+
+  useEffect(() => {
+    if (language !== 'en' || !products.length) return;
+    const untranslated = products.filter((product) => !translatedTitles[String(product.id || product.path || product.title)]);
+    if (!untranslated.length) return;
+
+    let active = true;
+    fetch('/api/translate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ texts: untranslated.map((product) => product.title) }),
+    })
+      .then((response) => (response.ok ? response.json() : Promise.reject(new Error('title translation unavailable'))))
+      .then((data) => {
+        if (!active || !Array.isArray(data.translations)) return;
+        setTranslatedTitles((current) => ({
+          ...current,
+          ...Object.fromEntries(untranslated.map((product, index) => [
+            String(product.id || product.path || product.title),
+            data.translations[index] || translateCatalogText(product.title, 'en'),
+          ])),
+        }));
+      });
+
+    return () => { active = false; };
+  }, [language, products, translatedTitles]);
 
   useEffect(() => {
     if (language !== 'en' || !selectedProduct?.description) return;
@@ -618,7 +647,7 @@ export default function App() {
                 <div className="product-detail-summary">
                   <img src={selectedProduct?.image} alt="" />
                   <div>
-                    <p className="contact-product">{translateCatalogText(selectedProduct?.title, language)}</p>
+                    <p className="contact-product">{language === 'en' ? (translatedTitles[String(selectedProduct?.id || selectedProduct?.path || selectedProduct?.title)] || translateCatalogText(selectedProduct?.title, 'en')) : selectedProduct?.title}</p>
                     <dl className="detail-list">
                       <div><dt>{t.priceLabel}</dt><dd>{formatPrice(selectedProduct?.price, selectedProduct?.priceText, language)}</dd></div>
                       <div><dt>{t.sellerLabel}</dt><dd>{selectedProduct?.sellerName || 'Patrick Tech Media'}</dd></div>
@@ -639,7 +668,7 @@ export default function App() {
               <div className="contact-sheet">
                 <p className="section-kicker">{localizedCategory(language)}</p>
                 <h2>{t.contactTitle}</h2>
-                <p className="contact-product">{translateCatalogText(selectedProduct?.title, language)}</p>
+                <p className="contact-product">{language === 'en' ? (translatedTitles[String(selectedProduct?.id || selectedProduct?.path || selectedProduct?.title)] || translateCatalogText(selectedProduct?.title, 'en')) : selectedProduct?.title}</p>
                 <div className="contact-links">
                   <a className="button button-primary button-full" href={ZALO_LINK} target="_blank" rel="noreferrer">{t.zalo}</a>
                   <a className="button button-secondary button-full" href={TELEGRAM_LINK} target="_blank" rel="noreferrer">{t.telegram}</a>

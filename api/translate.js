@@ -21,41 +21,40 @@ export default async function handler(request, response) {
     return;
   }
 
-  const { text } = request.body ?? {};
-  if (typeof text !== 'string' || !text.trim()) {
+  const { text, texts } = request.body ?? {};
+  const sourceTexts = Array.isArray(texts) ? texts : [text];
+  if (!sourceTexts.length || sourceTexts.some((item) => typeof item !== 'string' || !item.trim())) {
     response.status(400).json({ error: 'text_required' });
     return;
   }
 
-  if (text.length > MAX_TEXT_LENGTH) {
+  const sourceLength = sourceTexts.reduce((total, item) => total + item.length, 0);
+  if (sourceLength > MAX_TEXT_LENGTH) {
     response.status(413).json({ error: 'text_too_long' });
     return;
   }
 
   try {
-    const preparedText = translateKnownPhrases(text);
-    if (!/[\u00c0-\u1ef9]/.test(preparedText)) {
-      response.status(200).json({ translated: preparedText });
-      return;
-    }
+    const translations = await Promise.all(sourceTexts.map(async (sourceText) => {
+      const preparedText = translateKnownPhrases(sourceText);
+      if (!/[\u00c0-\u1ef9]/.test(preparedText)) return preparedText;
 
-    const translationUrl = new URL('https://translate.googleapis.com/translate_a/single');
-    translationUrl.searchParams.set('client', 'gtx');
-    translationUrl.searchParams.set('sl', 'vi');
-    translationUrl.searchParams.set('tl', 'en');
-    translationUrl.searchParams.set('dt', 't');
-    translationUrl.searchParams.set('q', preparedText);
+      const translationUrl = new URL('https://translate.googleapis.com/translate_a/single');
+      translationUrl.searchParams.set('client', 'gtx');
+      translationUrl.searchParams.set('sl', 'vi');
+      translationUrl.searchParams.set('tl', 'en');
+      translationUrl.searchParams.set('dt', 't');
+      translationUrl.searchParams.set('q', preparedText);
 
-    const translationResponse = await fetch(translationUrl, { headers: { Accept: 'application/json' } });
-    if (!translationResponse.ok) throw new Error(`translation_failed_${translationResponse.status}`);
+      const translationResponse = await fetch(translationUrl, { headers: { Accept: 'application/json' } });
+      if (!translationResponse.ok) throw new Error(`translation_failed_${translationResponse.status}`);
+      const payload = await translationResponse.json();
+      const translated = Array.isArray(payload?.[0]) ? payload[0].map((segment) => segment?.[0] || '').join('') : '';
+      if (!translated || translated.includes('??')) throw new Error('translation_invalid');
+      return translated;
+    }));
 
-    const payload = await translationResponse.json();
-    const translated = Array.isArray(payload?.[0])
-      ? payload[0].map((segment) => segment?.[0] || '').join('')
-      : '';
-
-    if (!translated || translated.includes('??')) throw new Error('translation_invalid');
-    response.status(200).json({ translated });
+    response.status(200).json(Array.isArray(texts) ? { translations } : { translated: translations[0] });
   } catch (error) {
     response.status(502).json({
       error: 'translation_unavailable',

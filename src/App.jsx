@@ -30,7 +30,10 @@ const pageTabs = {
 };
 
 const hashtags = ['#chatgpt', '#youtubepremium', '#canva', '#duolingo', '#adobe', '#capcut', '#notion', '#grok', '#office365', '#spotify', '#netflix', '#figma'];
-const categories = ['Voucher giảm giá', 'Tài khoản', 'Phần mềm', 'AI', 'Office', 'Streaming', 'Design', 'Education', 'Cloud', 'Code', 'Template'];
+const categories = {
+  vi: ['Voucher giảm giá', 'Tài khoản', 'Phần mềm', 'AI', 'Office', 'Streaming', 'Thiết kế', 'Giáo dục', 'Cloud', 'Code', 'Template'],
+  en: ['Discount vouchers', 'Accounts', 'Software', 'AI', 'Office', 'Streaming', 'Design', 'Education', 'Cloud', 'Code', 'Templates'],
+};
 
 const copy = {
   vi: {
@@ -122,7 +125,7 @@ const copy = {
     listing: 'List a product',
     productName: 'Product name',
     productPlaceholder: 'Example: Windows 11 Pro key',
-    price: 'Price (VND)',
+    price: 'Price (USD)',
     submit: 'Submit listing',
     requested: 'Find a product',
     requestIntro: 'Tell the community exactly what you are looking for.',
@@ -157,8 +160,41 @@ const copy = {
   }
 };
 
-const formatPrice = (value, fallbackText) => {
-  if (typeof value === 'number' && value > 0) return `${new Intl.NumberFormat('vi-VN').format(value)}đ`;
+const VND_PER_USD = 26000;
+
+const englishTerms = [
+  [/nâng gói/gi, 'Upgrade'],
+  [/tài khoản/gi, 'Account'],
+  [/bản quyền/gi, 'License'],
+  [/gói/gi, 'Plan'],
+  [/giảm giá/gi, 'Discount'],
+  [/phần mềm/gi, 'Software'],
+  [/tháng/gi, 'months'],
+  [/năm/gi, 'year'],
+  [/liên hệ/gi, 'Contact us'],
+  [/kích hoạt/gi, 'activation'],
+  [/hỗ trợ/gi, 'support'],
+  [/trọn đời/gi, 'lifetime'],
+  [/chính hãng/gi, 'official'],
+];
+
+function translateCatalogText(text, language) {
+  if (!text || language === 'vi') return text;
+  return englishTerms.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), text);
+}
+
+function localizedCategory(language) {
+  return language === 'en' ? 'Discount vouchers & accounts' : 'Voucher giảm giá & Tài khoản';
+}
+
+const formatPrice = (value, fallbackText, language) => {
+  if (typeof value === 'number' && value > 0) {
+    if (language === 'en') {
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(value / VND_PER_USD);
+    }
+    return `${new Intl.NumberFormat('vi-VN').format(value)}đ`;
+  }
+  if (language === 'en') return 'Contact us';
   return fallbackText || 'Liên hệ';
 };
 
@@ -231,7 +267,7 @@ function Logo() {
   );
 }
 
-function ProductCard({ product, onSave, onBuy, onViewDescription, buyLabel, descriptionLabel }) {
+function ProductCard({ product, language, onSave, onBuy, onViewDescription, buyLabel, descriptionLabel }) {
   const [saved, setSaved] = useState(false);
 
   const toggleSave = () => {
@@ -242,14 +278,14 @@ function ProductCard({ product, onSave, onBuy, onViewDescription, buyLabel, desc
   return (
     <article className="product-card">
       <div className="product-visual">
-        <img src={product.image} alt={product.title} loading="lazy" />
-        <span className="badge verified-badge"><span className="badge-check">✓</span>{product.badge}</span>
-        <button className={saved ? 'save-button is-saved' : 'save-button'} aria-label="Lưu sản phẩm" onClick={toggleSave}>♡</button>
+        <img src={product.image} alt={translateCatalogText(product.title, language)} loading="lazy" />
+        <span className="badge verified-badge"><span className="badge-check">✓</span>{language === 'en' ? 'Store product' : product.badge}</span>
+        <button className={saved ? 'save-button is-saved' : 'save-button'} aria-label={language === 'en' ? 'Save product' : 'Lưu sản phẩm'} onClick={toggleSave}>♡</button>
       </div>
       <div className="product-info">
-        <p>{product.category}</p>
-        <h3>{product.title}</h3>
-        <strong>{formatPrice(product.price, product.priceText)}</strong>
+        <p>{localizedCategory(language)}</p>
+        <h3>{translateCatalogText(product.title, language)}</h3>
+        <strong>{formatPrice(product.price, product.priceText, language)}</strong>
         <div className="product-actions-row">
           <button className="description-button" aria-label={descriptionLabel} title={descriptionLabel} onClick={() => onViewDescription(product)}>{descriptionLabel}</button>
           <button className="buy-button" onClick={() => onBuy(product)}>{buyLabel}</button>
@@ -274,6 +310,12 @@ export default function App() {
 
   const t = copy[language];
   const tabs = pageTabs[language];
+  const localizedProducts = useMemo(() => products.map((product) => ({
+    ...product,
+    title: translateCatalogText(product.title, language),
+    category: localizedCategory(language),
+    description: translateCatalogText(product.description, language),
+  })), [products, language]);
   const priceInput = Number(sellPrice.replace(/\D/g, '')) || 0;
   const pageNote = activePage === 'seller'
     ? { title: t.sellerNoteTitle, text: t.sellerNoteText }
@@ -282,8 +324,8 @@ export default function App() {
       : { title: t.storeNoteTitle, text: t.storeNoteText };
 
   const filteredProducts = useMemo(
-    () => products.filter((product) => `${product.title} ${product.category} ${product.description || ''}`.toLowerCase().includes(query.toLowerCase())),
-    [products, query]
+    () => localizedProducts.filter((product) => `${product.title} ${product.category} ${product.description || ''}`.toLowerCase().includes(query.toLowerCase())),
+    [localizedProducts, query]
   );
 
   const showNotice = (message) => {
@@ -406,7 +448,7 @@ export default function App() {
           </div>
           <div className="category-row">
             <span>{t.categories}</span>
-            {categories.map((category) => <button key={category} onClick={() => setQuery(category)}>{category}</button>)}
+            {categories[language].map((category) => <button key={category} onClick={() => setQuery(category)}>{category}</button>)}
             {hashtags.map((tag) => <button key={tag} className="tag-chip" onClick={() => setQuery(tag.replace('#', ''))}>{tag}</button>)}
           </div>
         </section>
@@ -424,6 +466,7 @@ export default function App() {
                 <ProductCard
                   key={product.id || product.title}
                   product={product}
+                  language={language}
                   onSave={(wasSaved) => setSaved((count) => count + (wasSaved ? 1 : -1))}
                   onBuy={openBuyModal}
                   onViewDescription={openDescriptionModal}
@@ -445,8 +488,8 @@ export default function App() {
             </div>
             <div className="seller-points">
               <article><span>01</span><h3>{t.fee}</h3><p>{t.feeText}</p></article>
-              <article><span>02</span><h3>{t.verified}</h3><p>Những bài đăng mới được kiểm tra trước khi xuất hiện trên trang.</p></article>
-              <article><span>03</span><h3>{t.delivery}</h3><p>Người mua và người bán kết nối trực tiếp, nhanh chóng.</p></article>
+              <article><span>02</span><h3>{t.verified}</h3><p>{language === 'en' ? 'New listings are checked before they appear on the site.' : 'Những bài đăng mới được kiểm tra trước khi xuất hiện trên trang.'}</p></article>
+              <article><span>03</span><h3>{t.delivery}</h3><p>{language === 'en' ? 'Buyers and sellers connect directly and quickly.' : 'Người mua và người bán kết nối trực tiếp, nhanh chóng.'}</p></article>
             </div>
           </section>
         ) : null}
@@ -511,14 +554,14 @@ export default function App() {
               </form>
             ) : modal === 'description' ? (
               <div className="contact-sheet">
-                <p className="section-kicker">{selectedProduct?.category}</p>
+                <p className="section-kicker">{localizedCategory(language)}</p>
                 <h2>{t.viewDescription}</h2>
                 <div className="product-detail-summary">
                   <img src={selectedProduct?.image} alt="" />
                   <div>
-                    <p className="contact-product">{selectedProduct?.title}</p>
+                    <p className="contact-product">{translateCatalogText(selectedProduct?.title, language)}</p>
                     <dl className="detail-list">
-                      <div><dt>{t.priceLabel}</dt><dd>{formatPrice(selectedProduct?.price, selectedProduct?.priceText)}</dd></div>
+                      <div><dt>{t.priceLabel}</dt><dd>{formatPrice(selectedProduct?.price, selectedProduct?.priceText, language)}</dd></div>
                       <div><dt>{t.sellerLabel}</dt><dd>{selectedProduct?.sellerName || 'Patrick Tech Media'}</dd></div>
                     </dl>
                   </div>
@@ -529,9 +572,9 @@ export default function App() {
               </div>
             ) : (
               <div className="contact-sheet">
-                <p className="section-kicker">{selectedProduct?.category}</p>
+                <p className="section-kicker">{localizedCategory(language)}</p>
                 <h2>{t.contactTitle}</h2>
-                <p className="contact-product">{selectedProduct?.title}</p>
+                <p className="contact-product">{translateCatalogText(selectedProduct?.title, language)}</p>
                 <div className="contact-links">
                   <a className="button button-primary button-full" href={ZALO_LINK} target="_blank" rel="noreferrer">{t.zalo}</a>
                   <a className="button button-secondary button-full" href={TELEGRAM_LINK} target="_blank" rel="noreferrer">{t.telegram}</a>
